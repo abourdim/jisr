@@ -1,0 +1,52 @@
+[
+  {
+    "id": 9,
+    "word_fr": "azur",
+    "word_en": "azure",
+    "word_ar": "لَازَوَرْد",
+    "transliteration": "lāzaward",
+    "meaning_fr": "Bleu ciel intense et lumineux, couleur du ciel serein.",
+    "meaning_en": "Bright sky blue, the color of a clear sky.",
+    "meaning_ar": "اللون الأزرق الفاتح المضيء، لون السماء الصافية.",
+    "etymology": "Du perso-arabe lāzaward (لازورد), issu du persan lāzhward, nom d'une région d'où provenait le lapis-lazuli.",
+    "pathway": "persan → arabe → latin médiéval → vieux français → anglais",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "lāzhward",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "لَازَوَرْد",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "lazulum",
+        "date": "XIe s."
+      },
+      {
+        "lang": "vieux français",
+        "word": "azur",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "azure",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "arts_musique",
+    "examples": {
+      "fr": "La Côte d'Azur tire son nom de ce bleu méditerranéen caractéristique.",
+      "en": "The Côte d'Azur takes its name from this characteristic Mediterranean blue.",
+      "ar": "أخذت كوت دازور اسمها من هذا اللون الأزرق المتوسطي المميز."
+    },
+    "related_words": [
+      "lapis-lazuli",
+      "cobalt",
+      "indigo"
+    ]
+  }
+]

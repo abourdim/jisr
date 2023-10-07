@@ -1,0 +1,42 @@
+[
+  {
+    "id": 15,
+    "word_fr": "sofa",
+    "word_en": "sofa",
+    "word_ar": "صُفَّة",
+    "transliteration": "ṣuffa",
+    "meaning_fr": "Siège rembourré à dossier et accoudoirs, pouvant accueillir plusieurs personnes.",
+    "meaning_en": "Padded seat with backrest and armrests, able to accommodate several people.",
+    "meaning_ar": "مقعد مبطن بمسند للظهر والذراعين، يمكنه استيعاب عدة أشخاص.",
+    "etymology": "De l'arabe ṣuffa (صفّة), banquette surélevée couverte de coussins, typique de l'architecture arabo-andalouse.",
+    "pathway": "arabe → turc ottoman → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "صُفَّة",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "turc ottoman",
+        "word": "sofa",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "sofa",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "architecture",
+    "examples": {
+      "fr": "Le sofa est devenu un meuble central du salon occidental.",
+      "en": "The sofa became a central piece of Western living rooms.",
+      "ar": "أصبح الصفة قطعة أثاث محورية في غرف المعيشة الغربية."
+    },
+    "related_words": [
+      "coton",
+      "tapis",
+      "alcôve"
+    ]
+  }
+]

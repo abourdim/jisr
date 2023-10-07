@@ -1,0 +1,47 @@
+[
+  {
+    "id": 11,
+    "word_fr": "amiral",
+    "word_en": "admiral",
+    "word_ar": "أَمِير البَحْر",
+    "transliteration": "amīr al-baḥr",
+    "meaning_fr": "Officier général de la marine militaire, au grade le plus élevé.",
+    "meaning_en": "General officer of the military navy, at the highest rank.",
+    "meaning_ar": "ضابط عام في البحرية العسكرية بأعلى رتبة.",
+    "etymology": "De l'arabe amīr al-baḥr (أمير البحر), « prince de la mer ». Adopté par les croisés en Méditerranée.",
+    "pathway": "arabe → latin médiéval sicilien → vieux français → anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "أَمِير البَحْر",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "amiratus",
+        "date": "XIe s."
+      },
+      {
+        "lang": "vieux français",
+        "word": "admiral",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "admiral",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "militaire",
+    "examples": {
+      "fr": "L'amiral Nelson est une figure célèbre de l'histoire navale britannique.",
+      "en": "Admiral Nelson is one of the most celebrated figures in British naval history.",
+      "ar": "يُعدّ الأميرال نيلسون من أبرز الشخصيات في التاريخ البحري البريطاني."
+    },
+    "related_words": [
+      "émir",
+      "safari",
+      "arsenal"
+    ]
+  }
+]

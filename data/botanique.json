@@ -1,0 +1,4277 @@
+[
+  {
+    "id": 7,
+    "word_fr": "coton",
+    "word_en": "cotton",
+    "word_ar": "قُطْن",
+    "transliteration": "quṭn",
+    "meaning_fr": "Fibre textile naturelle provenant des capsules du cotonnier, plante herbacée tropicale.",
+    "meaning_en": "Natural textile fiber from the bolls of the cotton plant, a tropical herbaceous plant.",
+    "meaning_ar": "ألياف نسيجية طبيعية تُستخرج من ثمار شجرة القطن.",
+    "etymology": "De l'arabe quṭn (قطن), terme attesté dès le IXe siècle. Les marchands arabes ont diffusé le coton en Méditerranée.",
+    "pathway": "arabe → espagnol → ancien français → anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "قُطْن",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "algodón",
+        "date": "XIe s."
+      },
+      {
+        "lang": "ancien français",
+        "word": "coton",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "cotton",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le coton égyptien est réputé pour la finesse de ses fibres.",
+      "en": "Egyptian cotton is renowned for the fineness of its fibers.",
+      "ar": "يشتهر القطن المصري بنعومة ألياف فائقة الجودة."
+    },
+    "related_words": [
+      "toile",
+      "tissu",
+      "sofa"
+    ]
+  },
+  {
+    "id": 18,
+    "word_fr": "nénuphar",
+    "word_en": "water lily",
+    "word_ar": "نِيلُوفَر",
+    "transliteration": "nīlūfar",
+    "meaning_fr": "Plante aquatique aux grandes feuilles flottantes et aux fleurs ornementales.",
+    "meaning_en": "Aquatic plant with large floating leaves and ornamental white or yellow flowers.",
+    "meaning_ar": "نبات مائي بأوراق عائمة كبيرة وأزهار زينة بيضاء أو صفراء.",
+    "etymology": "Du perso-arabe nīlūfar (نيلوفر), issu du sanskrit nīlotpala, « lotus bleu ».",
+    "pathway": "sanskrit → persan → arabe → latin médiéval → français",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "nīlotpala",
+        "date": "antiquité"
+      },
+      {
+        "lang": "persan/arabe",
+        "word": "نِيلُوفَر",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "nenufar",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "français",
+        "word": "nénuphar",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les nénuphars de Giverny ont inspiré les tableaux de Monet.",
+      "en": "The water lilies in Giverny inspired Monet's famous paintings.",
+      "ar": "ألهمت زهرة اللوتس في جيفيرني لوحات مونيه الشهيرة."
+    },
+    "related_words": [
+      "azur",
+      "gazelle",
+      "coton"
+    ]
+  },
+  {
+    "id": 80,
+    "word_fr": "safran",
+    "word_en": "saffron",
+    "word_ar": "زَعْفَرَان",
+    "transliteration": "zaʿfarān",
+    "meaning_fr": "Épice précieuse obtenue des stigmates séchés du crocus sativus, utilisée en cuisine, teinturerie et médecine.",
+    "meaning_en": "Precious spice obtained from the dried stigmas of crocus sativus, used in cooking, dyeing, and medicine.",
+    "meaning_ar": "توابل ثمينة تُؤخذ من أسدية الزعفران المجففة، تُستخدم في الطهي والصباغة والطب.",
+    "etymology": "De l'arabe zaʿfarān (زعفران), lui-même du persan zarparān signifiant « aux pétales d'or ». Les marchands arabes ont diffusé cette épice orientale vers l'Europe via l'Andalousie.",
+    "pathway": "persan → arabe → espagnol médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "zarparān",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "زَعْفَرَان",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "azafrán",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "safran/saffron",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le safran iranien est considéré comme le meilleur du monde pour sa couleur et son arôme.",
+      "en": "Iranian saffron is considered the world's finest for its color and aroma.",
+      "ar": "يُعدّ الزعفران الإيراني الأفضل في العالم من حيث اللون والعطر."
+    },
+    "related_words": [
+      "henné",
+      "jasmin",
+      "curcuma"
+    ]
+  },
+  {
+    "id": 81,
+    "word_fr": "henné",
+    "word_en": "henna",
+    "word_ar": "حِنَّاء",
+    "transliteration": "ḥinnāʾ",
+    "meaning_fr": "Arbuste dont les feuilles fournissent un colorant naturel rouge-orangé utilisé pour la teinture des cheveux et la décoration corporelle.",
+    "meaning_en": "Shrub whose leaves provide a natural red-orange dye used for hair dyeing and body decoration.",
+    "meaning_ar": "شجيرة تُعطي أوراقها صبغة طبيعية حمراء-برتقالية تُستخدم لصبغ الشعر وتزيين الجسم.",
+    "etymology": "De l'arabe ḥinnāʾ (حناء), nom de cette plante tinctoriale cultivée depuis l'Antiquité dans la péninsule arabique et en Inde. Le henné est mentionné dans les traités médicaux d'Ibn Sīnā pour ses propriétés antiseptiques.",
+    "pathway": "arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "حِنَّاء",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "turc ottoman",
+        "word": "kına",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "henné/henna",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le henné est utilisé depuis des millénaires dans les cérémonies de mariage du monde arabe et indien.",
+      "en": "Henna has been used for millennia in wedding ceremonies across the Arab and Indian worlds.",
+      "ar": "استُخدمت الحناء منذ آلاف السنين في حفلات الأعراس في العالم العربي والهندي."
+    },
+    "related_words": [
+      "safran",
+      "jasmin",
+      "indigo"
+    ]
+  },
+  {
+    "id": 82,
+    "word_fr": "jasmin",
+    "word_en": "jasmine",
+    "word_ar": "يَاسَمِين",
+    "transliteration": "yāsamīn",
+    "meaning_fr": "Arbuste grimpant aux fleurs blanches ou jaunes très parfumées, utilisé en parfumerie, en médecine et dans les jardins islamiques.",
+    "meaning_en": "Climbing shrub with highly fragrant white or yellow flowers, used in perfumery, medicine, and Islamic gardens.",
+    "meaning_ar": "شجيرة متسلقة بأزهار بيضاء أو صفراء عطرة جدًا، تُستخدم في صناعة العطور والطب والحدائق الإسلامية.",
+    "etymology": "Du perso-arabe yāsamīn (ياسمين), du persan yāsaman. Cette fleur emblématique des jardins arabes andalous et persans était utilisée en parfumerie et en médecine pour ses propriétés calmantes.",
+    "pathway": "persan → arabe → espagnol → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "yāsaman",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "يَاسَمِين",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "jazmín",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "jasmin/jasmine",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le jasmin ornait les jardins de l'Alhambra et parfumait les cours des palais nasrides.",
+      "en": "Jasmine adorned the gardens of the Alhambra and perfumed the courts of Nasrid palaces.",
+      "ar": "كان الياسمين يُزيّن حدائق الحمراء ويُعطّر فناءات قصور بني نصر."
+    },
+    "related_words": [
+      "henné",
+      "safran",
+      "rose"
+    ]
+  },
+  {
+    "id": 83,
+    "word_fr": "lilas",
+    "word_en": "lilac",
+    "word_ar": "لَيْلَك",
+    "transliteration": "laylak",
+    "meaning_fr": "Arbuste aux grappes de fleurs violettes ou blanches très parfumées, originaire des Balkans et introduit en Europe par les Ottomans.",
+    "meaning_en": "Shrub with clusters of very fragrant violet or white flowers, native to the Balkans and introduced to Europe by Ottomans.",
+    "meaning_ar": "شجيرة بعناقيد من الأزهار البنفسجية أو البيضاء العطرة جدًا، أصلها البلقان وأُدخلت إلى أوروبا بواسطة العثمانيين.",
+    "etymology": "Du perso-arabe laylak (ليلك), du persan nīlak signifiant « bleuâtre ». Les botanistes ottomans introduisirent le lilas en Europe occidentale au XVIe siècle via les échanges diplomatiques avec Vienne.",
+    "pathway": "persan → arabe / turc ottoman → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "nīlak",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe/turc",
+        "word": "لَيْلَك",
+        "date": "XIe s."
+      },
+      {
+        "lang": "français",
+        "word": "lilas",
+        "date": "XVIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "lilac",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le lilas fut introduit en France au XVIe siècle grâce aux échanges entre la Porte ottomane et Versailles.",
+      "en": "Lilac was introduced to France in the 16th century through exchanges between the Ottoman Porte and Versailles.",
+      "ar": "أُدخل الليلك إلى فرنسا في القرن السادس عشر عبر التبادلات بين الباب العالي وفرساي."
+    },
+    "related_words": [
+      "jasmin",
+      "henné",
+      "rose"
+    ]
+  },
+  {
+    "id": 84,
+    "word_fr": "orange",
+    "word_en": "orange",
+    "word_ar": "نَارَنْج",
+    "transliteration": "nāranj",
+    "meaning_fr": "Fruit du genre Citrus à écorce orangée et chair acidulée sucrée, introduit en Europe par les marchands arabes.",
+    "meaning_en": "Citrus fruit with orange skin and sweet acidic flesh, introduced to Europe by Arab merchants.",
+    "meaning_ar": "ثمرة من جنس الحمضيات ذات قشرة برتقالية ولبّ حامض حلو، أُدخلت إلى أوروبا بواسطة التجار العرب.",
+    "etymology": "Du sanskrit nāraṅga, via le persan nārang et l'arabe nāranj (نارنج). Les Arabes ont introduit le fruit en Sicile et en Andalousie, d'où il gagna toute l'Europe. La couleur orange doit son nom au fruit.",
+    "pathway": "sanskrit → persan → arabe → espagnol → vieux français → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "nāraṅga",
+        "date": "antiquité"
+      },
+      {
+        "lang": "persan",
+        "word": "nārang",
+        "date": "VIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "نَارَنْج",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "naranja",
+        "date": "XIe s."
+      },
+      {
+        "lang": "vieux français",
+        "word": "une norenge → orange",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "orange",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les Arabes introduisirent l'orange amère en Sicile et en Espagne avant le Xe siècle.",
+      "en": "Arabs introduced the bitter orange to Sicily and Spain before the 10th century.",
+      "ar": "أدخل العرب النارنج إلى صقلية وإسبانيا قبل القرن العاشر الميلادي."
+    },
+    "related_words": [
+      "limon",
+      "cédrat",
+      "safran"
+    ]
+  },
+  {
+    "id": 85,
+    "word_fr": "limon",
+    "word_en": "lemon",
+    "word_ar": "لَيْمُون",
+    "transliteration": "laymūn",
+    "meaning_fr": "Fruit jaune du citronnier, très acide, riche en vitamine C, introduit en Méditerranée par les marchands arabes.",
+    "meaning_en": "Yellow lemon fruit, very acidic, rich in vitamin C, introduced to the Mediterranean by Arab merchants.",
+    "meaning_ar": "ثمرة الليمون الصفراء، حامضة جدًا، غنية بفيتامين C، أُدخلت إلى البحر المتوسط بواسطة التجار العرب.",
+    "etymology": "Du perso-arabe laymūn (ليمون), du persan līmū. Les botanistes arabes cultivèrent le citronnier en Andalousie et en Sicile à partir du Xe siècle, révolutionnant l'alimentation méditerranéenne.",
+    "pathway": "persan → arabe → langues romanes → anglais",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "līmū",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "لَيْمُون",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol/italien",
+        "word": "limón / limone",
+        "date": "XIe s."
+      },
+      {
+        "lang": "vieux français",
+        "word": "limon",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "lemon",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les agronomes arabes cultivèrent le citronnier en Andalousie dès le Xe siècle.",
+      "en": "Arab agronomists cultivated the lemon tree in Andalusia from the 10th century.",
+      "ar": "زرع الزراعيون العرب شجرة الليمون في الأندلس منذ القرن العاشر الميلادي."
+    },
+    "related_words": [
+      "orange",
+      "cédrat",
+      "safran"
+    ]
+  },
+  {
+    "id": 86,
+    "word_fr": "épinard",
+    "word_en": "spinach",
+    "word_ar": "إِسْفَانَاخ",
+    "transliteration": "isfānākh",
+    "meaning_fr": "Plante potagère aux feuilles vertes riches en fer et en vitamines, introduite en Europe par les Arabes.",
+    "meaning_en": "Leafy green vegetable rich in iron and vitamins, introduced to Europe by Arabs.",
+    "meaning_ar": "نبات بقولي بأوراق خضراء غنية بالحديد والفيتامينات، أُدخل إلى أوروبا بواسطة العرب.",
+    "etymology": "De l'arabe isfānākh (إسفاناخ), lui-même du persan aspanākh. Les agronomes arabes andalous cultivèrent l'épinard en Espagne à partir du Xe siècle. Ibn al-ʿAwwām le décrit dans son traité d'agronomie.",
+    "pathway": "persan → arabe → espagnol médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "aspanākh",
+        "date": "VIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "إِسْفَانَاخ",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "espinaca",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "épinard/spinach",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-ʿAwwām décrivit les techniques de culture de l'épinard dans son traité d'agronomie andalou.",
+      "en": "Ibn al-Awwam described spinach cultivation techniques in his Andalusian agronomy treatise.",
+      "ar": "وصف ابن العوام تقنيات زراعة الإسفاناخ في رسالته الزراعية الأندلسية."
+    },
+    "related_words": [
+      "artichaut",
+      "aubergine",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 87,
+    "word_fr": "artichaut",
+    "word_en": "artichoke",
+    "word_ar": "الخُرْشُوف",
+    "transliteration": "al-khurshūf",
+    "meaning_fr": "Plante potagère vivace dont on consomme le réceptacle charnu et les bractées de l'inflorescence.",
+    "meaning_en": "Perennial vegetable whose fleshy receptacle and inflorescence bracts are eaten.",
+    "meaning_ar": "نبات خضروات معمّر يُؤكل قاعدته اللحمية وأوراق نورته.",
+    "etymology": "De l'arabe al-khurshūf (الخرشوف) ou al-ḥarrashaf. Les agronomes arabes d'Andalousie cultivèrent l'artichaut et le répandirent en Sicile et en Italie, d'où il gagna le reste de l'Europe.",
+    "pathway": "arabe → espagnol médiéval → italien → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الخُرْشُوف",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "alcachofa",
+        "date": "XIe s."
+      },
+      {
+        "lang": "italien",
+        "word": "articiocco",
+        "date": "XVe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "artichaut/artichoke",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les agronomes arabes andalous cultivaient l'artichaut dans les jardins de Séville et de Cordoue.",
+      "en": "Arab Andalusian agronomists cultivated artichokes in the gardens of Seville and Cordoba.",
+      "ar": "كان الزراعيون العرب الأندلسيون يزرعون الخرشوف في حدائق إشبيلية وقرطبة."
+    },
+    "related_words": [
+      "épinard",
+      "aubergine",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 88,
+    "word_fr": "aubergine",
+    "word_en": "eggplant",
+    "word_ar": "بَاذِنْجَان",
+    "transliteration": "bāḏinjān",
+    "meaning_fr": "Fruit légume de la famille des solanacées, à peau violette et chair blanche, introduit en Europe par les Arabes.",
+    "meaning_en": "Fruit vegetable of the nightshade family with purple skin and white flesh, introduced to Europe by Arabs.",
+    "meaning_ar": "ثمرة-خضروات من الفصيلة الباذنجانية بقشرة بنفسجية ولبّ أبيض، أُدخلت إلى أوروبا بواسطة العرب.",
+    "etymology": "Du sanskrit vatinganah, via le persan bādingān et l'arabe bāḏinjān (باذنجان). Les Arabes introduisirent l'aubergine en Méditerranée; Ibn al-ʿAwwām décrit plusieurs variétés dans son traité andalou.",
+    "pathway": "sanskrit → persan → arabe → espagnol → catalan → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "vatinganah",
+        "date": "antiquité"
+      },
+      {
+        "lang": "persan",
+        "word": "bādingān",
+        "date": "VIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "بَاذِنْجَان",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "espagnol/catalan",
+        "word": "alberengena / alberginia",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "aubergine/eggplant",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'aubergine est mentionnée dans des dizaines de recettes de la cuisine arabe classique.",
+      "en": "Eggplant is mentioned in dozens of recipes from classical Arab cuisine.",
+      "ar": "ذُكر الباذنجان في عشرات الوصفات من المطبخ العربي الكلاسيكي."
+    },
+    "related_words": [
+      "épinard",
+      "artichaut",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 89,
+    "word_fr": "coriandre",
+    "word_en": "coriander",
+    "word_ar": "كُزْبَرَة",
+    "transliteration": "kuzbara",
+    "meaning_fr": "Plante aromatique annuelle dont les feuilles et les graines sont utilisées comme condiment dans les cuisines du monde entier.",
+    "meaning_en": "Annual aromatic plant whose leaves and seeds are used as a condiment in cuisines worldwide.",
+    "meaning_ar": "نبات عطري حولي تُستخدم أوراقه وبذوره توابل في مطابخ العالم أجمع.",
+    "etymology": "Du grec koriandron, arabisé en kuzbara (كزبرة). Ibn al-Bayṭār décrivit en détail les propriétés médicinales et culinaires de la coriandre dans son grand traité botanique.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "koriandron",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كُزْبَرَة",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "coriandrum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "coriandre/coriander",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit les vertus digestives de la coriandre dans son traité botanique.",
+      "en": "Ibn al-Baytar described the digestive properties of coriander in his botanical treatise.",
+      "ar": "وصف ابن البيطار فوائد الكزبرة الهضمية في رسالته النباتية."
+    },
+    "related_words": [
+      "cumin",
+      "carvi",
+      "safran"
+    ]
+  },
+  {
+    "id": 90,
+    "word_fr": "cumin",
+    "word_en": "cumin",
+    "word_ar": "كَمُّون",
+    "transliteration": "kammūn",
+    "meaning_fr": "Plante aromatique annuelle dont les graines séchées constituent un condiment essentiel de la cuisine arabe et orientale.",
+    "meaning_en": "Annual aromatic plant whose dried seeds are an essential condiment in Arab and Oriental cuisine.",
+    "meaning_ar": "نبات عطري حولي تُشكّل بذوره المجففة توابل أساسية في المطبخ العربي والشرقي.",
+    "etymology": "Du sémitique commun, via l'hébreu kammōn et l'arabe kammūn (كمون). Mentionné dans le Coran (سورة آل عمران). Les marchands arabes diffusèrent cette épice vers l'Europe médiévale.",
+    "pathway": "sémitique → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "kammūn",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كَمُّون",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "cuminum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "cumin",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le cumin est l'une des épices les plus anciennes et les plus répandues du monde arabe.",
+      "en": "Cumin is one of the oldest and most widespread spices in the Arab world.",
+      "ar": "الكمون من أقدم التوابل وأكثرها انتشارًا في العالم العربي."
+    },
+    "related_words": [
+      "coriandre",
+      "carvi",
+      "safran"
+    ]
+  },
+  {
+    "id": 91,
+    "word_fr": "carvi",
+    "word_en": "caraway",
+    "word_ar": "كَرَاوِيَا",
+    "transliteration": "karāwiyā",
+    "meaning_fr": "Plante bisannuelle dont les graines aromatiques sont utilisées comme condiment et comme remède digestif.",
+    "meaning_en": "Biennial plant whose aromatic seeds are used as a condiment and digestive remedy.",
+    "meaning_ar": "نبات ثنائي الحول تُستخدم بذوره العطرية توابل وعلاجًا هضميًا.",
+    "etymology": "De l'arabe karāwiyā (كراويا), lui-même du grec karōn. Ibn Sīnā décrivit les propriétés carminatives et digestives du carvi dans son Qānūn, et le prescrivait pour les coliques.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "karōn",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كَرَاوِيَا",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "carvi",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "carvi/caraway",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait le carvi pour les troubles digestifs et les flatulences.",
+      "en": "Ibn Sina prescribed caraway for digestive disorders and flatulence.",
+      "ar": "كان ابن سينا يصف الكراويا لاضطرابات الجهاز الهضمي والانتفاخ."
+    },
+    "related_words": [
+      "cumin",
+      "coriandre",
+      "fenouil"
+    ]
+  },
+  {
+    "id": 92,
+    "word_fr": "fenouil",
+    "word_en": "fennel",
+    "word_ar": "شَمَر",
+    "transliteration": "shamar",
+    "meaning_fr": "Plante aromatique vivace à saveur anisée, dont toutes les parties sont comestibles et aux propriétés digestives reconnues.",
+    "meaning_en": "Perennial aromatic plant with an anise flavor, all parts of which are edible and known for digestive properties.",
+    "meaning_ar": "نبات عطري معمّر بنكهة يانسون، جميع أجزائه صالحة للأكل وله خصائص هضمية معروفة.",
+    "etymology": "Du latin faeniculum, arabisé en shamar (شمر). Les agronomes arabes andalous cultivaient le fenouil et Ibn al-Bayṭār en décrivit les propriétés médicinales dans son grand traité des simples.",
+    "pathway": "latin → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "latin",
+        "word": "faeniculum",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "شَمَر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "faeniculum / feniculum",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "fenouil/fennel",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit les propriétés carminatives et ophtalmologiques du fenouil.",
+      "en": "Ibn al-Baytar described the carminative and ophthalmic properties of fennel.",
+      "ar": "وصف ابن البيطار الخصائص الكارمينية والعينية للشمر."
+    },
+    "related_words": [
+      "carvi",
+      "cumin",
+      "anis"
+    ]
+  },
+  {
+    "id": 93,
+    "word_fr": "anis",
+    "word_en": "anise",
+    "word_ar": "يَنْسُون",
+    "transliteration": "yansūn",
+    "meaning_fr": "Plante annuelle à petites fleurs blanches dont les graines ont une saveur caractéristique sucrée-anisée utilisée en cuisine et en médecine.",
+    "meaning_en": "Annual plant with small white flowers whose seeds have a characteristic sweet anise flavor used in cooking and medicine.",
+    "meaning_ar": "نبات حولي بأزهار بيضاء صغيرة، تتميز بذوره بنكهة يانسونية حلوة مميزة تُستخدم في الطهي والطب.",
+    "etymology": "Du grec anison, arabisé en yansūn (ينسون). Les médecins arabes prescrivaient l'anis pour les coliques, les troubles respiratoires et comme galactogogue pour les mères allaitantes.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "anison",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "يَنْسُون",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "anisum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "anis/anise",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait l'anis vert pour faciliter la digestion et calmer les spasmes intestinaux.",
+      "en": "Ibn Sina prescribed green anise to aid digestion and calm intestinal spasms.",
+      "ar": "كان ابن سينا يصف اليانسون لتسهيل الهضم وتهدئة التشنجات المعوية."
+    },
+    "related_words": [
+      "fenouil",
+      "carvi",
+      "cumin"
+    ]
+  },
+  {
+    "id": 94,
+    "word_fr": "estragon",
+    "word_en": "tarragon",
+    "word_ar": "طَرْخُون",
+    "transliteration": "ṭarkhūn",
+    "meaning_fr": "Plante aromatique vivace aux feuilles longues et étroites à saveur anisée, utilisée en cuisine française et en médecine.",
+    "meaning_en": "Perennial aromatic plant with long narrow leaves and anise flavor, used in French cuisine and medicine.",
+    "meaning_ar": "نبات عطري معمّر بأوراق طويلة وضيقة ذات نكهة يانسونية، يُستخدم في الطهي الفرنسي والطب.",
+    "etymology": "De l'arabe ṭarkhūn (طرخون), lui-même du grec drakon (« dragon »). Les médecins arabes utilisaient l'estragon comme stimulant digestif et contre les maux de dents.",
+    "pathway": "grec → arabe → espagnol médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "drakon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "طَرْخُون",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "tarchón",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "estragon/tarragon",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit l'estragon comme stimulant de l'appétit et remède contre les maux de dents.",
+      "en": "Ibn al-Baytar described tarragon as an appetite stimulant and remedy for toothache.",
+      "ar": "وصف ابن البيطار الطرخون محفزًا للشهية وعلاجًا لآلام الأسنان."
+    },
+    "related_words": [
+      "coriandre",
+      "fenouil",
+      "anis"
+    ]
+  },
+  {
+    "id": 95,
+    "word_fr": "ricin",
+    "word_en": "castor",
+    "word_ar": "خِرْوَع",
+    "transliteration": "khirwaʿ",
+    "meaning_fr": "Grande plante herbacée dont les graines fournissent une huile utilisée en médecine, en cosmétique et comme lubrifiant.",
+    "meaning_en": "Large herbaceous plant whose seeds provide oil used in medicine, cosmetics, and as a lubricant.",
+    "meaning_ar": "نبات عشبي كبير توفر بذوره زيتًا يُستخدم في الطب ومستحضرات التجميل والتشحيم.",
+    "etymology": "Du latin ricinus, arabisé en khirwaʿ (خرْوع). Les médecins arabes utilisaient l'huile de ricin comme purgatif, lubrifiant et pour les soins capillaires. Ibn Sīnā en décrit les usages dans son Qānūn.",
+    "pathway": "latin → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "latin",
+        "word": "ricinus",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "خِرْوَع",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "ricinus communis",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "ricin/castor",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'huile de ricin était prescrite par Ibn Sīnā comme purgatif doux et pour les soins des cheveux.",
+      "en": "Castor oil was prescribed by Ibn Sina as a mild purgative and for hair care.",
+      "ar": "كان ابن سينا يصف زيت الخرْوع مسهلًا لطيفًا ولعناية الشعر."
+    },
+    "related_words": [
+      "séné",
+      "tamarin",
+      "aloes"
+    ]
+  },
+  {
+    "id": 96,
+    "word_fr": "hysope",
+    "word_en": "hyssop",
+    "word_ar": "زُوفَا",
+    "transliteration": "zūfā",
+    "meaning_fr": "Plante aromatique vivace de la famille des lamiacées, aux propriétés expectorantes et antiseptiques.",
+    "meaning_en": "Perennial aromatic plant of the lamiaceae family, with expectorant and antiseptic properties.",
+    "meaning_ar": "نبات عطري معمّر من الفصيلة الشفوية، له خصائص طاردة للبلغم ومطهرة.",
+    "etymology": "Du grec hussōpos, arabisé en zūfā (زوفا). Les médecins arabes prescrivaient l'hysope pour les affections respiratoires, la toux et les infections pulmonaires.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "hussōpos",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "زُوفَا",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "hyssopus",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "hysope/hyssop",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait l'hysope en décoction pour traiter la toux et les bronchites.",
+      "en": "Ibn Sina prescribed hyssop decoction to treat coughs and bronchitis.",
+      "ar": "كان ابن سينا يصف طبيخ الزوفا لعلاج السعال والتهاب الشعب الهوائية."
+    },
+    "related_words": [
+      "séné",
+      "aloes",
+      "cubèbe"
+    ]
+  },
+  {
+    "id": 97,
+    "word_fr": "sumac",
+    "word_en": "sumac",
+    "word_ar": "سُمَّاق",
+    "transliteration": "summāq",
+    "meaning_fr": "Arbuste dont les baies séchées et moulues constituent une épice acidulée rouge caractéristique de la cuisine arabe.",
+    "meaning_en": "Shrub whose dried and ground berries form a tart red spice characteristic of Arab cuisine.",
+    "meaning_ar": "شجيرة تُشكّل ثمارها المجففة والمطحونة توابل حامضة حمراء مميزة في المطبخ العربي.",
+    "etymology": "De l'arabe summāq (سماق), terme désignant cet arbuste de la famille des anacardiacées. Les Arabes l'utilisaient comme condiment acidulant en remplacement du vinaigre et comme médicament astringent.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "سُمَّاق",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "sumach",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "sumac",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le sumac est l'une des épices emblématiques de la cuisine levantine et arabe.",
+      "en": "Sumac is one of the emblematic spices of Levantine and Arab cuisine.",
+      "ar": "السماق من أبرز توابل المطبخ الشامي والعربي."
+    },
+    "related_words": [
+      "safran",
+      "cumin",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 98,
+    "word_fr": "tamaris",
+    "word_en": "tamarisk",
+    "word_ar": "طَرْفَاء",
+    "transliteration": "ṭarfāʾ",
+    "meaning_fr": "Arbre ou arbuste des régions arides aux petites fleurs roses en épi, utilisé dans les jardins islamiques et en médecine.",
+    "meaning_en": "Tree or shrub of arid regions with small pink spike flowers, used in Islamic gardens and medicine.",
+    "meaning_ar": "شجرة أو شجيرة في المناطق الجافة ذات أزهار وردية صغيرة في عنقود، تُستخدم في الحدائق الإسلامية والطب.",
+    "etymology": "Du latin tamariscus, partiellement influencé par l'arabe ṭarfāʾ (طرفاء). Les agronomes arabes andalous plantaient le tamaris pour stabiliser les sols et comme plante ornementale dans les jardins islamiques.",
+    "pathway": "latin → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "latin",
+        "word": "tamariscus",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "طَرْفَاء",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "tamariscus / tamarix",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "tamaris/tamarisk",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le tamaris poussait dans les jardins d'eau des palais arabes pour son ombre légère et ses fleurs roses.",
+      "en": "Tamarisk grew in the water gardens of Arab palaces for its light shade and pink flowers.",
+      "ar": "كانت الطرفاء تنمو في حدائق المياه بالقصور العربية لظلها الخفيف وأزهارها الوردية."
+    },
+    "related_words": [
+      "jasmin",
+      "lilas",
+      "rose"
+    ]
+  },
+  {
+    "id": 99,
+    "word_fr": "indigo",
+    "word_en": "indigo",
+    "word_ar": "النِّيل",
+    "transliteration": "al-nīl",
+    "meaning_fr": "Colorant bleu-violet profond extrait de la plante Indigofera tinctoria, importé d'Orient par les marchands arabes.",
+    "meaning_en": "Deep blue-violet dye extracted from the Indigofera tinctoria plant, imported from the Orient by Arab merchants.",
+    "meaning_ar": "صبغة زرقاء-بنفسجية غامقة تُستخرج من نبات النيلة، استوردها التجار العرب من الشرق.",
+    "etymology": "Du sanskrit nīla (« bleu sombre »), via le persan nīl et l'arabe al-nīl (النيل). Les marchands arabes acheminaient l'indigo de l'Inde vers l'Europe via l'Égypte et l'Andalousie.",
+    "pathway": "sanskrit → persan → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "nīla",
+        "date": "antiquité"
+      },
+      {
+        "lang": "persan",
+        "word": "nīl",
+        "date": "VIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "النِّيل",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "indicum / indigo",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "indigo",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les teinturiers arabes maîtrisaient l'art de la teinture à l'indigo depuis le VIIe siècle.",
+      "en": "Arab dyers mastered the art of indigo dyeing from the 7th century.",
+      "ar": "أتقن الصبّاغون العرب فن الصباغة بالنيلة منذ القرن السابع الميلادي."
+    },
+    "related_words": [
+      "henné",
+      "safre",
+      "coton"
+    ]
+  },
+  {
+    "id": 100,
+    "word_fr": "carouber",
+    "word_en": "carob",
+    "word_ar": "خَرُّوب",
+    "transliteration": "kharrūb",
+    "meaning_fr": "Arbre méditerranéen dont les gousses sucrées étaient utilisées comme aliment, comme médicament et comme unité de poids (carat).",
+    "meaning_en": "Mediterranean tree whose sweet pods were used as food, medicine, and as a unit of weight (carat).",
+    "meaning_ar": "شجرة متوسطية تُستخدم قرونها الحلوة غذاءً ودواءً ووحدة وزن (قيراط).",
+    "etymology": "De l'arabe kharrūb (خروب). Le mot carat (قيراط) vient du même arbre, dont la graine servait d'étalon de poids pour les pierres précieuses. Les agronomes arabes cultivèrent le caroubier en Méditerranée.",
+    "pathway": "arabe → grec médiéval → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "خَرُّوب",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "grec médiéval",
+        "word": "keratia",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "carrubia",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "caroube/carob",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "La graine de caroube, le qirāṭ arabe, donna son nom au carat utilisé en joaillerie.",
+      "en": "The carob seed, the Arab qirat, gave its name to the carat used in jewelry.",
+      "ar": "أعطت بذرة الخروب، القيراط العربي، اسمها للقيراط المستخدم في صناعة المجوهرات."
+    },
+    "related_words": [
+      "tamarin",
+      "orange",
+      "artichaut"
+    ]
+  },
+  {
+    "id": 105,
+    "word_fr": "corossol",
+    "word_en": "soursop",
+    "word_ar": "القُشْطَة",
+    "transliteration": "al-qushṭa",
+    "meaning_fr": "Fruit tropical épineux à chair blanche crémeuse et saveur acidulée, de la famille des Annonacées.",
+    "meaning_en": "Spiny tropical fruit with creamy white flesh and tart flavor, of the Annonaceae family.",
+    "meaning_ar": "ثمرة استوائية شائكة بلبّ أبيض كريمي ونكهة حامضة، من الفصيلة القشطية.",
+    "etymology": "L'arabe al-qushṭa (القشطة) désignait des fruits de la famille des Annonacées introduits par les marchands arabes dans le commerce oriental. Le mot «corossol» est d'origine antillaise mais la famille de plantes fut décrite par les botanistes arabes.",
+    "pathway": "arabe → langues tropicales → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "القُشْطَة",
+        "date": "IXe s."
+      },
+      {
+        "lang": "portugais antillais",
+        "word": "corossol",
+        "date": "XVIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "corossol/soursop",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les botanistes arabes classifièrent les Annonacées parmi les fruits tropicaux médicinaux.",
+      "en": "Arab botanists classified Annonaceae among tropical medicinal fruits.",
+      "ar": "صنّف علماء النبات العرب الفصيلة القشطية ضمن الفواكه الاستوائية الطبية."
+    },
+    "related_words": [
+      "tamarin",
+      "orange",
+      "carouber"
+    ]
+  },
+  {
+    "id": 106,
+    "word_fr": "curcuma",
+    "word_en": "turmeric",
+    "word_ar": "كُرْكُم",
+    "transliteration": "kurkum",
+    "meaning_fr": "Plante rhizomateuse tropicale dont la racine séchée et moulue constitue l'épice jaune caractéristique de nombreuses cuisines orientales.",
+    "meaning_en": "Tropical rhizomatous plant whose dried, ground root forms the characteristic yellow spice of many Eastern cuisines.",
+    "meaning_ar": "نبات استوائي ريزومي تُشكّل جذمورته المجففة والمطحونة التابل الأصفر المميز للمطابخ الشرقية.",
+    "etymology": "De l'arabe kurkum (كركم), lui-même du sanskrit kuṅkuma. Les marchands arabes importaient le curcuma d'Inde et le diffusaient dans tout le monde islamique. Ibn al-Bayṭār décrivit ses propriétés colorantes et médicinales.",
+    "pathway": "sanskrit → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "kuṅkuma",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كُرْكُم",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "curcuma",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "curcuma/turmeric",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit le curcuma comme colorant alimentaire et remède anti-inflammatoire.",
+      "en": "Ibn al-Baytar described turmeric as a food coloring and anti-inflammatory remedy.",
+      "ar": "وصف ابن البيطار الكركم مُلوِّنًا غذائيًا وعلاجًا مضادًا للالتهاب."
+    },
+    "related_words": [
+      "safran",
+      "cumin",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 107,
+    "word_fr": "câpre",
+    "word_en": "caper",
+    "word_ar": "كَبَّار",
+    "transliteration": "kabbār",
+    "meaning_fr": "Bouton floral mariné du câprier, arbuste méditerranéen utilisé comme condiment et en médecine arabe.",
+    "meaning_en": "Pickled flower bud of the caper bush, a Mediterranean shrub used as a condiment and in Arab medicine.",
+    "meaning_ar": "برعم زهري مخلّل من شجرة الكبار، شجيرة متوسطية تُستخدم توابل وفي الطب العربي.",
+    "etymology": "Du grec kapparis, arabisé en kabbār (كبّار). Les médecins arabes utilisaient l'écorce de la racine du câprier comme diurétique et contre les douleurs articulaires. Ibn al-Bayṭār en décrivit les usages.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "kapparis",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كَبَّار",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "capparis",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "câpre/caper",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār prescrivait l'écorce de câprier pour traiter les douleurs articulaires.",
+      "en": "Ibn al-Baytar prescribed caper root bark to treat joint pains.",
+      "ar": "كان ابن البيطار يصف لحاء جذر الكبار لعلاج آلام المفاصل."
+    },
+    "related_words": [
+      "coriandre",
+      "estragon",
+      "sumac"
+    ]
+  },
+  {
+    "id": 108,
+    "word_fr": "réglisse",
+    "word_en": "licorice",
+    "word_ar": "عِرْقُ السُّوس",
+    "transliteration": "ʿirq al-sūs",
+    "meaning_fr": "Plante vivace dont la racine a une saveur sucrée caractéristique, utilisée en confiserie, en pharmacie et en médecine.",
+    "meaning_en": "Perennial plant whose root has a characteristic sweet flavor, used in confectionery, pharmacy, and medicine.",
+    "meaning_ar": "نبات معمّر تتميز جذوره بنكهة حلوة مميزة، يُستخدم في صناعة الحلويات والصيدلة والطب.",
+    "etymology": "Du grec glukurrhiza, passé par l'arabe ʿirq al-sūs (عرق السوس), signifiant littéralement « racine de réglisse ». Ibn Sīnā en décrivit les propriétés apaisantes sur les voies respiratoires et digestives.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "glukurrhiza",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "عِرْقُ السُّوس",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "liquiritia",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "réglisse/licorice",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait la réglisse pour calmer la toux et apaiser les inflammations de la gorge.",
+      "en": "Ibn Sina prescribed licorice to calm coughs and soothe throat inflammation.",
+      "ar": "كان ابن سينا يصف عرق السوس لتهدئة السعال وتخفيف التهابات الحلق."
+    },
+    "related_words": [
+      "séné",
+      "aloes",
+      "hysope"
+    ]
+  },
+  {
+    "id": 109,
+    "word_fr": "pistache",
+    "word_en": "pistachio",
+    "word_ar": "فُسْتُق",
+    "transliteration": "fustuq",
+    "meaning_fr": "Fruit sec à coque verte et graine verte savoureuse, originaire du Proche-Orient et cultivé dans tout le monde islamique.",
+    "meaning_en": "Nut with a green shell and flavorful green seed, native to the Near East and cultivated throughout the Islamic world.",
+    "meaning_ar": "ثمرة جافة بقشرة خضراء وبذرة خضراء لذيذة، أصلها الشرق الأدنى وتُزرع في العالم الإسلامي.",
+    "etymology": "Du grec pistakion, arabisé en fustuq (فستق). Les agronomes arabes cultivaient le pistachier de la Syrie à l'Espagne. Ibn al-ʿAwwām décrivit sa culture dans son traité d'agronomie andalou.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "pistakion",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "فُسْتُق",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "pistacium",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "pistache/pistachio",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "La pistache est un ingrédient fondamental de la pâtisserie arabe depuis l'ère abbasside.",
+      "en": "The pistachio is a fundamental ingredient in Arab pastry since the Abbasid era.",
+      "ar": "الفستق مكوّن أساسي في الحلويات العربية منذ العصر العباسي."
+    },
+    "related_words": [
+      "orange",
+      "tamarin",
+      "carouber"
+    ]
+  },
+  {
+    "id": 301,
+    "word_fr": "safran",
+    "word_en": "saffron",
+    "word_ar": "زَعْفَرَان",
+    "transliteration": "zaʿfarān",
+    "meaning_fr": "Épice précieuse obtenue des stigmates séchés du crocus sativus, utilisée en cuisine, teinturerie et médecine.",
+    "meaning_en": "Precious spice obtained from the dried stigmas of crocus sativus, used in cooking, dyeing, and medicine.",
+    "meaning_ar": "توابل ثمينة تُؤخذ من أسدية الزعفران المجففة، تُستخدم في الطهي والصباغة والطب.",
+    "etymology": "De l'arabe zaʿfarān (زعفران), du persan zarparān, « aux pétales d'or ». Diffusé vers l'Europe via l'Andalousie par les marchands arabes.",
+    "pathway": "persan → arabe → espagnol médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "zarparān",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "زَعْفَرَان",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "azafrán",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "safran/saffron",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le safran iranien est considéré comme le meilleur du monde pour sa couleur et son arôme.",
+      "en": "Iranian saffron is considered the world's finest for its color and aroma.",
+      "ar": "يُعدّ الزعفران الإيراني الأفضل في العالم من حيث اللون والعطر."
+    },
+    "related_words": [
+      "henné",
+      "jasmin",
+      "curcuma"
+    ]
+  },
+  {
+    "id": 302,
+    "word_fr": "henné",
+    "word_en": "henna",
+    "word_ar": "حِنَّاء",
+    "transliteration": "ḥinnāʾ",
+    "meaning_fr": "Arbuste dont les feuilles fournissent un colorant naturel rouge-orangé pour la teinture des cheveux et la décoration corporelle.",
+    "meaning_en": "Shrub whose leaves provide a natural red-orange dye for hair dyeing and body decoration.",
+    "meaning_ar": "شجيرة تُعطي أوراقها صبغة طبيعية حمراء-برتقالية تُستخدم لصبغ الشعر وتزيين الجسم.",
+    "etymology": "De l'arabe ḥinnāʾ (حناء), cultivé depuis l'Antiquité dans la péninsule arabique. Mentionné par Ibn Sīnā pour ses propriétés antiseptiques.",
+    "pathway": "arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "حِنَّاء",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "turc ottoman",
+        "word": "kına",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "henné/henna",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le henné est utilisé depuis des millénaires dans les cérémonies de mariage du monde arabe.",
+      "en": "Henna has been used for millennia in wedding ceremonies across the Arab world.",
+      "ar": "استُخدمت الحناء منذ آلاف السنين في حفلات الأعراس في العالم العربي."
+    },
+    "related_words": [
+      "safran",
+      "jasmin",
+      "indigo"
+    ]
+  },
+  {
+    "id": 303,
+    "word_fr": "jasmin",
+    "word_en": "jasmine",
+    "word_ar": "يَاسَمِين",
+    "transliteration": "yāsamīn",
+    "meaning_fr": "Arbuste grimpant aux fleurs blanches très parfumées, emblème des jardins islamiques andalous et persans.",
+    "meaning_en": "Climbing shrub with highly fragrant white flowers, emblem of Andalusian and Persian Islamic gardens.",
+    "meaning_ar": "شجيرة متسلقة بأزهار بيضاء عطرة جدًا، رمز حدائق الأندلس وإيران الإسلامية.",
+    "etymology": "Du perso-arabe yāsamīn (ياسمين), du persan yāsaman. Emblème des jardins de l'Alhambra.",
+    "pathway": "persan → arabe → espagnol → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "yāsaman",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "يَاسَمِين",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "jazmín",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "jasmin/jasmine",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le jasmin ornait les jardins de l'Alhambra et parfumait les cours des palais nasrides.",
+      "en": "Jasmine adorned the Alhambra gardens and perfumed the courts of Nasrid palaces.",
+      "ar": "كان الياسمين يُزيّن حدائق الحمراء ويُعطّر فناءات قصور بني نصر."
+    },
+    "related_words": [
+      "henné",
+      "safran",
+      "lilas"
+    ]
+  },
+  {
+    "id": 304,
+    "word_fr": "lilas",
+    "word_en": "lilac",
+    "word_ar": "لَيْلَك",
+    "transliteration": "laylak",
+    "meaning_fr": "Arbuste aux grappes de fleurs violettes très parfumées, introduit en Europe par les Ottomans.",
+    "meaning_en": "Shrub with clusters of very fragrant violet flowers, introduced to Europe by Ottomans.",
+    "meaning_ar": "شجيرة بعناقيد من الأزهار البنفسجية العطرة جدًا، أُدخلت إلى أوروبا بواسطة العثمانيين.",
+    "etymology": "Du perso-arabe laylak (ليلك), du persan nīlak, « bleuâtre ». Introduit en Europe occidentale au XVIe siècle.",
+    "pathway": "persan → arabe/turc → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "nīlak",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe/turc",
+        "word": "لَيْلَك",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "lilas/lilac",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le lilas fut introduit en France au XVIe siècle grâce aux échanges ottomans.",
+      "en": "Lilac was introduced to France in the 16th century through Ottoman exchanges.",
+      "ar": "أُدخل الليلك إلى فرنسا في القرن السادس عشر عبر التبادلات العثمانية."
+    },
+    "related_words": [
+      "jasmin",
+      "henné",
+      "rose"
+    ]
+  },
+  {
+    "id": 305,
+    "word_fr": "orange",
+    "word_en": "orange",
+    "word_ar": "نَارَنْج",
+    "transliteration": "nāranj",
+    "meaning_fr": "Fruit du genre Citrus à écorce orangée, introduit en Europe méditerranéenne par les marchands arabes.",
+    "meaning_en": "Citrus fruit with orange skin, introduced to Mediterranean Europe by Arab merchants.",
+    "meaning_ar": "ثمرة من جنس الحمضيات ذات قشرة برتقالية، أُدخلت إلى أوروبا المتوسطية بواسطة التجار العرب.",
+    "etymology": "Du sanskrit nāraṅga via le persan nārang et l'arabe nāranj (نارنج). La couleur orange tire son nom du fruit.",
+    "pathway": "sanskrit → persan → arabe → espagnol → vieux français → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "nāraṅga",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "نَارَنْج",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "vieux français",
+        "word": "norenge → orange",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "orange",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les Arabes introduisirent l'orange amère en Sicile et en Espagne avant le Xe siècle.",
+      "en": "Arabs introduced bitter orange to Sicily and Spain before the 10th century.",
+      "ar": "أدخل العرب النارنج إلى صقلية وإسبانيا قبل القرن العاشر الميلادي."
+    },
+    "related_words": [
+      "limon",
+      "cédrat",
+      "tamarin"
+    ]
+  },
+  {
+    "id": 306,
+    "word_fr": "limon",
+    "word_en": "lemon",
+    "word_ar": "لَيْمُون",
+    "transliteration": "laymūn",
+    "meaning_fr": "Fruit jaune du citronnier, très acide, riche en vitamine C, introduit en Méditerranée par les Arabes.",
+    "meaning_en": "Yellow lemon fruit, very acidic, rich in vitamin C, introduced to the Mediterranean by Arabs.",
+    "meaning_ar": "ثمرة الليمون الصفراء، حامضة جدًا، غنية بفيتامين C، أُدخلت إلى البحر المتوسط بواسطة العرب.",
+    "etymology": "Du perso-arabe laymūn (ليمون), du persan līmū. Cultivé en Andalousie à partir du Xe siècle.",
+    "pathway": "persan → arabe → langues romanes → anglais",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "līmū",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "لَيْمُون",
+        "date": "IXe s."
+      },
+      {
+        "lang": "vieux français",
+        "word": "limon",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "lemon",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les agronomes arabes cultivèrent le citronnier en Andalousie dès le Xe siècle.",
+      "en": "Arab agronomists cultivated the lemon tree in Andalusia from the 10th century.",
+      "ar": "زرع الزراعيون العرب شجرة الليمون في الأندلس منذ القرن العاشر الميلادي."
+    },
+    "related_words": [
+      "orange",
+      "cédrat",
+      "tamarin"
+    ]
+  },
+  {
+    "id": 307,
+    "word_fr": "épinard",
+    "word_en": "spinach",
+    "word_ar": "إِسْفَانَاخ",
+    "transliteration": "isfānākh",
+    "meaning_fr": "Plante potagère aux feuilles vertes riches en fer et vitamines, introduite en Europe par les Arabes d'Andalousie.",
+    "meaning_en": "Leafy green vegetable rich in iron and vitamins, introduced to Europe by Arabs of Andalusia.",
+    "meaning_ar": "نبات بقولي بأوراق خضراء غنية بالحديد والفيتامينات، أُدخل إلى أوروبا بواسطة عرب الأندلس.",
+    "etymology": "De l'arabe isfānākh (إسفاناخ), du persan aspanākh. Cultivé en Espagne à partir du Xe siècle.",
+    "pathway": "persan → arabe → espagnol médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "aspanākh",
+        "date": "VIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "إِسْفَانَاخ",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "espinaca",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "épinard/spinach",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-ʿAwwām décrivit les techniques de culture de l'épinard dans son traité d'agronomie andalou.",
+      "en": "Ibn al-Awwam described spinach cultivation in his Andalusian agronomy treatise.",
+      "ar": "وصف ابن العوام تقنيات زراعة الإسفاناخ في رسالته الزراعية الأندلسية."
+    },
+    "related_words": [
+      "artichaut",
+      "aubergine",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 308,
+    "word_fr": "artichaut",
+    "word_en": "artichoke",
+    "word_ar": "الخُرْشُوف",
+    "transliteration": "al-khurshūf",
+    "meaning_fr": "Plante potagère vivace dont on consomme le réceptacle charnu, répandue par les agronomes arabes d'Andalousie.",
+    "meaning_en": "Perennial vegetable whose fleshy receptacle is eaten, spread by Arab agronomists of Andalusia.",
+    "meaning_ar": "نبات خضروات معمّر يُؤكل قاعدته اللحمية، نشره الزراعيون العرب في الأندلس.",
+    "etymology": "De l'arabe al-khurshūf (الخرشوف). Diffusé d'Andalousie vers la Sicile et l'Italie.",
+    "pathway": "arabe → espagnol médiéval → italien → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الخُرْشُوف",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "alcachofa",
+        "date": "XIe s."
+      },
+      {
+        "lang": "italien",
+        "word": "articiocco",
+        "date": "XVe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "artichaut/artichoke",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les agronomes arabes andalous cultivaient l'artichaut dans les jardins de Séville et de Cordoue.",
+      "en": "Arab Andalusian agronomists cultivated artichokes in the gardens of Seville and Cordoba.",
+      "ar": "كان الزراعيون العرب الأندلسيون يزرعون الخرشوف في حدائق إشبيلية وقرطبة."
+    },
+    "related_words": [
+      "épinard",
+      "aubergine",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 309,
+    "word_fr": "aubergine",
+    "word_en": "eggplant",
+    "word_ar": "بَاذِنْجَان",
+    "transliteration": "bāḏinjān",
+    "meaning_fr": "Fruit légume de la famille des solanacées à peau violette, introduit en Europe par les Arabes.",
+    "meaning_en": "Fruit vegetable of the nightshade family with purple skin, introduced to Europe by Arabs.",
+    "meaning_ar": "ثمرة-خضروات من الفصيلة الباذنجانية بقشرة بنفسجية، أُدخلت إلى أوروبا بواسطة العرب.",
+    "etymology": "Du sanskrit vatinganah, via le persan bādingān et l'arabe bāḏinjān (باذنجان).",
+    "pathway": "sanskrit → persan → arabe → espagnol → catalan → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "vatinganah",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "بَاذِنْجَان",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "catalan",
+        "word": "alberginia",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "aubergine/eggplant",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'aubergine est mentionnée dans des dizaines de recettes de la cuisine arabe classique.",
+      "en": "Eggplant is mentioned in dozens of recipes from classical Arab cuisine.",
+      "ar": "ذُكر الباذنجان في عشرات الوصفات من المطبخ العربي الكلاسيكي."
+    },
+    "related_words": [
+      "épinard",
+      "artichaut",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 310,
+    "word_fr": "coriandre",
+    "word_en": "coriander",
+    "word_ar": "كُزْبَرَة",
+    "transliteration": "kuzbara",
+    "meaning_fr": "Plante aromatique annuelle dont les feuilles et les graines sont condiment universel des cuisines orientales.",
+    "meaning_en": "Annual aromatic plant whose leaves and seeds are a universal condiment in Eastern cuisines.",
+    "meaning_ar": "نبات عطري حولي تُستخدم أوراقه وبذوره توابل في مطابخ الشرق.",
+    "etymology": "Du grec koriandron, arabisé en kuzbara (كزبرة). Ibn al-Bayṭār décrivit ses propriétés médicinales et culinaires.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "koriandron",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كُزْبَرَة",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "coriandrum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "coriandre/coriander",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit les vertus digestives de la coriandre dans son traité botanique.",
+      "en": "Ibn al-Baytar described the digestive properties of coriander in his botanical treatise.",
+      "ar": "وصف ابن البيطار فوائد الكزبرة الهضمية في رسالته النباتية."
+    },
+    "related_words": [
+      "cumin",
+      "carvi",
+      "safran"
+    ]
+  },
+  {
+    "id": 311,
+    "word_fr": "cumin",
+    "word_en": "cumin",
+    "word_ar": "كَمُّون",
+    "transliteration": "kammūn",
+    "meaning_fr": "Plante aromatique annuelle dont les graines séchées sont une épice essentielle de la cuisine arabe.",
+    "meaning_en": "Annual aromatic plant whose dried seeds are an essential spice in Arab cuisine.",
+    "meaning_ar": "نبات عطري حولي تُشكّل بذوره المجففة توابل أساسية في المطبخ العربي.",
+    "etymology": "Du sémitique commun, via l'hébreu kammōn et l'arabe kammūn (كمون). Les marchands arabes diffusèrent cette épice vers l'Europe médiévale.",
+    "pathway": "sémitique → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "kammūn",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كَمُّون",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "cuminum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "cumin",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le cumin est l'une des épices les plus anciennes et les plus répandues du monde arabe.",
+      "en": "Cumin is one of the oldest and most widespread spices in the Arab world.",
+      "ar": "الكمون من أقدم التوابل وأكثرها انتشارًا في العالم العربي."
+    },
+    "related_words": [
+      "coriandre",
+      "carvi",
+      "safran"
+    ]
+  },
+  {
+    "id": 312,
+    "word_fr": "carvi",
+    "word_en": "caraway",
+    "word_ar": "كَرَاوِيَا",
+    "transliteration": "karāwiyā",
+    "meaning_fr": "Plante bisannuelle dont les graines aromatiques sont condiment et remède digestif.",
+    "meaning_en": "Biennial plant whose aromatic seeds are used as condiment and digestive remedy.",
+    "meaning_ar": "نبات ثنائي الحول تُستخدم بذوره العطرية توابل وعلاجًا هضميًا.",
+    "etymology": "Du grec karōn, arabisé en karāwiyā (كراويا). Ibn Sīnā en décrivit les propriétés carminatives.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "karōn",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كَرَاوِيَا",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "carvi",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "carvi/caraway",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait le carvi pour les troubles digestifs et les flatulences.",
+      "en": "Ibn Sina prescribed caraway for digestive disorders and flatulence.",
+      "ar": "كان ابن سينا يصف الكراويا لاضطرابات الجهاز الهضمي والانتفاخ."
+    },
+    "related_words": [
+      "cumin",
+      "coriandre",
+      "fenouil"
+    ]
+  },
+  {
+    "id": 313,
+    "word_fr": "fenouil",
+    "word_en": "fennel",
+    "word_ar": "شَمَر",
+    "transliteration": "shamar",
+    "meaning_fr": "Plante aromatique vivace à saveur anisée, cultivée et décrite par les agronomes arabes andalous.",
+    "meaning_en": "Perennial aromatic plant with anise flavor, cultivated and described by Arab Andalusian agronomists.",
+    "meaning_ar": "نبات عطري معمّر بنكهة يانسون، زرعه الزراعيون العرب الأندلسيون ووصفوه.",
+    "etymology": "Du latin faeniculum, arabisé en shamar (شمر). Ibn al-Bayṭār en décrit les propriétés médicinales.",
+    "pathway": "latin → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "latin",
+        "word": "faeniculum",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "شَمَر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "fenouil/fennel",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit les propriétés carminatives et ophtalmologiques du fenouil.",
+      "en": "Ibn al-Baytar described the carminative and ophthalmic properties of fennel.",
+      "ar": "وصف ابن البيطار الخصائص الكارمينية والعينية للشمر."
+    },
+    "related_words": [
+      "carvi",
+      "cumin",
+      "anis"
+    ]
+  },
+  {
+    "id": 314,
+    "word_fr": "anis",
+    "word_en": "anise",
+    "word_ar": "يَنْسُون",
+    "transliteration": "yansūn",
+    "meaning_fr": "Plante annuelle à fleurs blanches dont les graines ont une saveur anisée, utilisée en cuisine et en médecine.",
+    "meaning_en": "Annual plant with white flowers whose seeds have an anise flavor, used in cooking and medicine.",
+    "meaning_ar": "نبات حولي بأزهار بيضاء، تتميز بذوره بنكهة يانسونية، يُستخدم في الطهي والطب.",
+    "etymology": "Du grec anison, arabisé en yansūn (ينسون). Prescrit par Ibn Sīnā pour les coliques.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "anison",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "يَنْسُون",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "anisum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "anis/anise",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait l'anis vert pour faciliter la digestion et calmer les spasmes intestinaux.",
+      "en": "Ibn Sina prescribed green anise to aid digestion and calm intestinal spasms.",
+      "ar": "كان ابن سينا يصف اليانسون لتسهيل الهضم وتهدئة التشنجات المعوية."
+    },
+    "related_words": [
+      "fenouil",
+      "carvi",
+      "cumin"
+    ]
+  },
+  {
+    "id": 315,
+    "word_fr": "estragon",
+    "word_en": "tarragon",
+    "word_ar": "طَرْخُون",
+    "transliteration": "ṭarkhūn",
+    "meaning_fr": "Plante aromatique vivace aux feuilles longues à saveur anisée, utilisée en cuisine et en médecine arabe.",
+    "meaning_en": "Perennial aromatic plant with long narrow leaves and anise flavor, used in Arab cuisine and medicine.",
+    "meaning_ar": "نبات عطري معمّر بأوراق طويلة ذات نكهة يانسونية، يُستخدم في الطهي والطب العربي.",
+    "etymology": "De l'arabe ṭarkhūn (طرخون), du grec drakon. Ibn al-Bayṭār en décrivit les propriétés digestives.",
+    "pathway": "grec → arabe → espagnol médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "drakon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "طَرْخُون",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "estragon/tarragon",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit l'estragon comme stimulant de l'appétit et remède contre les maux de dents.",
+      "en": "Ibn al-Baytar described tarragon as an appetite stimulant and remedy for toothache.",
+      "ar": "وصف ابن البيطار الطرخون محفزًا للشهية وعلاجًا لآلام الأسنان."
+    },
+    "related_words": [
+      "coriandre",
+      "fenouil",
+      "anis"
+    ]
+  },
+  {
+    "id": 316,
+    "word_fr": "sumac",
+    "word_en": "sumac",
+    "word_ar": "سُمَّاق",
+    "transliteration": "summāq",
+    "meaning_fr": "Arbuste dont les baies séchées et moulues forment une épice acidulée rouge emblématique de la cuisine arabe.",
+    "meaning_en": "Shrub whose dried and ground berries form a tart red spice emblematic of Arab cuisine.",
+    "meaning_ar": "شجيرة تُشكّل ثمارها المجففة والمطحونة توابل حامضة حمراء مميزة في المطبخ العربي.",
+    "etymology": "De l'arabe summāq (سماق). Utilisé comme acidulant en remplacement du vinaigre.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "سُمَّاق",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "sumach",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "sumac",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le sumac est l'une des épices emblématiques de la cuisine levantine et arabe.",
+      "en": "Sumac is one of the emblematic spices of Levantine and Arab cuisine.",
+      "ar": "السماق من أبرز توابل المطبخ الشامي والعربي."
+    },
+    "related_words": [
+      "safran",
+      "cumin",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 317,
+    "word_fr": "tamarin",
+    "word_en": "tamarind",
+    "word_ar": "تَمْرُ هِنْدِي",
+    "transliteration": "tamr hindī",
+    "meaning_fr": "Fruit du tamarinier, gousse acidulée aux propriétés laxatives et digestives importée d'Inde par les marchands arabes.",
+    "meaning_en": "Fruit of the tamarind tree, a tart pod with laxative and digestive properties imported from India by Arab merchants.",
+    "meaning_ar": "ثمرة شجرة التمر الهندي، قرن حمضي بخصائص مُسهلة وهضمية استورده التجار العرب من الهند.",
+    "etymology": "De l'arabe tamr hindī (تمر هندي), « datte de l'Inde ».",
+    "pathway": "arabe → latin médiéval → espagnol → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "تَمْرُ هِنْدِي",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "tamarindus",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "tamarin/tamarind",
+        "date": "XVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les marchands arabes importaient le tamarin d'Inde et le diffusaient dans tout le monde islamique.",
+      "en": "Arab merchants imported tamarind from India and spread it throughout the Islamic world.",
+      "ar": "استورد التجار العرب التمر الهندي من الهند ونشروه في العالم الإسلامي."
+    },
+    "related_words": [
+      "orange",
+      "limon",
+      "cédrat"
+    ]
+  },
+  {
+    "id": 318,
+    "word_fr": "indigo",
+    "word_en": "indigo",
+    "word_ar": "النِّيل",
+    "transliteration": "al-nīl",
+    "meaning_fr": "Colorant bleu-violet profond extrait de la plante Indigofera tinctoria, importé d'Orient par les marchands arabes.",
+    "meaning_en": "Deep blue-violet dye extracted from the Indigofera tinctoria plant, imported from the Orient by Arab merchants.",
+    "meaning_ar": "صبغة زرقاء-بنفسجية غامقة تُستخرج من نبات النيلة، استوردها التجار العرب من الشرق.",
+    "etymology": "Du sanskrit nīla (« bleu sombre »), via le persan nīl et l'arabe al-nīl (النيل).",
+    "pathway": "sanskrit → persan → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "nīla",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "النِّيل",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "indicum / indigo",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "indigo",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les teinturiers arabes maîtrisaient l'art de la teinture à l'indigo depuis le VIIe siècle.",
+      "en": "Arab dyers mastered the art of indigo dyeing from the 7th century.",
+      "ar": "أتقن الصبّاغون العرب فن الصباغة بالنيلة منذ القرن السابع الميلادي."
+    },
+    "related_words": [
+      "henné",
+      "coton",
+      "santal"
+    ]
+  },
+  {
+    "id": 319,
+    "word_fr": "carouber",
+    "word_en": "carob",
+    "word_ar": "خَرُّوب",
+    "transliteration": "kharrūb",
+    "meaning_fr": "Arbre méditerranéen dont les gousses sucrées étaient aliment, médicament et unité de poids (le carat).",
+    "meaning_en": "Mediterranean tree whose sweet pods were food, medicine, and a unit of weight (the carat).",
+    "meaning_ar": "شجرة متوسطية تُستخدم قرونها الحلوة غذاءً ودواءً ووحدة وزن (القيراط).",
+    "etymology": "De l'arabe kharrūb (خروب). La graine de caroube, le qirāṭ, donna son nom au carat en joaillerie.",
+    "pathway": "arabe → grec médiéval → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "خَرُّوب",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "grec médiéval",
+        "word": "keratia",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "caroube/carob",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "La graine de caroube, le qirāṭ arabe, donna son nom au carat en joaillerie.",
+      "en": "The carob seed, the Arab qirat, gave its name to the carat in jewelry.",
+      "ar": "أعطت بذرة الخروب، القيراط العربي، اسمها للقيراط المستخدم في صناعة المجوهرات."
+    },
+    "related_words": [
+      "tamarin",
+      "orange",
+      "pistache"
+    ]
+  },
+  {
+    "id": 320,
+    "word_fr": "curcuma",
+    "word_en": "turmeric",
+    "word_ar": "كُرْكُم",
+    "transliteration": "kurkum",
+    "meaning_fr": "Plante rhizomateuse tropicale dont la racine moulue forme l'épice jaune caractéristique des cuisines orientales.",
+    "meaning_en": "Tropical rhizomatous plant whose ground root forms the characteristic yellow spice of Eastern cuisines.",
+    "meaning_ar": "نبات استوائي ريزومي تُشكّل جذمورته المطحونة التابل الأصفر المميز للمطابخ الشرقية.",
+    "etymology": "De l'arabe kurkum (كركم), du sanskrit kuṅkuma. Ibn al-Bayṭār en décrivit les propriétés colorantes et anti-inflammatoires.",
+    "pathway": "sanskrit → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "kuṅkuma",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كُرْكُم",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "curcuma",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "curcuma/turmeric",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit le curcuma comme colorant alimentaire et remède anti-inflammatoire.",
+      "en": "Ibn al-Baytar described turmeric as a food coloring and anti-inflammatory remedy.",
+      "ar": "وصف ابن البيطار الكركم مُلوِّنًا غذائيًا وعلاجًا مضادًا للالتهاب."
+    },
+    "related_words": [
+      "safran",
+      "cumin",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 321,
+    "word_fr": "pistache",
+    "word_en": "pistachio",
+    "word_ar": "فُسْتُق",
+    "transliteration": "fustuq",
+    "meaning_fr": "Fruit sec à coque verte originaire du Proche-Orient, cultivé dans tout le monde islamique depuis l'Antiquité.",
+    "meaning_en": "Nut with a green shell native to the Near East, cultivated throughout the Islamic world since antiquity.",
+    "meaning_ar": "ثمرة جافة بقشرة خضراء أصلها الشرق الأدنى، تُزرع في العالم الإسلامي منذ الأزمنة القديمة.",
+    "etymology": "Du grec pistakion, arabisé en fustuq (فستق). Ibn al-ʿAwwām décrivit sa culture dans son traité andalou.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "pistakion",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "فُسْتُق",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "pistacium",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "pistache/pistachio",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "La pistache est un ingrédient fondamental de la pâtisserie arabe depuis l'ère abbasside.",
+      "en": "The pistachio is a fundamental ingredient in Arab pastry since the Abbasid era.",
+      "ar": "الفستق مكوّن أساسي في الحلويات العربية منذ العصر العباسي."
+    },
+    "related_words": [
+      "carouber",
+      "orange",
+      "tamarin"
+    ]
+  },
+  {
+    "id": 322,
+    "word_fr": "coton",
+    "word_en": "cotton",
+    "word_ar": "قُطْن",
+    "transliteration": "quṭn",
+    "meaning_fr": "Fibre textile extraite des capsules du cotonnier, dont la culture fut développée et diffusée par les Arabes.",
+    "meaning_en": "Textile fiber extracted from cotton plant capsules, whose cultivation was developed and spread by Arabs.",
+    "meaning_ar": "ألياف نسيجية تُستخرج من كبسولات نبات القطن، طوّر العرب زراعته ونشروها.",
+    "etymology": "De l'arabe quṭn (قطن). Les Arabes introduisirent la culture du coton en Sicile, en Espagne et en Afrique du Nord.",
+    "pathway": "arabe → espagnol médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "قُطْن",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "algodón",
+        "date": "Xe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "cottonum",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "coton/cotton",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les Arabes introduisirent la culture du coton en Sicile et en Espagne, révolutionnant le textile médiéval.",
+      "en": "Arabs introduced cotton cultivation to Sicily and Spain, revolutionizing medieval textiles.",
+      "ar": "أدخل العرب زراعة القطن إلى صقلية وإسبانيا، مما أحدث ثورة في النسيج الوسيط."
+    },
+    "related_words": [
+      "indigo",
+      "henné",
+      "soie"
+    ]
+  },
+  {
+    "id": 323,
+    "word_fr": "ricin",
+    "word_en": "castor",
+    "word_ar": "خِرْوَع",
+    "transliteration": "khirwaʿ",
+    "meaning_fr": "Grande plante herbacée dont les graines fournissent une huile à usages médicinaux, cosmétiques et lubrifiants.",
+    "meaning_en": "Large herbaceous plant whose seeds provide oil with medicinal, cosmetic, and lubricant uses.",
+    "meaning_ar": "نبات عشبي كبير توفر بذوره زيتًا يُستخدم في الطب ومستحضرات التجميل والتشحيم.",
+    "etymology": "Du latin ricinus, arabisé en khirwaʿ (خرْوع). Ibn Sīnā en décrit les usages dans son Qānūn.",
+    "pathway": "latin → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "latin",
+        "word": "ricinus",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "خِرْوَع",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "ricin/castor",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'huile de ricin était prescrite par Ibn Sīnā comme purgatif doux et pour les soins des cheveux.",
+      "en": "Castor oil was prescribed by Ibn Sina as a mild purgative and for hair care.",
+      "ar": "كان ابن سينا يصف زيت الخرْوع مسهلًا لطيفًا ولعناية الشعر."
+    },
+    "related_words": [
+      "séné",
+      "aloes",
+      "cubèbe"
+    ]
+  },
+  {
+    "id": 324,
+    "word_fr": "réglisse",
+    "word_en": "licorice",
+    "word_ar": "عِرْقُ السُّوس",
+    "transliteration": "ʿirq al-sūs",
+    "meaning_fr": "Plante vivace dont la racine a une saveur sucrée, utilisée en confiserie, pharmacie et médecine.",
+    "meaning_en": "Perennial plant whose root has a sweet flavor, used in confectionery, pharmacy, and medicine.",
+    "meaning_ar": "نبات معمّر تتميز جذوره بنكهة حلوة، يُستخدم في الحلويات والصيدلة والطب.",
+    "etymology": "Du grec glukurrhiza, arabisé en ʿirq al-sūs (عرق السوس). Ibn Sīnā prescrivait la réglisse pour calmer la toux.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "glukurrhiza",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "عِرْقُ السُّوس",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "liquiritia",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "réglisse/licorice",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait la réglisse pour calmer la toux et apaiser les inflammations de la gorge.",
+      "en": "Ibn Sina prescribed licorice to calm coughs and soothe throat inflammation.",
+      "ar": "كان ابن سينا يصف عرق السوس لتهدئة السعال وتخفيف التهابات الحلق."
+    },
+    "related_words": [
+      "séné",
+      "aloes",
+      "hysope"
+    ]
+  },
+  {
+    "id": 325,
+    "word_fr": "câpre",
+    "word_en": "caper",
+    "word_ar": "كَبَّار",
+    "transliteration": "kabbār",
+    "meaning_fr": "Bouton floral mariné du câprier, arbuste méditerranéen utilisé comme condiment et en médecine arabe.",
+    "meaning_en": "Pickled flower bud of the caper bush, a Mediterranean shrub used as condiment and in Arab medicine.",
+    "meaning_ar": "برعم زهري مخلّل من شجرة الكبار، شجيرة متوسطية تُستخدم توابل وفي الطب العربي.",
+    "etymology": "Du grec kapparis, arabisé en kabbār (كبّار). Ibn al-Bayṭār décrivit les propriétés diurétiques de la racine.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "kapparis",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كَبَّار",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "câpre/caper",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār prescrivait l'écorce de câprier pour traiter les douleurs articulaires.",
+      "en": "Ibn al-Baytar prescribed caper root bark to treat joint pains.",
+      "ar": "كان ابن البيطار يصف لحاء جذر الكبار لعلاج آلام المفاصل."
+    },
+    "related_words": [
+      "coriandre",
+      "estragon",
+      "sumac"
+    ]
+  },
+  {
+    "id": 326,
+    "word_fr": "sésame",
+    "word_en": "sesame",
+    "word_ar": "سِمْسِم",
+    "transliteration": "simsim",
+    "meaning_fr": "Plante annuelle cultivée pour ses graines oléagineuses, base de nombreuses préparations culinaires arabes.",
+    "meaning_en": "Annual plant cultivated for its oily seeds, the base of many Arab culinary preparations.",
+    "meaning_ar": "نبات حولي يُزرع لبذوره الزيتية، قاعدة مستحضرات الطهي العربية العديدة.",
+    "etymology": "Du sémitique commun simsim (سمسم), l'une des plus anciennes plantes cultivées. Mentionné dans les papyrus égyptiens et les textes cunéiformes.",
+    "pathway": "sémitique ancien → arabe → grec → latin → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "simsim",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "سِمْسِم",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "grec",
+        "word": "sēsamon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "sésame/sesame",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le sésame entre dans la composition du tahini et du halva, préparations emblématiques du monde arabe.",
+      "en": "Sesame is used in tahini and halva, emblematic preparations of the Arab world.",
+      "ar": "السمسم مكوّن في الطحينة والحلوى، المستحضرات الرمزية للعالم العربي."
+    },
+    "related_words": [
+      "cumin",
+      "coriandre",
+      "safran"
+    ]
+  },
+  {
+    "id": 327,
+    "word_fr": "gingembre",
+    "word_en": "ginger",
+    "word_ar": "زَنْجَبِيل",
+    "transliteration": "zanjabīl",
+    "meaning_fr": "Rhizome aromatique aux propriétés digestives et anti-inflammatoires, mentionné dans le Coran comme parfum du Paradis.",
+    "meaning_en": "Aromatic rhizome with digestive and anti-inflammatory properties, mentioned in the Quran as a fragrance of Paradise.",
+    "meaning_ar": "جذمور عطري بخصائص هضمية ومضادة للالتهاب، مذكور في القرآن عطرًا في الجنة.",
+    "etymology": "Du sanskrit śṛṅgavera, via le persan et l'arabe zanjabīl (زنجبيل). Mentionné dans le Coran (سورة الإنسان: 17).",
+    "pathway": "sanskrit → persan → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "śṛṅgavera",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "زَنْجَبِيل",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "zingiber",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "gingembre/ginger",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le gingembre est mentionné dans le Coran comme boisson des habitants du Paradis.",
+      "en": "Ginger is mentioned in the Quran as a drink of the inhabitants of Paradise.",
+      "ar": "ذُكر الزنجبيل في القرآن الكريم شرابًا لأهل الجنة."
+    },
+    "related_words": [
+      "cannelle",
+      "cardamome",
+      "curcuma"
+    ]
+  },
+  {
+    "id": 328,
+    "word_fr": "ambre jaune",
+    "word_en": "amber",
+    "word_ar": "كَهْرَبَاء",
+    "transliteration": "kahrubāʾ",
+    "meaning_fr": "Résine fossile jaune-orangée aux propriétés électriques, dont le nom arabe donna « électricité » en langues modernes.",
+    "meaning_en": "Yellow-orange fossil resin with electrical properties, whose Arabic name gave 'electricity' to modern languages.",
+    "meaning_ar": "راتنج أحفوري أصفر-برتقالي بخصائص كهربائية، أعطى اسمه العربي كلمة «الكهرباء» في اللغات الحديثة.",
+    "etymology": "De l'arabe kahrubāʾ (كهرباء), du persan kāh-rubāʾ, « qui attire la paille ». Les physiciens arabes étudièrent ses propriétés électrostatiques.",
+    "pathway": "persan → arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "kāh-rubāʾ",
+        "date": "VIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "كَهْرَبَاء",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "électricité/electricity",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le mot arabe kahrubāʾ, « qui attire la paille », est à l'origine du mot électricité.",
+      "en": "The Arabic word kahruba, 'that which attracts straw', is the origin of the word electricity.",
+      "ar": "الكلمة العربية كهرباء، «التي تجذب القش»، هي أصل كلمة الكهرباء في اللغات الحديثة."
+    },
+    "related_words": [
+      "musc",
+      "ambre gris",
+      "benjoin"
+    ]
+  },
+  {
+    "id": 329,
+    "word_fr": "abricot",
+    "word_en": "apricot",
+    "word_ar": "مِشْمِش",
+    "transliteration": "mishmish",
+    "meaning_fr": "Fruit drupacé à noyau, originaire d'Asie centrale, cultivé et diffusé par les agronomes arabes en Méditerranée.",
+    "meaning_en": "Stone fruit originating from Central Asia, cultivated and spread by Arab agronomists in the Mediterranean.",
+    "meaning_ar": "ثمرة ذات نواة أصلها آسيا الوسطى، زرعها الزراعيون العرب ونشروها في البحر المتوسط.",
+    "etymology": "De l'arabe mishmish (مشمش). Le mot anglais apricot vient du portugais albricoque, de l'arabe al-barqūq via l'espagnol.",
+    "pathway": "arabe → portugais → espagnol → anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "مِشْمِش / البَرْقُوق",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "portugais",
+        "word": "albricoque",
+        "date": "XVe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "apricot",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'abricot fut cultivé et amélioré par les agronomes arabes de Syrie et d'Andalousie.",
+      "en": "The apricot was cultivated and improved by Arab agronomists of Syria and Andalusia.",
+      "ar": "زرع الزراعيون العرب في سوريا والأندلس المشمش وحسّنوا أصنافه."
+    },
+    "related_words": [
+      "orange",
+      "limon",
+      "pistache"
+    ]
+  },
+  {
+    "id": 330,
+    "word_fr": "grenade (fruit)",
+    "word_en": "pomegranate",
+    "word_ar": "رُمَّان",
+    "transliteration": "rummān",
+    "meaning_fr": "Fruit rouge aux graines acidulées, symbole de fertilité et de prospérité dans la culture islamique, mentionné dans le Coran.",
+    "meaning_en": "Red fruit with tart seeds, symbol of fertility and prosperity in Islamic culture, mentioned in the Quran.",
+    "meaning_ar": "ثمرة حمراء بحبوب حامضة، رمز الخصوبة والازدهار في الثقافة الإسلامية، مذكورة في القرآن.",
+    "etymology": "Du latin granatum, arabisé en rummān (رمان). Mentionné trois fois dans le Coran (سورة الأنعام، الرحمن). Cultivé en Andalousie, il donna son nom à la ville de Grenade.",
+    "pathway": "arabe → espagnol → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "رُمَّان",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin",
+        "word": "granatum / malum granatum",
+        "date": "antiquité"
+      },
+      {
+        "lang": "espagnol",
+        "word": "Granada (ville)",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "grenade/pomegranate",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "La grenade est mentionnée dans le Coran parmi les fruits du Paradis.",
+      "en": "The pomegranate is mentioned in the Quran among the fruits of Paradise.",
+      "ar": "ذُكر الرمان في القرآن الكريم من بين ثمار الجنة."
+    },
+    "related_words": [
+      "orange",
+      "figue",
+      "datte"
+    ]
+  },
+  {
+    "id": 331,
+    "word_fr": "figue",
+    "word_en": "fig",
+    "word_ar": "تِين",
+    "transliteration": "tīn",
+    "meaning_fr": "Fruit doux et charnu du figuier, mentionné dans le Coran, cultivé par les agronomes arabes dans tout le Bassin méditerranéen.",
+    "meaning_en": "Sweet and fleshy fruit of the fig tree, mentioned in the Quran, cultivated by Arab agronomists throughout the Mediterranean.",
+    "meaning_ar": "ثمرة التين الحلوة اللحمية، مذكورة في القرآن، يزرعها الزراعيون العرب في الحوض المتوسط.",
+    "etymology": "De l'arabe tīn (تين), sémitique commun. Mentionné dans le Coran (سورة التين). Ibn al-ʿAwwām décrivit une dizaine de variétés de figues dans son traité andalou.",
+    "pathway": "sémitique → arabe → langues méditerranéennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "tīn",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "تِين",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "grec",
+        "word": "sūkon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "ficus",
+        "date": "XIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Allah jure par la figue dans le Coran, témoignant de sa haute valeur dans la culture arabe.",
+      "en": "Allah swears by the fig in the Quran, testifying to its high value in Arab culture.",
+      "ar": "أقسم الله بالتين في القرآن الكريم، مما يشهد على مكانته الرفيعة في الثقافة العربية."
+    },
+    "related_words": [
+      "grenade",
+      "datte",
+      "olive"
+    ]
+  },
+  {
+    "id": 332,
+    "word_fr": "datte",
+    "word_en": "date",
+    "word_ar": "تَمْر",
+    "transliteration": "tamr",
+    "meaning_fr": "Fruit du palmier-dattier, aliment de base du monde arabe, riche en sucres et très apprécié pour rompre le jeûne.",
+    "meaning_en": "Fruit of the date palm, staple food of the Arab world, rich in sugars and valued for breaking the fast.",
+    "meaning_ar": "ثمرة نخلة التمر، غذاء رئيسي في العالم العربي، غنية بالسكريات ومحبوبة لإفطار الصيام.",
+    "etymology": "Du latin dactylus (du grec daktulos), arabisé et coexistant avec tamr (تمر), terme arabe propre. Le palmier-dattier est le symbole végétal de la culture arabique.",
+    "pathway": "arabe propre / grec → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "تَمْر / نَخْل",
+        "date": "antiquité"
+      },
+      {
+        "lang": "grec",
+        "word": "daktulos",
+        "date": "antiquité"
+      },
+      {
+        "lang": "latin",
+        "word": "dactylus",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "datte/date",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le Prophète Muḥammad recommandait de rompre le jeûne du Ramadan avec des dattes.",
+      "en": "The Prophet Muhammad recommended breaking the Ramadan fast with dates.",
+      "ar": "أوصى النبي محمد بالإفطار على التمر في رمضان."
+    },
+    "related_words": [
+      "figue",
+      "grenade",
+      "olive"
+    ]
+  },
+  {
+    "id": 333,
+    "word_fr": "olive",
+    "word_en": "olive",
+    "word_ar": "زَيْتُون",
+    "transliteration": "zaytūn",
+    "meaning_fr": "Fruit de l'olivier, arbre sacré de la Méditerranée, mentionné dans le Coran, source d'huile précieuse.",
+    "meaning_en": "Fruit of the olive tree, sacred Mediterranean tree, mentioned in the Quran, source of precious oil.",
+    "meaning_ar": "ثمرة شجرة الزيتون المقدسة في البحر المتوسط، مذكورة في القرآن، مصدر الزيت الثمين.",
+    "etymology": "Du sémitique commun zayt (« huile »), arabe zaytūn (زيتون). Mentionné dans le Coran (سورة النور: 35).",
+    "pathway": "sémitique → arabe → grec → latin → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "zayt",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "زَيْتُون",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "olive",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le Coran compare la lumière divine à la flamme d'une lampe alimentée par l'huile d'olive bénie.",
+      "en": "The Quran compares divine light to the flame of a lamp fed by blessed olive oil.",
+      "ar": "يشبّه القرآن النور الإلهي بشعلة مصباح يُغذيه زيت الزيتون المبارك."
+    },
+    "related_words": [
+      "datte",
+      "figue",
+      "grenade"
+    ]
+  },
+  {
+    "id": 334,
+    "word_fr": "jujube",
+    "word_en": "jujube",
+    "word_ar": "عُنَّاب",
+    "transliteration": "ʿunnāb",
+    "meaning_fr": "Petit fruit rouge du jujubier, utilisé en médecine arabe comme pectoral et adoucissant des voies respiratoires.",
+    "meaning_en": "Small red fruit of the jujube tree, used in Arab medicine as pectoral and soothing for the respiratory tract.",
+    "meaning_ar": "ثمرة عناب الحمراء الصغيرة، استُخدمت في الطب العربي صدريًا ومُلطِّفًا للجهاز التنفسي.",
+    "etymology": "Du perso-arabe ʿunnāb (عناب). Ibn Sīnā le prescrivait pour les toux persistantes et les irritations de la gorge.",
+    "pathway": "persan → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "عُنَّاب",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "ziziphum",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "jujube",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait le jujube pour calmer les toux chroniques et adoucir la gorge.",
+      "en": "Ibn Sina prescribed jujube to calm chronic coughs and soothe the throat.",
+      "ar": "كان ابن سينا يصف العناب لتهدئة السعال المزمن وتلطيف الحلق."
+    },
+    "related_words": [
+      "datte",
+      "figue",
+      "réglisse"
+    ]
+  },
+  {
+    "id": 335,
+    "word_fr": "lotus (arbre)",
+    "word_en": "lote tree",
+    "word_ar": "سِدْرَة",
+    "transliteration": "sidra",
+    "meaning_fr": "Arbre sacré mentionné dans le Coran (Sidrat al-Muntahā), dont les fruits et les feuilles étaient utilisés en médecine.",
+    "meaning_en": "Sacred tree mentioned in the Quran (Sidrat al-Muntaha), whose fruits and leaves were used in medicine.",
+    "meaning_ar": "شجرة مقدسة مذكورة في القرآن (سدرة المنتهى)، كانت ثمارها وأوراقها تُستخدم في الطب.",
+    "etymology": "De l'arabe sidra (سدرة), Ziziphus lotus. Mentionné dans le Coran (سورة النجم). Les feuilles de sidra étaient utilisées pour le lavage rituel des défunts.",
+    "pathway": "arabe → langues islamiques",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "سِدْرَة",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "langues islamiques",
+        "word": "sidra / lote tree",
+        "date": "VIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "La Sidrat al-Muntahā est l'arbre-limite du cosmos dans la cosmologie coranique.",
+      "en": "Sidrat al-Muntaha is the boundary tree of the cosmos in Quranic cosmology.",
+      "ar": "سدرة المنتهى هي الشجرة الحدّ للكون في الكونيات القرآنية."
+    },
+    "related_words": [
+      "datte",
+      "figue",
+      "olive"
+    ]
+  },
+  {
+    "id": 336,
+    "word_fr": "menthe",
+    "word_en": "mint",
+    "word_ar": "نَعْنَاع",
+    "transliteration": "naʿnāʿ",
+    "meaning_fr": "Plante aromatique vivace aux feuilles fraîches et piquantes, très utilisée dans les cuisines et médecines arabes.",
+    "meaning_en": "Perennial aromatic plant with fresh and pungent leaves, widely used in Arab cuisine and medicine.",
+    "meaning_ar": "نبات عطري معمّر بأوراق طازجة وحارة، يُستخدم كثيرًا في المطابخ والطب العربي.",
+    "etymology": "Du grec mintha, arabisé en naʿnāʿ (نعناع). Ibnal-Bayṭār en décrivit les propriétés carminatives et stimulantes.",
+    "pathway": "grec → arabe → langues méditerranéennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "mintha",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "نَعْنَاع",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "mentha",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "menthe/mint",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le thé à la menthe est l'emblème de l'hospitalité maghrébine et du Moyen-Orient.",
+      "en": "Mint tea is the emblem of Maghreb and Middle Eastern hospitality.",
+      "ar": "الشاي بالنعناع رمز الضيافة في المغرب والشرق الأوسط."
+    },
+    "related_words": [
+      "coriandre",
+      "fenouil",
+      "anis"
+    ]
+  },
+  {
+    "id": 337,
+    "word_fr": "basilic",
+    "word_en": "basil",
+    "word_ar": "رَيْحَان",
+    "transliteration": "rayḥān",
+    "meaning_fr": "Plante aromatique aux feuilles odorantes, mentionnée dans le Coran, emblème de la parfumerie et cuisine arabes.",
+    "meaning_en": "Aromatic plant with fragrant leaves, mentioned in the Quran, emblem of Arab perfumery and cuisine.",
+    "meaning_ar": "نبات عطري بأوراق فوّاحة، مذكور في القرآن، رمز العطور والمطبخ العربيين.",
+    "etymology": "Du grec basilikon, arabisé en rayḥān (ريحان). Mentionné dans le Coran (سورة الرحمن: 12).",
+    "pathway": "grec → arabe → langues méditerranéennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "basilikon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "رَيْحَان",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "basilicum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "basilic/basil",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le rayḥān est mentionné dans le Coran parmi les bienfaits de la Terre.",
+      "en": "Rayhaan is mentioned in the Quran among the blessings of the Earth.",
+      "ar": "ذُكر الريحان في القرآن الكريم من بين نعم الأرض."
+    },
+    "related_words": [
+      "menthe",
+      "coriandre",
+      "jasmin"
+    ]
+  },
+  {
+    "id": 338,
+    "word_fr": "mélilot",
+    "word_en": "melilot",
+    "word_ar": "إِكْلِيلُ المَلِك",
+    "transliteration": "iklīl al-malik",
+    "meaning_fr": "Plante légumineuse aux fleurs jaunes ou blanches odorantes, utilisée en médecine arabe comme émollient et sédatif.",
+    "meaning_en": "Leguminous plant with fragrant yellow or white flowers, used in Arab medicine as an emollient and sedative.",
+    "meaning_ar": "نبات بقولي بأزهار صفراء أو بيضاء عطرة، استُخدم في الطب العربي مُليِّنًا ومُهدِّئًا.",
+    "etymology": "De l'arabe iklīl al-malik (إكليل الملك), « couronne du roi ». Ibn Sīnā le prescrivait pour les douleurs articulaires et les inflammations.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "إِكْلِيلُ المَلِك",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "melilotus",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "mélilot/melilot",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā utilisait le mélilot en cataplasme pour soulager les inflammations articulaires.",
+      "en": "Ibn Sina used melilot as a poultice to relieve joint inflammations.",
+      "ar": "كان ابن سينا يستخدم إكليل الملك ضمادةً لتخفيف التهابات المفاصل."
+    },
+    "related_words": [
+      "aloes",
+      "centaurée",
+      "chicorée"
+    ]
+  },
+  {
+    "id": 339,
+    "word_fr": "tamaris",
+    "word_en": "tamarisk",
+    "word_ar": "طَرْفَاء",
+    "transliteration": "ṭarfāʾ",
+    "meaning_fr": "Arbre des régions arides aux petites fleurs roses, utilisé dans les jardins islamiques et en médecine.",
+    "meaning_en": "Tree of arid regions with small pink flowers, used in Islamic gardens and in medicine.",
+    "meaning_ar": "شجرة في المناطق الجافة ذات أزهار وردية صغيرة، تُستخدم في الحدائق الإسلامية والطب.",
+    "etymology": "Du latin tamariscus, arabisé en ṭarfāʾ (طرفاء). Les agronomes arabes andalous le plantaient pour stabiliser les sols.",
+    "pathway": "latin → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "latin",
+        "word": "tamariscus",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "طَرْفَاء",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "tamaris/tamarisk",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le tamaris poussait dans les jardins des palais arabes pour son ombre légère et ses fleurs roses.",
+      "en": "Tamarisk grew in Arab palace gardens for its light shade and pink flowers.",
+      "ar": "كانت الطرفاء تنمو في حدائق القصور العربية لظلها الخفيف وأزهارها الوردية."
+    },
+    "related_words": [
+      "jasmin",
+      "lilas",
+      "lotus"
+    ]
+  },
+  {
+    "id": 340,
+    "word_fr": "laurier-rose",
+    "word_en": "oleander",
+    "word_ar": "دِفْلَى",
+    "transliteration": "diflā",
+    "meaning_fr": "Arbrisseau méditerranéen aux fleurs roses très toxiques, décrit par Ibn Sīnā pour ses dangers.",
+    "meaning_en": "Mediterranean shrub with very toxic pink flowers, described by Ibn Sina for its dangers.",
+    "meaning_ar": "شجيرة متوسطية بأزهار وردية شديدة السمية، وصفها ابن سينا لمخاطرها.",
+    "etymology": "De l'arabe diflā (دفلى). Ibn Sīnā consacra un passage au laurier-rose dans le Qānūn, avertissant de sa grande toxicité.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "دِفْلَى",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "oleander",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "laurier-rose/oleander",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā avertissait dans son Qānūn de la grande toxicité du laurier-rose.",
+      "en": "Ibn Sina warned in his Canon about the great toxicity of oleander.",
+      "ar": "حذّر ابن سينا في قانونه من السمية الشديدة للدفلى."
+    },
+    "related_words": [
+      "mandragore",
+      "coloquinte",
+      "scammone"
+    ]
+  },
+  {
+    "id": 341,
+    "word_fr": "palme",
+    "word_en": "palm",
+    "word_ar": "نَخْل",
+    "transliteration": "nakhl",
+    "meaning_fr": "Palmier-dattier, arbre emblématique de la culture arabe et islamique, symbole de générosité et d'élévation.",
+    "meaning_en": "Date palm, emblematic tree of Arab and Islamic culture, symbol of generosity and elevation.",
+    "meaning_ar": "نخلة التمر، الشجرة الرمزية للثقافة العربية والإسلامية، رمز الكرم والسمو.",
+    "etymology": "De l'arabe nakhl (نخل), sémitique commun. Mentionné abondamment dans le Coran. Le palmier-dattier est le symbole végétal de l'Arabie.",
+    "pathway": "sémitique → arabe → latin / grec → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "nakhl",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "نَخْل",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin",
+        "word": "palma",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "palme/palm",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le Coran décrit le palmier-dattier comme une parabole de la parole bonne.",
+      "en": "The Quran describes the date palm as a parable of the good word.",
+      "ar": "يصف القرآن الكريم النخلة مثلًا للكلمة الطيبة."
+    },
+    "related_words": [
+      "datte",
+      "figue",
+      "olive"
+    ]
+  },
+  {
+    "id": 342,
+    "word_fr": "papyrus",
+    "word_en": "papyrus",
+    "word_ar": "بَرْدِيّ",
+    "transliteration": "bardī",
+    "meaning_fr": "Plante aquatique des marais du Nil dont la tige servait à fabriquer le premier support d'écriture, transmis par les Arabes d'Égypte.",
+    "meaning_en": "Aquatic plant of the Nile marshes whose stem was used to make the first writing material, transmitted by Egyptian Arabs.",
+    "meaning_ar": "نبات مائي في أهوار النيل كانت سيقانه تُستخدم لصنع أول دعامة للكتابة، نقله عرب مصر.",
+    "etymology": "Du grec papuros, arabisé en bardī (بردي). Les Arabes d'Égypte perpétuèrent la production de papyrus et le diffusèrent dans tout le monde islamique.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "papuros",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "بَرْدِيّ",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "papyrus",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "papyrus",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les savants arabes d'Égypte utilisèrent le papyrus puis le papier pour transmettre le savoir.",
+      "en": "Arab scholars of Egypt used papyrus and then paper to transmit knowledge.",
+      "ar": "استخدم علماء العرب في مصر البردي ثم الورق لنقل المعرفة."
+    },
+    "related_words": [
+      "coton",
+      "indigo",
+      "lotus"
+    ]
+  },
+  {
+    "id": 343,
+    "word_fr": "pavot",
+    "word_en": "poppy",
+    "word_ar": "خَشْخَاش",
+    "transliteration": "khashkhāsh",
+    "meaning_fr": "Plante herbacée dont les graines oléagineuses et la résine (opium) étaient utilisées en médecine arabe.",
+    "meaning_en": "Herbaceous plant whose oily seeds and resin (opium) were used in Arab medicine.",
+    "meaning_ar": "نبات عشبي كانت بذوره الزيتية وراتنجه (الأفيون) تُستخدم في الطب العربي.",
+    "etymology": "De l'arabe khashkhāsh (خشخاش). Ibn Sīnā décrivit les propriétés analgésiques de l'opium et ses risques dans son Qānūn.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "خَشْخَاش",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "papaver",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "pavot/poppy",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā décrivit les propriétés somnifères du pavot et leurs applications chirurgicales.",
+      "en": "Ibn Sina described the soporific properties of poppy and their surgical applications.",
+      "ar": "وصف ابن سينا الخصائص المنوّمة للخشخاش وتطبيقاتها الجراحية."
+    },
+    "related_words": [
+      "opiat",
+      "mandragore",
+      "coloquinte"
+    ]
+  },
+  {
+    "id": 344,
+    "word_fr": "myrte",
+    "word_en": "myrtle",
+    "word_ar": "آس",
+    "transliteration": "āss",
+    "meaning_fr": "Arbuste méditerranéen aux feuilles aromatiques antiseptiques, cultivé dans les jardins islamiques.",
+    "meaning_en": "Mediterranean shrub with antiseptic aromatic leaves, cultivated in Islamic gardens.",
+    "meaning_ar": "شجيرة متوسطية بأوراق عطرية مطهرة، تُزرع في الحدائق الإسلامية.",
+    "etymology": "Du grec murtos, arabisé en āss (آس). Ibn Sīnā le prescrivait pour sécher les plaies et resserrer les tissus.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "murtos",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "آس",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "myrtus",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "myrte/myrtle",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le myrte ornait les jardins de l'Alhambra, notamment la fameuse Cour des Myrtes.",
+      "en": "Myrtle adorned the gardens of the Alhambra, notably the famous Court of the Myrtles.",
+      "ar": "كان الآس يُزيّن حدائق الحمراء، ولا سيما فناء الآس الشهير."
+    },
+    "related_words": [
+      "jasmin",
+      "rose",
+      "lilas"
+    ]
+  },
+  {
+    "id": 345,
+    "word_fr": "hysope",
+    "word_en": "hyssop",
+    "word_ar": "زُوفَا",
+    "transliteration": "zūfā",
+    "meaning_fr": "Plante aromatique vivace aux propriétés expectorantes et antiseptiques, prescrite en médecine arabe.",
+    "meaning_en": "Perennial aromatic plant with expectorant and antiseptic properties, prescribed in Arab medicine.",
+    "meaning_ar": "نبات عطري معمّر له خصائص طاردة للبلغم ومطهرة، وُصف في الطب العربي.",
+    "etymology": "Du grec hussōpos, arabisé en zūfā (زوفا). Ibn Sīnā la prescrivait pour les affections respiratoires.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "hussōpos",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "زُوفَا",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "hyssopus",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "hysope/hyssop",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait l'hysope en décoction pour traiter la toux et les bronchites.",
+      "en": "Ibn Sina prescribed hyssop decoction to treat coughs and bronchitis.",
+      "ar": "كان ابن سينا يصف طبيخ الزوفا لعلاج السعال والتهاب الشعب الهوائية."
+    },
+    "related_words": [
+      "séné",
+      "aloes",
+      "cubèbe"
+    ]
+  },
+  {
+    "id": 346,
+    "word_fr": "chicorée",
+    "word_en": "chicory",
+    "word_ar": "هِنْدِبَاء",
+    "transliteration": "hindibāʾ",
+    "meaning_fr": "Plante herbacée aux fleurs bleues aux propriétés hépatiques et dépuratives décrites par Ibn Sīnā.",
+    "meaning_en": "Herbaceous plant with blue flowers and hepatic and depurative properties described by Ibn Sina.",
+    "meaning_ar": "نبات عشبي ذو أزهار زرقاء بخصائص كبدية ومُنقِّية وصفها ابن سينا.",
+    "etymology": "Du grec kichōrion, arabisé en hindibāʾ (هندباء).",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "kichōrion",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "هِنْدِبَاء",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "cichorium",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "chicorée/chicory",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait la chicorée pour purifier le foie et traiter la jaunisse.",
+      "en": "Ibn Sina prescribed chicory to purify the liver and treat jaundice.",
+      "ar": "كان ابن سينا يصف الهندباء لتنقية الكبد وعلاج اليرقان."
+    },
+    "related_words": [
+      "aloes",
+      "centaurée",
+      "réglisse"
+    ]
+  },
+  {
+    "id": 347,
+    "word_fr": "coloquinte",
+    "word_en": "colocynth",
+    "word_ar": "حَنْظَل",
+    "transliteration": "ḥanẓal",
+    "meaning_fr": "Cucurbitacée des régions arides dont la pulpe séchée était purgatif drastique, mentionnée dans la poésie préislamique.",
+    "meaning_en": "Cucurbit of arid regions whose dried pulp was a drastic purgative, mentioned in pre-Islamic poetry.",
+    "meaning_ar": "من الفصيلة القرعية في المناطق الجافة، كانت لبّه المجففة مُسهلًا حادًا، مذكور في الشعر الجاهلي.",
+    "etymology": "Du grec kolokynthis, arabisé en ḥanẓal (حنظل). Symbole de l'amertume dans la poésie arabe.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "kolokynthis",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "حَنْظَل",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "colocynthis",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "coloquinte/colocynth",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le ḥanẓal symbolise l'amertume extrême dans la poésie arabe classique.",
+      "en": "Hanzal symbolizes extreme bitterness in classical Arabic poetry.",
+      "ar": "يرمز الحنظل إلى المرارة الشديدة في الشعر العربي الكلاسيكي."
+    },
+    "related_words": [
+      "scammone",
+      "séné",
+      "aloes"
+    ]
+  },
+  {
+    "id": 348,
+    "word_fr": "nénuphar",
+    "word_en": "water lily",
+    "word_ar": "نِيلُوفَر",
+    "transliteration": "nīlūfar",
+    "meaning_fr": "Plante aquatique aux grandes fleurs blanches ou roses, ornement des bassins des jardins islamiques.",
+    "meaning_en": "Aquatic plant with large white or pink flowers, ornament of basins in Islamic gardens.",
+    "meaning_ar": "نبات مائي بأزهار كبيرة بيضاء أو وردية، زينة أحواض الحدائق الإسلامية.",
+    "etymology": "Du persan nīlūfar, arabisé en nīlūfar (نيلوفر). Ornait les bassins des palais abbassides et nasrides.",
+    "pathway": "persan → arabe → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "persan",
+        "word": "nīlūfar",
+        "date": "VIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "نِيلُوفَر",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "français",
+        "word": "nénuphar",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "water lily",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les nénuphars ornaient les bassins des jardins de l'Alhambra et des palais abbassides.",
+      "en": "Water lilies adorned the pools of the Alhambra gardens and Abbasid palaces.",
+      "ar": "كان النيلوفر يُزيّن أحواض حدائق الحمراء والقصور العباسية."
+    },
+    "related_words": [
+      "jasmin",
+      "rose",
+      "lotus"
+    ]
+  },
+  {
+    "id": 349,
+    "word_fr": "rose",
+    "word_en": "rose",
+    "word_ar": "وَرْد",
+    "transliteration": "ward",
+    "meaning_fr": "Fleur emblématique des jardins islamiques et de la parfumerie arabe, source de l'eau de rose et de l'huile de rose.",
+    "meaning_en": "Emblematic flower of Islamic gardens and Arab perfumery, source of rose water and rose oil.",
+    "meaning_ar": "زهرة رمزية لحدائق الإسلام والعطور العربية، مصدر ماء الورد وزيت الورد.",
+    "etymology": "De l'arabe ward (ورد). L'eau de rose (māʾ al-ward) était produite en grande quantité en Perse et en Andalousie pour l'alimentation, la médecine et la parfumerie.",
+    "pathway": "arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "وَرْد",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin",
+        "word": "rosa",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "rose",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'eau de rose arabe parfumait les mets, les fontaines et les mosquées du monde islamique.",
+      "en": "Arab rose water perfumed food, fountains, and mosques of the Islamic world.",
+      "ar": "كان ماء الورد العربي يُعطّر المأكولات والنوافير والمساجد في العالم الإسلامي."
+    },
+    "related_words": [
+      "jasmin",
+      "myrte",
+      "nénuphar"
+    ]
+  },
+  {
+    "id": 350,
+    "word_fr": "santal",
+    "word_en": "sandalwood",
+    "word_ar": "صَنْدَل",
+    "transliteration": "ṣandal",
+    "meaning_fr": "Bois aromatique du santal, utilisé en médecine, parfumerie et dans les encensoirs des mosquées islamiques.",
+    "meaning_en": "Aromatic sandalwood, used in medicine, perfumery, and in incense burners of Islamic mosques.",
+    "meaning_ar": "خشب الصندل العطري، يُستخدم في الطب والعطور ومباخر مساجد الإسلام.",
+    "etymology": "Du sanskrit chandana, via le persan ṣandal et l'arabe ṣandal (صندل). Ibn Sīnā distinguait le santal blanc, rouge et jaune.",
+    "pathway": "sanskrit → persan → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "chandana",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "صَنْدَل",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "sandalum",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "santal/sandalwood",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le santal blanc était l'un des bois les plus précieux de la pharmacopée arabe médiévale.",
+      "en": "White sandalwood was one of the most precious woods in medieval Arab pharmacopoeia.",
+      "ar": "كان الصندل الأبيض أحد أثمن الأخشاب في الدساتير الطبية العربية الوسيطة."
+    },
+    "related_words": [
+      "musc",
+      "benjoin",
+      "encens"
+    ]
+  },
+  {
+    "id": 351,
+    "word_fr": "cannelle",
+    "word_en": "cinnamon",
+    "word_ar": "قِرْفَة",
+    "transliteration": "qirfa",
+    "meaning_fr": "Écorce aromatique séchée du cannelier, épice et médicament de la cuisine et pharmacopée arabes.",
+    "meaning_en": "Dried aromatic bark of the cinnamon tree, spice and medicine of Arab cuisine and pharmacopoeia.",
+    "meaning_ar": "لحاء عطري مجفف من شجرة القرفة، توابل ودواء في الطهي والدساتير الطبية العربية.",
+    "etymology": "Du grec kinnamōmon, arabisé en qirfa (قرفة). Ibn Sīnā prescrivait la cannelle pour stimuler la digestion.",
+    "pathway": "hébreu ancien → grec → arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "hébreu ancien",
+        "word": "qinnāmōn",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "قِرْفَة",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "cinnamomum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "cannelle/cinnamon",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les marchands arabes avaient le monopole du commerce de la cannelle en Méditerranée médiévale.",
+      "en": "Arab merchants had a monopoly on the cinnamon trade in medieval Mediterranean.",
+      "ar": "كان التجار العرب يحتكرون تجارة القرفة في البحر المتوسط الوسيط."
+    },
+    "related_words": [
+      "girofle",
+      "cardamome",
+      "gingembre"
+    ]
+  },
+  {
+    "id": 352,
+    "word_fr": "cardamome",
+    "word_en": "cardamom",
+    "word_ar": "هَيْل",
+    "transliteration": "hāl",
+    "meaning_fr": "Épice aromatique aux graines parfumées, très prisée dans la cuisine et médecine arabes, emblème du café arabe.",
+    "meaning_en": "Aromatic spice with fragrant seeds, highly prized in Arab cuisine and medicine, emblem of Arab coffee.",
+    "meaning_ar": "توابل عطرية ذات بذور فوّاحة، محظوظة في الطهي والطب العربيين، رمز القهوة العربية.",
+    "etymology": "Du grec kardamōmon, arabisé en hāl (هال). Entre dans la composition du café arabe traditionnel.",
+    "pathway": "sanskrit → grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "ela",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "هَيْل",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "cardamomum",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "cardamome/cardamom",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le café arabe traditionnel est toujours préparé avec de la cardamome, symbole d'hospitalité.",
+      "en": "Traditional Arab coffee is always prepared with cardamom, a symbol of hospitality.",
+      "ar": "القهوة العربية التقليدية تُحضَّر دائمًا بالهيل، رمز الضيافة."
+    },
+    "related_words": [
+      "cannelle",
+      "gingembre",
+      "safran"
+    ]
+  },
+  {
+    "id": 353,
+    "word_fr": "girofle",
+    "word_en": "clove",
+    "word_ar": "قَرَنْفُل",
+    "transliteration": "qaranful",
+    "meaning_fr": "Bouton floral séché du giroflier aux propriétés analgésiques et antiseptiques, importé des Moluques par les marchands arabes.",
+    "meaning_en": "Dried flower bud of the clove tree with analgesic and antiseptic properties, imported from the Moluccas by Arab merchants.",
+    "meaning_ar": "برعم زهري مجفف للقرنفل بخصائص مُسكِّنة ومطهرة، استورده التجار العرب من جزر التوابل.",
+    "etymology": "Du perso-arabe qaranful (قرنفل), du grec karyophyllon. Les Arabes contrôlaient le commerce des Moluques.",
+    "pathway": "grec → persan → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "karyophyllon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "قَرَنْفُل",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "girofle/clove",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les marchands arabes contrôlaient le commerce du girofle des Moluques jusqu'au XVe siècle.",
+      "en": "Arab merchants controlled the clove trade from the Moluccas until the 15th century.",
+      "ar": "كان التجار العرب يتحكمون في تجارة القرنفل من جزر المالوكو حتى القرن الخامس عشر."
+    },
+    "related_words": [
+      "cannelle",
+      "cardamome",
+      "poivre"
+    ]
+  },
+  {
+    "id": 354,
+    "word_fr": "myrrhe",
+    "word_en": "myrrh",
+    "word_ar": "مُرّ",
+    "transliteration": "murr",
+    "meaning_fr": "Résine aromatique extraite d'arbustes de la péninsule arabique, aux propriétés antiseptiques et cicatrisantes.",
+    "meaning_en": "Aromatic resin extracted from shrubs of the Arabian Peninsula, with antiseptic and healing properties.",
+    "meaning_ar": "راتنج عطري يُستخرج من شجيرات شبه الجزيرة العربية، بخصائص مطهرة ومُلتئمة.",
+    "etymology": "Du sémitique commun murr (مر), « amer ». La myrrhe est mentionnée dans le Coran. Les Arabes contrôlaient son commerce mondial.",
+    "pathway": "sémitique → arabe → grec → latin → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "murr",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "مُرّ",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "myrrhe/myrrh",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les marchands arabes de la tribu quraychite contrôlaient les routes commerciales de la myrrhe.",
+      "en": "Arab merchants of the Quraysh tribe controlled the commercial routes of myrrh.",
+      "ar": "كان التجار العرب من قريش يتحكمون في طرق تجارة المر."
+    },
+    "related_words": [
+      "encens",
+      "baumier",
+      "benjoin"
+    ]
+  },
+  {
+    "id": 355,
+    "word_fr": "encens",
+    "word_en": "frankincense",
+    "word_ar": "لُبَان",
+    "transliteration": "lubān",
+    "meaning_fr": "Résine aromatique de l'arbre Boswellia, utilisée dans les rituels religieux et la médecine islamique.",
+    "meaning_en": "Aromatic resin of the Boswellia tree, used in religious rituals and Islamic medicine.",
+    "meaning_ar": "راتنج عطري من شجرة البوسويليا، يُستخدم في الشعائر الدينية والطب الإسلامي.",
+    "etymology": "De l'arabe lubān (لبان), « lait ». Mentionné par Ibn Sīnā pour ses propriétés anti-inflammatoires.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "لُبَان",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "thus / frankincense",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "encens/frankincense",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'encens d'Arabie était l'une des plus précieuses marchandises des routes de la soie arabes.",
+      "en": "Arabian frankincense was one of the most precious goods on Arab silk roads.",
+      "ar": "كان اللبان العربي من أثمن بضائع طرق الحرير العربية."
+    },
+    "related_words": [
+      "myrrhe",
+      "baumier",
+      "camphre"
+    ]
+  },
+  {
+    "id": 356,
+    "word_fr": "aloès",
+    "word_en": "aloe",
+    "word_ar": "صَبِر",
+    "transliteration": "ṣabir",
+    "meaning_fr": "Plante succulente aux feuilles charnues contenant un gel cicatrisant, très utilisé dans la pharmacopée arabe.",
+    "meaning_en": "Succulent plant with fleshy leaves containing a healing gel, widely used in Arab pharmacopoeia.",
+    "meaning_ar": "نبات رسوخي بأوراق لحمية تحتوي على هلام مُلتئم، يُستخدم كثيرًا في الدساتير الطبية العربية.",
+    "etymology": "Du grec aloe, arabisé en ṣabir (صبر). Ibn al-Bayṭār décrivit vingt usages médicinaux.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "aloe",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "صَبِر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "aloe",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "aloès/aloe",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit plus de vingt usages médicinaux de l'aloès dans son traité botanique.",
+      "en": "Ibn al-Baytar described over twenty medicinal uses of aloe in his botanical treatise.",
+      "ar": "وصف ابن البيطار أكثر من عشرين استخدامًا طبيًا للصبر في رسالته النباتية."
+    },
+    "related_words": [
+      "séné",
+      "tamarin",
+      "chicorée"
+    ]
+  },
+  {
+    "id": 357,
+    "word_fr": "noix muscade",
+    "word_en": "nutmeg",
+    "word_ar": "جَوْزَة الطِّيب",
+    "transliteration": "jawzat al-ṭīb",
+    "meaning_fr": "Graine aromatique du muscadier, utilisée en médecine arabe comme stimulant cérébral et digestif.",
+    "meaning_en": "Aromatic seed of the nutmeg tree, used in Arab medicine as a cerebral stimulant and digestive.",
+    "meaning_ar": "بذرة عطرية من شجرة جوزة الطيب، استُخدمت في الطب العربي مُحفِّزًا دماغيًا وهضميًا.",
+    "etymology": "De l'arabe jawzat al-ṭīb (جوزة الطيب), « noix du parfum ». Importée des îles Banda.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "جَوْزَة الطِّيب",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "nux myristica",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "noix muscade/nutmeg",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les marchands arabes importaient la noix muscade des îles Banda et en contrôlaient le commerce.",
+      "en": "Arab merchants imported nutmeg from the Banda Islands and controlled its trade.",
+      "ar": "كان التجار العرب يستوردون جوزة الطيب من جزر باندا ويتحكمون في تجارتها."
+    },
+    "related_words": [
+      "girofle",
+      "cannelle",
+      "cardamome"
+    ]
+  },
+  {
+    "id": 358,
+    "word_fr": "mandragore",
+    "word_en": "mandrake",
+    "word_ar": "اللُّفَّاح",
+    "transliteration": "al-luffāḥ",
+    "meaning_fr": "Plante solanacée à racine anthropomorphe, narcotique et anesthésiant mentionné dans le Coran.",
+    "meaning_en": "Solanaceous plant with an anthropomorphic root, narcotic and anaesthetic mentioned in the Quran.",
+    "meaning_ar": "نبات من الفصيلة الباذنجانية بجذر يشبه الإنسان، مُخدِّر ومُنوِّم مذكور في القرآن.",
+    "etymology": "Du grec mandragoras, arabisé en al-luffāḥ (اللفاح). Mentionné dans le Coran (سورة يوسف: 14).",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "mandragoras",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "اللُّفَّاح",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "mandragora",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "mandragore/mandrake",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le luffāḥ est mentionné dans le Coran à l'occasion de l'histoire de Jacob et de ses fils.",
+      "en": "Luffah is mentioned in the Quran in the story of Jacob and his sons.",
+      "ar": "ذُكر اللفاح في القرآن الكريم في قصة يعقوب وأبنائه."
+    },
+    "related_words": [
+      "opiat",
+      "pavot",
+      "coloquinte"
+    ]
+  },
+  {
+    "id": 359,
+    "word_fr": "orge",
+    "word_en": "barley",
+    "word_ar": "شَعِير",
+    "transliteration": "shaʿīr",
+    "meaning_fr": "Céréale ancienne cultivée dans la péninsule arabique, aliment de base des Arabes et base de préparations médicinales.",
+    "meaning_en": "Ancient grain cultivated in the Arabian Peninsula, staple food of Arabs and base for medicinal preparations.",
+    "meaning_ar": "حبوب قديمة تُزرع في شبه الجزيرة العربية، غذاء أساسي للعرب وقاعدة مستحضرات طبية.",
+    "etymology": "De l'arabe shaʿīr (شعير), sémitique commun. L'eau d'orge (māʾ al-shaʿīr) était une préparation médicinale fondamentale de la pharmacopée arabe.",
+    "pathway": "sémitique → arabe → langues méditerranéennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "shaʿīr",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "شَعِير",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin",
+        "word": "hordeum",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "orge/barley",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "L'eau d'orge était la boisson médicinale de base prescrite par Ibn Sīnā pour les malades.",
+      "en": "Barley water was the basic medicinal drink prescribed by Ibn Sina for the sick.",
+      "ar": "كان ماء الشعير الشراب الطبي الأساسي الذي يصفه ابن سينا للمرضى."
+    },
+    "related_words": [
+      "datte",
+      "olive",
+      "séné"
+    ]
+  },
+  {
+    "id": 360,
+    "word_fr": "fenugrec",
+    "word_en": "fenugreek",
+    "word_ar": "حِلْبَة",
+    "transliteration": "ḥilba",
+    "meaning_fr": "Légumineuse aromatique aux graines amères, utilisée en cuisine arabe et en médecine pour ses propriétés galactogènes.",
+    "meaning_en": "Aromatic legume with bitter seeds, used in Arab cuisine and medicine for its galactogenic properties.",
+    "meaning_ar": "بقولة عطرية ببذور مُرّة، تُستخدم في الطهي العربي والطب لخصائصها في تعزيز إدرار الحليب.",
+    "etymology": "Du latin faenum graecum, arabisé en ḥilba (حلبة). Recommandé par Ibn Sīnā pour les mères allaitantes.",
+    "pathway": "latin → arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "latin",
+        "word": "faenum graecum",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "حِلْبَة",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "fenugrec/fenugreek",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā recommandait le fenugrec pour stimuler la lactation chez les mères allaitantes.",
+      "en": "Ibn Sina recommended fenugreek to stimulate lactation in nursing mothers.",
+      "ar": "أوصى ابن سينا بالحلبة لتحفيز الإرضاع عند الأمهات المُرضعات."
+    },
+    "related_words": [
+      "cumin",
+      "coriandre",
+      "séné"
+    ]
+  },
+  {
+    "id": 361,
+    "word_fr": "nigelle",
+    "word_en": "nigella",
+    "word_ar": "حَبَّةُ البَرَكَة",
+    "transliteration": "ḥabbat al-baraka",
+    "meaning_fr": "Petite plante annuelle dont les graines noires sont utilisées comme épice et médicament, bénie dans la Sunna.",
+    "meaning_en": "Small annual plant whose black seeds are used as spice and medicine, blessed in the Sunna.",
+    "meaning_ar": "نبات حولي صغير تُستخدم بذوره السوداء توابل ودواءً، مُباركة في السنة النبوية.",
+    "etymology": "De l'arabe ḥabbat al-baraka (حبة البركة), « graine de bénédiction ». Le Prophète Muḥammad dit dans un hadith authentique qu'elle guérit de tout sauf la mort.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "حَبَّةُ البَرَكَة",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "nigella sativa",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "nigelle/nigella",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Le Prophète Muḥammad décrivit la nigelle comme remède pour toute maladie sauf la mort.",
+      "en": "The Prophet Muhammad described nigella as a remedy for every disease except death.",
+      "ar": "وصف النبي محمد الحبة السوداء بأنها شفاء من كل داء إلا الموت."
+    },
+    "related_words": [
+      "sésame",
+      "cumin",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 362,
+    "word_fr": "persil",
+    "word_en": "parsley",
+    "word_ar": "بَقْدُونِس",
+    "transliteration": "baqdūnis",
+    "meaning_fr": "Plante herbacée aromatique biennale, condiment universel décrit par Ibn al-Bayṭār pour ses propriétés diurétiques.",
+    "meaning_en": "Biennial aromatic herbaceous plant, universal condiment described by Ibn al-Baytar for its diuretic properties.",
+    "meaning_ar": "نبات عشبي عطري ثنائي الحول، توابل عالمية وصفها ابن البيطار لخصائصها المُدِرّة للبول.",
+    "etymology": "Du grec petroselinon, arabisé en baqdūnis (بقدونس). Ibn Sīnā le prescrivait comme diurétique pour les calculs rénaux.",
+    "pathway": "grec → arabe → langues méditerranéennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "petroselinon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "بَقْدُونِس",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "petroselinum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "persil/parsley",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait le persil comme diurétique pour dissoudre les calculs rénaux.",
+      "en": "Ibn Sina prescribed parsley as a diuretic to dissolve kidney stones.",
+      "ar": "كان ابن سينا يصف البقدونس مُدِرًّا للبول لتفتيت حصوات الكلى."
+    },
+    "related_words": [
+      "coriandre",
+      "fenouil",
+      "carvi"
+    ]
+  },
+  {
+    "id": 363,
+    "word_fr": "céleri",
+    "word_en": "celery",
+    "word_ar": "كَرَفْس",
+    "transliteration": "karafs",
+    "meaning_fr": "Plante aromatique biennale aux tiges croquantes, cultivée et utilisée en médecine arabe pour ses propriétés diurétiques.",
+    "meaning_en": "Biennial aromatic plant with crunchy stems, cultivated and used in Arab medicine for its diuretic properties.",
+    "meaning_ar": "نبات عطري ثنائي الحول بسيقان مقرمشة، زُرع واستُخدم في الطب العربي لخصائصه المُدِرّة للبول.",
+    "etymology": "Du grec selinon, arabisé en karafs (كرفس). Ibn al-Bayṭār décrivit ses propriétés digestives et diurétiques.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "selinon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كَرَفْس",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "selinum",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "céleri/celery",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn al-Bayṭār décrivit le céleri comme purificateur du sang et diurétique efficace.",
+      "en": "Ibn al-Baytar described celery as a blood purifier and effective diuretic.",
+      "ar": "وصف ابن البيطار الكرفس مُنقِّيًا للدم ومُدِرًّا فعّالًا للبول."
+    },
+    "related_words": [
+      "persil",
+      "fenouil",
+      "coriandre"
+    ]
+  },
+  {
+    "id": 364,
+    "word_fr": "canne à sucre",
+    "word_en": "sugarcane",
+    "word_ar": "قَصَبُ السُّكَّر",
+    "transliteration": "qaṣab al-sukkar",
+    "meaning_fr": "Graminée tropicale dont le jus sucré fut raffiné en sucre blanc par les ingénieurs arabes, révolutionnant l'alimentation mondiale.",
+    "meaning_en": "Tropical grass whose sweet juice was refined into white sugar by Arab engineers, revolutionizing world food.",
+    "meaning_ar": "عشبة استوائية كان عصيرها الحلو يُكرَّر إلى سكر أبيض بواسطة المهندسين العرب، مُحدثًا ثورة في الغذاء العالمي.",
+    "etymology": "De l'arabe qaṣab al-sukkar (قصب السكر). Les Arabes développèrent les techniques de raffinage du sucre et les diffusèrent vers l'Europe.",
+    "pathway": "sanskrit → persan → arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "śarkarā",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "قَصَبُ السُّكَّر",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "azúcar / caña",
+        "date": "Xe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "sucre/sugar",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les Arabes introduisirent la culture de la canne à sucre en Sicile et dans la péninsule ibérique.",
+      "en": "Arabs introduced sugarcane cultivation to Sicily and the Iberian Peninsula.",
+      "ar": "أدخل العرب زراعة قصب السكر إلى صقلية وشبه الجزيرة الإيبيرية."
+    },
+    "related_words": [
+      "sirop",
+      "sucre",
+      "datte"
+    ]
+  },
+  {
+    "id": 365,
+    "word_fr": "sumac (arbre)",
+    "word_en": "sumac tree",
+    "word_ar": "السُّمَّاق الشَّجَر",
+    "transliteration": "al-summāq al-shajar",
+    "meaning_fr": "Arbre ou arbuste de la famille des anacardiacées dont les baies rouges séchées forment une épice, cultivé au Proche-Orient.",
+    "meaning_en": "Tree or shrub of the Anacardiaceae family whose dried red berries form a spice, cultivated in the Near East.",
+    "meaning_ar": "شجرة أو شجيرة من الفصيلة البطمية تُشكّل ثمارها الحمراء المجففة توابل، تُزرع في الشرق الأدنى.",
+    "etymology": "De l'arabe summāq (سماق), attesté depuis le VIIe siècle. Les agronomes arabes le cultivaient pour ses usages culinaires et médicinaux.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "سُمَّاق",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "rhus coriaria",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "sumac",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les agronomes arabes cultivaient le sumac pour son usage comme acidulant et comme tanin pour le cuir.",
+      "en": "Arab agronomists cultivated sumac for its use as an acidulant and as tannin for leather.",
+      "ar": "كان الزراعيون العرب يزرعون السماق لاستخدامه محمِّضًا وعفصًا لدباغة الجلود."
+    },
+    "related_words": [
+      "sumac",
+      "carouber",
+      "grenade"
+    ]
+  },
+  {
+    "id": 366,
+    "word_fr": "poivre noir",
+    "word_en": "black pepper",
+    "word_ar": "فُلْفُل أَسْوَد",
+    "transliteration": "fulful aswad",
+    "meaning_fr": "Épice piquante universelle extraite des baies séchées du poivrier, importée d'Inde par les marchands arabes.",
+    "meaning_en": "Universal pungent spice extracted from the dried berries of the pepper plant, imported from India by Arab merchants.",
+    "meaning_ar": "توابل حارة عالمية تُستخرج من ثمار الفلفل المجففة، استوردها التجار العرب من الهند.",
+    "etymology": "De l'arabe fulful (فلفل), du sanskrit pippalī. Les marchands arabes contrôlaient le commerce du poivre de l'Inde vers la Méditerranée.",
+    "pathway": "sanskrit → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "pippalī",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "فُلْفُل",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "piper",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "poivre/pepper",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les marchands arabes contrôlaient le commerce du poivre entre l'Inde et la Méditerranée.",
+      "en": "Arab merchants controlled the pepper trade between India and the Mediterranean.",
+      "ar": "كان التجار العرب يتحكمون في تجارة الفلفل بين الهند والبحر المتوسط."
+    },
+    "related_words": [
+      "girofle",
+      "cannelle",
+      "cardamome"
+    ]
+  },
+  {
+    "id": 367,
+    "word_fr": "amande",
+    "word_en": "almond",
+    "word_ar": "لَوْز",
+    "transliteration": "lawz",
+    "meaning_fr": "Fruit sec à coque dure originaire du Proche-Orient, cultivé par les agronomes arabes dans tout le Bassin méditerranéen.",
+    "meaning_en": "Hard-shelled nut originating from the Near East, cultivated by Arab agronomists throughout the Mediterranean Basin.",
+    "meaning_ar": "ثمرة جافة ذات قشرة صلبة أصلها الشرق الأدنى، زرعها الزراعيون العرب في حوض البحر المتوسط.",
+    "etymology": "Du grec amugdalon, arabisé en lawz (لوز). Ibn al-ʿAwwām décrivit plusieurs variétés d'amandiers dans son traité d'agronomie andalou.",
+    "pathway": "grec → arabe → langues méditerranéennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "amugdalon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "لَوْز",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "amandula",
+        "date": "IXe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "amande/almond",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les agronomes arabes andalous sélectionnèrent des variétés d'amandes douces pour la pâtisserie.",
+      "en": "Arab Andalusian agronomists selected sweet almond varieties for pastry.",
+      "ar": "انتقى الزراعيون العرب الأندلسيون أصناف اللوز الحلو للحلويات."
+    },
+    "related_words": [
+      "pistache",
+      "orange",
+      "carouber"
+    ]
+  },
+  {
+    "id": 368,
+    "word_fr": "câlissier",
+    "word_en": "quince",
+    "word_ar": "سَفَرْجَل",
+    "transliteration": "safarjal",
+    "meaning_fr": "Fruit jaune du cognassier à pulpe dure et acide, cultivé et utilisé en confitures et médicaments dans le monde arabe.",
+    "meaning_en": "Yellow fruit of the quince tree with hard, acidic flesh, cultivated and used in jams and medicines in the Arab world.",
+    "meaning_ar": "ثمرة السفرجل الصفراء ذات اللبّ الصلب والحامض، تُزرع وتُستخدم في المربيات والأدوية في العالم العربي.",
+    "etymology": "Du grec kudonion malon, arabisé en safarjal (سفرجل). Ibn Sīnā prescrivait le coing pour renforcer l'estomac et traiter les nausées.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "kudonion malon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "سَفَرْجَل",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "coing/quince",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Ibn Sīnā prescrivait le coing pour renforcer l'estomac et arrêter les vomissements.",
+      "en": "Ibn Sina prescribed quince to strengthen the stomach and stop vomiting.",
+      "ar": "كان ابن سينا يصف السفرجل لتقوية المعدة ووقف القيء."
+    },
+    "related_words": [
+      "orange",
+      "grenade",
+      "abricot"
+    ]
+  },
+  {
+    "id": 369,
+    "word_fr": "mûrier",
+    "word_en": "mulberry",
+    "word_ar": "تُوت",
+    "transliteration": "tūt",
+    "meaning_fr": "Arbre dont les fruits sucrés et les feuilles (nourriture du ver à soie) étaient cultivés dans le monde islamique.",
+    "meaning_en": "Tree whose sweet fruits and leaves (food of the silkworm) were cultivated in the Islamic world.",
+    "meaning_ar": "شجرة تُزرع ثمارها الحلوة وأوراقها (غذاء دودة القز) في العالم الإسلامي.",
+    "etymology": "De l'arabe tūt (توت). Les Arabes développèrent la sériciculture (élevage du ver à soie) et diffusèrent la culture du mûrier vers l'Europe.",
+    "pathway": "arabe → langues méditerranéennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "تُوت",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "morus",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "mûrier/mulberry",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Les Arabes introduisirent la sériciculture en Sicile et en Espagne, développant la culture du mûrier.",
+      "en": "Arabs introduced silk worm cultivation to Sicily and Spain, developing mulberry cultivation.",
+      "ar": "أدخل العرب تربية دودة القز إلى صقلية وإسبانيا ونشروا زراعة التوت."
+    },
+    "related_words": [
+      "coton",
+      "indigo",
+      "soie"
+    ]
+  },
+  {
+    "id": 370,
+    "word_fr": "soufre",
+    "word_en": "sulfur",
+    "word_ar": "كِبْرِيت",
+    "transliteration": "kibrīt",
+    "meaning_fr": "Élément chimique jaune utilisé en médecine arabe comme antiseptique cutané et dans les préparations alchimiques.",
+    "meaning_en": "Yellow chemical element used in Arab medicine as a skin antiseptic and in alchemical preparations.",
+    "meaning_ar": "عنصر كيميائي أصفر استُخدم في الطب العربي مطهرًا جلديًا وفي المستحضرات الخيميائية.",
+    "etymology": "De l'arabe kibrīt (كبريت), sémitique commun. Jābir ibn Ḥayyān développa la théorie mercure-soufre en alchimie.",
+    "pathway": "sémitique → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "sémitique ancien",
+        "word": "kibrīt",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "كِبْرِيت",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "sulfur",
+        "date": "antiquité"
+      },
+      {
+        "lang": "langues européennes",
+        "word": "soufre/sulfur",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "botanique",
+    "examples": {
+      "fr": "Jābir ibn Ḥayyān développa la théorie mercure-soufre, pilier de la chimie alchimique médiévale.",
+      "en": "Jabir ibn Hayyan developed the mercury-sulfur theory, a pillar of medieval alchemical chemistry.",
+      "ar": "طوّر جابر بن حيان نظرية الزئبق والكبريت، ركيزة الكيمياء الخيميائية الوسيطة."
+    },
+    "related_words": [
+      "alchimie",
+      "borax",
+      "amalgame"
+    ]
+  }
+]

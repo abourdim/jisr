@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>جسر — Jisr v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   JISR v1.0 — Thème Islamique Profond
+   Références : Alhambra · Médine · Cordoue · Istanbul
+   Palette : nuit de Médine · or nasride · turquoise andalou
+═══════════════════════════════════════════════════════════════ */
+:root {
+  /* Couleurs de nuit islamique */
+  --night:        #080C10;
+  --night2:       #0C1118;
+  --night3:       #111820;
+  --night4:       #172030;
+  --night5:       #1E2A3A;
+
+  /* Or nasride (Alhambra) */
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-bright:  #F0D878;
+  --gold-dim:     rgba(201,168,76,0.15);
+  --gold-glow:    rgba(201,168,76,0.35);
+
+  /* Turquoise andalou */
+  --teal:         #2A7B8C;
+  --teal-light:   #3AACBF;
+  --teal-dim:     rgba(42,123,140,0.2);
+
+  /* Rouge nasride */
+  --nasrid-red:   #8C2A2A;
+  --nasrid-light: #C04040;
+
+  /* Vert émeraude islamique */
+  --emerald:      #1A6B4A;
+  --emerald-light:#2A9B6E;
+
+  /* Ivoire de parchemin */
+  --ivory:        #F0E6CC;
+  --ivory-soft:   #E0D4B8;
+  --ivory-dim:    rgba(240,230,204,0.6);
+  --ivory-faint:  rgba(240,230,204,0.12);
+  --ivory-ghost:  rgba(240,230,204,0.06);
+
+  /* Brun cuir */
+  --brown:        #7A5030;
+  --brown-light:  #A8723E;
+
+  --font-arabic:  'Amiri', 'Traditional Arabic', serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-ui:      'Lato', sans-serif;
+
+  --r-sm:4px; --r-md:10px; --r-lg:18px; --r-xl:26px; --r-pill:999px;
+  --ease: cubic-bezier(0.4,0,0.2,1);
+  --spring: cubic-bezier(0.22,0.68,0,1.2);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size:16px; scroll-behavior:smooth; }
+
+body {
+  background: var(--night);
+  color: var(--ivory);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Fond : Motif géométrique islamique (zellige) ─── */
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(42,123,140,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(26,107,74,0.04) 0%, transparent 60%);
+}
+
+/* Motif étoile islamique en overlay */
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.03;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(201,168,76,1) 28px, rgba(201,168,76,1) 29px),
+    repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(201,168,76,1) 28px, rgba(201,168,76,1) 29px),
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,168,76,0.5) 20px, rgba(201,168,76,0.5) 21px),
+    repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(201,168,76,0.5) 20px, rgba(201,168,76,0.5) 21px);
+}
+
+.container { max-width:1240px; margin:0 auto; padding:0 28px; position:relative; z-index:1; }
+
+/* ═══════════════════════════════════════════════════════════════
+   BISMILLAH — Médaillon ornemental
+═══════════════════════════════════════════════════════════════ */
+.bismillah-wrap {
+  position:relative; text-align:center;
+  padding:28px 20px 22px;
+  background: linear-gradient(180deg, rgba(42,123,140,0.08) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  overflow:hidden;
+}
+
+/* Arabesques latérales CSS */
+.bismillah-wrap::before {
+  content:'❧';
+  position:absolute; left:40px; top:50%; transform:translateY(-50%);
+  font-size:2rem; color:rgba(201,168,76,0.2); line-height:1;
+}
+.bismillah-wrap::after {
+  content:'❧';
+  position:absolute; right:40px; top:50%; transform:translateY(-50%) scaleX(-1);
+  font-size:2rem; color:rgba(201,168,76,0.2); line-height:1;
+}
+
+/* Ligne ornementale haut */
+.bismillah-ornament {
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  margin-bottom:12px;
+}
+.bismillah-ornament span {
+  height:1px; width:120px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.bismillah-ornament .diamond {
+  width:8px; height:8px; background:var(--gold); transform:rotate(45deg); flex-shrink:0;
+}
+
+.bismillah-text {
+  font-family: var(--font-arabic);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold-light);
+  direction: rtl;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-shadow: 0 0 40px rgba(201,168,76,0.5), 0 0 80px rgba(201,168,76,0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER — Minaret & Coupole CSS
+═══════════════════════════════════════════════════════════════ */
+header {
+  padding: 0;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arc nasride décoratif derrière le header */
+header::before {
+  content:'';
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:800px; height:300px;
+  border:1px solid rgba(201,168,76,0.04);
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  pointer-events:none;
+}
+
+.header-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px; flex-wrap:wrap; padding:32px 0 28px;
+}
+
+/* Silhouette mosquée CSS */
+.mosque-silhouette {
+  display:flex; align-items:flex-end; gap:6px; opacity:0.12; flex-shrink:0;
+}
+.minaret {
+  background:var(--gold);
+  border-radius:2px 2px 0 0;
+  position:relative;
+}
+.minaret::before {
+  content:''; position:absolute; top:-10px; left:50%; transform:translateX(-50%);
+  width:0; height:0;
+  border-left:6px solid transparent; border-right:6px solid transparent;
+  border-bottom:10px solid var(--gold);
+}
+.m1 { width:10px; height:55px; }
+.m2 { width:14px; height:75px; }
+.m3 { width:10px; height:55px; }
+.dome-body {
+  width:60px; height:32px; background:var(--gold);
+  border-radius:50% 50% 0 0; position:relative; align-self:flex-end;
+}
+
+.header-brand { display:flex; flex-direction:column; gap:4px; }
+
+.brand-ar {
+  font-family: var(--font-arabic);
+  font-size: clamp(3.5rem,8vw,6rem);
+  color: var(--gold-light);
+  direction: rtl;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-shadow:
+    0 0 60px rgba(201,168,76,0.6),
+    0 0 120px rgba(201,168,76,0.25),
+    0 0 200px rgba(42,123,140,0.15);
+}
+
+.brand-sub {
+  display:flex; align-items:center; gap:10px;
+}
+.brand-latin {
+  font-family: var(--font-display);
+  font-size: clamp(0.75rem,1.5vw,0.95rem);
+  font-weight: 300; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--ivory-dim);
+}
+.brand-version {
+  padding:2px 9px; background:var(--gold-dim);
+  border:1px solid rgba(201,168,76,0.3); border-radius:var(--r-pill);
+  font-size:0.6rem; font-weight:700; letter-spacing:0.12em; color:var(--gold);
+}
+
+.header-controls { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+
+/* Boutons header style islamique */
+.hbtn {
+  display:flex; align-items:center; gap:7px; padding:9px 18px;
+  font-family:var(--font-ui); font-size:0.78rem; font-weight:700; letter-spacing:0.08em;
+  background:var(--night3);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:var(--r-pill);
+  color:var(--ivory-dim); cursor:pointer; transition:all 0.22s;
+  white-space:nowrap; position:relative; overflow:hidden;
+}
+.hbtn::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent);
+  opacity:0; transition:opacity 0.2s;
+}
+.hbtn:hover { border-color:var(--gold); color:var(--gold-light); }
+.hbtn:hover::before { opacity:1; }
+.hbtn.active { background:linear-gradient(135deg,rgba(201,168,76,0.2),rgba(42,123,140,0.1)); border-color:var(--gold); color:var(--gold-light); }
+.hbtn svg { width:14px; height:14px; flex-shrink:0; }
+
+.lang-switcher {
+  display:flex; background:var(--night3);
+  border:1px solid rgba(201,168,76,0.18); border-radius:var(--r-pill); overflow:hidden;
+}
+.lbtn {
+  padding:9px 16px; font-family:var(--font-ui); font-size:0.78rem; font-weight:700;
+  letter-spacing:0.06em; color:var(--ivory-dim); background:transparent; border:none;
+  cursor:pointer; transition:all 0.2s;
+}
+.lbtn.active {
+  background:linear-gradient(135deg,var(--gold),#B8922A);
+  color:var(--night);
+}
+.lbtn:hover:not(.active) { color:var(--gold-light); }
+
+/* ═══════════════════════════════════════════════════════════════
+   SÉPARATEURS ISLAMIQUES
+═══════════════════════════════════════════════════════════════ */
+.islamic-divider {
+  display:flex; align-items:center; gap:10px;
+  margin: 6px 0 20px;
+}
+.islamic-divider .line {
+  flex:1; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.35), rgba(42,123,140,0.2), transparent);
+}
+.islamic-divider .ornament {
+  font-family:var(--font-arabic); font-size:1.1rem; color:rgba(201,168,76,0.4);
+  line-height:1;
+}
+
+/* Section label */
+.section-label {
+  font-family:var(--font-ui); font-size:0.68rem; font-weight:700; letter-spacing:0.22em;
+  text-transform:uppercase; color:var(--teal-light); margin-bottom:6px;
+  display:flex; align-items:center; gap:12px;
+}
+.section-label::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(42,123,140,0.4),transparent); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOT DU JOUR — Arche nasride
+═══════════════════════════════════════════════════════════════ */
+#wod-section { padding:44px 0 20px; }
+
+.wod-card {
+  background: linear-gradient(145deg, var(--night3) 0%, var(--night4) 50%, #0E1A28 100%);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:var(--r-xl);
+  padding:48px 56px;
+  display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:transform 0.3s var(--ease), box-shadow 0.3s;
+  box-shadow:0 10px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,168,76,0.1);
+}
+
+/* Arc en fer à cheval (arche alhambra) en arrière-plan */
+.wod-card::before {
+  content:'';
+  position:absolute; bottom:-20px; right:60px;
+  width:280px; height:320px;
+  border:1px solid rgba(201,168,76,0.07);
+  border-radius:50% 50% 0 0 / 60% 60% 0 0;
+  pointer-events:none;
+}
+
+/* Motif zellige coin */
+.wod-card::after {
+  content:'';
+  position:absolute; top:0; right:0; width:200px; height:200px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(42,123,140,0.12) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 40%);
+  pointer-events:none;
+}
+
+.wod-card:hover { transform:translateY(-4px); box-shadow:0 24px 80px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.06); }
+
+.wod-left .cat-badge { margin-bottom:22px; }
+.wod-left h2 {
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,5vw,3.6rem);
+  font-weight:300; color:var(--ivory); line-height:1.1;
+  letter-spacing:0.02em;
+}
+.wod-left .wod-en { font-size:0.88rem; color:var(--ivory-dim); margin-top:6px; letter-spacing:0.06em; font-style:italic; }
+.wod-left .wod-excerpt { font-size:0.9rem; color:rgba(240,230,204,0.55); margin-top:18px; line-height:1.75; max-width:480px; }
+.wod-pathway-tag {
+  display:inline-flex; align-items:center; gap:8px; margin-top:20px;
+  padding:6px 16px;
+  background:rgba(42,123,140,0.1); border:1px solid rgba(42,123,140,0.25);
+  border-radius:var(--r-pill); font-size:0.72rem; color:var(--teal-light);
+}
+
+.wod-right { display:flex; flex-direction:column; align-items:center; gap:10px; z-index:1; }
+
+/* Médaillon calligraphique */
+.wod-medallion {
+  position:relative; display:flex; flex-direction:column; align-items:center;
+  padding:24px 32px;
+}
+.wod-medallion::before {
+  content:'';
+  position:absolute; inset:0;
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:50% 50% 50% 50% / 40% 40% 60% 60%;
+  background:radial-gradient(ellipse,rgba(201,168,76,0.04) 0%,transparent 70%);
+}
+
+.wod-ar {
+  font-family:var(--font-arabic);
+  font-size:clamp(4rem,9vw,7.5rem);
+  color:var(--gold-light);
+  direction:rtl; line-height:1.2;
+  text-shadow: 0 0 60px rgba(201,168,76,0.45), 0 0 120px rgba(201,168,76,0.2);
+  position:relative; z-index:1;
+}
+.wod-tr {
+  font-family:var(--font-display); font-style:italic;
+  font-size:1.05rem; color:rgba(201,168,76,0.55);
+  letter-spacing:0.12em; margin-top:4px; position:relative; z-index:1;
+}
+.wod-tts {
+  background:none; border:1px solid rgba(201,168,76,0.22);
+  border-radius:50%; width:42px; height:42px; display:flex; align-items:center;
+  justify-content:center; cursor:pointer; color:var(--gold); transition:all 0.2s;
+  margin-top:10px; z-index:1;
+}
+.wod-tts:hover { background:var(--gold-dim); border-color:var(--gold); transform:scale(1.1); }
+.wod-tts svg { width:15px; height:15px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   RECHERCHE
+═══════════════════════════════════════════════════════════════ */
+#search-section { padding:36px 0 22px; }
+.search-row { display:flex; gap:12px; align-items:stretch; flex-wrap:wrap; }
+.search-box { flex:1; min-width:260px; position:relative; }
+.search-box input {
+  width:100%; padding:16px 50px 16px 52px;
+  font-family:var(--font-ui); font-size:1rem; color:var(--ivory);
+  background:var(--night3); border:1.5px solid rgba(201,168,76,0.18);
+  border-radius:var(--r-lg); outline:none; transition:all 0.25s;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.search-box input::placeholder { color:rgba(240,230,204,0.25); }
+.search-box input:focus { border-color:var(--teal-light); box-shadow:0 0 0 3px rgba(42,123,140,0.12), inset 0 1px 0 rgba(255,255,255,0.03); }
+.s-icon { position:absolute; left:18px; top:50%; transform:translateY(-50%); width:18px; height:18px; color:rgba(240,230,204,0.25); pointer-events:none; }
+.s-clear { position:absolute; right:14px; top:50%; transform:translateY(-50%); width:28px; height:28px; background:none; border:none; color:rgba(240,230,204,0.3); cursor:pointer; display:none; align-items:center; justify-content:center; border-radius:50%; transition:all 0.2s; }
+.s-clear.show { display:flex; }
+.s-clear:hover { background:rgba(240,230,204,0.08); color:var(--ivory); }
+.s-clear svg { width:14px; height:14px; }
+
+.kbd-toggle {
+  display:flex; align-items:center; gap:8px; padding:0 20px;
+  background:var(--night3); border:1.5px solid rgba(201,168,76,0.18); border-radius:var(--r-lg);
+  color:var(--ivory-dim); cursor:pointer; font-family:var(--font-ui); font-size:0.82rem; font-weight:700;
+  letter-spacing:0.06em; transition:all 0.2s; white-space:nowrap; height:54px;
+}
+.kbd-toggle:hover,.kbd-toggle.active { border-color:var(--teal-light); color:var(--teal-light); background:var(--teal-dim); }
+.kbd-toggle .ar-sample { font-family:var(--font-arabic); font-size:1.2rem; }
+
+/* Filtres */
+.filter-row { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; align-items:center; }
+.filter-label { font-size:0.68rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(240,230,204,0.35); margin-right:4px; }
+.lf-btn { padding:6px 14px; font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.08em; color:rgba(240,230,204,0.4); background:transparent; border:1px solid rgba(240,230,204,0.1); border-radius:var(--r-pill); cursor:pointer; transition:all 0.2s; }
+.lf-btn.active { background:var(--night3); border-color:var(--teal-light); color:var(--teal-light); }
+.lf-btn:hover:not(.active) { border-color:rgba(42,123,140,0.4); color:var(--ivory-dim); }
+.cat-row { display:flex; gap:7px; flex-wrap:wrap; margin-top:10px; }
+.cat-btn { padding:5px 13px; font-family:var(--font-ui); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(240,230,204,0.35); background:transparent; border:1px solid rgba(240,230,204,0.08); border-radius:var(--r-pill); cursor:pointer; transition:all 0.2s; }
+.cat-btn:hover { border-color:rgba(201,168,76,0.4); color:var(--gold); }
+.cat-btn.active { background:rgba(201,168,76,0.1); border-color:var(--gold); color:var(--gold-light); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CLAVIER ARABE — Style andalou
+═══════════════════════════════════════════════════════════════ */
+#arabic-keyboard {
+  background:var(--night3);
+  border:1px solid rgba(201,168,76,0.18);
+  border-top:3px solid rgba(42,123,140,0.5);
+  border-radius:0 0 var(--r-lg) var(--r-lg);
+  padding:20px 22px 18px; margin-top:-4px; display:none;
+  box-shadow:0 12px 40px rgba(0,0,0,0.5);
+  animation:slideDown 0.25s var(--spring);
+}
+#arabic-keyboard.open { display:block; }
+@keyframes slideDown { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+.kbd-row { display:flex; gap:5px; justify-content:center; margin-bottom:5px; flex-wrap:wrap; }
+.k {
+  min-width:40px; height:44px; padding:0 6px;
+  background:var(--night4);
+  border:1px solid rgba(201,168,76,0.12);
+  border-bottom:2px solid rgba(201,168,76,0.2);
+  border-radius:var(--r-sm);
+  font-family:var(--font-arabic); font-size:1.35rem; color:var(--ivory);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:all 0.15s; direction:rtl; line-height:1;
+}
+.k:hover { background:rgba(42,123,140,0.2); border-color:var(--teal-light); color:var(--teal-light); transform:translateY(-2px); box-shadow:0 4px 12px rgba(42,123,140,0.2); }
+.k:active { transform:translateY(0); }
+.k.wide { min-width:72px; font-family:var(--font-ui); font-size:0.72rem; letter-spacing:0.06em; color:var(--ivory-dim); }
+.kbd-diacritics { display:flex; gap:5px; justify-content:center; margin-top:10px; padding-top:10px; border-top:1px solid rgba(201,168,76,0.1); flex-wrap:wrap; }
+
+/* Badge catégorie */
+.cat-badge {
+  display:inline-flex; align-items:center; padding:4px 12px;
+  font-family:var(--font-ui); font-size:0.62rem; font-weight:700; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--teal-light);
+  background:rgba(42,123,140,0.1); border:1px solid rgba(42,123,140,0.25);
+  border-radius:var(--r-pill);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RÉSULTATS & CARTES
+═══════════════════════════════════════════════════════════════ */
+#results-section { padding-bottom:90px; }
+.results-meta { display:flex; align-items:center; justify-content:space-between; margin:26px 0 18px; flex-wrap:wrap; gap:10px; }
+.r-count { font-family:var(--font-display); font-style:italic; font-size:1rem; color:rgba(240,230,204,0.35); }
+.r-count strong { color:var(--ivory); font-style:normal; }
+.r-actions { display:flex; gap:8px; }
+.r-btn { padding:7px 16px; background:none; border:1px solid rgba(201,168,76,0.2); border-radius:var(--r-pill); color:var(--gold); font-size:0.75rem; font-weight:700; letter-spacing:0.08em; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:5px; }
+.r-btn:hover { background:var(--gold-dim); border-color:var(--gold); }
+.r-btn svg { width:13px; height:13px; }
+
+.no-results { text-align:center; padding:90px 20px; display:none; }
+.no-results.visible { display:block; }
+.no-res-ar { font-family:var(--font-arabic); font-size:3.5rem; color:rgba(201,168,76,0.12); direction:rtl; display:block; margin-bottom:14px; }
+.no-results p { font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:rgba(240,230,204,0.2); }
+
+.cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:20px; }
+@media(min-width:980px){ .cards-grid { grid-template-columns:repeat(3,1fr); } }
+
+/* ─── Carte ─── */
+.word-card {
+  background: linear-gradient(160deg, var(--night3) 0%, var(--night4) 100%);
+  border:1px solid rgba(201,168,76,0.1);
+  border-radius:var(--r-lg); padding:26px 26px 20px;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:transform 0.28s var(--spring), box-shadow 0.28s var(--ease), border-color 0.25s;
+  box-shadow:0 4px 24px rgba(0,0,0,0.35);
+  animation:cardIn 0.4s var(--spring) both;
+}
+@keyframes cardIn { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+/* Bordure top dorée au hover */
+.word-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, var(--teal), var(--gold), var(--teal-light));
+  opacity:0; transition:opacity 0.25s;
+}
+
+/* Motif arabesque coin carte */
+.word-card::after {
+  content:'ب'; font-family:var(--font-arabic); font-size:6rem;
+  color:rgba(201,168,76,0.025); position:absolute; bottom:-10px; left:10px;
+  direction:rtl; line-height:1; pointer-events:none; user-select:none;
+}
+
+.word-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 18px 56px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.18), 0 0 30px rgba(42,123,140,0.06);
+  border-color:rgba(201,168,76,0.25);
+}
+.word-card:hover::before { opacity:1; }
+
+.card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; }
+.card-actions { display:flex; gap:5px; }
+.card-act-btn {
+  width:28px; height:28px; background:none; border:1px solid rgba(240,230,204,0.08);
+  border-radius:50%; color:rgba(240,230,204,0.35); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all 0.2s;
+}
+.card-act-btn:hover { border-color:var(--gold); color:var(--gold); background:var(--gold-dim); }
+.card-act-btn.fav-active { color:var(--gold); border-color:var(--gold); background:var(--gold-dim); }
+.card-act-btn.speaking { color:var(--teal-light); border-color:var(--teal-light); animation:pulse 0.8s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(42,123,140,0.4)} 50%{box-shadow:0 0 0 6px rgba(42,123,140,0)} }
+.card-act-btn svg { width:12px; height:12px; }
+
+/* Mot arabe avec médaillon */
+.card-ar-wrap { text-align:right; margin-bottom:16px; }
+.card-ar {
+  font-family:var(--font-arabic); font-size:2.9rem; color:var(--ivory);
+  direction:rtl; line-height:1.25;
+}
+.card-tr {
+  font-family:var(--font-display); font-style:italic; font-size:0.87rem;
+  color:var(--brown-light); letter-spacing:0.09em; margin-top:2px;
+}
+
+.card-div { height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.12),transparent); margin:12px 0; }
+
+.card-words { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; margin-bottom:10px; }
+.cw-fr { font-family:var(--font-display); font-size:1.4rem; font-weight:600; color:var(--ivory); }
+.cw-sep { color:rgba(201,168,76,0.3); }
+.cw-en { font-family:var(--font-display); font-size:1.05rem; font-style:italic; color:var(--brown-light); }
+
+.card-meaning { font-size:0.84rem; color:rgba(240,230,204,0.45); line-height:1.65; margin-bottom:14px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.card-meaning[dir="rtl"] { font-family:var(--font-arabic); font-size:0.95rem; text-align:right; }
+
+.card-pathway { display:inline-flex; align-items:center; gap:5px; font-size:0.67rem; color:rgba(240,230,204,0.3); background:rgba(240,230,204,0.04); padding:4px 10px; border-radius:var(--r-pill); }
+
+.card-foot { display:flex; align-items:center; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid rgba(240,230,204,0.05); }
+.card-open-btn { display:flex; align-items:center; gap:5px; font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-light); background:none; border:none; cursor:pointer; padding:0; transition:gap 0.2s; }
+.card-open-btn:hover { gap:9px; }
+.card-open-btn svg { width:12px; height:12px; }
+
+/* Indicateur "appris" */
+.learned-badge { width:8px; height:8px; background:var(--emerald-light); border-radius:50%; flex-shrink:0; }
+
+mark { background:rgba(42,123,140,0.25); color:inherit; border-radius:2px; padding:0 2px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   ARBRE ÉTYMOLOGIQUE — Style manuscrit
+═══════════════════════════════════════════════════════════════ */
+.etym-tree-wrap {
+  background:var(--night2); border:1px solid rgba(201,168,76,0.1);
+  border-radius:var(--r-md); padding:22px; overflow-x:auto;
+}
+.etym-tree { display:flex; align-items:center; gap:0; flex-wrap:nowrap; min-width:fit-content; }
+.etym-node {
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  background:var(--night3); border:1px solid rgba(201,168,76,0.15);
+  border-radius:var(--r-md); padding:12px 16px; min-width:100px; text-align:center;
+}
+.etym-node.root { border-color:var(--gold); background:rgba(201,168,76,0.07); }
+.etym-node.final { border-color:rgba(42,123,140,0.4); background:rgba(42,123,140,0.05); }
+.etym-lang { font-size:0.58rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-light); }
+.etym-node.root .etym-lang { color:var(--gold); }
+.etym-word { font-family:var(--font-arabic); font-size:1.3rem; color:var(--ivory); direction:rtl; line-height:1.4; }
+.etym-word.latin { font-family:var(--font-display); font-style:italic; font-size:0.95rem; direction:ltr; }
+.etym-date { font-size:0.6rem; color:rgba(240,230,204,0.3); }
+.etym-arrow { width:36px; height:2px; background:linear-gradient(90deg,rgba(201,168,76,0.4),rgba(42,123,140,0.3)); flex-shrink:0; position:relative; }
+.etym-arrow::after { content:'▶'; position:absolute; right:-6px; top:50%; transform:translateY(-50%); font-size:7px; color:rgba(201,168,76,0.35); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL — Arc alhambra
+═══════════════════════════════════════════════════════════════ */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(4,6,10,0.88); z-index:1000;
+  display:flex; align-items:center; justify-content:center; padding:20px;
+  backdrop-filter:blur(8px); opacity:0; pointer-events:none; transition:opacity 0.3s var(--ease);
+}
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.modal {
+  background:var(--night2); border:1px solid rgba(201,168,76,0.14);
+  border-radius:var(--r-xl); width:100%; max-width:780px; max-height:92vh;
+  overflow-y:auto; position:relative;
+  transform:translateY(30px) scale(0.97); transition:transform 0.35s var(--spring);
+  box-shadow:0 50px 120px rgba(0,0,0,0.8), 0 0 0 1px rgba(201,168,76,0.06);
+}
+.modal-overlay.open .modal { transform:translateY(0) scale(1); }
+.modal::-webkit-scrollbar{width:4px} .modal::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.18);border-radius:9px}
+
+/* Header modal — arc en fer à cheval */
+.modal-hdr {
+  background:linear-gradient(160deg, #0A1220 0%, #0F1A2C 60%, #121E30 100%);
+  padding:48px 52px 40px; border-radius:var(--r-xl) var(--r-xl) 0 0;
+  position:relative; overflow:hidden;
+  border-bottom:1px solid rgba(201,168,76,0.12);
+}
+
+/* Arc nasride en CSS dans le header */
+.modal-hdr::before {
+  content:'';
+  position:absolute; bottom:-1px; left:50%; transform:translateX(-50%);
+  width:320px; height:200px;
+  border:1px solid rgba(201,168,76,0.08);
+  border-radius:50% 50% 0 0 / 80% 80% 0 0;
+  pointer-events:none;
+}
+
+/* Motif étoile à 8 branches en coin */
+.modal-hdr::after {
+  content:'';
+  position:absolute; top:0; right:0; bottom:0; width:300px;
+  background:
+    radial-gradient(circle at 100% 30%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(42,123,140,0.05) 0%, transparent 40%);
+  pointer-events:none;
+}
+
+.modal-close {
+  position:absolute; top:18px; right:20px; width:34px; height:34px;
+  background:rgba(240,230,204,0.05); border:1px solid rgba(240,230,204,0.1);
+  border-radius:50%; color:rgba(240,230,204,0.45); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all 0.2s; z-index:2;
+}
+.modal-close:hover { background:rgba(240,230,204,0.1); color:var(--ivory); }
+.modal-close svg { width:14px; height:14px; }
+
+.modal-nav { position:absolute; top:18px; left:18px; display:flex; gap:6px; z-index:2; }
+.modal-nav-btn {
+  width:30px; height:30px; background:rgba(240,230,204,0.05);
+  border:1px solid rgba(240,230,204,0.1); border-radius:50%;
+  color:rgba(240,230,204,0.35); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all 0.2s;
+}
+.modal-nav-btn:hover { color:var(--gold); border-color:var(--gold); }
+.modal-nav-btn svg { width:12px; height:12px; }
+
+/* Grand mot arabe — cœur de la modale */
+.modal-ar-wrap {
+  position:relative; z-index:1; text-align:center; margin-bottom:8px;
+}
+.modal-ar {
+  font-family:var(--font-arabic);
+  font-size:clamp(3.5rem,9vw,6.5rem);
+  color:var(--gold-light); direction:rtl;
+  line-height:1.2;
+  text-shadow: 0 0 80px rgba(201,168,76,0.5), 0 0 160px rgba(201,168,76,0.2), 0 0 240px rgba(42,123,140,0.1);
+}
+.modal-tr {
+  font-family:var(--font-display); font-style:italic;
+  font-size:1.1rem; color:rgba(201,168,76,0.55);
+  text-align:center; letter-spacing:0.13em; position:relative; z-index:1;
+}
+
+.modal-chips {
+  display:flex; justify-content:center; gap:12px; margin-top:24px;
+  flex-wrap:wrap; position:relative; z-index:1;
+}
+.m-chip {
+  display:flex; align-items:center; gap:8px;
+  background:rgba(240,230,204,0.05); border:1px solid rgba(240,230,204,0.09);
+  border-radius:var(--r-pill); padding:8px 18px;
+}
+.m-chip-flag { font-size:1rem; }
+.m-chip-word { font-family:var(--font-display); font-size:1.1rem; font-weight:600; color:var(--ivory); }
+
+.modal-hdr-actions {
+  display:flex; justify-content:center; gap:8px; margin-top:20px;
+  flex-wrap:wrap; position:relative; z-index:1;
+}
+.m-act {
+  display:flex; align-items:center; gap:6px; padding:7px 16px;
+  background:rgba(240,230,204,0.05); border:1px solid rgba(240,230,204,0.1);
+  border-radius:var(--r-pill); color:rgba(240,230,204,0.55);
+  cursor:pointer; font-size:0.74rem; font-weight:700; letter-spacing:0.08em; transition:all 0.2s;
+}
+.m-act:hover { border-color:var(--gold); color:var(--gold); background:var(--gold-dim); }
+.m-act.speaking { color:var(--teal-light); border-color:var(--teal-light); animation:pulse 0.8s infinite; }
+.m-act.fav-on { color:var(--gold); border-color:var(--gold); background:var(--gold-dim); }
+.m-act.learned-on { color:var(--emerald-light); border-color:var(--emerald-light); background:rgba(42,155,110,0.1); }
+.m-act svg { width:13px; height:13px; }
+
+/* Corps modal */
+.modal-body { padding:40px 52px 52px; }
+.m-section { margin-bottom:28px; }
+.m-section:last-child { margin-bottom:0; }
+.m-title {
+  font-family:var(--font-ui); font-size:0.64rem; font-weight:700;
+  letter-spacing:0.22em; text-transform:uppercase; color:var(--teal-light);
+  margin-bottom:14px; display:flex; align-items:center; gap:10px;
+}
+.m-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(42,123,140,0.35),transparent); }
+
+/* 3 blocs de définition */
+.def-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+.def-block {
+  background:var(--night3); border:1px solid rgba(240,230,204,0.06);
+  border-radius:var(--r-sm); padding:14px 16px;
+}
+.def-block.ar-block { border-color:rgba(201,168,76,0.12); background:rgba(201,168,76,0.04); }
+.def-lang { font-size:0.64rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brown-light); margin-bottom:7px; }
+.def-text { font-size:0.87rem; color:rgba(240,230,204,0.65); line-height:1.65; }
+.def-text.ar-text { font-family:var(--font-arabic); font-size:1.02rem; direction:rtl; text-align:right; line-height:1.8; }
+
+.etym-block {
+  font-size:0.9rem; color:rgba(240,230,204,0.62); line-height:1.8;
+  background:var(--night3); padding:18px 20px; border-radius:var(--r-sm);
+  border-left:3px solid var(--gold);
+}
+.ex-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.ex-block { background:var(--night3); border-radius:var(--r-sm); padding:13px 16px; border-left:2px solid rgba(201,168,76,0.18); }
+.ex-text { font-family:var(--font-display); font-style:italic; font-size:0.92rem; color:rgba(240,230,204,0.55); line-height:1.65; }
+.ex-text.ar-text { font-family:var(--font-arabic); direction:rtl; text-align:right; font-style:normal; font-size:1rem; }
+.rel-tags { display:flex; gap:8px; flex-wrap:wrap; }
+.rel-tag { padding:6px 14px; font-size:0.8rem; color:rgba(240,230,204,0.45); background:var(--night3); border:1px solid rgba(240,230,204,0.08); border-radius:var(--r-pill); cursor:pointer; transition:all 0.2s; }
+.rel-tag:hover { border-color:var(--gold); color:var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════════
+   QUIZ
+═══════════════════════════════════════════════════════════════ */
+.quiz-q { font-family:var(--font-display); font-size:1.2rem; color:var(--ivory); margin-bottom:6px; line-height:1.4; }
+.quiz-ar { font-family:var(--font-arabic); font-size:3.8rem; color:var(--gold-light); direction:rtl; text-align:center; margin-bottom:24px; text-shadow:0 0 40px rgba(201,168,76,0.4); }
+.quiz-choices { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.quiz-choice { padding:14px 16px; background:var(--night3); border:1.5px solid rgba(240,230,204,0.08); border-radius:var(--r-md); cursor:pointer; font-family:var(--font-arabic); font-size:1.4rem; color:var(--ivory); text-align:center; direction:rtl; transition:all 0.2s; line-height:1.4; }
+.quiz-choice:hover { border-color:var(--gold); background:var(--gold-dim); }
+.quiz-choice.correct { border-color:var(--emerald-light); background:rgba(42,155,110,0.15); color:#7DD09A; }
+.quiz-choice.wrong { border-color:var(--nasrid-light); background:rgba(192,64,64,0.12); color:#E08080; }
+.quiz-progress { display:flex; gap:4px; margin-bottom:22px; }
+.qp-dot { flex:1; height:3px; background:rgba(240,230,204,0.08); border-radius:9px; transition:background 0.3s; }
+.qp-dot.done { background:var(--gold); }
+.qp-dot.current { background:rgba(201,168,76,0.4); }
+.quiz-score { text-align:center; font-family:var(--font-display); font-size:2rem; color:var(--gold); margin-top:8px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PANEL FAVORIS / HISTORIQUE
+═══════════════════════════════════════════════════════════════ */
+.side-panel {
+  position:fixed; right:0; top:0; bottom:0; width:320px;
+  background:var(--night2); border-left:1px solid rgba(201,168,76,0.12);
+  z-index:900; transform:translateX(100%); transition:transform 0.35s var(--spring);
+  box-shadow:-24px 0 80px rgba(0,0,0,0.6); display:flex; flex-direction:column;
+}
+.side-panel.open { transform:translateX(0); }
+.panel-tabs { display:flex; border-bottom:1px solid rgba(201,168,76,0.1); }
+.panel-tab { flex:1; padding:14px 0; font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; background:none; border:none; color:rgba(240,230,204,0.35); cursor:pointer; transition:all 0.2s; border-bottom:2px solid transparent; }
+.panel-tab.active { color:var(--gold-light); border-bottom-color:var(--gold); }
+.panel-body { flex:1; overflow-y:auto; padding:20px 20px 80px; }
+.panel-close { position:absolute; top:14px; right:16px; background:none; border:none; color:rgba(240,230,204,0.3); cursor:pointer; width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:all 0.2s; }
+.panel-close:hover { background:rgba(240,230,204,0.08); color:var(--ivory); }
+.panel-close svg { width:14px; height:14px; }
+.panel-item { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:var(--night3); border:1px solid rgba(201,168,76,0.08); border-radius:var(--r-md); margin-bottom:8px; cursor:pointer; transition:all 0.2s; gap:10px; }
+.panel-item:hover { border-color:rgba(201,168,76,0.25); }
+.pi-ar { font-family:var(--font-arabic); font-size:1.5rem; color:var(--gold-light); direction:rtl; flex-shrink:0; }
+.pi-fr { font-family:var(--font-display); font-size:0.95rem; font-weight:600; color:var(--ivory); flex:1; }
+.pi-rm { background:none; border:none; color:rgba(240,230,204,0.2); cursor:pointer; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:all 0.2s; flex-shrink:0; }
+.pi-rm:hover { color:var(--nasrid-light); background:rgba(192,64,64,0.1); }
+.pi-rm svg { width:11px; height:11px; }
+.panel-empty { text-align:center; padding:40px 20px; }
+.panel-empty-ar { font-family:var(--font-arabic); font-size:2.5rem; color:rgba(201,168,76,0.1); direction:rtl; display:block; margin-bottom:10px; }
+.panel-empty p { font-family:var(--font-display); font-style:italic; font-size:0.9rem; color:rgba(240,230,204,0.2); }
+
+/* ═══════════════════════════════════════════════════════════════
+   DEMO BANNER
+═══════════════════════════════════════════════════════════════ */
+.demo-banner {
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+  background:var(--night3); border:1px solid var(--teal-light);
+  border-radius:var(--r-pill); padding:10px 22px;
+  display:none; align-items:center; gap:12px;
+  font-size:0.8rem; color:var(--teal-light); z-index:800;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(42,123,140,0.15);
+  animation:float 2s ease-in-out infinite;
+}
+.demo-banner.show { display:flex; }
+@keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-4px)} }
+.demo-stop { background:none; border:1px solid rgba(42,123,140,0.4); border-radius:var(--r-pill); padding:4px 12px; color:var(--teal-light); cursor:pointer; font-size:0.72rem; font-weight:700; transition:all 0.2s; }
+.demo-stop:hover { background:var(--teal-dim); }
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════════════════ */
+.toast {
+  position:fixed; bottom:80px; left:50%; transform:translateX(-50%) translateY(16px);
+  background:var(--night3); border:1px solid rgba(201,168,76,0.3);
+  border-radius:var(--r-pill); padding:10px 22px;
+  font-size:0.82rem; color:var(--gold-light); z-index:2000;
+  opacity:0; transition:all 0.3s; pointer-events:none; white-space:nowrap;
+}
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* FOOTER */
+footer {
+  border-top:1px solid rgba(201,168,76,0.08);
+  padding:24px 0; text-align:center; position:relative; z-index:1;
+}
+footer p { font-family:var(--font-display); font-style:italic; font-size:0.85rem; color:rgba(240,230,204,0.22); }
+footer strong { color:var(--gold); font-style:normal; }
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media(max-width:768px){
+  .wod-card { grid-template-columns:1fr; padding:30px 24px; gap:28px; }
+  .wod-right { order:-1; }
+  .wod-ar { font-size:4.5rem; }
+  .search-row { flex-direction:column; }
+  .kbd-toggle { height:48px; }
+  .modal-hdr { padding:38px 24px 30px; }
+  .modal-body { padding:26px 24px 38px; }
+  .def-grid { grid-template-columns:1fr; }
+  .ex-grid { grid-template-columns:1fr; }
+  .modal { border-radius:var(--r-lg); }
+  .side-panel { width:100%; }
+  .quiz-choices { grid-template-columns:1fr; }
+  .modal-chips { flex-direction:column; align-items:center; }
+  .mosque-silhouette { display:none; }
+}
+@media(max-width:480px){
+  .container { padding:0 14px; }
+  .brand-ar { font-size:3rem; }
+  .header-controls { width:100%; }
+  .bismillah-wrap::before,.bismillah-wrap::after { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ BISMILLAH ═══════════════ -->
+<div class="bismillah-wrap">
+  <div class="bismillah-ornament">
+    <span></span><div class="diamond"></div><div class="diamond"></div><div class="diamond"></div><span></span>
+  </div>
+  <div class="bismillah-text">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+  <div class="bismillah-ornament" style="margin-top:10px;margin-bottom:0">
+    <span></span><div class="diamond"></div><div class="diamond"></div><div class="diamond"></div><span></span>
+  </div>
+</div>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:20px">
+        <!-- Silhouette mosquée CSS -->
+        <div class="mosque-silhouette" aria-hidden="true">
+          <div class="minaret m1"></div>
+          <div class="minaret m2"></div>
+          <div class="dome-body"></div>
+          <div class="minaret m2"></div>
+          <div class="minaret m1"></div>
+        </div>
+        <div class="header-brand">
+          <div class="brand-ar">جِسْر</div>
+          <div class="brand-sub">
+            <span class="brand-latin">Jisr — Pont entre les langues</span>
+            <span class="brand-version">v1.0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-switcher">
+          <button class="lbtn active" data-ui-lang="fr">FR</button>
+          <button class="lbtn" data-ui-lang="en">EN</button>
+          <button class="lbtn" data-ui-lang="ar" style="font-family:var(--font-arabic);font-size:1rem">ع</button>
+        </div>
+        <button class="hbtn" onclick="openSidePanel('favs')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span data-i18n="favorites">Favoris</span>
+          <span id="fav-count" style="display:none;background:var(--gold);color:var(--night);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;display:none;align-items:center;justify-content:center;margin-left:2px">0</span>
+        </button>
+        <button class="hbtn" onclick="openSidePanel('history')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="history">Historique</span>
+        </button>
+        <button class="hbtn" onclick="openQuiz()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span data-i18n="quiz">Quiz</span>
+        </button>
+        <button class="hbtn" id="demo-btn" onclick="startDemo()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span data-i18n="demo">Démo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+<!-- ═══════════════ MOT DU JOUR ═══════════════ -->
+<section id="wod-section"></section>
+
+<!-- ═══════════════ RECHERCHE ═══════════════ -->
+<section id="search-section">
+  <div class="search-row">
+    <div class="search-box">
+      <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="search-input" autocomplete="off" spellcheck="false"/>
+      <button class="s-clear" id="s-clear" onclick="clearSearch()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <button class="kbd-toggle" id="kbd-toggle" onclick="toggleKbd()">
+      <span class="ar-sample">ك</span>
+      <span data-i18n="arabic_keyboard">Clavier arabe</span>
+    </button>
+    <select id="cat-filter" onchange="filterCategory()" style="background:var(--surface-2);color:var(--text-primary);border:1px solid var(--gold-dim);border-radius:8px;padding:10px 14px;font-size:.9rem;cursor:pointer;font-family:inherit;">
+      <option value="">Toutes les catégories</option>
+      <option value="astronomie">🌙 Astronomie</option>
+      <option value="botanique">🌿 Botanique</option>
+      <option value="medecine">⚕️ Médecine</option>
+      <option value="mathematiques">🔢 Mathématiques</option>
+      <option value="chimie">⚗️ Chimie</option>
+      <option value="cuisine">🍽️ Cuisine</option>
+      <option value="commerce">💰 Commerce</option>
+      <option value="zoologie">🦁 Zoologie</option>
+      <option value="geographie">🗺️ Géographie</option>
+      <option value="militaire">⚔️ Militaire</option>
+      <option value="architecture">🏛️ Architecture</option>
+      <option value="arts_musique">🎵 Arts & Musique</option>
+    </select>
+  </div>
+
+  <div id="arabic-keyboard">
+    <div class="kbd-row" id="kr1"></div>
+    <div class="kbd-row" id="kr2"></div>
+    <div class="kbd-row" id="kr3"></div>
+    <div class="kbd-row">
+      <button class="k wide" onclick="ki(' ')"><span data-i18n="space">espace</span></button>
+      <button class="k wide" onclick="kb()">⌫</button>
+      <button class="k wide" onclick="kc()"><span data-i18n="clear">effacer</span></button>
+    </div>
+    <div class="kbd-diacritics" id="kd"></div>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label" data-i18n="display">Affichage</span>
+    <button class="lf-btn active" data-lang="all" data-i18n="all">Tous</button>
+    <button class="lf-btn" data-lang="fr">🇫🇷 Français</button>
+    <button class="lf-btn" data-lang="en">🇬🇧 English</button>
+    <button class="lf-btn" data-lang="ar">🇸🇦 عربي</button>
+  </div>
+  <div class="cat-row" id="cat-row"></div>
+</section>
+
+<!-- ═══════════════ RÉSULTATS ═══════════════ -->
+<section id="results-section">
+  <div class="results-meta">
+    <p class="r-count" id="r-count"></p>
+    <div class="r-actions">
+      <button class="r-btn" onclick="randomWord()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+        <span data-i18n="random">Aléatoire</span>
+      </button>
+    </div>
+  </div>
+  <div id="no-results" class="no-results">
+    <span class="no-res-ar" dir="rtl">لا نتائج</span>
+    <p data-i18n="no_results">Aucun mot ne correspond.</p>
+  </div>
+  <div id="cards-grid" class="cards-grid"></div>
+</section>
+
+</div>
+</main>
+
+<!-- ═══════════════ MODALS ═══════════════ -->
+<div id="word-modal" class="modal-overlay">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<div id="quiz-modal" class="modal-overlay">
+  <div class="modal" style="max-width:520px">
+    <div class="modal-hdr" style="padding:30px 32px 26px">
+      <button class="modal-close" onclick="closeQuiz()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div style="font-family:var(--font-arabic);font-size:2.5rem;color:var(--gold-light);text-align:center;direction:rtl;position:relative;z-index:1;text-shadow:0 0 40px rgba(201,168,76,0.4)">اختبار</div>
+      <div style="font-family:var(--font-display);font-style:italic;text-align:center;color:rgba(240,230,204,0.4);font-size:0.88rem;position:relative;z-index:1;margin-top:4px" data-i18n="quiz_title">Quiz étymologique</div>
+    </div>
+    <div class="modal-body" id="quiz-body" style="padding:26px 32px 32px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ PANEL LATÉRAL ═══════════════ -->
+<div class="side-panel" id="side-panel">
+  <button class="panel-close" onclick="closeSidePanel()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="panel-tabs">
+    <button class="panel-tab active" id="tab-favs" onclick="switchTab('favs')" data-i18n="favorites">Favoris</button>
+    <button class="panel-tab" id="tab-history" onclick="switchTab('history')" data-i18n="history">Historique</button>
+    <button class="panel-tab" id="tab-learned" onclick="switchTab('learned')" data-i18n="learned">Appris</button>
+  </div>
+  <div class="panel-body" id="panel-body"></div>
+</div>
+
+<!-- ═══════════════ DEMO / TOAST ═══════════════ -->
+<div class="demo-banner" id="demo-banner">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+  <span data-i18n="demo_running">Mode démo…</span>
+  <button class="demo-stop" onclick="stopDemo()"><span data-i18n="stop">Arrêter</span></button>
+</div>
+<div class="toast" id="toast"></div>
+
+<footer>
+  <div class="container">
+    <p><strong>جِسْر — Jisr v1.0</strong> · Sources : CNRTL · Oxford English Dictionary · Dozy's Supplément aux dictionnaires arabes · <span data-i18n="footer_desc">L'héritage arabe dans les langues du monde</span></p>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   CHARGEMENT ASYNC — fetch data/*.json
+   Fichier index.html pour dépôt Git (données externalisées)
+═══════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════
+   I18N
+═══════════════════════════════════════════════════════════════ */
+const I18N={
+  fr:{favorites:'Favoris',history:'Historique',learned:'Appris',quiz:'Quiz',demo:'Démo',arabic_keyboard:'Clavier arabe',display:'Affichage',all:'Tous',random:'Aléatoire',no_results:'Aucun mot ne correspond.',space:'espace',clear:'effacer',footer_desc:"L'héritage arabe dans les langues du monde",demo_running:'Mode démo…',stop:'Arrêter',quiz_title:'Quiz étymologique',word_of_day:'Mot du jour',meaning:'Signification',etymology:'Étymologie',pathway_lbl:'Chemin linguistique',examples_lbl:'Exemples',related:'Mots liés',listen:'Écouter',share:'Partager',save:'Favori',mark_learned:'Appris',results:'résultats sur',words:'mots',tts_ar:'🔊 Arabe',tts_fr:'🔊 Français',tts_en:'🔊 English',quiz_q:'Quel est le mot arabe pour',quiz_restart:'Rejouer',quiz_score:'Score',no_favs:'Aucun favori.',no_history:'Aucun historique.',no_learned:'Aucun mot appris.',copied:'Lien copié !',fav_added:'Ajouté aux favoris ★',fav_removed:'Retiré des favoris',learned_added:'Marqué comme appris ✓',learned_removed:'Retiré des appris'},
+  en:{favorites:'Favorites',history:'History',learned:'Learned',quiz:'Quiz',demo:'Demo',arabic_keyboard:'Arabic Keyboard',display:'Display',all:'All',random:'Random',no_results:'No words match.',space:'space',clear:'clear',footer_desc:'The Arabic heritage in world languages',demo_running:'Demo mode…',stop:'Stop',quiz_title:'Etymology Quiz',word_of_day:'Word of the Day',meaning:'Meaning',etymology:'Etymology',pathway_lbl:'Linguistic Pathway',examples_lbl:'Examples',related:'Related Words',listen:'Listen',share:'Share',save:'Favorite',mark_learned:'Learned',results:'results out of',words:'words',tts_ar:'🔊 Arabic',tts_fr:'🔊 French',tts_en:'🔊 English',quiz_q:'What is the Arabic word for',quiz_restart:'Play again',quiz_score:'Score',no_favs:'No favorites yet.',no_history:'No history yet.',no_learned:'No learned words yet.',copied:'Link copied!',fav_added:'Added to favorites ★',fav_removed:'Removed from favorites',learned_added:'Marked as learned ✓',learned_removed:'Removed from learned'},
+  ar:{favorites:'المفضلة',history:'السجل',learned:'المحفوظ',quiz:'اختبار',demo:'عرض',arabic_keyboard:'لوحة المفاتيح',display:'عرض',all:'الكل',random:'عشوائي',no_results:'لا توجد نتائج.',space:'مسافة',clear:'مسح',footer_desc:'الإرث العربي في لغات العالم',demo_running:'وضع العرض…',stop:'إيقاف',quiz_title:'اختبار اشتقاقي',word_of_day:'كلمة اليوم',meaning:'المعنى',etymology:'الاشتقاق',pathway_lbl:'المسار اللغوي',examples_lbl:'أمثلة',related:'كلمات ذات صلة',listen:'استمع',share:'مشاركة',save:'مفضلة',mark_learned:'محفوظ',results:'نتائج من',words:'كلمات',tts_ar:'🔊 عربي',tts_fr:'🔊 فرنسي',tts_en:'🔊 إنجليزي',quiz_q:'ما هي الكلمة العربية لـ',quiz_restart:'إعادة',quiz_score:'النتيجة',no_favs:'لا توجد مفضلات.',no_history:'لا يوجد سجل.',no_learned:'لا توجد كلمات محفوظة.',copied:'تم النسخ!',fav_added:'أضيف للمفضلة ★',fav_removed:'أزيل من المفضلة',learned_added:'تم الحفظ ✓',learned_removed:'أزيل من المحفوظات'}
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   LOCALSTORAGE — Couche de persistance complète
+═══════════════════════════════════════════════════════════════ */
+const LS = {
+  get(k,def=null){ try{ const v=localStorage.getItem('jisr_'+k); return v===null?def:JSON.parse(v); }catch{return def;} },
+  set(k,v){ try{ localStorage.setItem('jisr_'+k,JSON.stringify(v)); }catch{} },
+  // Clés : favs, history, learned, quiz_scores, ui_lang, card_lang
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   ÉTAT (persisté dans localStorage)
+═══════════════════════════════════════════════════════════════ */
+const S = {
+  words: [], filtered:[],   /* populated after fetch */
+  query:'', cardLang: LS.get('card_lang','all'),
+  uiLang: LS.get('ui_lang','fr'),
+  cats:[], wod:null,
+  favs:    LS.get('favs',[]),
+  history: LS.get('history',[]),
+  learned: LS.get('learned',[]),
+  quizScores: LS.get('quiz_scores',[]),
+  debounce:null, demoTimer:null, demoRunning:false,
+  activeTab:'favs',
+};
+
+const t = k => (I18N[S.uiLang]||I18N.fr)[k]||k;
+const cap = s => s?s.charAt(0).toUpperCase()+s.slice(1):'';
+const trunc = (s,n) => !s||s.length<=n?s||'':s.slice(0,n).trimEnd()+'…';
+const hl = txt => {
+  if(!S.query||!txt) return txt||'';
+  return txt.replace(new RegExp(`(${S.query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<mark>$1</mark>');
+};
+
+/* ── Persistance helpers ── */
+function saveFavs()    { LS.set('favs', S.favs); }
+function saveHistory() { LS.set('history', S.history); }
+function saveLearned() { LS.set('learned', S.learned); }
+function saveScores()  { LS.set('quiz_scores', S.quizScores); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CLAVIER ARABE
+═══════════════════════════════════════════════════════════════ */
+const KR=['ض ص ث ق ف غ ع ه خ ح ج د','ش س ي ب ل ا ت ن م ك ط','ئ ء ؤ ر ﻻ ى ة و ز ظ'];
+const KD=['َ','ُ','ِ','ً','ٌ','ٍ','ّ','ْ','ـ'];
+
+function buildKbd(){
+  KR.forEach((row,i)=>{
+    document.getElementById('kr'+(i+1)).innerHTML=row.split(' ').map(c=>`<button class="k" onclick="ki('${c}')">${c}</button>`).join('');
+  });
+  document.getElementById('kd').innerHTML=KD.map(d=>`<button class="k" style="min-width:52px;font-size:1rem" onclick="ki('${d}')">ا${d}</button>`).join('');
+}
+function ki(ch){
+  const inp=document.getElementById('search-input');
+  const s=inp.selectionStart,e=inp.selectionEnd;
+  inp.value=inp.value.slice(0,s)+ch+inp.value.slice(e);
+  inp.selectionStart=inp.selectionEnd=s+ch.length;
+  inp.focus(); onInput();
+}
+function kb(){ const inp=document.getElementById('search-input'); inp.value=inp.value.slice(0,-1); onInput(); }
+function kc(){ clearSearch(); }
+function toggleKbd(){
+  document.getElementById('arabic-keyboard').classList.toggle('open');
+  document.getElementById('kbd-toggle').classList.toggle('active');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TTS
+═══════════════════════════════════════════════════════════════ */
+function speak(text,lang,btn){
+  if(!window.speechSynthesis){ showToast('TTS non supporté'); return; }
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=lang; u.rate=lang.startsWith('ar')?0.82:0.95;
+  if(btn){ btn.classList.add('speaking'); u.onend=u.onerror=()=>btn.classList.remove('speaking'); }
+  window.speechSynthesis.speak(u);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FAVORIS / APPRIS / HISTORIQUE
+═══════════════════════════════════════════════════════════════ */
+function toggleFav(id,btn){
+  const i=S.favs.indexOf(id);
+  if(i===-1){ S.favs.push(id); showToast(t('fav_added')); }
+  else{ S.favs.splice(i,1); showToast(t('fav_removed')); }
+  saveFavs(); updateFavCount();
+  if(btn){ btn.classList.toggle('fav-active',S.favs.includes(id)); btn.querySelector('svg').setAttribute('fill',S.favs.includes(id)?'currentColor':'none'); }
+}
+function toggleLearned(id,btn){
+  const i=S.learned.indexOf(id);
+  if(i===-1){ S.learned.push(id); showToast(t('learned_added')); }
+  else{ S.learned.splice(i,1); showToast(t('learned_removed')); }
+  saveLearned();
+  if(btn) btn.classList.toggle('learned-on',S.learned.includes(id));
+}
+function addHistory(id){
+  S.history=S.history.filter(x=>x!==id);
+  S.history.unshift(id);
+  if(S.history.length>20) S.history=S.history.slice(0,20);
+  saveHistory();
+}
+function updateFavCount(){
+  const el=document.getElementById('fav-count');
+  el.textContent=S.favs.length;
+  el.style.display=S.favs.length?'inline-flex':'none';
+}
+function shareWord(id){
+  const url=`${location.href.split('?')[0]}?word=${id}`;
+  navigator.clipboard.writeText(url).then(()=>showToast(t('copied'))).catch(()=>showToast(t('copied')));
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOT DU JOUR
+═══════════════════════════════════════════════════════════════ */
+function selectWod(){
+  const d=new Date(), seed=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();
+  S.wod=DATA[seed%DATA.length];
+}
+function renderWod(){
+  const w=S.wod;
+  document.getElementById('wod-section').innerHTML=`
+    <p class="section-label">${t('word_of_day')}</p>
+    <div class="wod-card" onclick="openModal(${w.id})" tabindex="0" onkeydown="if(event.key==='Enter')openModal(${w.id})">
+      <div class="wod-left">
+        <span class="cat-badge">${cap(w.category)}</span>
+        <h2>${w.word_fr}</h2>
+        <p class="wod-en">${w.word_en}</p>
+        <p class="wod-excerpt">${trunc(w.etymology,150)}</p>
+        <div class="wod-pathway-tag">→ ${w.pathway}</div>
+      </div>
+      <div class="wod-right">
+        <div class="wod-medallion">
+          <div class="wod-ar" dir="rtl" lang="ar">${w.word_ar}</div>
+          <div class="wod-tr">${w.transliteration}</div>
+        </div>
+        <button class="wod-tts" onclick="event.stopPropagation();speak('${w.word_ar}','ar-SA',this)" title="${t('listen')}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+      </div>
+    </div>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CATÉGORIES
+═══════════════════════════════════════════════════════════════ */
+function buildCats(){
+  const cats=[...new Set(DATA.map(w=>w.category))].sort();
+  document.getElementById('cat-row').innerHTML=
+    `<button class="cat-btn active" data-cat="all" onclick="toggleCat('all')">${t('all')}</button>`+
+    cats.map(c=>`<button class="cat-btn" data-cat="${c}" onclick="toggleCat('${c}')">${cap(c)}</button>`).join('');
+}
+function toggleCat(cat){
+  if(cat==='all'){ S.cats=[]; document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat==='all')); }
+  else{
+    document.querySelector('[data-cat="all"]')?.classList.remove('active');
+    const i=S.cats.indexOf(cat); i===-1?S.cats.push(cat):S.cats.splice(i,1);
+    if(!S.cats.length) document.querySelector('[data-cat="all"]')?.classList.add('active');
+    document.querySelectorAll('.cat-btn[data-cat]').forEach(b=>{ if(b.dataset.cat!=='all') b.classList.toggle('active',S.cats.includes(b.dataset.cat)); });
+  }
+  filter();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FILTRES
+═══════════════════════════════════════════════════════════════ */
+function filter(){
+  const q=S.query.toLowerCase().trim();
+  S.filtered=DATA.filter(w=>{
+    if(S.cats.length&&!S.cats.includes(w.category)) return false;
+    if(!q) return true;
+    return [w.word_fr,w.word_en,w.word_ar,w.transliteration,w.meaning_fr,w.meaning_en,w.meaning_ar]
+      .some(f=>(f||'').toLowerCase().includes(q));
+  });
+  renderCards(); updateCount();
+}
+function onInput(){
+  const v=document.getElementById('search-input').value;
+  S.query=v;
+  document.getElementById('s-clear').classList.toggle('show',v.length>0);
+  clearTimeout(S.debounce); S.debounce=setTimeout(filter,180);
+}
+function clearSearch(){
+  document.getElementById('search-input').value='';
+  S.query='';
+  document.getElementById('s-clear').classList.remove('show');
+  filter();
+}
+function filterCategory(){
+  const val=document.getElementById('cat-filter').value;
+  S.cats=val?[val]:[];
+  filter();
+}
+function randomWord(){ openModal(DATA[Math.floor(Math.random()*DATA.length)].id); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CARTES — définition selon langue active
+═══════════════════════════════════════════════════════════════ */
+function getMeaning(w){
+  if(S.cardLang==='ar') return {text:w.meaning_ar, isAr:true};
+  if(S.cardLang==='en') return {text:w.meaning_en, isAr:false};
+  if(S.cardLang==='fr') return {text:w.meaning_fr, isAr:false};
+  // 'all' → langue UI
+  if(S.uiLang==='ar') return {text:w.meaning_ar, isAr:true};
+  if(S.uiLang==='en') return {text:w.meaning_en, isAr:false};
+  return {text:w.meaning_fr, isAr:false};
+}
+
+function renderCards(){
+  const grid=document.getElementById('cards-grid');
+  const noR=document.getElementById('no-results');
+  if(!S.filtered.length){ grid.innerHTML=''; noR.classList.add('visible'); return; }
+  noR.classList.remove('visible');
+  grid.innerHTML=S.filtered.map((w,i)=>{
+    const {text,isAr}=getMeaning(w);
+    const faved=S.favs.includes(w.id);
+    const learnt=S.learned.includes(w.id);
+    return `<article class="word-card" style="animation-delay:${Math.min(i*45,500)}ms"
+      onclick="openModal(${w.id})" tabindex="0" onkeydown="if(event.key==='Enter')openModal(${w.id})">
+      <div class="card-top">
+        <span class="cat-badge">${cap(w.category)}</span>
+        <div class="card-actions">
+          ${learnt?`<div class="learned-badge" title="${t('mark_learned')}"></div>`:''}
+          <button class="card-act-btn ${faved?'fav-active':''}" onclick="event.stopPropagation();toggleFav(${w.id},this)" title="${t('save')}">
+            <svg viewBox="0 0 24 24" fill="${faved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </button>
+          <button class="card-act-btn" onclick="event.stopPropagation();speak('${w.word_ar}','ar-SA',this)" title="${t('listen')}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="card-ar-wrap">
+        <div class="card-ar" dir="rtl" lang="ar">${hl(w.word_ar)}</div>
+        <div class="card-tr">${hl(w.transliteration)}</div>
+      </div>
+      <div class="card-div"></div>
+      <div class="card-words">
+        <span class="cw-fr">${hl(w.word_fr)}</span>
+        <span class="cw-sep">·</span>
+        <span class="cw-en">${hl(w.word_en)}</span>
+      </div>
+      <p class="card-meaning${isAr?' ':' '}" ${isAr?'dir="rtl" lang="ar"':''}>${hl(trunc(text,110))}</p>
+      <div class="card-pathway">→ ${w.pathway}</div>
+      <div class="card-foot">
+        <button class="card-open-btn">
+          ${t('listen')==='Listen'?'Full card':'Fiche complète'}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </article>`;
+  }).join('');
+}
+function updateCount(){
+  const el=document.getElementById('r-count');
+  const n=S.filtered.length;
+  el.innerHTML=n===DATA.length?`<strong>${n}</strong> ${t('words')}`:`<strong>${n}</strong> ${t('results')} ${DATA.length}`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ARBRE ÉTYMOLOGIQUE
+═══════════════════════════════════════════════════════════════ */
+function buildTree(steps){
+  if(!steps?.length) return '';
+  return `<div class="etym-tree-wrap"><div class="etym-tree">
+    ${steps.map((s,i,a)=>`
+      ${i>0?'<div class="etym-arrow"></div>':''}
+      <div class="etym-node ${i===0?'root':''} ${i===a.length-1?'final':''}">
+        <span class="etym-lang">${s.lang}</span>
+        <span class="etym-word ${s.lang.includes('arab')||s.lang.includes('arabe')||s.lang==='persan/arabe'?'':'latin'}"
+          ${s.lang.includes('arabe')||s.lang==='persan/arabe'?'dir="rtl"':''}>${s.word}</span>
+        <span class="etym-date">${s.date}</span>
+      </div>`).join('')}
+  </div></div>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL DÉTAIL — 3 définitions (FR + EN + AR)
+═══════════════════════════════════════════════════════════════ */
+function openModal(id){
+  const w=DATA.find(x=>x.id===id); if(!w) return;
+  addHistory(id);
+  const faved=S.favs.includes(id), learnt=S.learned.includes(id);
+  const rel=(w.related_words||[]).map(r=>`<span class="rel-tag" onclick="searchRel('${r}')">${r}</span>`).join('');
+
+  document.getElementById('modal-content').innerHTML=`
+    <div class="modal-hdr">
+      <div class="modal-nav">
+        <button class="modal-nav-btn" onclick="navModal(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="modal-nav-btn" onclick="navModal(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <button class="modal-close" onclick="closeModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal-ar-wrap">
+        <div class="modal-ar" dir="rtl" lang="ar">${w.word_ar}</div>
+      </div>
+      <div class="modal-tr">${w.transliteration}</div>
+      <div class="modal-chips">
+        <div class="m-chip"><span class="m-chip-flag">🇫🇷</span><span class="m-chip-word">${w.word_fr}</span></div>
+        <div class="m-chip"><span class="m-chip-flag">🇬🇧</span><span class="m-chip-word">${w.word_en}</span></div>
+        <div class="m-chip"><span class="m-chip-flag" style="font-size:.85rem">🏷</span><span class="m-chip-word" style="font-size:.85rem;font-weight:400">${cap(w.category)}</span></div>
+      </div>
+      <div class="modal-hdr-actions">
+        <button class="m-act" onclick="speak('${w.word_ar}','ar-SA',this)">${t('tts_ar')}</button>
+        <button class="m-act" onclick="speak('${w.word_fr}','fr-FR',this)">${t('tts_fr')}</button>
+        <button class="m-act" onclick="speak('${w.word_en}','en-US',this)">${t('tts_en')}</button>
+        <button class="m-act ${faved?'fav-on':''}" onclick="toggleFav(${id},this)">
+          <svg viewBox="0 0 24 24" fill="${faved?'currentColor':'none'}" stroke="currentColor" stroke-width="2" width="13" height="13"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          ${t('save')}
+        </button>
+        <button class="m-act ${learnt?'learned-on':''}" onclick="toggleLearned(${id},this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>
+          ${t('mark_learned')}
+        </button>
+        <button class="m-act" onclick="shareWord(${id})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/></svg>
+          ${t('share')}
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+
+      <!-- ── SIGNIFICATION — 3 langues ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('meaning')}</h3>
+        <div class="def-grid">
+          <div class="def-block">
+            <div class="def-lang">🇫🇷 Français</div>
+            <p class="def-text">${w.meaning_fr}</p>
+          </div>
+          <div class="def-block">
+            <div class="def-lang">🇬🇧 English</div>
+            <p class="def-text">${w.meaning_en}</p>
+          </div>
+          <div class="def-block ar-block">
+            <div class="def-lang" style="color:var(--gold)">🇸🇦 العربية</div>
+            <p class="def-text ar-text" dir="rtl" lang="ar">${w.meaning_ar}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ÉTYMOLOGIE ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('etymology')}</h3>
+        <p class="etym-block">${w.etymology}</p>
+      </div>
+
+      <!-- ── ARBRE ÉTYMOLOGIQUE ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('pathway_lbl')}</h3>
+        ${buildTree(w.pathway_steps)}
+      </div>
+
+      <!-- ── EXEMPLES — 3 langues ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('examples_lbl')}</h3>
+        <div class="ex-grid">
+          <div class="ex-block">
+            <div class="def-lang">🇫🇷</div>
+            <p class="ex-text">« ${w.examples.fr} »</p>
+          </div>
+          <div class="ex-block">
+            <div class="def-lang">🇬🇧</div>
+            <p class="ex-text">« ${w.examples.en} »</p>
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <div class="ex-block" style="border-left-color:rgba(201,168,76,0.3)">
+            <div class="def-lang" style="color:var(--gold)">🇸🇦 مثال</div>
+            <p class="ex-text ar-text" dir="rtl" lang="ar">« ${w.examples.ar} »</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── MOTS LIÉS ── -->
+      ${rel?`<div class="m-section"><h3 class="m-title">${t('related')}</h3><div class="rel-tags">${rel}</div></div>`:''}
+
+    </div>`;
+
+  document.getElementById('word-modal').classList.add('open');
+  document.getElementById('modal-content').scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+
+function navModal(dir){
+  const mc=document.getElementById('modal-content');
+  const arEl=mc.querySelector('.modal-ar');
+  if(!arEl) return;
+  const curAr=arEl.textContent.trim();
+  const curIdx=DATA.findIndex(w=>w.word_ar===curAr);
+  openModal(DATA[(curIdx+dir+DATA.length)%DATA.length].id);
+}
+function closeModal(){
+  document.getElementById('word-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function searchRel(word){
+  closeModal();
+  const inp=document.getElementById('search-input');
+  inp.value=word; S.query=word;
+  document.getElementById('s-clear').classList.add('show');
+  filter();
+  document.getElementById('search-section').scrollIntoView({behavior:'smooth'});
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PANEL LATÉRAL (Favoris / Historique / Appris)
+═══════════════════════════════════════════════════════════════ */
+function openSidePanel(tab){
+  S.activeTab=tab;
+  document.getElementById('side-panel').classList.add('open');
+  switchTab(tab);
+}
+function closeSidePanel(){ document.getElementById('side-panel').classList.remove('open'); }
+function switchTab(tab){
+  S.activeTab=tab;
+  document.querySelectorAll('.panel-tab').forEach(b=>b.classList.toggle('active',b.id==='tab-'+tab));
+  renderPanel();
+}
+function renderPanel(){
+  const body=document.getElementById('panel-body');
+  let ids=[];
+  let emptyKey='no_favs';
+  if(S.activeTab==='favs'){ ids=S.favs; emptyKey='no_favs'; }
+  else if(S.activeTab==='history'){ ids=S.history; emptyKey='no_history'; }
+  else{ ids=S.learned; emptyKey='no_learned'; }
+
+  if(!ids.length){
+    body.innerHTML=`<div class="panel-empty"><span class="panel-empty-ar" dir="rtl">✦</span><p>${t(emptyKey)}</p></div>`;
+    return;
+  }
+  body.innerHTML=ids.map(id=>{
+    const w=DATA.find(x=>x.id===id); if(!w) return '';
+    const canRm=S.activeTab!=='history';
+    return `<div class="panel-item" onclick="openModal(${id});closeSidePanel()">
+      <div class="pi-ar" dir="rtl">${w.word_ar}</div>
+      <div class="pi-fr">${w.word_fr}</div>
+      ${canRm?`<button class="pi-rm" onclick="event.stopPropagation();removePanelItem(${id})" title="Retirer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>`:''}
+    </div>`;
+  }).join('');
+}
+function removePanelItem(id){
+  if(S.activeTab==='favs'){ S.favs=S.favs.filter(x=>x!==id); saveFavs(); updateFavCount(); }
+  else if(S.activeTab==='learned'){ S.learned=S.learned.filter(x=>x!==id); saveLearned(); }
+  renderPanel(); renderCards();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   QUIZ
+═══════════════════════════════════════════════════════════════ */
+function openQuiz(){
+  const qs=[...DATA].sort(()=>Math.random()-0.5).slice(0,8).map(w=>{
+    const wrong=DATA.filter(x=>x.id!==w.id).sort(()=>Math.random()-0.5).slice(0,3);
+    return {word:w, choices:[...wrong,w].sort(()=>Math.random()-0.5), answered:false};
+  });
+  window._quiz={qs,idx:0,score:0};
+  document.getElementById('quiz-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  renderQuiz();
+}
+function renderQuiz(){
+  const {qs,idx,score}=window._quiz;
+  const body=document.getElementById('quiz-body');
+  if(idx>=qs.length){
+    const pct=Math.round(score/qs.length*100);
+    S.quizScores.unshift({score,total:qs.length,date:new Date().toLocaleDateString()});
+    if(S.quizScores.length>10) S.quizScores=S.quizScores.slice(0,10);
+    saveScores();
+    body.innerHTML=`<div style="text-align:center;padding:24px 0">
+      <div style="font-family:var(--font-arabic);font-size:4rem;color:var(--gold-light);direction:rtl;margin-bottom:16px;text-shadow:0 0 40px rgba(201,168,76,0.4)">${score>=6?'ممتاز':score>=4?'جيد':'تعلّم'}</div>
+      <div class="quiz-score">${t('quiz_score')} : ${score} / ${qs.length} <span style="font-size:1rem;color:var(--ivory-dim)">(${pct}%)</span></div>
+      <p style="font-family:var(--font-display);font-style:italic;color:rgba(240,230,204,0.4);margin:12px 0 24px;font-size:0.92rem">${score>=6?'Excellent !':score>=4?'Bien joué !':'Continuez à apprendre !'}</p>
+      <button class="r-btn" style="margin:0 auto" onclick="openQuiz()">↺ ${t('quiz_restart')}</button>
+    </div>`;
+    return;
+  }
+  const q=qs[idx];
+  const dots=qs.map((_,i)=>`<div class="qp-dot ${i<idx?'done':i===idx?'current':''}"></div>`).join('');
+  const qLabel=S.uiLang==='ar'?`${t('quiz_q')} : ${q.word.word_fr} / ${q.word.word_en}`:`${t('quiz_q')} :<br><em>${q.word.word_fr} / ${q.word.word_en}</em>`;
+  body.innerHTML=`
+    <div class="quiz-progress">${dots}</div>
+    <p class="quiz-q">${qLabel}</p>
+    <div class="quiz-ar" dir="rtl" lang="ar">؟</div>
+    <div class="quiz-choices">
+      ${q.choices.map((c,i)=>`<button class="quiz-choice" onclick="answerQuiz(${i})">${c.word_ar}</button>`).join('')}
+    </div>`;
+}
+function answerQuiz(ci){
+  const q=window._quiz.qs[window._quiz.idx];
+  if(q.answered) return;
+  q.answered=true;
+  const ok=q.choices[ci].id===q.word.id;
+  if(ok) window._quiz.score++;
+  document.querySelector('.quiz-ar').textContent=q.word.word_ar;
+  document.querySelectorAll('.quiz-choice').forEach((b,i)=>{
+    if(q.choices[i].id===q.word.id) b.classList.add('correct');
+    else if(i===ci&&!ok) b.classList.add('wrong');
+  });
+  setTimeout(()=>{ window._quiz.idx++; renderQuiz(); },1200);
+}
+function closeQuiz(){ document.getElementById('quiz-modal').classList.remove('open'); document.body.style.overflow=''; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DÉMO
+═══════════════════════════════════════════════════════════════ */
+function startDemo(){
+  if(S.demoRunning){ stopDemo(); return; }
+  S.demoRunning=true;
+  document.getElementById('demo-banner').classList.add('show');
+  document.getElementById('demo-btn').classList.add('active');
+  runDemo();
+}
+function runDemo(){
+  if(!S.demoRunning) return;
+  const picks=['café','zéro','algèbre','amiral','gazelle','sirop','coton'];
+  const pick=picks[Math.floor(Math.random()*picks.length)];
+  const inp=document.getElementById('search-input');
+  inp.value=''; S.query=''; filter();
+  let i=0;
+  const iv=setInterval(()=>{
+    if(!S.demoRunning){ clearInterval(iv); return; }
+    inp.value+=pick[i++]; S.query=inp.value;
+    document.getElementById('s-clear').classList.add('show');
+    filter();
+    if(i>=pick.length){
+      clearInterval(iv);
+      S.demoTimer=setTimeout(()=>{
+        if(!S.demoRunning) return;
+        const w=DATA.find(x=>x.word_fr===pick);
+        if(w){ openModal(w.id); S.demoTimer=setTimeout(()=>{ if(!S.demoRunning) return; closeModal(); clearSearch(); S.demoTimer=setTimeout(runDemo,1600); },3200); }
+        else S.demoTimer=setTimeout(runDemo,2000);
+      },700);
+    }
+  },130);
+}
+function stopDemo(){
+  S.demoRunning=false; clearTimeout(S.demoTimer);
+  document.getElementById('demo-banner').classList.remove('show');
+  document.getElementById('demo-btn').classList.remove('active');
+  closeModal(); clearSearch();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LANGUE UI
+═══════════════════════════════════════════════════════════════ */
+function switchUiLang(lang){
+  S.uiLang=lang; LS.set('ui_lang',lang);
+  const isAr=lang==='ar';
+  document.documentElement.lang=lang;
+  document.documentElement.dir=isAr?'rtl':'ltr';
+  document.querySelectorAll('.lbtn[data-ui-lang]').forEach(b=>b.classList.toggle('active',b.dataset.uiLang===lang));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ el.textContent=t(el.dataset.i18n); });
+  document.getElementById('search-input').placeholder=isAr?'ابحث عن كلمة…':lang==='en'?'Search a word…':'Rechercher un mot…';
+  renderWod(); buildCats(); filter();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════════════════ */
+function showToast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),2200);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', async ()=>{
+  /* ── Chargement des données ── */
+  const CATEGORIES = ["astronomie", "botanique", "medecine", "mathematiques", "chimie", "cuisine", "commerce", "zoologie", "geographie", "militaire", "architecture", "arts_musique"];
+  try {
+    const results = await Promise.all(
+      CATEGORIES.map(c => fetch(`data/${c}.json`).then(r => r.json()))
+    );
+    const allWords = results.flat().sort((a,b)=>a.id-b.id);
+    S.words    = allWords;
+    S.filtered = [...allWords];
+  } catch(err) {
+    console.error('Jisr: erreur chargement données', err);
+    document.getElementById('cards-grid').innerHTML =
+      '<p style="color:var(--gold);text-align:center;padding:40px">⚠️ Impossible de charger les données.<br>Lance un serveur local : <code>python3 -m http.server</code></p>';
+    return;
+  }
+  /* ── Initialisation ── */
+  // Langue UI persistée
+  document.querySelectorAll('.lbtn[data-ui-lang]').forEach(b=>{
+    b.addEventListener('click',()=>switchUiLang(b.getAttribute('data-ui-lang')));
+  });
+  // Filtre langue carte persisté
+  document.querySelectorAll('.lf-btn').forEach(b=>{
+    if(b.dataset.lang===S.cardLang) b.classList.add('active');
+    else b.classList.remove('active');
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.lf-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); S.cardLang=b.dataset.lang;
+      LS.set('card_lang',S.cardLang); filter();
+    });
+  });
+  // Search
+  document.getElementById('search-input').addEventListener('input',onInput);
+  document.getElementById('search-input').addEventListener('keydown',e=>{ if(e.key==='Escape') clearSearch(); });
+  // Fermeture modals
+  ['word-modal','quiz-modal'].forEach(id=>{
+    document.getElementById(id).addEventListener('click',e=>{ if(e.target===document.getElementById(id)){ closeModal(); closeQuiz(); } });
+  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeModal(); closeQuiz(); if(S.demoRunning) stopDemo(); } });
+
+  // Langue initiale
+  switchUiLang(S.uiLang);
+  buildKbd();
+  selectWod(); renderWod();
+  buildCats(); filter();
+  updateFavCount();
+
+  // Deep link
+  const urlWord=new URLSearchParams(location.search).get('word');
+  if(urlWord){ const w=DATA.find(x=>x.id===parseInt(urlWord)); if(w) setTimeout(()=>openModal(w.id),300); }
+});
+</script>

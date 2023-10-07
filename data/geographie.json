@@ -1,0 +1,47 @@
+[
+  {
+    "id": 17,
+    "word_fr": "safari",
+    "word_en": "safari",
+    "word_ar": "سَفَر",
+    "transliteration": "safar",
+    "meaning_fr": "Voyage d'observation ou de chasse en Afrique, dans la nature sauvage.",
+    "meaning_en": "Trip for observation or hunting in Africa, in the wild.",
+    "meaning_ar": "رحلة للمشاهدة أو الصيد في أفريقيا في البرية.",
+    "etymology": "Du mot arabe safar (سفر) « voyage ». Passé en swahili pour désigner le voyage en Afrique de l'Est.",
+    "pathway": "arabe → swahili → anglais → français",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "سَفَر",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "swahili",
+        "word": "safari",
+        "date": "XIXe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "safari",
+        "date": "XIXe s."
+      },
+      {
+        "lang": "français",
+        "word": "safari",
+        "date": "XIXe s."
+      }
+    ],
+    "category": "geographie",
+    "examples": {
+      "fr": "Un safari photographique au Kenya permet d'observer les big five.",
+      "en": "A photographic safari in Kenya allows one to observe the big five.",
+      "ar": "يتيح سفاري التصوير في كينيا مشاهدة الحيوانات الخمسة الكبرى."
+    },
+    "related_words": [
+      "gazelle",
+      "amiral",
+      "magazine"
+    ]
+  }
+]

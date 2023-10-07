@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "total": 279,
+  "categories": [
+    {
+      "id": "architecture",
+      "label_fr": "Architecture",
+      "count": 1
+    },
+    {
+      "id": "arts_musique",
+      "label_fr": "Arts Musique",
+      "count": 1
+    },
+    {
+      "id": "astronomie",
+      "label_fr": "Astronomie",
+      "count": 31
+    },
+    {
+      "id": "botanique",
+      "label_fr": "Botanique",
+      "count": 98
+    },
+    {
+      "id": "chimie",
+      "label_fr": "Chimie",
+      "count": 1
+    },
+    {
+      "id": "commerce",
+      "label_fr": "Commerce",
+      "count": 2
+    },
+    {
+      "id": "cuisine",
+      "label_fr": "Cuisine",
+      "count": 3
+    },
+    {
+      "id": "geographie",
+      "label_fr": "Geographie",
+      "count": 1
+    },
+    {
+      "id": "mathematiques",
+      "label_fr": "Mathematiques",
+      "count": 4
+    },
+    {
+      "id": "medecine",
+      "label_fr": "Medecine",
+      "count": 131
+    },
+    {
+      "id": "militaire",
+      "label_fr": "Militaire",
+      "count": 1
+    },
+    {
+      "id": "zoologie",
+      "label_fr": "Zoologie",
+      "count": 5
+    }
+  ]
+}

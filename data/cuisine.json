@@ -1,0 +1,142 @@
+[
+  {
+    "id": 4,
+    "word_fr": "café",
+    "word_en": "coffee",
+    "word_ar": "قَهْوَة",
+    "transliteration": "qahwa",
+    "meaning_fr": "Boisson chaude préparée à partir des graines torréfiées du caféier, popularisée par le monde arabe.",
+    "meaning_en": "Hot beverage prepared from roasted seeds of the coffee plant, popularized by the Arab world.",
+    "meaning_ar": "مشروب ساخن يُحضَّر من حبوب البن المحمصة، انتشر عبر العالم العربي.",
+    "etymology": "De l'arabe qahwa (قهوة). Le mot est passé par le turc kahve avant d'atteindre l'Europe.",
+    "pathway": "arabe → turc → italien → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "قَهْوَة",
+        "date": "XVe s."
+      },
+      {
+        "lang": "turc",
+        "word": "kahve",
+        "date": "XVIe s."
+      },
+      {
+        "lang": "italien",
+        "word": "caffè",
+        "date": "XVIIe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "café/coffee",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "cuisine",
+    "examples": {
+      "fr": "Le café fut introduit en France au XVIIe siècle via les ports méditerranéens.",
+      "en": "Coffee was introduced to France in the 17th century via Mediterranean ports.",
+      "ar": "وصل القهوة إلى فرنسا في القرن السابع عشر عبر الموانئ المتوسطية."
+    },
+    "related_words": [
+      "sirop",
+      "sucre",
+      "macchiato"
+    ]
+  },
+  {
+    "id": 5,
+    "word_fr": "sucre",
+    "word_en": "sugar",
+    "word_ar": "سُكَّر",
+    "transliteration": "sukkar",
+    "meaning_fr": "Substance cristalline de saveur douce, extraite de la canne à sucre ou de la betterave.",
+    "meaning_en": "Sweet crystalline substance extracted mainly from sugarcane or beets.",
+    "meaning_ar": "مادة بلورية حلوة المذاق، تُستخلص من قصب السكر أو الشمندر.",
+    "etymology": "De l'arabe sukkar (سكّر), issu du sanskrit śarkarā, « gravier, sable grossier ».",
+    "pathway": "sanskrit → persan → arabe → latin médiéval → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "śarkarā",
+        "date": "antiquité"
+      },
+      {
+        "lang": "persan",
+        "word": "shakar",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "سُكَّر",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "succarum",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "sucre/sugar",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "cuisine",
+    "examples": {
+      "fr": "Le sucre de canne fut longtemps une denrée précieuse importée d'Orient.",
+      "en": "Cane sugar was long a precious commodity imported from the East.",
+      "ar": "كان سكر القصب لفترة طويلة سلعة ثمينة مستوردة من الشرق."
+    },
+    "related_words": [
+      "sirop",
+      "café",
+      "élixir"
+    ]
+  },
+  {
+    "id": 6,
+    "word_fr": "sirop",
+    "word_en": "syrup",
+    "word_ar": "شَرَاب",
+    "transliteration": "sharāb",
+    "meaning_fr": "Préparation liquide sucrée et épaisse, souvent aromatisée, utilisée en cuisine ou en pharmacie.",
+    "meaning_en": "Sweet, thick liquid preparation, often flavored, used in cooking or pharmacy.",
+    "meaning_ar": "مستحضر سائل حلو وسميك، غالباً معطر، يُستخدم في الطهي أو الصيدلة.",
+    "etymology": "De l'arabe sharāb (شراب), signifiant « boisson, breuvage ».",
+    "pathway": "arabe → latin médiéval → ancien français → anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "شَرَاب",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "sirupus",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "ancien français",
+        "word": "sirop",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "syrup",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "cuisine",
+    "examples": {
+      "fr": "Le sirop d'érable est une spécialité canadienne mondialement connue.",
+      "en": "Maple syrup is a world-famous Canadian specialty.",
+      "ar": "شراب القيقب تخصص كندي معروف في جميع أنحاء العالم."
+    },
+    "related_words": [
+      "alcool",
+      "sucre",
+      "élixir"
+    ]
+  }
+]
