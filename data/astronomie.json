@@ -1,0 +1,1277 @@
+[
+  {
+    "id": 19,
+    "word_fr": "zénith",
+    "word_en": "zenith",
+    "word_ar": "سَمْتُ الرَّأْس",
+    "transliteration": "samt al-raʾs",
+    "meaning_fr": "Point de la sphère céleste situé à la verticale de l'observateur, au-dessus de sa tête.",
+    "meaning_en": "The point on the celestial sphere directly above the observer.",
+    "meaning_ar": "النقطة في الكرة السماوية الواقعة عموديًا فوق رأس الراصد.",
+    "etymology": "De l'arabe samt al-raʾs (سمت الرأس), signifiant littéralement « direction de la tête ». Les astronomes médiévaux latins ont transcrit samt par zenit puis zénith par confusion de lecture du m en ni.",
+    "pathway": "arabe → latin médiéval → espagnol → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "سَمْتُ الرَّأْس",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "zenit capitis",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "zenit",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "zénith/zenith",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Le soleil atteint son zénith à midi solaire vrai.",
+      "en": "The sun reaches its zenith at true solar noon.",
+      "ar": "تبلغ الشمس سمت الرأس عند ظهر الشمس الحقيقي."
+    },
+    "related_words": [
+      "nadir",
+      "azimut",
+      "almicantarat"
+    ]
+  },
+  {
+    "id": 20,
+    "word_fr": "nadir",
+    "word_en": "nadir",
+    "word_ar": "نَظِير السَّمْت",
+    "transliteration": "naẓīr al-samt",
+    "meaning_fr": "Point de la sphère céleste diamétralement opposé au zénith, situé sous les pieds de l'observateur.",
+    "meaning_en": "The point on the celestial sphere directly below the observer, opposite the zenith.",
+    "meaning_ar": "النقطة في الكرة السماوية المقابلة تمامًا لسمت الرأس، تحت قدمَي الراصد.",
+    "etymology": "De l'arabe naẓīr al-samt (نظير السمت), « le correspondant du zénith ». Le terme naẓīr signifie « homologue, vis-à-vis ». Transmis par les astronomes arabes de l'école de Bagdad.",
+    "pathway": "arabe → latin médiéval → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "نَظِير السَّمْت",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "nadir",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "nadir",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Le nadir est utilisé en géodésie pour les mesures verticales.",
+      "en": "The nadir is used in geodesy for vertical measurements.",
+      "ar": "يُستخدم نظير السمت في الجيوديسيا لإجراء القياسات الرأسية."
+    },
+    "related_words": [
+      "zénith",
+      "azimut",
+      "almicantarat"
+    ]
+  },
+  {
+    "id": 21,
+    "word_fr": "azimut",
+    "word_en": "azimuth",
+    "word_ar": "السُّمُوت",
+    "transliteration": "al-sumūt",
+    "meaning_fr": "Angle mesuré dans le plan horizontal entre le nord et la direction d'un astre ou d'un point, compté dans le sens des aiguilles d'une montre.",
+    "meaning_en": "Horizontal angle measured clockwise from north to the direction of a celestial body or point.",
+    "meaning_ar": "الزاوية الأفقية المقاسة في اتجاه عقارب الساعة من الشمال إلى اتجاه جرم سماوي أو نقطة ما.",
+    "etymology": "Du pluriel arabe al-sumūt (السموت), pluriel de samt (سمت) signifiant « direction, chemin ». Le terme désigne les directions dans le plan horizontal. Transmis en latin médiéval par les traducteurs de Tolède.",
+    "pathway": "arabe → latin médiéval → espagnol → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "السُّمُوت",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "azimuth",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "acimut",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "azimut/azimuth",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "La boussole indique le nord, l'azimut donne la direction précise d'un astre.",
+      "en": "The compass indicates north; the azimuth gives the precise direction of a star.",
+      "ar": "تُشير البوصلة إلى الشمال، ويُعطي السمت الاتجاه الدقيق للنجم."
+    },
+    "related_words": [
+      "zénith",
+      "nadir",
+      "almicantarat"
+    ]
+  },
+  {
+    "id": 22,
+    "word_fr": "algol",
+    "word_en": "algol",
+    "word_ar": "رَأْسُ الغُول",
+    "transliteration": "raʾs al-ghūl",
+    "meaning_fr": "Étoile binaire à éclipses de la constellation de Persée, connue pour sa variation périodique de luminosité.",
+    "meaning_en": "Eclipsing binary star in the constellation Perseus, known for its periodic variation in brightness.",
+    "meaning_ar": "نجم مزدوج متغيّر في كوكبة برسيوس، معروف بتذبذب سطوعه الدوري.",
+    "etymology": "De l'arabe raʾs al-ghūl (رأس الغول), signifiant « la tête du démon » ou « la tête de l'ogre ». Les astronomes arabes avaient remarqué sa variation de luminosité et lui attribuaient un caractère maléfique.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "رَأْسُ الغُول",
+        "date": "Xe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Algol",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Algol",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Algol est l'une des premières étoiles variables découvertes par les astronomes arabes.",
+      "en": "Algol is one of the first variable stars observed by Arab astronomers.",
+      "ar": "يُعدّ رأس الغول من أوائل النجوم المتغيرة التي رصدها الفلكيون العرب."
+    },
+    "related_words": [
+      "aldébaran",
+      "altaïr",
+      "bételgeuse"
+    ]
+  },
+  {
+    "id": 23,
+    "word_fr": "aldébaran",
+    "word_en": "aldebaran",
+    "word_ar": "الدَّبَرَان",
+    "transliteration": "al-dabarān",
+    "meaning_fr": "Étoile géante rouge de la constellation du Taureau, l'une des plus brillantes du ciel nocturne.",
+    "meaning_en": "Red giant star in the constellation Taurus, one of the brightest stars in the night sky.",
+    "meaning_ar": "نجم عملاق أحمر في كوكبة الثور، وهو من أكثر النجوم لمعانًا في سماء الليل.",
+    "etymology": "De l'arabe al-dabarān (الدبران), signifiant « le suiveur », car cette étoile suit les Pléiades dans leur course nocturne. Nom donné par les astronomes arabes qui cartographiaient méticuleusement le ciel.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الدَّبَرَان",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Aldebaran",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Aldébaran",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Aldébaran est l'œil rouge du Taureau dans la mythologie céleste arabe.",
+      "en": "Aldebaran is the red eye of the Bull in Arab celestial mythology.",
+      "ar": "الدبران هو عين الثور الحمراء في الأساطير الفلكية العربية."
+    },
+    "related_words": [
+      "algol",
+      "altaïr",
+      "fomalhaut"
+    ]
+  },
+  {
+    "id": 24,
+    "word_fr": "altaïr",
+    "word_en": "altair",
+    "word_ar": "النَّسْرُ الطَّائِر",
+    "transliteration": "al-nasr al-ṭāʾir",
+    "meaning_fr": "Étoile la plus brillante de la constellation de l'Aigle, l'une des trois étoiles du Triangle d'été.",
+    "meaning_en": "Brightest star in the constellation Aquila, one of the three stars of the Summer Triangle.",
+    "meaning_ar": "ألمع نجم في كوكبة النسر الطائر، وأحد نجوم المثلث الصيفي الثلاثة.",
+    "etymology": "De l'arabe al-nasr al-ṭāʾir (النسر الطائر), signifiant « l'aigle qui vole », par opposition à Véga appelée al-nasr al-wāqiʿ, « l'aigle qui plonge ». Nommé par les astronomes arabes de l'ère abbasside.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "النَّسْرُ الطَّائِر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Atair",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Altaïr",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Altaïr tourne si vite sur elle-même qu'elle est aplatie aux pôles.",
+      "en": "Altair rotates so fast that it is flattened at its poles.",
+      "ar": "يدور النسر الطائر بسرعة كبيرة لدرجة أنه يبدو مفلطحًا عند قطبيه."
+    },
+    "related_words": [
+      "algol",
+      "aldébaran",
+      "véga"
+    ]
+  },
+  {
+    "id": 25,
+    "word_fr": "fomalhaut",
+    "word_en": "fomalhaut",
+    "word_ar": "فَمُ الحُوت",
+    "transliteration": "fam al-ḥūt",
+    "meaning_fr": "Étoile brillante de la constellation du Poisson austral, première étoile autour de laquelle un disque de débris fut observé.",
+    "meaning_en": "Bright star in the constellation Piscis Austrinus, the first star around which a debris disk was directly observed.",
+    "meaning_ar": "نجم لامع في كوكبة الحوت الجنوبي، وهو أول نجم رُصد حوله قرص من الحطام مباشرةً.",
+    "etymology": "De l'arabe fam al-ḥūt (فم الحوت), signifiant « la bouche du poisson ». Les astronomes arabes plaçaient cet astre à la bouche du grand poisson céleste dans leurs atlas stellaires.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "فَمُ الحُوت",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Fomahaut",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Fomalhaut",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Fomalhaut est l'une des étoiles les plus étudiées pour la recherche d'exoplanètes.",
+      "en": "Fomalhaut is one of the most studied stars in the search for exoplanets.",
+      "ar": "يُعدّ فم الحوت من أكثر النجوم دراسةً في البحث عن الكواكب الخارجية."
+    },
+    "related_words": [
+      "altaïr",
+      "aldébaran",
+      "achernar"
+    ]
+  },
+  {
+    "id": 26,
+    "word_fr": "achernar",
+    "word_en": "achernar",
+    "word_ar": "آخِرُ النَّهْر",
+    "transliteration": "ākhir al-nahr",
+    "meaning_fr": "Étoile la plus brillante de la constellation Éridan, représentant l'embouchure du fleuve céleste.",
+    "meaning_en": "Brightest star in the constellation Eridanus, representing the mouth of the celestial river.",
+    "meaning_ar": "ألمع نجم في كوكبة النهر، يمثل مصبّ النهر السماوي.",
+    "etymology": "De l'arabe ākhir al-nahr (آخر النهر), signifiant « la fin du fleuve ». Les astronomes arabes nommaient ainsi l'étoile terminale de la constellation Éridan, imaginée comme un grand fleuve céleste.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "آخِرُ النَّهْر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Acharnar",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Achernar",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Achernar est visible depuis l'hémisphère sud et marque la fin du fleuve Éridan.",
+      "en": "Achernar is visible from the southern hemisphere and marks the end of the river Eridanus.",
+      "ar": "يُرى آخر النهر من نصف الكرة الجنوبي ويُمثّل نهاية نهر إريدانوس."
+    },
+    "related_words": [
+      "fomalhaut",
+      "altaïr",
+      "rigel"
+    ]
+  },
+  {
+    "id": 27,
+    "word_fr": "rigel",
+    "word_en": "rigel",
+    "word_ar": "رِجْلُ الجَبَّار",
+    "transliteration": "rijl al-jabbār",
+    "meaning_fr": "Supergéante bleue-blanche de la constellation d'Orion, l'une des étoiles les plus lumineuses de la Voie lactée.",
+    "meaning_en": "Blue-white supergiant in the constellation Orion, one of the most luminous stars in the Milky Way.",
+    "meaning_ar": "نجم عملاق أزرق-أبيض في كوكبة الجبار، من أكثر النجوم إضاءةً في درب التبانة.",
+    "etymology": "De l'arabe rijl al-jabbār (رجل الجبار), signifiant « le pied du géant ». Les astronomes arabes désignaient ainsi l'étoile brillante marquant le pied droit d'Orion, appelé al-Jabbār, « le géant ».",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "رِجْلُ الجَبَّار",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Rigel",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Rigel",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Rigel est la septième étoile la plus brillante du ciel nocturne.",
+      "en": "Rigel is the seventh brightest star in the night sky.",
+      "ar": "رجل الجبار هو سابع أكثر النجوم لمعانًا في سماء الليل."
+    },
+    "related_words": [
+      "bételgeuse",
+      "algol",
+      "aldébaran"
+    ]
+  },
+  {
+    "id": 28,
+    "word_fr": "bételgeuse",
+    "word_en": "betelgeuse",
+    "word_ar": "إِبْطُ الجَبَّار",
+    "transliteration": "ibṭ al-jabbār",
+    "meaning_fr": "Supergéante rouge de la constellation d'Orion, l'une des étoiles les plus grandes connues.",
+    "meaning_en": "Red supergiant in the constellation Orion, one of the largest known stars.",
+    "meaning_ar": "نجم عملاق أحمر في كوكبة الجبار، من أكبر النجوم المعروفة.",
+    "etymology": "De l'arabe ibṭ al-jabbār (إبط الجبار), signifiant « l'aisselle du géant ». Corruption phonétique progressive : ibṭ → bed → bet → betel. L'étoile marque l'épaule droite d'Orion dans les atlas arabes.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "إِبْطُ الجَبَّار",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Bedalgeuze",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Betelgeuse",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Bételgeuse est si grande que si elle remplaçait le Soleil, elle engloutirait Mars.",
+      "en": "Betelgeuse is so large that if it replaced the Sun, it would engulf Mars.",
+      "ar": "إبط الجبار ضخم لدرجة أنه لو حلّ محل الشمس لابتلع المريخ."
+    },
+    "related_words": [
+      "rigel",
+      "algol",
+      "aldébaran"
+    ]
+  },
+  {
+    "id": 29,
+    "word_fr": "véga",
+    "word_en": "vega",
+    "word_ar": "النَّسْرُ الوَاقِع",
+    "transliteration": "al-nasr al-wāqiʿ",
+    "meaning_fr": "Étoile la plus brillante de la constellation de la Lyre, deuxième étoile la plus brillante de l'hémisphère nord.",
+    "meaning_en": "Brightest star in the constellation Lyra, second brightest star in the northern hemisphere.",
+    "meaning_ar": "ألمع نجم في كوكبة القيثارة، وثاني أكثر النجوم لمعانًا في نصف الكرة الشمالي.",
+    "etymology": "De l'arabe al-nasr al-wāqiʿ (النسر الواقع), signifiant « l'aigle qui plonge » ou « l'aigle tombant ». Contraction de wāqiʿ en vega par les astronomes latins médiévaux.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "النَّسْرُ الوَاقِع",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Wega",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Vega",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Véga sera l'étoile polaire dans environ 12 000 ans en raison de la précession des équinoxes.",
+      "en": "Vega will be the pole star in about 12,000 years due to the precession of the equinoxes.",
+      "ar": "سيكون النسر الواقع نجم القطب بعد نحو 12000 عام بسبب تقدم الاعتدالين."
+    },
+    "related_words": [
+      "altaïr",
+      "algol",
+      "deneb"
+    ]
+  },
+  {
+    "id": 30,
+    "word_fr": "deneb",
+    "word_en": "deneb",
+    "word_ar": "ذَنَبُ الدَّجَاجَة",
+    "transliteration": "dhanab al-dajāja",
+    "meaning_fr": "Supergéante bleue-blanche de la constellation du Cygne, l'une des étoiles les plus distantes visibles à l'œil nu.",
+    "meaning_en": "Blue-white supergiant in the constellation Cygnus, one of the most distant stars visible to the naked eye.",
+    "meaning_ar": "نجم عملاق أزرق في كوكبة الدجاجة، من أبعد النجوم المرئية بالعين المجردة.",
+    "etymology": "De l'arabe dhanab al-dajāja (ذنب الدجاجة), signifiant « la queue de la poule ». Les astronomes arabes nommaient la constellation du Cygne al-Dajāja, « la poule ». Le mot dhanab, « queue », a donné Deneb par contraction.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "ذَنَبُ الدَّجَاجَة",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Deneb",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Deneb",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Deneb est l'une des étoiles les plus lumineuses connues de notre galaxie.",
+      "en": "Deneb is one of the most luminous stars known in our galaxy.",
+      "ar": "يُعدّ ذنب الدجاجة من أكثر النجوم إضاءةً المعروفة في مجرتنا."
+    },
+    "related_words": [
+      "véga",
+      "altaïr",
+      "algol"
+    ]
+  },
+  {
+    "id": 31,
+    "word_fr": "almicantarat",
+    "word_en": "almucantar",
+    "word_ar": "المُقَنْطَرَات",
+    "transliteration": "al-muqanṭarāt",
+    "meaning_fr": "Cercle de la sphère céleste parallèle à l'horizon, utilisé pour mesurer la hauteur d'un astre.",
+    "meaning_en": "Circle on the celestial sphere parallel to the horizon, used to measure the altitude of a star.",
+    "meaning_ar": "دائرة على الكرة السماوية موازية للأفق، تُستخدم لقياس ارتفاع النجم.",
+    "etymology": "De l'arabe al-muqanṭarāt (المقنطرات), dérivé de qanṭara (قنطرة) signifiant « pont, arche ». Les astronomes arabes utilisaient ce terme pour désigner les cercles arqués parallèles à l'horizon sur l'astrolabe.",
+    "pathway": "arabe → latin médiéval → espagnol → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "المُقَنْطَرَات",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "almucantarat",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "almicantarat",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "almucantar",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "L'astrolabe arabe utilise les almicantarats pour déterminer l'heure solaire.",
+      "en": "The Arab astrolabe uses almucantars to determine solar time.",
+      "ar": "يستخدم الإسطرلاب العربي المقنطرات لتحديد الوقت الشمسي."
+    },
+    "related_words": [
+      "zénith",
+      "nadir",
+      "azimut"
+    ]
+  },
+  {
+    "id": 32,
+    "word_fr": "algèbre (étoile)",
+    "word_en": "algorab",
+    "word_ar": "الغُرَاب",
+    "transliteration": "al-ghurāb",
+    "meaning_fr": "Étoile de la constellation du Corbeau, dont le nom arabe signifie « le corbeau ».",
+    "meaning_en": "Star in the constellation Corvus, whose Arabic name means 'the crow'.",
+    "meaning_ar": "نجم في كوكبة الغراب، اسمه العربي يعني الطائر الأسود.",
+    "etymology": "De l'arabe al-ghurāb (الغراب), signifiant « le corbeau ». Les astronomes arabes nommaient ainsi plusieurs étoiles et constellations d'après des animaux familiers du désert arabique.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الغُرَاب",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Algorab",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Algorab",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Algorab est l'étoile principale de la petite constellation du Corbeau.",
+      "en": "Algorab is the main star of the small constellation Corvus.",
+      "ar": "الغراب هو النجم الرئيسي في كوكبة الغراب الصغيرة."
+    },
+    "related_words": [
+      "algol",
+      "deneb",
+      "altaïr"
+    ]
+  },
+  {
+    "id": 33,
+    "word_fr": "astrolabe",
+    "word_en": "astrolabe",
+    "word_ar": "الإِسْطُرْلَاب",
+    "transliteration": "al-isṭurlāb",
+    "meaning_fr": "Instrument astronomique médiéval permettant de mesurer la hauteur des astres et de déterminer l'heure et la latitude.",
+    "meaning_en": "Medieval astronomical instrument used to measure the altitude of stars and determine time and latitude.",
+    "meaning_ar": "آلة فلكية وسيطة تُستخدم لقياس ارتفاع الأجرام السماوية وتحديد الوقت وخط العرض.",
+    "etymology": "Du grec astrolabos arabisé en al-isṭurlāb (الإسطرلاب). Les savants arabes ont perfectionné cet instrument grec, ajoutant les projections stéréographiques et les almicantarats. Ibn al-Haytham et al-Battānī en firent un outil de précision.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "astrolabos",
+        "date": "IIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "الإِسْطُرْلَاب",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "astrolabium",
+        "date": "Xe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "astrolabe",
+        "date": "XIIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "L'astrolabe arabe permettait de calculer les heures de prière avec précision.",
+      "en": "The Arab astrolabe allowed precise calculation of prayer times.",
+      "ar": "مكّن الإسطرلاب العربي من حساب أوقات الصلاة بدقة بالغة."
+    },
+    "related_words": [
+      "almicantarat",
+      "azimut",
+      "zénith"
+    ]
+  },
+  {
+    "id": 34,
+    "word_fr": "alidade",
+    "word_en": "alidade",
+    "word_ar": "العِضَادَة",
+    "transliteration": "al-ʿiḍāda",
+    "meaning_fr": "Règle de visée mobile utilisée sur les instruments de mesure astronomiques et géodésiques.",
+    "meaning_en": "Mobile sighting rule used on astronomical and geodesic measuring instruments.",
+    "meaning_ar": "مسطرة التصويب المتحركة المستخدمة في الأجهزة الفلكية والجيوديسية.",
+    "etymology": "De l'arabe al-ʿiḍāda (العضادة), signifiant « bras, support latéral ». Terme technique désignant le bras pivotant de l'astrolabe qui permettait de viser les étoiles et de lire les graduations.",
+    "pathway": "arabe → latin médiéval → espagnol → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "العِضَادَة",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "alhidada",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "alidada",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "alidade",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "L'alidade de l'astrolabe permettait de pointer précisément vers une étoile.",
+      "en": "The astrolabe's alidade allowed precise pointing toward a star.",
+      "ar": "مكّنت عضادة الإسطرلاب من التوجيه بدقة نحو النجوم."
+    },
+    "related_words": [
+      "astrolabe",
+      "azimut",
+      "almicantarat"
+    ]
+  },
+  {
+    "id": 35,
+    "word_fr": "algèbre (azimut)",
+    "word_en": "albedo",
+    "word_ar": "البَيَاض",
+    "transliteration": "al-bayāḍ",
+    "meaning_fr": "Fraction de la lumière solaire réfléchie par une surface, notamment un astre ou une planète.",
+    "meaning_en": "Fraction of sunlight reflected by a surface, especially a star or planet.",
+    "meaning_ar": "نسبة الضوء الشمسي المنعكس عن سطح ما، لا سيما الأجرام السماوية.",
+    "etymology": "Du latin médiéval albedo, lui-même calque de l'arabe al-bayāḍ (البياض), signifiant « la blancheur, la clarté ». Terme utilisé par les astronomes et opticiens arabes, notamment Ibn al-Haytham dans son Kitāb al-Manāẓir.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "البَيَاض",
+        "date": "Xe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "albedo",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "albedo",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "La Lune a un albedo d'environ 12 %, reflétant peu la lumière solaire.",
+      "en": "The Moon has an albedo of about 12%, reflecting little sunlight.",
+      "ar": "للقمر بياض يبلغ نحو 12%، مما يعني أنه يعكس القليل من الضوء الشمسي."
+    },
+    "related_words": [
+      "astrolabe",
+      "azimut",
+      "zénith"
+    ]
+  },
+  {
+    "id": 36,
+    "word_fr": "almagesteword",
+    "word_en": "almagest",
+    "word_ar": "المَجِسْطِي",
+    "transliteration": "al-majisṭī",
+    "meaning_fr": "Traité d'astronomie de Ptolémée (IIe s.), préservé et transmis à l'Europe par les astronomes arabes.",
+    "meaning_en": "Ptolemy's astronomical treatise (2nd century), preserved and transmitted to Europe by Arab astronomers.",
+    "meaning_ar": "رسالة بطليموس الفلكية (القرن الثاني الميلادي)، حُفظت ونُقلت إلى أوروبا عبر الفلكيين العرب.",
+    "etymology": "De l'arabe al-majisṭī (المجسطي), arabisation du grec megistē (syntaxis), « la grande compilation ». Les Abbassides ont traduit et commenté cette œuvre fondatrice, la faisant parvenir à l'Europe médiévale.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "Megistē Syntaxis",
+        "date": "IIe s."
+      },
+      {
+        "lang": "arabe",
+        "word": "المَجِسْطِي",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Almagesti",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Almageste",
+        "date": "XIIIe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "L'Almageste fut traduit en arabe à Bagdad au IXe siècle par Hunayn ibn Ishaq.",
+      "en": "The Almagest was translated into Arabic in Baghdad in the 9th century by Hunayn ibn Ishaq.",
+      "ar": "تُرجم المجسطي إلى العربية في بغداد في القرن التاسع على يد حنين بن إسحاق."
+    },
+    "related_words": [
+      "astrolabe",
+      "azimut",
+      "zénith"
+    ]
+  },
+  {
+    "id": 37,
+    "word_fr": "almanach",
+    "word_en": "almanac",
+    "word_ar": "المَنَاخ",
+    "transliteration": "al-manākh",
+    "meaning_fr": "Publication annuelle contenant des informations astronomiques, météorologiques et calendaires.",
+    "meaning_en": "Annual publication containing astronomical, meteorological, and calendrical information.",
+    "meaning_ar": "منشور سنوي يحتوي على معلومات فلكية ومناخية وتقويمية.",
+    "etymology": "De l'arabe al-manākh (المناخ), signifiant « le climat, les saisons ». Les astronomes arabes compilaient des tables annuelles des positions des astres liées aux saisons agricoles et aux vents.",
+    "pathway": "arabe → espagnol médiéval → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "المَنَاخ",
+        "date": "IXe s."
+      },
+      {
+        "lang": "espagnol médiéval",
+        "word": "almanaque",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "almanach",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "almanach/almanac",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Les premiers almanachs arabes intégraient les positions des étoiles pour guider les agriculteurs.",
+      "en": "The first Arab almanacs included star positions to guide farmers.",
+      "ar": "تضمّنت أوائل المناخات العربية مواقع النجوم لإرشاد المزارعين."
+    },
+    "related_words": [
+      "astrolabe",
+      "azimut",
+      "zénith"
+    ]
+  },
+  {
+    "id": 38,
+    "word_fr": "alcor",
+    "word_en": "alcor",
+    "word_ar": "الخَوَر",
+    "transliteration": "al-khawr",
+    "meaning_fr": "Petite étoile compagne de Mizar dans la Grande Ourse, utilisée historiquement pour tester l'acuité visuelle.",
+    "meaning_en": "Small companion star to Mizar in Ursa Major, historically used to test visual acuity.",
+    "meaning_ar": "نجم مرافق صغير لنجم المئزر في الدب الأكبر، استُخدم تاريخيًا لاختبار حدة البصر.",
+    "etymology": "De l'arabe al-khawr (الخور) ou selon d'autres sources al-khawwar, signifiant « le faible, le discret ». Les astronomes arabes utilisaient ce couple d'étoiles Mizar-Alcor pour évaluer la qualité de la vision.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الخَوَر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Alcor",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Alcor",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Distinguer Alcor de Mizar à l'œil nu était un test classique pour les archers arabes.",
+      "en": "Distinguishing Alcor from Mizar with the naked eye was a classic test for Arab archers.",
+      "ar": "كان التمييز بين الخور والمئزر بالعين المجردة اختبارًا كلاسيكيًا للرماة العرب."
+    },
+    "related_words": [
+      "algol",
+      "véga",
+      "deneb"
+    ]
+  },
+  {
+    "id": 39,
+    "word_fr": "mizar",
+    "word_en": "mizar",
+    "word_ar": "المِئْزَر",
+    "transliteration": "al-miʾzar",
+    "meaning_fr": "Étoile double de la Grande Ourse, première étoile double résolue au télescope en 1617.",
+    "meaning_en": "Double star in Ursa Major, the first double star resolved by telescope in 1617.",
+    "meaning_ar": "نجم مزدوج في الدب الأكبر، أول نجم مزدوج تم حله بالتلسكوب عام 1617م.",
+    "etymology": "De l'arabe al-miʾzar (المئزر), signifiant « le tablier, la ceinture ». Les astronomes arabes plaçaient cette étoile à la « ceinture » ou au « milieu » de la queue de la Grande Ourse.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "المِئْزَر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Mirac / Mizar",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Mizar",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Mizar et Alcor forment un couple d'étoiles visible à l'œil nu dans la Grande Ourse.",
+      "en": "Mizar and Alcor form a pair of stars visible to the naked eye in Ursa Major.",
+      "ar": "يُشكّل المئزر والخور زوجًا من النجوم المرئية بالعين المجردة في كوكبة الدب الأكبر."
+    },
+    "related_words": [
+      "alcor",
+      "véga",
+      "algol"
+    ]
+  },
+  {
+    "id": 40,
+    "word_fr": "alphecca",
+    "word_en": "alphecca",
+    "word_ar": "الفَكَّة",
+    "transliteration": "al-fakka",
+    "meaning_fr": "Étoile la plus brillante de la constellation de la Couronne boréale.",
+    "meaning_en": "Brightest star in the constellation Corona Borealis.",
+    "meaning_ar": "ألمع نجم في كوكبة الإكليل الشمالي.",
+    "etymology": "De l'arabe al-fakka (الفكة), désignant la constellation de la Couronne boréale, parfois traduit par « l'anneau brisé » ou « les perles éparses ». Les astronomes arabes voyaient dans cette constellation un collier de gemmes.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الفَكَّة",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Alphecca",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Alphecca",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Alphecca marque la perle centrale du collier céleste de la Couronne boréale.",
+      "en": "Alphecca marks the central gem of the celestial necklace of the Corona Borealis.",
+      "ar": "الفكة هي الجوهرة المركزية في عقد السماء لكوكبة الإكليل الشمالي."
+    },
+    "related_words": [
+      "algol",
+      "aldébaran",
+      "véga"
+    ]
+  },
+  {
+    "id": 41,
+    "word_fr": "sabik",
+    "word_en": "sabik",
+    "word_ar": "السَّابِق",
+    "transliteration": "al-sābiq",
+    "meaning_fr": "Étoile de la constellation du Serpentaire, dont le nom signifie « le précédant ».",
+    "meaning_en": "Star in the constellation Ophiuchus, whose name means 'the preceding one'.",
+    "meaning_ar": "نجم في كوكبة الحواء، اسمه يعني المتقدم أو السابق.",
+    "etymology": "De l'arabe al-sābiq (السابق), signifiant « celui qui précède ». Les astronomes arabes désignaient ainsi cette étoile car elle se levait avant d'autres étoiles voisines dans leur système de mesure du temps nocturne.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "السَّابِق",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Sabik",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Sabik",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Sabik est la deuxième étoile en luminosité de la constellation du Serpentaire.",
+      "en": "Sabik is the second brightest star in the constellation Ophiuchus.",
+      "ar": "السابق هو ثاني أكثر نجوم كوكبة الحواء لمعانًا."
+    },
+    "related_words": [
+      "algol",
+      "aldébaran",
+      "rigel"
+    ]
+  },
+  {
+    "id": 42,
+    "word_fr": "rasalhague",
+    "word_en": "rasalhague",
+    "word_ar": "رَأْسُ الحَوَّاء",
+    "transliteration": "raʾs al-ḥawwāʾ",
+    "meaning_fr": "Étoile la plus brillante de la constellation du Serpentaire, représentant la tête du porteur de serpent.",
+    "meaning_en": "Brightest star in Ophiuchus, representing the head of the serpent bearer.",
+    "meaning_ar": "ألمع نجم في كوكبة الحواء، يمثل رأس حامل الثعبان.",
+    "etymology": "De l'arabe raʾs al-ḥawwāʾ (رأس الحواء), signifiant « la tête du charmeur de serpents ». Al-Ḥawwāʾ désigne le personnage mythologique portant un serpent, associé à la médecine dans la tradition islamique.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "رَأْسُ الحَوَّاء",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Ras Alhauge",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Rasalhague",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Rasalhague marque la tête du Serpentaire, gardien mythique de la médecine.",
+      "en": "Rasalhague marks the head of Ophiuchus, the mythical guardian of medicine.",
+      "ar": "رأس الحواء يمثل رأس حامل الثعبان، الحارس الأسطوري للطب."
+    },
+    "related_words": [
+      "sabik",
+      "algol",
+      "rigel"
+    ]
+  },
+  {
+    "id": 43,
+    "word_fr": "schedar",
+    "word_en": "schedar",
+    "word_ar": "الصَّدْر",
+    "transliteration": "al-ṣadr",
+    "meaning_fr": "Étoile principale de la constellation de Cassiopée, représentant la poitrine de la reine.",
+    "meaning_en": "Main star of the constellation Cassiopeia, representing the breast of the queen.",
+    "meaning_ar": "النجم الرئيسي في كوكبة ذات الكرسي، يمثل صدر الملكة.",
+    "etymology": "De l'arabe al-ṣadr (الصدر), signifiant « la poitrine ». Les astronomes arabes identifiaient cette étoile à la poitrine de la figure féminine assise sur le trône dans leur cartographie céleste.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الصَّدْر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Schedar",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Schedar",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Schedar est l'étoile la plus brillante de la constellation de Cassiopée.",
+      "en": "Schedar is the brightest star in the constellation Cassiopeia.",
+      "ar": "الصدر هو ألمع نجم في كوكبة ذات الكرسي."
+    },
+    "related_words": [
+      "algol",
+      "véga",
+      "deneb"
+    ]
+  },
+  {
+    "id": 44,
+    "word_fr": "mirach",
+    "word_en": "mirach",
+    "word_ar": "المِئْزَر",
+    "transliteration": "al-miʾzar",
+    "meaning_fr": "Étoile brillante de la constellation d'Andromède, servant de guide pour localiser la galaxie d'Andromède.",
+    "meaning_en": "Bright star in the constellation Andromeda, used as a guide to locate the Andromeda galaxy.",
+    "meaning_ar": "نجم لامع في كوكبة أندروميدا، يُستخدم دليلًا لتحديد موقع مجرة أندروميدا.",
+    "etymology": "De l'arabe al-miʾzar (المئزر), signifiant « la ceinture, le tablier ». Les astronomes arabes plaçaient cette étoile à la ceinture d'Andromède dans leurs atlas célestes.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "المِئْزَر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Mirach",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Mirach",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Mirach est une étoile repère essentielle pour observer la galaxie d'Andromède.",
+      "en": "Mirach is an essential guide star for observing the Andromeda galaxy.",
+      "ar": "المئزر نجم مرجعي أساسي لرصد مجرة أندروميدا."
+    },
+    "related_words": [
+      "algol",
+      "schedar",
+      "mizar"
+    ]
+  },
+  {
+    "id": 45,
+    "word_fr": "pherkad",
+    "word_en": "pherkad",
+    "word_ar": "الفَرْقَدَان",
+    "transliteration": "al-farqadān",
+    "meaning_fr": "Étoile de la Petite Ourse, formant avec Kochab un duo d'étoiles nommé « les deux veaux » par les Arabes.",
+    "meaning_en": "Star in Ursa Minor, forming with Kochab a duo named 'the two calves' by Arab astronomers.",
+    "meaning_ar": "نجم في الدب الأصغر، يُشكّل مع كوكب ثنائيًا سمّاه العرب الفرقدان.",
+    "etymology": "De l'arabe al-farqadān (الفرقدان), forme duelle signifiant « les deux veaux ». Les astronomes arabes nommaient ainsi les deux étoiles Kochab et Pherkad de la Petite Ourse, qui tournaient autour du pôle céleste.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الفَرْقَدَان",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Phercad",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Pherkad",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Pherkad et Kochab étaient les étoiles polaires avant que Polaris ne prenne ce rôle.",
+      "en": "Pherkad and Kochab were the pole stars before Polaris assumed that role.",
+      "ar": "كان الفرقدان وكوكب نجمَي القطب قبل أن يتولى الجدي هذا الدور."
+    },
+    "related_words": [
+      "mizar",
+      "alcor",
+      "véga"
+    ]
+  },
+  {
+    "id": 46,
+    "word_fr": "algédi",
+    "word_en": "algedi",
+    "word_ar": "الجَدْي",
+    "transliteration": "al-jadī",
+    "meaning_fr": "Étoile principale de la constellation du Capricorne, dont le nom arabe signifie « le chevreau ».",
+    "meaning_en": "Main star of the constellation Capricornus, whose Arabic name means 'the kid' or 'young goat'.",
+    "meaning_ar": "النجم الرئيسي في كوكبة الجدي، واسمه العربي يعني الجدي الصغير.",
+    "etymology": "De l'arabe al-jadī (الجدي), signifiant « le chevreau, le petit de la chèvre ». Les astronomes arabes nommaient ainsi l'étoile principale de la constellation du Capricorne et aussi l'étoile polaire (نجم الجدي).",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الجَدْي",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Algedi",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Algedi",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Algédi marque la tête du Capricorne dans les atlas célestes arabes.",
+      "en": "Algedi marks the head of Capricornus in Arab celestial atlases.",
+      "ar": "الجدي يمثل رأس كوكبة الجدي في الأطالس السماوية العربية."
+    },
+    "related_words": [
+      "algol",
+      "fomalhaut",
+      "deneb"
+    ]
+  },
+  {
+    "id": 47,
+    "word_fr": "alnitak",
+    "word_en": "alnitak",
+    "word_ar": "النِّطَاق",
+    "transliteration": "al-niṭāq",
+    "meaning_fr": "Étoile orientale de la ceinture d'Orion, l'une des trois étoiles alignées les plus reconnaissables du ciel.",
+    "meaning_en": "Easternmost star of Orion's Belt, one of the three most recognizable aligned stars in the sky.",
+    "meaning_ar": "النجم الشرقي لنطاق الجبار، أحد أكثر ثلاثة نجوم منتظمة في السماء قابلية للتعرف.",
+    "etymology": "De l'arabe al-niṭāq (النطاق), signifiant « la ceinture ». Les astronomes arabes nommaient les trois étoiles d'Orion (Alnitak, Alnilam, Mintaka) collectivement al-Manṭaqa, « la zone de la ceinture ».",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "النِّطَاق",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Alnitac",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Alnitak",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Alnitak, Alnilam et Mintaka forment la ceinture d'Orion, repère céleste universel.",
+      "en": "Alnitak, Alnilam, and Mintaka form Orion's Belt, a universal celestial landmark.",
+      "ar": "النطاق والنظام والمنتقى يُشكّلون نطاق الجبار، المعلم السماوي العالمي."
+    },
+    "related_words": [
+      "rigel",
+      "bételgeuse",
+      "aldébaran"
+    ]
+  },
+  {
+    "id": 48,
+    "word_fr": "alnilam",
+    "word_en": "alnilam",
+    "word_ar": "النِّظَام",
+    "transliteration": "al-niẓām",
+    "meaning_fr": "Étoile centrale de la ceinture d'Orion, supergéante bleue parmi les plus lumineuses de la Voie lactée.",
+    "meaning_en": "Central star of Orion's Belt, a blue supergiant among the most luminous in the Milky Way.",
+    "meaning_ar": "النجم المركزي لنطاق الجبار، عملاق أزرق من أكثر نجوم درب التبانة إضاءةً.",
+    "etymology": "De l'arabe al-niẓām (النظام), signifiant « le fil de perles, le collier ordonné ». Les astronomes arabes voyaient dans les trois étoiles de la ceinture d'Orion un collier de perles parfaitement alignées.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "النِّظَام",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Alnilam",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Alnilam",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Alnilam est entourée d'une nébuleuse de réflexion bleue visible aux télescopes amateurs.",
+      "en": "Alnilam is surrounded by a blue reflection nebula visible through amateur telescopes.",
+      "ar": "يحيط بالنظام سديم انعكاسي أزرق يمكن رؤيته بالتلسكوبات الهاوية."
+    },
+    "related_words": [
+      "alnitak",
+      "rigel",
+      "bételgeuse"
+    ]
+  },
+  {
+    "id": 49,
+    "word_fr": "saiph",
+    "word_en": "saiph",
+    "word_ar": "السَّيْف",
+    "transliteration": "al-sayf",
+    "meaning_fr": "Étoile marquant le pied gauche d'Orion dans les atlas arabes, supergéante bleue très lumineuse.",
+    "meaning_en": "Star marking the left foot of Orion in Arab atlases, a highly luminous blue supergiant.",
+    "meaning_ar": "نجم يمثل القدم اليسرى للجبار في الأطالس العربية، عملاق أزرق شديد اللمعان.",
+    "etymology": "De l'arabe al-sayf (السيف), signifiant « l'épée ». Les astronomes arabes l'associaient à l'épée portée par le géant Orion, plutôt qu'à son pied comme dans la tradition grecque.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "السَّيْف",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Saiph",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "Saiph",
+        "date": "XVe s."
+      }
+    ],
+    "category": "astronomie",
+    "examples": {
+      "fr": "Saiph et Rigel forment les deux pieds du géant Orion dans le ciel hivernal.",
+      "en": "Saiph and Rigel form the two feet of the giant Orion in the winter sky.",
+      "ar": "السيف ورجل الجبار يُشكّلان قدمَي الجبار في سماء الشتاء."
+    },
+    "related_words": [
+      "rigel",
+      "bételgeuse",
+      "alnitak"
+    ]
+  }
+]

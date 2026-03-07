@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "word_fr": "alcool",
+    "word_en": "alcohol",
+    "word_ar": "الكُحْل",
+    "transliteration": "al-kuḥl",
+    "meaning_fr": "Liquide volatil et inflammable obtenu par fermentation de sucres, utilisé en chimie, médecine et boissons.",
+    "meaning_en": "Volatile, flammable liquid obtained by fermentation of sugars, used in chemistry, medicine, and beverages.",
+    "meaning_ar": "سائل متطاير وقابل للاشتعال يُستخلص بتخمير السكريات، يُستخدم في الكيمياء والطب.",
+    "etymology": "De l'arabe al-kuḥl (الكحل), désignant une poudre fine d'antimoine utilisée comme fard. Par extension, toute substance distillée volatile.",
+    "pathway": "arabe → latin médiéval → espagnol → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الكُحْل",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "alcohol",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "alcohol",
+        "date": "XVe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "alcool",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "chimie",
+    "examples": {
+      "fr": "L'alcool éthylique est utilisé comme antiseptique en médecine.",
+      "en": "Ethyl alcohol is used as an antiseptic in medicine.",
+      "ar": "يُستخدم الكحول الإيثيلي كمطهر في الطب."
+    },
+    "related_words": [
+      "élixir",
+      "alchimie",
+      "alambic"
+    ]
+  }
+]

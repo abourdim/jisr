@@ -1,0 +1,100 @@
+feat(data): release Jisr v1.0 — 279 mots, architecture multi-fichiers
+
+BREAKING CHANGE: passage de 18 mots inline (v1.1) à 279 mots répartis
+en 12 catégories avec filtrage par catégorie.
+
+─────────────────────────────────────────────────────────────────────
+DONNÉES
+─────────────────────────────────────────────────────────────────────
+
+feat(data/astronomie): 31 mots astronomiques arabes (IDs 19–49)
+  - zénith, nadir, azimut, astrolabe, almageste, almanach
+  - étoiles : aldébaran, altaïr, véga, rigel, bételgeuse, fomalhaut…
+  - instruments : alidade, almicantarat, albedo
+
+feat(data/medecine): 131 mots médico-pharmaceutiques arabes (IDs 50–79, 201–300)
+  - pharmacopée végétale : camphre, séné, cubèbe, myrrhe, benjoin…
+  - chimie médicale : alchimie, alambic, alcali, amalgame, borax, natron…
+  - chirurgie : cautère, suture, fistule, canule, phlébotomie, ḥijāma…
+  - préparations : julep, rob, électuaire, thériaque, bézoard…
+  - institutions : maristan, quarantaine, lazaret
+
+feat(data/botanique): 98 mots botaniques arabes (IDs 80–109, 301–370)
+  - épices : safran, cumin, coriandre, carvi, fenouil, anis, estragon…
+  - fruits coraniques : figue (تين), olive (زيتون), datte (تمر), grenade (رمان)…
+  - plantes prophétiques : nigelle حبة السوداء, gingembre زنجبيل, jujubier سدر
+  - colorants : henné, indigo, garance, safre
+  - aromatiques : jasmin, rose, lavande, romarin, thym, menthe, basilic…
+
+feat(data/autres): 19 mots répartis en 9 catégories nouvelles
+  - chimie (1) : alcool
+  - mathématiques (4) : algèbre, algorithme, zéro, chiffre
+  - cuisine (3) : café, sucre, sirop
+  - commerce (2) : magazine, tarif
+  - zoologie (5) : gazelle + 4 faune batch3
+  - architecture (1) : sofa
+  - arts_musique (1) : azur
+  - militaire (1) : amiral
+  - géographie (1) : safari
+
+─────────────────────────────────────────────────────────────────────
+ARCHITECTURE
+─────────────────────────────────────────────────────────────────────
+
+feat(arch): structure de données multi-fichiers par catégorie
+  - data/index.json        — manifeste des catégories (version, total, labels)
+  - data/astronomie.json   — 31 mots
+  - data/botanique.json    — 98 mots
+  - data/medecine.json     — 131 mots
+  - data/mathematiques.json — 4 mots
+  - data/chimie.json        — 1 mot
+  - data/cuisine.json       — 3 mots
+  - data/commerce.json      — 2 mots
+  - data/zoologie.json      — 5 mots
+  - data/geographie.json    — 1 mot
+  - data/militaire.json     — 1 mot
+  - data/architecture.json  — 1 mot
+  - data/arts_musique.json  — 1 mot
+
+─────────────────────────────────────────────────────────────────────
+INTERFACE
+─────────────────────────────────────────────────────────────────────
+
+feat(ui): filtre par catégorie dans la barre de recherche
+  - <select id="cat-filter"> avec 12 options + "Toutes les catégories"
+  - function filterCategory() → met à jour S.cats → appelle filter()
+  - compatible avec la recherche textuelle existante (AND logique)
+  - émojis par catégorie : 🌙 Astronomie · 🌿 Botanique · ⚕️ Médecine…
+
+feat(ui): compteur de mots mis à jour (279 mots)
+
+─────────────────────────────────────────────────────────────────────
+QUALITÉ DES DONNÉES
+─────────────────────────────────────────────────────────────────────
+
+- Arabe classique uniquement (الفصحى) — Coran · ḥadīths · Ibn Sīnā · Ibn al-Bayṭār · Ibn al-ʿAwwām
+- Translitération académique uniforme (ā ī ū ʿ ʾ ḥ ḫ ḍ ṭ ẓ ġ š)
+- Exemples trilingues (fr · en · ar) pour chaque entrée
+- Pathway étymologique complet avec datation
+- IDs uniques sans collision : 1–370 (avec lacunes normales)
+
+─────────────────────────────────────────────────────────────────────
+PROCHAIN SPRINT
+─────────────────────────────────────────────────────────────────────
+
+TODO(data): compléter les catégories légères
+  - cuisine → 150 mots (actuel: 3)
+  - mathématiques → 100 mots (actuel: 4)
+  - chimie → 100 mots (actuel: 1)
+  - commerce → 100 mots (actuel: 2)
+  - zoologie → 100 mots (actuel: 5)
+  - géographie, histoire, textile, philosophie, droit, météo
+
+─────────────────────────────────────────────────────────────────────
+STATS
+─────────────────────────────────────────────────────────────────────
+
+  Mots v1.1 → v1.0 :    18  →  279  (+1450 %)
+  Catégories :            1  →   12
+  Fichiers de données :   0  →   13  (12 + index)
+  Taille HTML :       ~95 Ko → ~440 Ko

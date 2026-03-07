@@ -1,0 +1,207 @@
+[
+  {
+    "id": 14,
+    "word_fr": "gazelle",
+    "word_en": "gazelle",
+    "word_ar": "غَزَال",
+    "transliteration": "ghazāl",
+    "meaning_fr": "Antilope élancée et gracieuse des régions arides d'Afrique et d'Asie, réputée pour sa rapidité.",
+    "meaning_en": "Slender, graceful antelope of arid regions of Africa and Asia, known for its speed.",
+    "meaning_ar": "ظبي رشيق ورقيق يعيش في المناطق الجافة بأفريقيا وآسيا، يُشتهر بسرعته.",
+    "etymology": "De l'arabe ghazāl (غزال), symbole de grâce et de beauté dans la poésie arabe classique.",
+    "pathway": "arabe → espagnol médiéval → français → anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "غَزَال",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "gacela",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "français",
+        "word": "gazelle",
+        "date": "XVIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "gazelle",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "zoologie",
+    "examples": {
+      "fr": "La gazelle de Thomson est l'une des espèces les plus rapides des savanes.",
+      "en": "Thomson's gazelle is one of the fastest species in African savannas.",
+      "ar": "يُعدّ غزال طومسون من أسرع الأنواع في السافانا الأفريقية."
+    },
+    "related_words": [
+      "safari",
+      "zèbre",
+      "fennec"
+    ]
+  },
+  {
+    "id": 101,
+    "word_fr": "girafe",
+    "word_en": "giraffe",
+    "word_ar": "زَرَافَة",
+    "transliteration": "zarāfa",
+    "meaning_fr": "Mammifère africain au cou très long, le plus grand animal terrestre vivant, introduit en Europe par les ambassades arabes.",
+    "meaning_en": "African mammal with a very long neck, the tallest living terrestrial animal, introduced to Europe by Arab embassies.",
+    "meaning_ar": "ثدييات أفريقية طويلة العنق، أطول الحيوانات البرية الحية، قُدِّمت إلى أوروبا بواسطة السفارات العربية.",
+    "etymology": "De l'arabe zarāfa (زرافة), terme attesté depuis le Xe siècle. Le sultan d'Égypte Baybars offrit une girafe au roi de France Louis IX en 1261. Al-Qazwīnī décrivit l'animal dans son encyclopédie cosmologique.",
+    "pathway": "arabe → italien → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "زَرَافَة",
+        "date": "Xe s."
+      },
+      {
+        "lang": "italien",
+        "word": "giraffa",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "girafe/giraffe",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "zoologie",
+    "examples": {
+      "fr": "Al-Qazwīnī décrivit la girafe comme « un animal de grâce divine aux proportions étranges ».",
+      "en": "Al-Qazwini described the giraffe as 'an animal of divine grace with strange proportions'.",
+      "ar": "وصف القزويني الزرافة بأنها «حيوان من النعمة الإلهية ذو أبعاد غريبة»."
+    },
+    "related_words": [
+      "gazelle",
+      "fennec",
+      "zèbre"
+    ]
+  },
+  {
+    "id": 102,
+    "word_fr": "gerboise",
+    "word_en": "jerboa",
+    "word_ar": "يَرْبُوع",
+    "transliteration": "yarbūʿ",
+    "meaning_fr": "Petit rongeur des régions arides aux longues pattes arrière lui permettant de sauter, caractéristique des déserts arabes.",
+    "meaning_en": "Small rodent of arid regions with long hind legs enabling jumping, characteristic of Arab deserts.",
+    "meaning_ar": "قارض صغير في المناطق الجافة بأرجل خلفية طويلة تُمكّنه من القفز، مميز لصحراء العرب.",
+    "etymology": "De l'arabe yarbūʿ (يربوع), terme désignant ce petit rongeur des déserts arabiques. Les naturalistes arabes, notamment al-Jāḥiẓ dans son Kitāb al-ḥayawān, décrivirent précisément cet animal.",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "يَرْبُوع",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "gerboa",
+        "date": "XVIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "gerboise/jerboa",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "zoologie",
+    "examples": {
+      "fr": "Al-Jāḥiẓ décrivit la gerboise avec précision dans son encyclopédie zoologique du IXe siècle.",
+      "en": "Al-Jahiz described the jerboa with precision in his 9th-century zoological encyclopedia.",
+      "ar": "وصف الجاحظ اليربوع بدقة في موسوعته الحيوانية من القرن التاسع الميلادي."
+    },
+    "related_words": [
+      "gazelle",
+      "fennec",
+      "girafe"
+    ]
+  },
+  {
+    "id": 103,
+    "word_fr": "fennec",
+    "word_en": "fennec",
+    "word_ar": "فَنَك",
+    "transliteration": "fanak",
+    "meaning_fr": "Petit renard du Sahara aux très grandes oreilles, parfaitement adapté à la vie dans les régions désertiques.",
+    "meaning_en": "Small fox of the Sahara with very large ears, perfectly adapted to life in desert regions.",
+    "meaning_ar": "ثعلب صغير من الصحراء الكبرى بآذان كبيرة جدًا، متكيّف تمامًا للحياة في المناطق الصحراوية.",
+    "etymology": "De l'arabe fanak (فنك), terme désignant ce petit renard sahélien. Al-Jāḥiẓ le mentionna dans son Kitāb al-ḥayawān. Les marchands arabes commercialisaient sa fourrure précieuse vers l'Europe.",
+    "pathway": "arabe → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "فَنَك",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "fennec",
+        "date": "XIXe s."
+      }
+    ],
+    "category": "zoologie",
+    "examples": {
+      "fr": "Le fennec est l'animal emblématique du désert saharien, adapté à la chaleur extrême.",
+      "en": "The fennec is the emblematic animal of the Saharan desert, adapted to extreme heat.",
+      "ar": "الفنك هو حيوان الصحراء الكبرى الرمزي، المتكيّف مع الحرارة الشديدة."
+    },
+    "related_words": [
+      "gerboise",
+      "gazelle",
+      "girafe"
+    ]
+  },
+  {
+    "id": 104,
+    "word_fr": "alcyon",
+    "word_en": "alcyone",
+    "word_ar": "الشَّاهِين",
+    "transliteration": "al-shāhīn",
+    "meaning_fr": "Oiseau marin légendaire, associé au martin-pêcheur dans la mythologie, dont le nom arabe désigne le faucon pèlerin.",
+    "meaning_en": "Legendary seabird, associated with the kingfisher in mythology, whose Arabic name refers to the peregrine falcon.",
+    "meaning_ar": "طائر بحري أسطوري مرتبط بطيور الرفراف في الأساطير، واسمه العربي يشير إلى الشاهين.",
+    "etymology": "Du grec alkuon, partiellement arabisé. L'arabe shāhīn (شاهين) désigne le faucon pèlerin, oiseau noble de la fauconnerie islamique. Les falconniers arabes développèrent un art raffiné de la chasse au faucon.",
+    "pathway": "grec → arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "grec",
+        "word": "alkuon",
+        "date": "antiquité"
+      },
+      {
+        "lang": "arabe",
+        "word": "الشَّاهِين",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "alcyon",
+        "date": "XIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "alcyon/alcyone",
+        "date": "XIVe s."
+      }
+    ],
+    "category": "zoologie",
+    "examples": {
+      "fr": "La fauconnerie arabe, l'art du shāhīn, est inscrite au patrimoine culturel immatériel de l'Unesco.",
+      "en": "Arab falconry, the art of the shaheen, is inscribed on UNESCO's intangible cultural heritage list.",
+      "ar": "الصيد بالصقور العربي، فن الشاهين، مُدرج في قائمة التراث الثقافي اللامادي لليونسكو."
+    },
+    "related_words": [
+      "fennec",
+      "girafe",
+      "gazelle"
+    ]
+  }
+]

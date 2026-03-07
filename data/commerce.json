@@ -1,0 +1,92 @@
+[
+  {
+    "id": 10,
+    "word_fr": "magazine",
+    "word_en": "magazine",
+    "word_ar": "مَخَازِن",
+    "transliteration": "makhāzin",
+    "meaning_fr": "Publication périodique illustrée contenant des articles variés sur différents sujets.",
+    "meaning_en": "Illustrated periodic publication containing various articles on different subjects.",
+    "meaning_ar": "مطبوعة دورية مصورة تحتوي على مقالات متنوعة حول موضوعات مختلفة.",
+    "etymology": "De l'arabe makhāzin (مخازن), pluriel de makhzan signifiant « entrepôt, trésor de savoir ».",
+    "pathway": "arabe → italien → français → anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "مَخَازِن",
+        "date": "VIIe s."
+      },
+      {
+        "lang": "italien",
+        "word": "magazzino",
+        "date": "XIIIe s."
+      },
+      {
+        "lang": "français",
+        "word": "magasin",
+        "date": "XVIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "magazine",
+        "date": "XVIIe s."
+      }
+    ],
+    "category": "commerce",
+    "examples": {
+      "fr": "Le premier magazine illustré français date du XVIIIe siècle.",
+      "en": "The first French illustrated magazine dates back to the 18th century.",
+      "ar": "يعود أول مجلة مصورة فرنسية إلى القرن الثامن عشر."
+    },
+    "related_words": [
+      "almanach",
+      "gazette",
+      "tarif"
+    ]
+  },
+  {
+    "id": 12,
+    "word_fr": "tarif",
+    "word_en": "tariff",
+    "word_ar": "تَعْرِيفَة",
+    "transliteration": "taʿrīfa",
+    "meaning_fr": "Liste officielle fixant le prix de marchandises ou de services ; droit de douane.",
+    "meaning_en": "Official list setting the price of goods or services; customs duty.",
+    "meaning_ar": "قائمة رسمية تحدد أسعار البضائع أو الخدمات؛ رسوم جمركية.",
+    "etymology": "De l'arabe taʿrīfa (تعريفة), dérivé de ʿarrafa signifiant « faire connaître, notifier ».",
+    "pathway": "arabe → espagnol médiéval → français → anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "تَعْرِيفَة",
+        "date": "VIIIe s."
+      },
+      {
+        "lang": "espagnol",
+        "word": "tarifa",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "français",
+        "word": "tarif",
+        "date": "XVIe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "tariff",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "commerce",
+    "examples": {
+      "fr": "Les tarifs douaniers sont au cœur des négociations internationales.",
+      "en": "Customs tariffs are at the heart of international trade negotiations.",
+      "ar": "تقع التعريفات الجمركية في صميم المفاوضات التجارية الدولية."
+    },
+    "related_words": [
+      "magazine",
+      "chiffre",
+      "amiral"
+    ]
+  }
+]

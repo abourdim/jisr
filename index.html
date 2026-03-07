@@ -1,2532 +1,1645 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Callgraph Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>جسر — Jisr v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#07090f;--bg2:#0d1117;--bg3:#111820;--bg4:#161e2c;
-  --border:#1e2a3a;--border2:#263348;
-  --text:#dce8f8;--text2:#7a95b8;--text3:#3d5270;
-  --accent:#4a8fff;--gold:#d4a843;
-  --green:#22c55e;--red:#ef4444;--yellow:#f59e0b;
-  --purple:#a78bfa;--cyan:#06b6d4;
-  --sidebar:260px;
+/* ═══════════════════════════════════════════════════════════════
+   JISR v1.0 — Thème Islamique Profond
+   Références : Alhambra · Médine · Cordoue · Istanbul
+   Palette : nuit de Médine · or nasride · turquoise andalou
+═══════════════════════════════════════════════════════════════ */
+:root {
+  /* Couleurs de nuit islamique */
+  --night:        #080C10;
+  --night2:       #0C1118;
+  --night3:       #111820;
+  --night4:       #172030;
+  --night5:       #1E2A3A;
+
+  /* Or nasride (Alhambra) */
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-bright:  #F0D878;
+  --gold-dim:     rgba(201,168,76,0.15);
+  --gold-glow:    rgba(201,168,76,0.35);
+
+  /* Turquoise andalou */
+  --teal:         #2A7B8C;
+  --teal-light:   #3AACBF;
+  --teal-dim:     rgba(42,123,140,0.2);
+
+  /* Rouge nasride */
+  --nasrid-red:   #8C2A2A;
+  --nasrid-light: #C04040;
+
+  /* Vert émeraude islamique */
+  --emerald:      #1A6B4A;
+  --emerald-light:#2A9B6E;
+
+  /* Ivoire de parchemin */
+  --ivory:        #F0E6CC;
+  --ivory-soft:   #E0D4B8;
+  --ivory-dim:    rgba(240,230,204,0.6);
+  --ivory-faint:  rgba(240,230,204,0.12);
+  --ivory-ghost:  rgba(240,230,204,0.06);
+
+  /* Brun cuir */
+  --brown:        #7A5030;
+  --brown-light:  #A8723E;
+
+  --font-arabic:  'Amiri', 'Traditional Arabic', serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-ui:      'Lato', sans-serif;
+
+  --r-sm:4px; --r-md:10px; --r-lg:18px; --r-xl:26px; --r-pill:999px;
+  --ease: cubic-bezier(0.4,0,0.2,1);
+  --spring: cubic-bezier(0.22,0.68,0,1.2);
 }
-html,body{height:100%;overflow:hidden;font-family:'Inter',sans-serif;font-size:13px;background:var(--bg);color:var(--text)}
 
-/* ══ LAUNCH ══════════════════════════════════════════════════ */
-#launch{
-  position:fixed;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:0;
-  transition:opacity .4s,transform .4s;
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size:16px; scroll-behavior:smooth; }
+
+body {
+  background: var(--night);
+  color: var(--ivory);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-#launch.out{opacity:0;pointer-events:none;transform:scale(.97)}
 
-.bism{text-align:center;margin-bottom:2rem}
-.bism-ar{
-  display:block;font-size:2.2rem;line-height:1.6;
-  font-family:"Scheherazade New","Noto Naskh Arabic",serif;
-  background:linear-gradient(135deg,#a07820,#d4a843,#f0c060,#d4a843,#a07820);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 20px #d4a84325);
-  animation:glow 4s ease-in-out infinite alternate;
+/* ─── Fond : Motif géométrique islamique (zellige) ─── */
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(42,123,140,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(26,107,74,0.04) 0%, transparent 60%);
 }
-@keyframes glow{from{filter:drop-shadow(0 0 12px #d4a84318)}to{filter:drop-shadow(0 0 28px #d4a84340)}}
-.bism-rule{display:flex;align-items:center;gap:.75rem;max-width:340px;margin:.5rem auto}
-.bism-rule::before,.bism-rule::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#d4a84340,transparent)}
-.bism-gem{color:var(--gold);font-size:.65rem;animation:pulse 3s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
-.bism-title{font-family:'Cinzel',serif;font-size:.8rem;font-weight:600;letter-spacing:.45em;text-transform:uppercase;color:var(--text2);margin-top:.25rem}
-.bism-sub{font-size:.62rem;color:var(--text3);letter-spacing:.12em;margin-top:.2rem}
 
-.card{
-  width:440px;max-width:95vw;
-  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
-  padding:1.75rem 1.85rem;
-  box-shadow:0 28px 90px #00000070;
-  position:relative;overflow:hidden;
+/* Motif étoile islamique en overlay */
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.03;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(201,168,76,1) 28px, rgba(201,168,76,1) 29px),
+    repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(201,168,76,1) 28px, rgba(201,168,76,1) 29px),
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,168,76,0.5) 20px, rgba(201,168,76,0.5) 21px),
+    repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(201,168,76,0.5) 20px, rgba(201,168,76,0.5) 21px);
 }
-.card::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,#d4a84328,#4a8fff28,transparent)}
 
-.inp{width:100%;padding:.55rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--text);font-size:.82rem;font-family:'JetBrains Mono',monospace;outline:none;transition:border .15s}
-.inp:focus{border-color:var(--accent)}
-.inp::placeholder{color:var(--text3)}
-.src-row{display:flex;gap:.45rem;margin-bottom:1.2rem}
-.src-row .inp{flex:1}
-.btn-sm{padding:.48rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-size:.72rem;cursor:pointer;white-space:nowrap;transition:all .12s}
-.btn-sm:hover{border-color:var(--border2);color:var(--text);background:var(--bg4)}
+.container { max-width:1240px; margin:0 auto; padding:0 28px; position:relative; z-index:1; }
 
-/* index button */
-.btn-index{
-  width:100%;padding:.72rem;border-radius:8px;
-  background:linear-gradient(135deg,#173d88,#2558c4,#4a8fff);
-  border:none;color:#fff;font-size:.9rem;font-weight:600;
-  cursor:pointer;letter-spacing:.04em;box-shadow:0 4px 20px #4a8fff28;
-  transition:all .15s;position:relative;overflow:hidden;
+/* ═══════════════════════════════════════════════════════════════
+   BISMILLAH — Médaillon ornemental
+═══════════════════════════════════════════════════════════════ */
+.bismillah-wrap {
+  position:relative; text-align:center;
+  padding:28px 20px 22px;
+  background: linear-gradient(180deg, rgba(42,123,140,0.08) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  overflow:hidden;
 }
-.btn-index:hover{box-shadow:0 6px 28px #4a8fff45;transform:translateY(-1px)}
-.btn-index:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 
-/* progress */
-#progress{margin-top:1rem;display:none}
-.prog-bar{height:3px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:.6rem}
-.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--cyan));width:0%;transition:width .3s;border-radius:3px}
-.prog-log{font-size:.68rem;color:var(--text3);font-family:'JetBrains Mono',monospace;min-height:1rem}
-
-/* ══ APP ════════════════════════════════════════════════════ */
-#app{position:fixed;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .4s}
-#app.on{opacity:1;pointer-events:all}
-
-/* topbar */
-#tb{
-  height:40px;background:var(--bg2);border-bottom:1px solid var(--border);
-  display:flex;align-items:center;gap:.5rem;padding:0 .8rem;flex-shrink:0;z-index:20;
+/* Arabesques latérales CSS */
+.bismillah-wrap::before {
+  content:'❧';
+  position:absolute; left:40px; top:50%; transform:translateY(-50%);
+  font-size:2rem; color:rgba(201,168,76,0.2); line-height:1;
 }
-.tb-logo{font-family:'Cinzel',serif;font-size:.68rem;font-weight:600;letter-spacing:.2em;color:var(--gold);opacity:.85}
-.tb-div{color:var(--border2)}
-.tb-src{font-size:.67rem;color:var(--text3);font-family:'JetBrains Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
-.tb-src span{color:var(--text2)}
-.tb-stat{font-size:.62rem;color:var(--text3);white-space:nowrap;flex-shrink:0}
-.tb-stat b{color:var(--accent)}
-.tbb{padding:.24rem .55rem;border-radius:5px;border:1px solid var(--border);background:none;color:var(--text2);font-size:.67rem;cursor:pointer;transition:all .12s;flex-shrink:0}
-.tbb:hover{border-color:var(--border2);color:var(--text);background:var(--bg3)}
-
-/* main area */
-#main{flex:1;display:flex;overflow:hidden}
-
-/* ── SIDEBAR ── */
-#sidebar{
-  width:var(--sidebar);flex-shrink:0;
-  background:var(--bg2);border-right:1px solid var(--border);
-  display:flex;flex-direction:column;overflow:hidden;
-  transition:width .2s;
+.bismillah-wrap::after {
+  content:'❧';
+  position:absolute; right:40px; top:50%; transform:translateY(-50%) scaleX(-1);
+  font-size:2rem; color:rgba(201,168,76,0.2); line-height:1;
 }
-.sb-sect{padding:.55rem .7rem;border-bottom:1px solid var(--border)}
-.sb-lbl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:.45rem;display:block}
 
-/* mode toggle */
-.mode-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:7px;overflow:hidden;border:1px solid var(--border)}
-.mbtn{padding:.42rem;border:none;background:var(--bg3);color:var(--text3);cursor:pointer;transition:all .15s;text-align:center;font-size:.7rem;font-weight:500}
-.mbtn:first-child{border-right:1px solid var(--border)}
-.mbtn.active{background:var(--bg4);color:var(--text)}
-
-/* depth */
-.depth-row{display:flex;align-items:center;gap:.6rem}
-.depth-row input[type=range]{flex:1;accent-color:var(--accent);height:3px;cursor:pointer}
-.dv{font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:500;color:var(--accent);min-width:1.6rem;text-align:center}
-
-/* style pills */
-.spills{display:flex;flex-wrap:wrap;gap:.3rem}
-.sp{padding:.2rem .5rem;border-radius:999px;font-size:.62rem;font-weight:500;border:1px solid var(--border);background:var(--bg3);color:var(--text3);cursor:pointer;transition:all .1s}
-.sp.active{color:#fff;border-color:transparent}
-
-/* trace panel */
-.trace-wrap{position:relative}
-.trace-inp{width:100%;padding:.4rem .65rem;border-radius:7px;border:1px solid var(--border);background:var(--bg3);color:var(--text);font-size:.75rem;font-family:'JetBrains Mono',monospace;outline:none;transition:border .15s}
-.trace-inp:focus{border-color:var(--accent)}
-.trace-inp::placeholder{color:var(--text3)}
-.ac-dd{position:absolute;top:100%;left:0;right:0;z-index:40;background:var(--bg3);border:1px solid var(--border2);border-top:none;border-radius:0 0 7px 7px;max-height:130px;overflow-y:auto;display:none;box-shadow:0 8px 24px #00000055}
-.ac-it{padding:.3rem .6rem;font-size:.73rem;color:var(--text2);cursor:pointer;font-family:'JetBrains Mono',monospace}
-.ac-it:hover,.ac-it.hi{background:var(--bg4);color:var(--text)}
-
-/* fn list */
-#fn-list{flex:1;overflow-y:auto;padding:.3rem}
-.fn-item{display:flex;align-items:center;gap:.4rem;padding:.3rem .5rem;border-radius:5px;cursor:pointer;transition:background .08s;border:1px solid transparent}
-.fn-item:hover{background:var(--bg3)}
-.fn-item.active{background:var(--bg4);border-color:var(--border2)}
-.fn-name{font-size:.72rem;font-family:'JetBrains Mono',monospace;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
-.fn-item.active .fn-name{color:var(--accent)}
-.fn-badge{font-size:.55rem;padding:.08rem .3rem;border-radius:3px;background:var(--bg3);color:var(--text3);flex-shrink:0}
-
-/* fn list search */
-.fn-search{padding:.4rem .5rem;border-bottom:1px solid var(--border);flex-shrink:0}
-.fn-search input{width:100%;padding:.32rem .55rem;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--text);font-size:.73rem;outline:none}
-.fn-search input:focus{border-color:var(--accent)}
-.fn-search input::placeholder{color:var(--text3)}
-
-/* ── GRAPH AREA ── */
-#graph-area{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative}
-
-/* graph controls bar */
-#gbar{
-  height:36px;background:var(--bg2);border-bottom:1px solid var(--border);
-  display:flex;align-items:center;gap:.5rem;padding:0 .7rem;flex-shrink:0;
+/* Ligne ornementale haut */
+.bismillah-ornament {
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  margin-bottom:12px;
 }
-#gbar-title{font-size:.75rem;font-weight:500;color:var(--text);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.gbtn{padding:.22rem .55rem;border-radius:5px;border:1px solid var(--border);background:none;color:var(--text2);font-size:.68rem;cursor:pointer;transition:all .1s}
-.gbtn:hover{border-color:var(--border2);color:var(--text);background:var(--bg3)}
-.gbtn.active{border-color:var(--accent);color:var(--accent)}
-#zoom-pct{font-size:.65rem;color:var(--text3);min-width:2.8rem;text-align:center;font-family:'JetBrains Mono',monospace}
-
-/* SVG canvas */
-#canvas{flex:1;overflow:hidden;position:relative;cursor:grab;background:var(--bg)}
-#canvas.grabbing{cursor:grabbing}
-#canvas svg{position:absolute;top:0;left:0;transform-origin:0 0;user-select:none}
-
-/* empty state */
-#canvas-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:var(--text3);pointer-events:none}
-.ce-icon{font-size:2.5rem;opacity:.15}
-.ce-text{font-size:.8rem}
-
-/* loading overlay */
-#canvas-loading{position:absolute;inset:0;background:#07090fee;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;z-index:10}
-.spinner{width:32px;height:32px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.loading-msg{font-size:.75rem;color:var(--text3);font-family:'JetBrains Mono',monospace}
-
-/* node styles */
-.n-proj{fill:#111e30;stroke:#4a8fff;stroke-width:1.5}
-.n-proj:hover,.n-proj.hover{fill:#1a2d48;stroke:#6aaeff;stroke-width:2;cursor:pointer}
-.n-proj.traced{fill:#0d2a0d;stroke:#22c55e;stroke-width:2}
-.n-proj.caller{fill:#2a0d0d;stroke:#ef6548;stroke-width:2}
-.n-proj.focused{fill:#1a2a4a;stroke:#fff;stroke-width:2.5}
-.n-ext{fill:#0e1420;stroke:#2d3d55;stroke-width:1;opacity:.7}
-.n-macro{fill:#1a180a;stroke:#d4a843;stroke-width:1;stroke-dasharray:4 2}
-.n-label{font-size:10px;fill:#dce8f8;font-family:'JetBrains Mono',monospace;pointer-events:none}
-.n-ext .n-label{fill:#4a6080}
-.e-call{stroke:#1e3a5a;stroke-width:1;fill:none;marker-end:url(#arr)}
-.e-call.to-traced{stroke:#ef6548;stroke-width:1.5;opacity:.8}
-.e-call.from-traced{stroke:#22c55e;stroke-width:1.5;opacity:.8}
-.e-call.dimmed{opacity:.08}
-
-/* info panel */
-#info{
-  position:absolute;right:0;top:0;bottom:0;width:220px;
-  background:var(--bg2);border-left:1px solid var(--border);
-  transform:translateX(100%);transition:transform .22s;
-  display:flex;flex-direction:column;z-index:5;
+.bismillah-ornament span {
+  height:1px; width:120px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
-#info.open{transform:none}
-#info-hd{padding:.55rem .7rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.4rem;flex-shrink:0}
-#info-name{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:500;color:var(--accent);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.info-close{background:none;border:none;color:var(--text3);cursor:pointer;font-size:1rem;line-height:1;padding:.1rem .3rem}
-.info-close:hover{color:var(--text)}
-#info-body{flex:1;overflow-y:auto;padding:.55rem .7rem}
-.info-row{display:flex;justify-content:space-between;margin-bottom:.35rem;font-size:.7rem}
-.info-row .ik{color:var(--text3)}
-.info-row .iv{color:var(--text2);font-family:'JetBrains Mono',monospace;font-size:.68rem;text-align:right;max-width:130px;overflow:hidden;text-overflow:ellipsis}
-.info-sect{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin:.5rem 0 .3rem}
-.info-fn{font-size:.7rem;font-family:'JetBrains Mono',monospace;color:var(--text2);padding:.15rem 0;cursor:pointer;transition:color .1s}
-.info-fn:hover{color:var(--accent)}
-.info-trace-btn{
-  width:100%;margin-top:.7rem;padding:.38rem;border-radius:6px;
-  background:var(--accent);border:none;color:#fff;font-size:.73rem;
-  cursor:pointer;font-weight:500;transition:opacity .12s;
+.bismillah-ornament .diamond {
+  width:8px; height:8px; background:var(--gold); transform:rotate(45deg); flex-shrink:0;
 }
-.info-trace-btn:hover{opacity:.85}
 
-/* file browser */
-#fb{display:none;position:fixed;inset:0;z-index:100;background:#000c;backdrop-filter:blur(5px);align-items:center;justify-content:center}
-#fb.on{display:flex}
-#fb-box{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;width:500px;max-width:95vw;max-height:68vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 32px 80px #000000a0}
-#fb-pb{padding:.45rem .75rem;background:var(--bg3);border-bottom:1px solid var(--border);font-size:.7rem;color:var(--accent);font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:.45rem}
-#fb-pt{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#fb-list{flex:1;overflow-y:auto;padding:.2rem}
-.fe{display:flex;align-items:center;gap:.45rem;padding:.35rem .55rem;border-radius:5px;cursor:pointer;font-size:.76rem;color:var(--text2);transition:all .1s}
-.fe:hover{background:var(--bg4);color:var(--text)}
-.fe.dir{color:var(--accent)}
-#fb-ft{padding:.45rem .7rem;background:var(--bg3);border-top:1px solid var(--border);display:flex;gap:.45rem;align-items:center}
-#fb-sel{flex:1;font-size:.7rem;color:var(--text2);font-family:'JetBrains Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.fb-ok{padding:.3rem .8rem;border-radius:6px;background:var(--accent);border:none;color:#fff;font-size:.73rem;cursor:pointer;font-weight:500}
-.fb-cn{padding:.3rem .65rem;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:.73rem;cursor:pointer}
-
-/* minimap */
-#minimap{
-  position:absolute;bottom:12px;right:12px;
-  width:160px;height:110px;
-  background:rgba(7,9,15,.88);border:1px solid var(--border2);
-  border-radius:8px;overflow:hidden;display:none;
-  box-shadow:0 4px 20px #00000060;z-index:10;cursor:pointer;
+.bismillah-text {
+  font-family: var(--font-arabic);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold-light);
+  direction: rtl;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-shadow: 0 0 40px rgba(201,168,76,0.5), 0 0 80px rgba(201,168,76,0.2);
 }
-#minimap canvas{display:block;width:100%;height:100%}
-#minimap-viewport{
-  position:absolute;border:1.5px solid var(--accent);
-  border-radius:2px;background:rgba(74,143,255,.08);
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER — Minaret & Coupole CSS
+═══════════════════════════════════════════════════════════════ */
+header {
+  padding: 0;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arc nasride décoratif derrière le header */
+header::before {
+  content:'';
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:800px; height:300px;
+  border:1px solid rgba(201,168,76,0.04);
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
   pointer-events:none;
 }
 
-/* breadcrumb */
-#breadcrumb{display:none;padding:.28rem .7rem;background:var(--bg3);border-bottom:1px solid var(--border);font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
-.bc-item{color:var(--text2);cursor:pointer;transition:color .1s}.bc-item:hover{color:var(--accent)}
-.bc-sep{margin:0 .35rem;opacity:.4}.bc-cur{color:var(--accent)}
-
-/* multi-trace */
-#multi-trace-sect{ margin-top:.5rem; }
-.mt-row{ display:flex; gap:.4rem; margin-bottom:.3rem; align-items:center; }
-.mt-inp{ flex:1; background:var(--bg3); border:1px solid var(--border2); border-radius:5px;
-  padding:.3rem .5rem; font-size:.7rem; font-family:'JetBrains Mono',monospace;
-  color:var(--text); outline:none; }
-.mt-inp:focus{ border-color:var(--accent); }
-.mt-btn{ background:var(--accent); border:none; border-radius:5px; color:#fff;
-  padding:.3rem .6rem; font-size:.65rem; cursor:pointer; white-space:nowrap; }
-.mt-btn:hover{ background:#6aaeff; }
-.mt-clear{ background:transparent; border:1px solid var(--border2); color:var(--text3);
-  border-radius:5px; padding:.3rem .5rem; font-size:.65rem; cursor:pointer; }
-.mt-clear:hover{ border-color:var(--text3); color:var(--text); }
-.mt-hint{ font-size:.6rem; color:var(--text3); line-height:1.4; }
-
-/* tooltip */
-#tooltip{
-  position:fixed;display:none;
-  background:#0d1117;border:1px solid var(--border2);
-  border-radius:6px;padding:.4rem .65rem;
-  font-size:.65rem;font-family:'JetBrains Mono',monospace;
-  color:var(--text2);pointer-events:none;z-index:200;
-  box-shadow:0 4px 16px #00000060;max-width:280px;line-height:1.6;
+.header-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px; flex-wrap:wrap; padding:32px 0 28px;
 }
-#tooltip b{ color:var(--accent); display:block; margin-bottom:.15rem; }
 
-/* ── Analysis panels ── */
-.analysis-panel{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;margin:.5rem 0}
-.analysis-title{font-size:.7rem;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
-.analysis-close{margin-left:auto;background:none;border:none;color:var(--text3);cursor:pointer;font-size:.85rem;padding:0 .2rem}
-.analysis-close:hover{color:var(--text)}
-.ana-row{display:flex;justify-content:space-between;align-items:center;padding:.25rem 0;border-bottom:1px solid var(--border);font-size:.68rem}
-.ana-row:last-child{border:none}
-.ana-key{color:var(--text2)}
-.ana-val{color:var(--text);font-family:'JetBrains Mono',monospace;font-weight:500}
-.ana-val.bad{color:#ef6548}
-.ana-val.ok{color:#22c55e}
-.ana-val.warn{color:#f59e0b}
-.dead-list{max-height:180px;overflow-y:auto;margin-top:.4rem}
-.dead-item{font-size:.65rem;font-family:'JetBrains Mono',monospace;padding:.2rem .3rem;border-radius:4px;cursor:pointer;display:flex;justify-content:space-between;color:var(--text2);transition:background .1s}
-.dead-item:hover{background:var(--bg3);color:var(--text)}
-.dead-item .di-file{font-size:.58rem;color:var(--text3);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.impact-inp{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:.3rem .5rem;font-size:.7rem;font-family:'JetBrains Mono',monospace;color:var(--text);outline:none;margin-bottom:.4rem}
-.impact-inp:focus{border-color:var(--accent)}
-.impact-hint{font-size:.6rem;color:var(--text3);line-height:1.5;margin-bottom:.4rem}
-.ana-btn{background:var(--bg3);border:1px solid var(--border2);border-radius:5px;color:var(--text2);padding:.28rem .6rem;font-size:.65rem;cursor:pointer;transition:all .15s}
-.ana-btn:hover{border-color:var(--accent);color:var(--accent)}
-.ana-btn.active{background:var(--accent)22;border-color:var(--accent);color:var(--accent)}
-.hm-legend{display:flex;align-items:center;gap:.4rem;font-size:.6rem;color:var(--text3);margin-top:.4rem}
-.hm-grad{width:60px;height:6px;border-radius:3px;background:linear-gradient(90deg,#111e30,#22c55e,#f59e0b,#ef4444)}
-/* path finder */
-.path-list{max-height:200px;overflow-y:auto;margin-top:.4rem}
-.path-item{font-size:.62rem;font-family:'JetBrains Mono',monospace;padding:.3rem .4rem;border-radius:5px;background:var(--bg3);margin-bottom:.3rem;cursor:pointer;border:1px solid transparent;transition:border-color .1s;line-height:1.6}
-.path-item:hover{border-color:var(--accent)}
-.path-item .pi-hops{color:var(--text3);font-size:.58rem}
-.path-fn{color:var(--accent)}.path-sep{color:var(--text3);margin:0 .15rem}
+/* Silhouette mosquée CSS */
+.mosque-silhouette {
+  display:flex; align-items:flex-end; gap:6px; opacity:0.12; flex-shrink:0;
+}
+.minaret {
+  background:var(--gold);
+  border-radius:2px 2px 0 0;
+  position:relative;
+}
+.minaret::before {
+  content:''; position:absolute; top:-10px; left:50%; transform:translateX(-50%);
+  width:0; height:0;
+  border-left:6px solid transparent; border-right:6px solid transparent;
+  border-bottom:10px solid var(--gold);
+}
+.m1 { width:10px; height:55px; }
+.m2 { width:14px; height:75px; }
+.m3 { width:10px; height:55px; }
+.dome-body {
+  width:60px; height:32px; background:var(--gold);
+  border-radius:50% 50% 0 0; position:relative; align-self:flex-end;
+}
 
-/* toast */
-.toast{position:fixed;bottom:1rem;right:1rem;z-index:200;background:var(--bg3);border:1px solid var(--border2);border-radius:7px;padding:.45rem .9rem;font-size:.74rem;box-shadow:0 8px 24px #00000055;opacity:0;transform:translateY(.4rem);transition:all .2s;pointer-events:none}
-.toast.on{opacity:1;transform:none}
+.header-brand { display:flex; flex-direction:column; gap:4px; }
 
-::-webkit-scrollbar{width:4px;height:4px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.brand-ar {
+  font-family: var(--font-arabic);
+  font-size: clamp(3.5rem,8vw,6rem);
+  color: var(--gold-light);
+  direction: rtl;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-shadow:
+    0 0 60px rgba(201,168,76,0.6),
+    0 0 120px rgba(201,168,76,0.25),
+    0 0 200px rgba(42,123,140,0.15);
+}
+
+.brand-sub {
+  display:flex; align-items:center; gap:10px;
+}
+.brand-latin {
+  font-family: var(--font-display);
+  font-size: clamp(0.75rem,1.5vw,0.95rem);
+  font-weight: 300; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--ivory-dim);
+}
+.brand-version {
+  padding:2px 9px; background:var(--gold-dim);
+  border:1px solid rgba(201,168,76,0.3); border-radius:var(--r-pill);
+  font-size:0.6rem; font-weight:700; letter-spacing:0.12em; color:var(--gold);
+}
+
+.header-controls { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+
+/* Boutons header style islamique */
+.hbtn {
+  display:flex; align-items:center; gap:7px; padding:9px 18px;
+  font-family:var(--font-ui); font-size:0.78rem; font-weight:700; letter-spacing:0.08em;
+  background:var(--night3);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:var(--r-pill);
+  color:var(--ivory-dim); cursor:pointer; transition:all 0.22s;
+  white-space:nowrap; position:relative; overflow:hidden;
+}
+.hbtn::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent);
+  opacity:0; transition:opacity 0.2s;
+}
+.hbtn:hover { border-color:var(--gold); color:var(--gold-light); }
+.hbtn:hover::before { opacity:1; }
+.hbtn.active { background:linear-gradient(135deg,rgba(201,168,76,0.2),rgba(42,123,140,0.1)); border-color:var(--gold); color:var(--gold-light); }
+.hbtn svg { width:14px; height:14px; flex-shrink:0; }
+
+.lang-switcher {
+  display:flex; background:var(--night3);
+  border:1px solid rgba(201,168,76,0.18); border-radius:var(--r-pill); overflow:hidden;
+}
+.lbtn {
+  padding:9px 16px; font-family:var(--font-ui); font-size:0.78rem; font-weight:700;
+  letter-spacing:0.06em; color:var(--ivory-dim); background:transparent; border:none;
+  cursor:pointer; transition:all 0.2s;
+}
+.lbtn.active {
+  background:linear-gradient(135deg,var(--gold),#B8922A);
+  color:var(--night);
+}
+.lbtn:hover:not(.active) { color:var(--gold-light); }
+
+/* ═══════════════════════════════════════════════════════════════
+   SÉPARATEURS ISLAMIQUES
+═══════════════════════════════════════════════════════════════ */
+.islamic-divider {
+  display:flex; align-items:center; gap:10px;
+  margin: 6px 0 20px;
+}
+.islamic-divider .line {
+  flex:1; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.35), rgba(42,123,140,0.2), transparent);
+}
+.islamic-divider .ornament {
+  font-family:var(--font-arabic); font-size:1.1rem; color:rgba(201,168,76,0.4);
+  line-height:1;
+}
+
+/* Section label */
+.section-label {
+  font-family:var(--font-ui); font-size:0.68rem; font-weight:700; letter-spacing:0.22em;
+  text-transform:uppercase; color:var(--teal-light); margin-bottom:6px;
+  display:flex; align-items:center; gap:12px;
+}
+.section-label::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(42,123,140,0.4),transparent); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOT DU JOUR — Arche nasride
+═══════════════════════════════════════════════════════════════ */
+#wod-section { padding:44px 0 20px; }
+
+.wod-card {
+  background: linear-gradient(145deg, var(--night3) 0%, var(--night4) 50%, #0E1A28 100%);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:var(--r-xl);
+  padding:48px 56px;
+  display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:transform 0.3s var(--ease), box-shadow 0.3s;
+  box-shadow:0 10px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,168,76,0.1);
+}
+
+/* Arc en fer à cheval (arche alhambra) en arrière-plan */
+.wod-card::before {
+  content:'';
+  position:absolute; bottom:-20px; right:60px;
+  width:280px; height:320px;
+  border:1px solid rgba(201,168,76,0.07);
+  border-radius:50% 50% 0 0 / 60% 60% 0 0;
+  pointer-events:none;
+}
+
+/* Motif zellige coin */
+.wod-card::after {
+  content:'';
+  position:absolute; top:0; right:0; width:200px; height:200px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(42,123,140,0.12) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 40%);
+  pointer-events:none;
+}
+
+.wod-card:hover { transform:translateY(-4px); box-shadow:0 24px 80px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.06); }
+
+.wod-left .cat-badge { margin-bottom:22px; }
+.wod-left h2 {
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,5vw,3.6rem);
+  font-weight:300; color:var(--ivory); line-height:1.1;
+  letter-spacing:0.02em;
+}
+.wod-left .wod-en { font-size:0.88rem; color:var(--ivory-dim); margin-top:6px; letter-spacing:0.06em; font-style:italic; }
+.wod-left .wod-excerpt { font-size:0.9rem; color:rgba(240,230,204,0.55); margin-top:18px; line-height:1.75; max-width:480px; }
+.wod-pathway-tag {
+  display:inline-flex; align-items:center; gap:8px; margin-top:20px;
+  padding:6px 16px;
+  background:rgba(42,123,140,0.1); border:1px solid rgba(42,123,140,0.25);
+  border-radius:var(--r-pill); font-size:0.72rem; color:var(--teal-light);
+}
+
+.wod-right { display:flex; flex-direction:column; align-items:center; gap:10px; z-index:1; }
+
+/* Médaillon calligraphique */
+.wod-medallion {
+  position:relative; display:flex; flex-direction:column; align-items:center;
+  padding:24px 32px;
+}
+.wod-medallion::before {
+  content:'';
+  position:absolute; inset:0;
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:50% 50% 50% 50% / 40% 40% 60% 60%;
+  background:radial-gradient(ellipse,rgba(201,168,76,0.04) 0%,transparent 70%);
+}
+
+.wod-ar {
+  font-family:var(--font-arabic);
+  font-size:clamp(4rem,9vw,7.5rem);
+  color:var(--gold-light);
+  direction:rtl; line-height:1.2;
+  text-shadow: 0 0 60px rgba(201,168,76,0.45), 0 0 120px rgba(201,168,76,0.2);
+  position:relative; z-index:1;
+}
+.wod-tr {
+  font-family:var(--font-display); font-style:italic;
+  font-size:1.05rem; color:rgba(201,168,76,0.55);
+  letter-spacing:0.12em; margin-top:4px; position:relative; z-index:1;
+}
+.wod-tts {
+  background:none; border:1px solid rgba(201,168,76,0.22);
+  border-radius:50%; width:42px; height:42px; display:flex; align-items:center;
+  justify-content:center; cursor:pointer; color:var(--gold); transition:all 0.2s;
+  margin-top:10px; z-index:1;
+}
+.wod-tts:hover { background:var(--gold-dim); border-color:var(--gold); transform:scale(1.1); }
+.wod-tts svg { width:15px; height:15px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   RECHERCHE
+═══════════════════════════════════════════════════════════════ */
+#search-section { padding:36px 0 22px; }
+.search-row { display:flex; gap:12px; align-items:stretch; flex-wrap:wrap; }
+.search-box { flex:1; min-width:260px; position:relative; }
+.search-box input {
+  width:100%; padding:16px 50px 16px 52px;
+  font-family:var(--font-ui); font-size:1rem; color:var(--ivory);
+  background:var(--night3); border:1.5px solid rgba(201,168,76,0.18);
+  border-radius:var(--r-lg); outline:none; transition:all 0.25s;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.search-box input::placeholder { color:rgba(240,230,204,0.25); }
+.search-box input:focus { border-color:var(--teal-light); box-shadow:0 0 0 3px rgba(42,123,140,0.12), inset 0 1px 0 rgba(255,255,255,0.03); }
+.s-icon { position:absolute; left:18px; top:50%; transform:translateY(-50%); width:18px; height:18px; color:rgba(240,230,204,0.25); pointer-events:none; }
+.s-clear { position:absolute; right:14px; top:50%; transform:translateY(-50%); width:28px; height:28px; background:none; border:none; color:rgba(240,230,204,0.3); cursor:pointer; display:none; align-items:center; justify-content:center; border-radius:50%; transition:all 0.2s; }
+.s-clear.show { display:flex; }
+.s-clear:hover { background:rgba(240,230,204,0.08); color:var(--ivory); }
+.s-clear svg { width:14px; height:14px; }
+
+.kbd-toggle {
+  display:flex; align-items:center; gap:8px; padding:0 20px;
+  background:var(--night3); border:1.5px solid rgba(201,168,76,0.18); border-radius:var(--r-lg);
+  color:var(--ivory-dim); cursor:pointer; font-family:var(--font-ui); font-size:0.82rem; font-weight:700;
+  letter-spacing:0.06em; transition:all 0.2s; white-space:nowrap; height:54px;
+}
+.kbd-toggle:hover,.kbd-toggle.active { border-color:var(--teal-light); color:var(--teal-light); background:var(--teal-dim); }
+.kbd-toggle .ar-sample { font-family:var(--font-arabic); font-size:1.2rem; }
+
+/* Filtres */
+.filter-row { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; align-items:center; }
+.filter-label { font-size:0.68rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(240,230,204,0.35); margin-right:4px; }
+.lf-btn { padding:6px 14px; font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.08em; color:rgba(240,230,204,0.4); background:transparent; border:1px solid rgba(240,230,204,0.1); border-radius:var(--r-pill); cursor:pointer; transition:all 0.2s; }
+.lf-btn.active { background:var(--night3); border-color:var(--teal-light); color:var(--teal-light); }
+.lf-btn:hover:not(.active) { border-color:rgba(42,123,140,0.4); color:var(--ivory-dim); }
+.cat-row { display:flex; gap:7px; flex-wrap:wrap; margin-top:10px; }
+.cat-btn { padding:5px 13px; font-family:var(--font-ui); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(240,230,204,0.35); background:transparent; border:1px solid rgba(240,230,204,0.08); border-radius:var(--r-pill); cursor:pointer; transition:all 0.2s; }
+.cat-btn:hover { border-color:rgba(201,168,76,0.4); color:var(--gold); }
+.cat-btn.active { background:rgba(201,168,76,0.1); border-color:var(--gold); color:var(--gold-light); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CLAVIER ARABE — Style andalou
+═══════════════════════════════════════════════════════════════ */
+#arabic-keyboard {
+  background:var(--night3);
+  border:1px solid rgba(201,168,76,0.18);
+  border-top:3px solid rgba(42,123,140,0.5);
+  border-radius:0 0 var(--r-lg) var(--r-lg);
+  padding:20px 22px 18px; margin-top:-4px; display:none;
+  box-shadow:0 12px 40px rgba(0,0,0,0.5);
+  animation:slideDown 0.25s var(--spring);
+}
+#arabic-keyboard.open { display:block; }
+@keyframes slideDown { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+.kbd-row { display:flex; gap:5px; justify-content:center; margin-bottom:5px; flex-wrap:wrap; }
+.k {
+  min-width:40px; height:44px; padding:0 6px;
+  background:var(--night4);
+  border:1px solid rgba(201,168,76,0.12);
+  border-bottom:2px solid rgba(201,168,76,0.2);
+  border-radius:var(--r-sm);
+  font-family:var(--font-arabic); font-size:1.35rem; color:var(--ivory);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:all 0.15s; direction:rtl; line-height:1;
+}
+.k:hover { background:rgba(42,123,140,0.2); border-color:var(--teal-light); color:var(--teal-light); transform:translateY(-2px); box-shadow:0 4px 12px rgba(42,123,140,0.2); }
+.k:active { transform:translateY(0); }
+.k.wide { min-width:72px; font-family:var(--font-ui); font-size:0.72rem; letter-spacing:0.06em; color:var(--ivory-dim); }
+.kbd-diacritics { display:flex; gap:5px; justify-content:center; margin-top:10px; padding-top:10px; border-top:1px solid rgba(201,168,76,0.1); flex-wrap:wrap; }
+
+/* Badge catégorie */
+.cat-badge {
+  display:inline-flex; align-items:center; padding:4px 12px;
+  font-family:var(--font-ui); font-size:0.62rem; font-weight:700; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--teal-light);
+  background:rgba(42,123,140,0.1); border:1px solid rgba(42,123,140,0.25);
+  border-radius:var(--r-pill);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RÉSULTATS & CARTES
+═══════════════════════════════════════════════════════════════ */
+#results-section { padding-bottom:90px; }
+.results-meta { display:flex; align-items:center; justify-content:space-between; margin:26px 0 18px; flex-wrap:wrap; gap:10px; }
+.r-count { font-family:var(--font-display); font-style:italic; font-size:1rem; color:rgba(240,230,204,0.35); }
+.r-count strong { color:var(--ivory); font-style:normal; }
+.r-actions { display:flex; gap:8px; }
+.r-btn { padding:7px 16px; background:none; border:1px solid rgba(201,168,76,0.2); border-radius:var(--r-pill); color:var(--gold); font-size:0.75rem; font-weight:700; letter-spacing:0.08em; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:5px; }
+.r-btn:hover { background:var(--gold-dim); border-color:var(--gold); }
+.r-btn svg { width:13px; height:13px; }
+
+.no-results { text-align:center; padding:90px 20px; display:none; }
+.no-results.visible { display:block; }
+.no-res-ar { font-family:var(--font-arabic); font-size:3.5rem; color:rgba(201,168,76,0.12); direction:rtl; display:block; margin-bottom:14px; }
+.no-results p { font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:rgba(240,230,204,0.2); }
+
+.cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:20px; }
+@media(min-width:980px){ .cards-grid { grid-template-columns:repeat(3,1fr); } }
+
+/* ─── Carte ─── */
+.word-card {
+  background: linear-gradient(160deg, var(--night3) 0%, var(--night4) 100%);
+  border:1px solid rgba(201,168,76,0.1);
+  border-radius:var(--r-lg); padding:26px 26px 20px;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:transform 0.28s var(--spring), box-shadow 0.28s var(--ease), border-color 0.25s;
+  box-shadow:0 4px 24px rgba(0,0,0,0.35);
+  animation:cardIn 0.4s var(--spring) both;
+}
+@keyframes cardIn { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+/* Bordure top dorée au hover */
+.word-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, var(--teal), var(--gold), var(--teal-light));
+  opacity:0; transition:opacity 0.25s;
+}
+
+/* Motif arabesque coin carte */
+.word-card::after {
+  content:'ب'; font-family:var(--font-arabic); font-size:6rem;
+  color:rgba(201,168,76,0.025); position:absolute; bottom:-10px; left:10px;
+  direction:rtl; line-height:1; pointer-events:none; user-select:none;
+}
+
+.word-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 18px 56px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.18), 0 0 30px rgba(42,123,140,0.06);
+  border-color:rgba(201,168,76,0.25);
+}
+.word-card:hover::before { opacity:1; }
+
+.card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; }
+.card-actions { display:flex; gap:5px; }
+.card-act-btn {
+  width:28px; height:28px; background:none; border:1px solid rgba(240,230,204,0.08);
+  border-radius:50%; color:rgba(240,230,204,0.35); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all 0.2s;
+}
+.card-act-btn:hover { border-color:var(--gold); color:var(--gold); background:var(--gold-dim); }
+.card-act-btn.fav-active { color:var(--gold); border-color:var(--gold); background:var(--gold-dim); }
+.card-act-btn.speaking { color:var(--teal-light); border-color:var(--teal-light); animation:pulse 0.8s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(42,123,140,0.4)} 50%{box-shadow:0 0 0 6px rgba(42,123,140,0)} }
+.card-act-btn svg { width:12px; height:12px; }
+
+/* Mot arabe avec médaillon */
+.card-ar-wrap { text-align:right; margin-bottom:16px; }
+.card-ar {
+  font-family:var(--font-arabic); font-size:2.9rem; color:var(--ivory);
+  direction:rtl; line-height:1.25;
+}
+.card-tr {
+  font-family:var(--font-display); font-style:italic; font-size:0.87rem;
+  color:var(--brown-light); letter-spacing:0.09em; margin-top:2px;
+}
+
+.card-div { height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.12),transparent); margin:12px 0; }
+
+.card-words { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; margin-bottom:10px; }
+.cw-fr { font-family:var(--font-display); font-size:1.4rem; font-weight:600; color:var(--ivory); }
+.cw-sep { color:rgba(201,168,76,0.3); }
+.cw-en { font-family:var(--font-display); font-size:1.05rem; font-style:italic; color:var(--brown-light); }
+
+.card-meaning { font-size:0.84rem; color:rgba(240,230,204,0.45); line-height:1.65; margin-bottom:14px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.card-meaning[dir="rtl"] { font-family:var(--font-arabic); font-size:0.95rem; text-align:right; }
+
+.card-pathway { display:inline-flex; align-items:center; gap:5px; font-size:0.67rem; color:rgba(240,230,204,0.3); background:rgba(240,230,204,0.04); padding:4px 10px; border-radius:var(--r-pill); }
+
+.card-foot { display:flex; align-items:center; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid rgba(240,230,204,0.05); }
+.card-open-btn { display:flex; align-items:center; gap:5px; font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-light); background:none; border:none; cursor:pointer; padding:0; transition:gap 0.2s; }
+.card-open-btn:hover { gap:9px; }
+.card-open-btn svg { width:12px; height:12px; }
+
+/* Indicateur "appris" */
+.learned-badge { width:8px; height:8px; background:var(--emerald-light); border-radius:50%; flex-shrink:0; }
+
+mark { background:rgba(42,123,140,0.25); color:inherit; border-radius:2px; padding:0 2px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   ARBRE ÉTYMOLOGIQUE — Style manuscrit
+═══════════════════════════════════════════════════════════════ */
+.etym-tree-wrap {
+  background:var(--night2); border:1px solid rgba(201,168,76,0.1);
+  border-radius:var(--r-md); padding:22px; overflow-x:auto;
+}
+.etym-tree { display:flex; align-items:center; gap:0; flex-wrap:nowrap; min-width:fit-content; }
+.etym-node {
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  background:var(--night3); border:1px solid rgba(201,168,76,0.15);
+  border-radius:var(--r-md); padding:12px 16px; min-width:100px; text-align:center;
+}
+.etym-node.root { border-color:var(--gold); background:rgba(201,168,76,0.07); }
+.etym-node.final { border-color:rgba(42,123,140,0.4); background:rgba(42,123,140,0.05); }
+.etym-lang { font-size:0.58rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-light); }
+.etym-node.root .etym-lang { color:var(--gold); }
+.etym-word { font-family:var(--font-arabic); font-size:1.3rem; color:var(--ivory); direction:rtl; line-height:1.4; }
+.etym-word.latin { font-family:var(--font-display); font-style:italic; font-size:0.95rem; direction:ltr; }
+.etym-date { font-size:0.6rem; color:rgba(240,230,204,0.3); }
+.etym-arrow { width:36px; height:2px; background:linear-gradient(90deg,rgba(201,168,76,0.4),rgba(42,123,140,0.3)); flex-shrink:0; position:relative; }
+.etym-arrow::after { content:'▶'; position:absolute; right:-6px; top:50%; transform:translateY(-50%); font-size:7px; color:rgba(201,168,76,0.35); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL — Arc alhambra
+═══════════════════════════════════════════════════════════════ */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(4,6,10,0.88); z-index:1000;
+  display:flex; align-items:center; justify-content:center; padding:20px;
+  backdrop-filter:blur(8px); opacity:0; pointer-events:none; transition:opacity 0.3s var(--ease);
+}
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.modal {
+  background:var(--night2); border:1px solid rgba(201,168,76,0.14);
+  border-radius:var(--r-xl); width:100%; max-width:780px; max-height:92vh;
+  overflow-y:auto; position:relative;
+  transform:translateY(30px) scale(0.97); transition:transform 0.35s var(--spring);
+  box-shadow:0 50px 120px rgba(0,0,0,0.8), 0 0 0 1px rgba(201,168,76,0.06);
+}
+.modal-overlay.open .modal { transform:translateY(0) scale(1); }
+.modal::-webkit-scrollbar{width:4px} .modal::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.18);border-radius:9px}
+
+/* Header modal — arc en fer à cheval */
+.modal-hdr {
+  background:linear-gradient(160deg, #0A1220 0%, #0F1A2C 60%, #121E30 100%);
+  padding:48px 52px 40px; border-radius:var(--r-xl) var(--r-xl) 0 0;
+  position:relative; overflow:hidden;
+  border-bottom:1px solid rgba(201,168,76,0.12);
+}
+
+/* Arc nasride en CSS dans le header */
+.modal-hdr::before {
+  content:'';
+  position:absolute; bottom:-1px; left:50%; transform:translateX(-50%);
+  width:320px; height:200px;
+  border:1px solid rgba(201,168,76,0.08);
+  border-radius:50% 50% 0 0 / 80% 80% 0 0;
+  pointer-events:none;
+}
+
+/* Motif étoile à 8 branches en coin */
+.modal-hdr::after {
+  content:'';
+  position:absolute; top:0; right:0; bottom:0; width:300px;
+  background:
+    radial-gradient(circle at 100% 30%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(42,123,140,0.05) 0%, transparent 40%);
+  pointer-events:none;
+}
+
+.modal-close {
+  position:absolute; top:18px; right:20px; width:34px; height:34px;
+  background:rgba(240,230,204,0.05); border:1px solid rgba(240,230,204,0.1);
+  border-radius:50%; color:rgba(240,230,204,0.45); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all 0.2s; z-index:2;
+}
+.modal-close:hover { background:rgba(240,230,204,0.1); color:var(--ivory); }
+.modal-close svg { width:14px; height:14px; }
+
+.modal-nav { position:absolute; top:18px; left:18px; display:flex; gap:6px; z-index:2; }
+.modal-nav-btn {
+  width:30px; height:30px; background:rgba(240,230,204,0.05);
+  border:1px solid rgba(240,230,204,0.1); border-radius:50%;
+  color:rgba(240,230,204,0.35); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all 0.2s;
+}
+.modal-nav-btn:hover { color:var(--gold); border-color:var(--gold); }
+.modal-nav-btn svg { width:12px; height:12px; }
+
+/* Grand mot arabe — cœur de la modale */
+.modal-ar-wrap {
+  position:relative; z-index:1; text-align:center; margin-bottom:8px;
+}
+.modal-ar {
+  font-family:var(--font-arabic);
+  font-size:clamp(3.5rem,9vw,6.5rem);
+  color:var(--gold-light); direction:rtl;
+  line-height:1.2;
+  text-shadow: 0 0 80px rgba(201,168,76,0.5), 0 0 160px rgba(201,168,76,0.2), 0 0 240px rgba(42,123,140,0.1);
+}
+.modal-tr {
+  font-family:var(--font-display); font-style:italic;
+  font-size:1.1rem; color:rgba(201,168,76,0.55);
+  text-align:center; letter-spacing:0.13em; position:relative; z-index:1;
+}
+
+.modal-chips {
+  display:flex; justify-content:center; gap:12px; margin-top:24px;
+  flex-wrap:wrap; position:relative; z-index:1;
+}
+.m-chip {
+  display:flex; align-items:center; gap:8px;
+  background:rgba(240,230,204,0.05); border:1px solid rgba(240,230,204,0.09);
+  border-radius:var(--r-pill); padding:8px 18px;
+}
+.m-chip-flag { font-size:1rem; }
+.m-chip-word { font-family:var(--font-display); font-size:1.1rem; font-weight:600; color:var(--ivory); }
+
+.modal-hdr-actions {
+  display:flex; justify-content:center; gap:8px; margin-top:20px;
+  flex-wrap:wrap; position:relative; z-index:1;
+}
+.m-act {
+  display:flex; align-items:center; gap:6px; padding:7px 16px;
+  background:rgba(240,230,204,0.05); border:1px solid rgba(240,230,204,0.1);
+  border-radius:var(--r-pill); color:rgba(240,230,204,0.55);
+  cursor:pointer; font-size:0.74rem; font-weight:700; letter-spacing:0.08em; transition:all 0.2s;
+}
+.m-act:hover { border-color:var(--gold); color:var(--gold); background:var(--gold-dim); }
+.m-act.speaking { color:var(--teal-light); border-color:var(--teal-light); animation:pulse 0.8s infinite; }
+.m-act.fav-on { color:var(--gold); border-color:var(--gold); background:var(--gold-dim); }
+.m-act.learned-on { color:var(--emerald-light); border-color:var(--emerald-light); background:rgba(42,155,110,0.1); }
+.m-act svg { width:13px; height:13px; }
+
+/* Corps modal */
+.modal-body { padding:40px 52px 52px; }
+.m-section { margin-bottom:28px; }
+.m-section:last-child { margin-bottom:0; }
+.m-title {
+  font-family:var(--font-ui); font-size:0.64rem; font-weight:700;
+  letter-spacing:0.22em; text-transform:uppercase; color:var(--teal-light);
+  margin-bottom:14px; display:flex; align-items:center; gap:10px;
+}
+.m-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(42,123,140,0.35),transparent); }
+
+/* 3 blocs de définition */
+.def-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+.def-block {
+  background:var(--night3); border:1px solid rgba(240,230,204,0.06);
+  border-radius:var(--r-sm); padding:14px 16px;
+}
+.def-block.ar-block { border-color:rgba(201,168,76,0.12); background:rgba(201,168,76,0.04); }
+.def-lang { font-size:0.64rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--brown-light); margin-bottom:7px; }
+.def-text { font-size:0.87rem; color:rgba(240,230,204,0.65); line-height:1.65; }
+.def-text.ar-text { font-family:var(--font-arabic); font-size:1.02rem; direction:rtl; text-align:right; line-height:1.8; }
+
+.etym-block {
+  font-size:0.9rem; color:rgba(240,230,204,0.62); line-height:1.8;
+  background:var(--night3); padding:18px 20px; border-radius:var(--r-sm);
+  border-left:3px solid var(--gold);
+}
+.ex-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.ex-block { background:var(--night3); border-radius:var(--r-sm); padding:13px 16px; border-left:2px solid rgba(201,168,76,0.18); }
+.ex-text { font-family:var(--font-display); font-style:italic; font-size:0.92rem; color:rgba(240,230,204,0.55); line-height:1.65; }
+.ex-text.ar-text { font-family:var(--font-arabic); direction:rtl; text-align:right; font-style:normal; font-size:1rem; }
+.rel-tags { display:flex; gap:8px; flex-wrap:wrap; }
+.rel-tag { padding:6px 14px; font-size:0.8rem; color:rgba(240,230,204,0.45); background:var(--night3); border:1px solid rgba(240,230,204,0.08); border-radius:var(--r-pill); cursor:pointer; transition:all 0.2s; }
+.rel-tag:hover { border-color:var(--gold); color:var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════════
+   QUIZ
+═══════════════════════════════════════════════════════════════ */
+.quiz-q { font-family:var(--font-display); font-size:1.2rem; color:var(--ivory); margin-bottom:6px; line-height:1.4; }
+.quiz-ar { font-family:var(--font-arabic); font-size:3.8rem; color:var(--gold-light); direction:rtl; text-align:center; margin-bottom:24px; text-shadow:0 0 40px rgba(201,168,76,0.4); }
+.quiz-choices { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.quiz-choice { padding:14px 16px; background:var(--night3); border:1.5px solid rgba(240,230,204,0.08); border-radius:var(--r-md); cursor:pointer; font-family:var(--font-arabic); font-size:1.4rem; color:var(--ivory); text-align:center; direction:rtl; transition:all 0.2s; line-height:1.4; }
+.quiz-choice:hover { border-color:var(--gold); background:var(--gold-dim); }
+.quiz-choice.correct { border-color:var(--emerald-light); background:rgba(42,155,110,0.15); color:#7DD09A; }
+.quiz-choice.wrong { border-color:var(--nasrid-light); background:rgba(192,64,64,0.12); color:#E08080; }
+.quiz-progress { display:flex; gap:4px; margin-bottom:22px; }
+.qp-dot { flex:1; height:3px; background:rgba(240,230,204,0.08); border-radius:9px; transition:background 0.3s; }
+.qp-dot.done { background:var(--gold); }
+.qp-dot.current { background:rgba(201,168,76,0.4); }
+.quiz-score { text-align:center; font-family:var(--font-display); font-size:2rem; color:var(--gold); margin-top:8px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PANEL FAVORIS / HISTORIQUE
+═══════════════════════════════════════════════════════════════ */
+.side-panel {
+  position:fixed; right:0; top:0; bottom:0; width:320px;
+  background:var(--night2); border-left:1px solid rgba(201,168,76,0.12);
+  z-index:900; transform:translateX(100%); transition:transform 0.35s var(--spring);
+  box-shadow:-24px 0 80px rgba(0,0,0,0.6); display:flex; flex-direction:column;
+}
+.side-panel.open { transform:translateX(0); }
+.panel-tabs { display:flex; border-bottom:1px solid rgba(201,168,76,0.1); }
+.panel-tab { flex:1; padding:14px 0; font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; background:none; border:none; color:rgba(240,230,204,0.35); cursor:pointer; transition:all 0.2s; border-bottom:2px solid transparent; }
+.panel-tab.active { color:var(--gold-light); border-bottom-color:var(--gold); }
+.panel-body { flex:1; overflow-y:auto; padding:20px 20px 80px; }
+.panel-close { position:absolute; top:14px; right:16px; background:none; border:none; color:rgba(240,230,204,0.3); cursor:pointer; width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:all 0.2s; }
+.panel-close:hover { background:rgba(240,230,204,0.08); color:var(--ivory); }
+.panel-close svg { width:14px; height:14px; }
+.panel-item { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:var(--night3); border:1px solid rgba(201,168,76,0.08); border-radius:var(--r-md); margin-bottom:8px; cursor:pointer; transition:all 0.2s; gap:10px; }
+.panel-item:hover { border-color:rgba(201,168,76,0.25); }
+.pi-ar { font-family:var(--font-arabic); font-size:1.5rem; color:var(--gold-light); direction:rtl; flex-shrink:0; }
+.pi-fr { font-family:var(--font-display); font-size:0.95rem; font-weight:600; color:var(--ivory); flex:1; }
+.pi-rm { background:none; border:none; color:rgba(240,230,204,0.2); cursor:pointer; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:all 0.2s; flex-shrink:0; }
+.pi-rm:hover { color:var(--nasrid-light); background:rgba(192,64,64,0.1); }
+.pi-rm svg { width:11px; height:11px; }
+.panel-empty { text-align:center; padding:40px 20px; }
+.panel-empty-ar { font-family:var(--font-arabic); font-size:2.5rem; color:rgba(201,168,76,0.1); direction:rtl; display:block; margin-bottom:10px; }
+.panel-empty p { font-family:var(--font-display); font-style:italic; font-size:0.9rem; color:rgba(240,230,204,0.2); }
+
+/* ═══════════════════════════════════════════════════════════════
+   DEMO BANNER
+═══════════════════════════════════════════════════════════════ */
+.demo-banner {
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+  background:var(--night3); border:1px solid var(--teal-light);
+  border-radius:var(--r-pill); padding:10px 22px;
+  display:none; align-items:center; gap:12px;
+  font-size:0.8rem; color:var(--teal-light); z-index:800;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(42,123,140,0.15);
+  animation:float 2s ease-in-out infinite;
+}
+.demo-banner.show { display:flex; }
+@keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-4px)} }
+.demo-stop { background:none; border:1px solid rgba(42,123,140,0.4); border-radius:var(--r-pill); padding:4px 12px; color:var(--teal-light); cursor:pointer; font-size:0.72rem; font-weight:700; transition:all 0.2s; }
+.demo-stop:hover { background:var(--teal-dim); }
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════════════════ */
+.toast {
+  position:fixed; bottom:80px; left:50%; transform:translateX(-50%) translateY(16px);
+  background:var(--night3); border:1px solid rgba(201,168,76,0.3);
+  border-radius:var(--r-pill); padding:10px 22px;
+  font-size:0.82rem; color:var(--gold-light); z-index:2000;
+  opacity:0; transition:all 0.3s; pointer-events:none; white-space:nowrap;
+}
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* FOOTER */
+footer {
+  border-top:1px solid rgba(201,168,76,0.08);
+  padding:24px 0; text-align:center; position:relative; z-index:1;
+}
+footer p { font-family:var(--font-display); font-style:italic; font-size:0.85rem; color:rgba(240,230,204,0.22); }
+footer strong { color:var(--gold); font-style:normal; }
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media(max-width:768px){
+  .wod-card { grid-template-columns:1fr; padding:30px 24px; gap:28px; }
+  .wod-right { order:-1; }
+  .wod-ar { font-size:4.5rem; }
+  .search-row { flex-direction:column; }
+  .kbd-toggle { height:48px; }
+  .modal-hdr { padding:38px 24px 30px; }
+  .modal-body { padding:26px 24px 38px; }
+  .def-grid { grid-template-columns:1fr; }
+  .ex-grid { grid-template-columns:1fr; }
+  .modal { border-radius:var(--r-lg); }
+  .side-panel { width:100%; }
+  .quiz-choices { grid-template-columns:1fr; }
+  .modal-chips { flex-direction:column; align-items:center; }
+  .mosque-silhouette { display:none; }
+}
+@media(max-width:480px){
+  .container { padding:0 14px; }
+  .brand-ar { font-size:3rem; }
+  .header-controls { width:100%; }
+  .bismillah-wrap::before,.bismillah-wrap::after { display:none; }
+}
 </style>
 </head>
 <body>
 
-<!-- ══ LAUNCH ═══════════════════════════════════════════════ -->
-<div id="launch">
-  <div class="bism">
-    <span class="bism-ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
-    <div class="bism-rule"><span class="bism-gem">✦</span></div>
-    <div class="bism-title">Callgraph Studio</div>
-    <div class="bism-sub">C · Interactive Call Graph Explorer</div>
+<!-- ═══════════════ BISMILLAH ═══════════════ -->
+<div class="bismillah-wrap">
+  <div class="bismillah-ornament">
+    <span></span><div class="diamond"></div><div class="diamond"></div><div class="diamond"></div><span></span>
   </div>
-  <div class="card">
-    <div class="src-row">
-      <input class="inp" id="src" placeholder="/path/to/project" spellcheck="false">
-      <button class="btn-sm" onclick="openFB()">Browse</button>
-    </div>
-    <button class="btn-index" id="btn-idx" onclick="doIndex()">
-      ◈ &nbsp;Index Project
-    </button>
-    <div id="progress">
-      <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
-      <div class="prog-log" id="prog-log"></div>
-    </div>
+  <div class="bismillah-text">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+  <div class="bismillah-ornament" style="margin-top:10px;margin-bottom:0">
+    <span></span><div class="diamond"></div><div class="diamond"></div><div class="diamond"></div><span></span>
   </div>
 </div>
 
-<!-- ══ APP ════════════════════════════════════════════════════ -->
-<div id="app">
-  <!-- topbar -->
-  <div id="tb">
-    <span class="tb-logo">✦ Callgraph</span>
-    <span class="tb-div">|</span>
-    <span class="tb-src" id="tb-src"></span>
-    <span class="tb-stat" id="tb-stat"></span>
-    <button class="tbb" onclick="newIndex()">⟳ Re-index</button>
-    <button class="tbb" onclick="newIndex(true)">＋ New</button>
-    <button class="tbb" onclick="clearSession()" title="Clear saved session" style="opacity:.65;font-size:.62rem">✕ Session</button>
-  </div>
-
-  <div id="main">
-    <!-- ── SIDEBAR ── -->
-    <div id="sidebar">
-
-      <!-- Mode -->
-      <div class="sb-sect">
-        <span class="sb-lbl">Mode</span>
-        <div class="mode-row">
-          <button class="mbtn active" id="m-fn" onclick="setMode('fn')">ƒ Function</button>
-          <button class="mbtn" id="m-mod" onclick="setMode('mod')">⬡ Module</button>
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:20px">
+        <!-- Silhouette mosquée CSS -->
+        <div class="mosque-silhouette" aria-hidden="true">
+          <div class="minaret m1"></div>
+          <div class="minaret m2"></div>
+          <div class="dome-body"></div>
+          <div class="minaret m2"></div>
+          <div class="minaret m1"></div>
         </div>
-        <!-- Module options — only shown in mod mode -->
-        <div id="mod-opts" style="display:none;margin-top:.45rem;display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.3rem">
-            <button class="gbtn" id="btn-expand" onclick="toggleModExpand()" title="Click module to expand its functions in-place">⊞ Expand</button>
-            <button class="gbtn" id="btn-matrix" onclick="toggleMatrix()" title="Coupling heatmap: modules × modules">▦ Matrix</button>
+        <div class="header-brand">
+          <div class="brand-ar">جِسْر</div>
+          <div class="brand-sub">
+            <span class="brand-latin">Jisr — Pont entre les langues</span>
+            <span class="brand-version">v1.0</span>
           </div>
         </div>
       </div>
 
-      <!-- Depth (fn mode only) -->
-      <div class="sb-sect" id="depth-sect">
-        <span class="sb-lbl">Depth &nbsp;<span style="opacity:.5;font-weight:400">(0=all)</span></span>
-        <div class="depth-row">
-          <input type="range" id="depth" min="0" max="10" value="0" oninput="onDepth(this.value)">
-          <span class="dv" id="dv">∞</span>
+      <div class="header-controls">
+        <div class="lang-switcher">
+          <button class="lbtn active" data-ui-lang="fr">FR</button>
+          <button class="lbtn" data-ui-lang="en">EN</button>
+          <button class="lbtn" data-ui-lang="ar" style="font-family:var(--font-arabic);font-size:1rem">ع</button>
         </div>
-      </div>
-
-      <!-- Style -->
-      <div class="sb-sect">
-        <span class="sb-lbl">Style</span>
-        <div class="spills" id="spills"></div>
-      </div>
-
-      <!-- Trace -->
-      <div class="sb-sect" id="trace-sect">
-        <span class="sb-lbl">Trace function</span>
-        <div class="trace-wrap">
-          <input class="trace-inp" id="trace-inp" placeholder="click node or type…"
-                 oninput="acTrace(this.value)" onkeydown="traceKey(event)"
-                 onblur="setTimeout(hideAc,150)">
-          <div class="ac-dd" id="ac-dd"></div>
-        </div>
-      </div>
-
-      <!-- Multi-trace -->
-      <div class="sb-sect" id="multi-trace-sect" style="display:none">
-        <span class="sb-lbl">Intersection trace</span>
-        <div class="mt-row">
-          <input class="mt-inp" id="mt-a" placeholder="Function A…">
-          <input class="mt-inp" id="mt-b" placeholder="Function B…">
-        </div>
-        <div class="mt-row">
-          <button class="mt-btn" onclick="runMultiTrace()">⊕ Intersect</button>
-          <button class="mt-clear" onclick="clearMultiTrace()">Clear</button>
-        </div>
-        <div class="mt-hint">Shows functions shared by both call trees</div>
-      </div>
-
-      <!-- Analysis Tools -->
-      <div class="sb-sect" id="analysis-sect" style="display:none">
-        <span class="sb-lbl">Analysis</span>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.3rem;margin-bottom:.4rem">
-          <button class="ana-btn" id="ana-dead-btn"   onclick="runDeadCode()">☠ Dead code</button>
-          <button class="ana-btn" id="ana-impact-btn" onclick="showImpactUI()">⚡ Impact</button>
-          <button class="ana-btn" id="ana-heat-btn"   onclick="runHeatmap()">🌡 Heatmap</button>
-          <button class="ana-btn" id="ana-path-btn"   onclick="showPathUI()">⇢ Path find</button>
-        </div>
-        <div id="analysis-result"></div>
-      </div>
-
-      <!-- Function list -->
-      <div class="fn-search">
-        <input id="fn-search" placeholder="Filter functions…" oninput="filterFns(this.value)" onblur="if(!this.value)highlightSearchNodes('')">
-      </div>
-      <div id="fn-list"></div>
-
-    </div>
-
-    <!-- ── GRAPH AREA ── -->
-    <div id="graph-area">
-      <div id="gbar">
-        <span id="gbar-title">—</span>
-      <span id="gbar-legend" style="display:none;font-size:.6rem;color:var(--text3);align-items:center;gap:.5rem;flex-shrink:0">
-        <span style="display:flex;align-items:center;gap:.2rem"><span style="width:18px;height:2px;background:#ef6548;display:inline-block;position:relative"><span style="position:absolute;right:-1px;top:-3px;color:#ef6548;font-size:8px">▶</span></span><span>calls</span></span>
-        <span style="display:flex;align-items:center;gap:.2rem"><span style="width:18px;height:2px;background:#22c55e;display:inline-block;position:relative"><span style="position:absolute;right:-1px;top:-3px;color:#22c55e;font-size:8px">▶</span></span><span>called by</span></span>
-        <span style="display:flex;align-items:center;gap:.2rem"><span style="width:18px;height:2px;background:#1e3a5a;display:inline-block;position:relative"><span style="position:absolute;right:-1px;top:-3px;color:#3d5270;font-size:8px">▶</span></span><span>other</span></span>
-      </span>
-        <button class="gbtn" id="btn-back"    onclick="histBack()"   title="Back (Alt+←)" disabled style="opacity:.35">◀</button>
-        <button class="gbtn" id="btn-fwd"     onclick="histFwd()"    title="Forward (Alt+→)" disabled style="opacity:.35">▶</button>
-        <button class="gbtn" onclick="fitGraph()" title="Fit (F)">Fit</button>
-        <button class="gbtn" id="btn-dir"     onclick="toggleDir()"  title="H/V layout">⇆</button>
-        <button class="gbtn" onclick="zoom(1.3)">+</button>
-        <span id="zoom-pct">100%</span>
-        <button class="gbtn" onclick="zoom(0.77)">−</button>
-        <button class="gbtn" id="btn-ext"     onclick="toggleExt()"  title="Show external functions">Ext</button>
-        <button class="gbtn"                  onclick="exportSVG()"  title="Save as SVG">SVG</button>
-        <button class="gbtn"                  onclick="exportPNG()"  title="Save as PNG">PNG</button>
-        <button class="gbtn" id="btn-reset-trace" onclick="clearTrace()" style="display:none">✕ Trace</button>
-      </div>
-
-      <div id="breadcrumb"></div>
-      <div id="canvas">
-        <div id="minimap"><canvas id="mm-canvas"></canvas><div id="minimap-viewport"></div></div>
-        <div id="canvas-empty">
-          <div class="ce-icon">◈</div>
-          <div class="ce-text">Graph will appear here</div>
-        </div>
-        <div id="canvas-loading">
-          <div class="spinner"></div>
-          <div class="loading-msg" id="loading-msg">Rendering…</div>
-        </div>
-      </div>
-
-      <!-- Node info panel -->
-      <div id="info">
-        <div id="info-hd">
-          <span id="info-name">—</span>
-          <button class="info-close" onclick="closeInfo()">✕</button>
-        </div>
-        <div id="info-body"></div>
+        <button class="hbtn" onclick="openSidePanel('favs')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span data-i18n="favorites">Favoris</span>
+          <span id="fav-count" style="display:none;background:var(--gold);color:var(--night);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;display:none;align-items:center;justify-content:center;margin-left:2px">0</span>
+        </button>
+        <button class="hbtn" onclick="openSidePanel('history')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="history">Historique</span>
+        </button>
+        <button class="hbtn" onclick="openQuiz()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span data-i18n="quiz">Quiz</span>
+        </button>
+        <button class="hbtn" id="demo-btn" onclick="startDemo()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span data-i18n="demo">Démo</span>
+        </button>
       </div>
     </div>
   </div>
+</header>
+
+<main>
+<div class="container">
+
+<!-- ═══════════════ MOT DU JOUR ═══════════════ -->
+<section id="wod-section"></section>
+
+<!-- ═══════════════ RECHERCHE ═══════════════ -->
+<section id="search-section">
+  <div class="search-row">
+    <div class="search-box">
+      <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="search-input" autocomplete="off" spellcheck="false"/>
+      <button class="s-clear" id="s-clear" onclick="clearSearch()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <button class="kbd-toggle" id="kbd-toggle" onclick="toggleKbd()">
+      <span class="ar-sample">ك</span>
+      <span data-i18n="arabic_keyboard">Clavier arabe</span>
+    </button>
+    <select id="cat-filter" onchange="filterCategory()" style="background:var(--surface-2);color:var(--text-primary);border:1px solid var(--gold-dim);border-radius:8px;padding:10px 14px;font-size:.9rem;cursor:pointer;font-family:inherit;">
+      <option value="">Toutes les catégories</option>
+      <option value="astronomie">🌙 Astronomie</option>
+      <option value="botanique">🌿 Botanique</option>
+      <option value="medecine">⚕️ Médecine</option>
+      <option value="mathematiques">🔢 Mathématiques</option>
+      <option value="chimie">⚗️ Chimie</option>
+      <option value="cuisine">🍽️ Cuisine</option>
+      <option value="commerce">💰 Commerce</option>
+      <option value="zoologie">🦁 Zoologie</option>
+      <option value="geographie">🗺️ Géographie</option>
+      <option value="militaire">⚔️ Militaire</option>
+      <option value="architecture">🏛️ Architecture</option>
+      <option value="arts_musique">🎵 Arts & Musique</option>
+    </select>
+  </div>
+
+  <div id="arabic-keyboard">
+    <div class="kbd-row" id="kr1"></div>
+    <div class="kbd-row" id="kr2"></div>
+    <div class="kbd-row" id="kr3"></div>
+    <div class="kbd-row">
+      <button class="k wide" onclick="ki(' ')"><span data-i18n="space">espace</span></button>
+      <button class="k wide" onclick="kb()">⌫</button>
+      <button class="k wide" onclick="kc()"><span data-i18n="clear">effacer</span></button>
+    </div>
+    <div class="kbd-diacritics" id="kd"></div>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label" data-i18n="display">Affichage</span>
+    <button class="lf-btn active" data-lang="all" data-i18n="all">Tous</button>
+    <button class="lf-btn" data-lang="fr">🇫🇷 Français</button>
+    <button class="lf-btn" data-lang="en">🇬🇧 English</button>
+    <button class="lf-btn" data-lang="ar">🇸🇦 عربي</button>
+  </div>
+  <div class="cat-row" id="cat-row"></div>
+</section>
+
+<!-- ═══════════════ RÉSULTATS ═══════════════ -->
+<section id="results-section">
+  <div class="results-meta">
+    <p class="r-count" id="r-count"></p>
+    <div class="r-actions">
+      <button class="r-btn" onclick="randomWord()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+        <span data-i18n="random">Aléatoire</span>
+      </button>
+    </div>
+  </div>
+  <div id="no-results" class="no-results">
+    <span class="no-res-ar" dir="rtl">لا نتائج</span>
+    <p data-i18n="no_results">Aucun mot ne correspond.</p>
+  </div>
+  <div id="cards-grid" class="cards-grid"></div>
+</section>
+
+</div>
+</main>
+
+<!-- ═══════════════ MODALS ═══════════════ -->
+<div id="word-modal" class="modal-overlay">
+  <div class="modal" id="modal-content"></div>
 </div>
 
-<!-- File browser -->
-<div id="fb" onclick="if(event.target===this)fbClose()">
-  <div id="fb-box">
-    <div id="fb-pb">
-      <span id="fb-pt">/</span>
-      <button class="fb-cn" onclick="fbUp()">↑ Up</button>
+<div id="quiz-modal" class="modal-overlay">
+  <div class="modal" style="max-width:520px">
+    <div class="modal-hdr" style="padding:30px 32px 26px">
+      <button class="modal-close" onclick="closeQuiz()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div style="font-family:var(--font-arabic);font-size:2.5rem;color:var(--gold-light);text-align:center;direction:rtl;position:relative;z-index:1;text-shadow:0 0 40px rgba(201,168,76,0.4)">اختبار</div>
+      <div style="font-family:var(--font-display);font-style:italic;text-align:center;color:rgba(240,230,204,0.4);font-size:0.88rem;position:relative;z-index:1;margin-top:4px" data-i18n="quiz_title">Quiz étymologique</div>
     </div>
-    <div id="fb-list"></div>
-    <div id="fb-ft">
-      <span id="fb-sel">Select a directory…</span>
-      <button class="fb-cn" onclick="fbClose()">Cancel</button>
-      <button class="fb-ok" onclick="fbConfirm()">Select</button>
-    </div>
+    <div class="modal-body" id="quiz-body" style="padding:26px 32px 32px"></div>
   </div>
 </div>
 
-<div id="tooltip"></div>
+<!-- ═══════════════ PANEL LATÉRAL ═══════════════ -->
+<div class="side-panel" id="side-panel">
+  <button class="panel-close" onclick="closeSidePanel()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="panel-tabs">
+    <button class="panel-tab active" id="tab-favs" onclick="switchTab('favs')" data-i18n="favorites">Favoris</button>
+    <button class="panel-tab" id="tab-history" onclick="switchTab('history')" data-i18n="history">Historique</button>
+    <button class="panel-tab" id="tab-learned" onclick="switchTab('learned')" data-i18n="learned">Appris</button>
+  </div>
+  <div class="panel-body" id="panel-body"></div>
+</div>
+
+<!-- ═══════════════ DEMO / TOAST ═══════════════ -->
+<div class="demo-banner" id="demo-banner">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+  <span data-i18n="demo_running">Mode démo…</span>
+  <button class="demo-stop" onclick="stopDemo()"><span data-i18n="stop">Arrêter</span></button>
+</div>
 <div class="toast" id="toast"></div>
 
+<footer>
+  <div class="container">
+    <p><strong>جِسْر — Jisr v1.0</strong> · Sources : CNRTL · Oxford English Dictionary · Dozy's Supplément aux dictionnaires arabes · <span data-i18n="footer_desc">L'héritage arabe dans les langues du monde</span></p>
+  </div>
+</footer>
+
 <script>
-// ══ STATE ══════════════════════════════════════════════════════
-let G = null;          // full graph data from /api/index
-let mode = 'fn';       // 'fn' | 'mod'
-let layoutDir = 'LR';  // 'LR' horizontal | 'TB' vertical
-let modExpand = false; // expand clicked module in-place
-let modMatrix = false; // show coupling matrix overlay
-let depth = 0;         // 0 = unlimited
-let selStyle = 'default';
-let showExt = false;
-let tracedFn = null;
-let focusedFn = null;
-let multiTraceA = null;
-let multiTraceB = null;
-let multiTraceMode = false;
-let traceHistory = [];   // [{fn, mode}]
-let traceHistIdx  = -1;
-let svgPan = {x:0, y:0, scale:1};
-let dragging = false, dragStart = {x:0,y:0}, panStart = {x:0,y:0};
-let _wasDragged = false;
-let fbCur='/', fbSel='/';
-let acIdx = -1;
+/* ═══════════════════════════════════════════════════════════════
+   CHARGEMENT ASYNC — fetch data/*.json
+   Fichier index.html pour dépôt Git (données externalisées)
+═══════════════════════════════════════════════════════════════ */
 
-const STYLES = [
-  {id:'default',  c:'#4a8fff'}, {id:'heat',   c:'#ef6548'},
-  {id:'green',    c:'#22c55e'}, {id:'purple',  c:'#a78bfa'},
-  {id:'gold',     c:'#d4a843'}, {id:'minimal', c:'#6b85a8'},
-];
 
-const NODE_COLORS = {
-  default:  {fill:'#111e30', stroke:'#4a8fff', text:'#dce8f8'},
-  heat:     {fill:'#2a0d00', stroke:'#ef6548', text:'#ffd0b0'},
-  green:    {fill:'#0d2a0d', stroke:'#22c55e', text:'#b0ffd0'},
-  purple:   {fill:'#1a0d2a', stroke:'#a78bfa', text:'#e0d0ff'},
-  gold:     {fill:'#2a1a00', stroke:'#d4a843', text:'#ffe0a0'},
-  minimal:  {fill:'#111820', stroke:'#3d5270', text:'#7a95b8'},
+/* ═══════════════════════════════════════════════════════════════
+   I18N
+═══════════════════════════════════════════════════════════════ */
+const I18N={
+  fr:{favorites:'Favoris',history:'Historique',learned:'Appris',quiz:'Quiz',demo:'Démo',arabic_keyboard:'Clavier arabe',display:'Affichage',all:'Tous',random:'Aléatoire',no_results:'Aucun mot ne correspond.',space:'espace',clear:'effacer',footer_desc:"L'héritage arabe dans les langues du monde",demo_running:'Mode démo…',stop:'Arrêter',quiz_title:'Quiz étymologique',word_of_day:'Mot du jour',meaning:'Signification',etymology:'Étymologie',pathway_lbl:'Chemin linguistique',examples_lbl:'Exemples',related:'Mots liés',listen:'Écouter',share:'Partager',save:'Favori',mark_learned:'Appris',results:'résultats sur',words:'mots',tts_ar:'🔊 Arabe',tts_fr:'🔊 Français',tts_en:'🔊 English',quiz_q:'Quel est le mot arabe pour',quiz_restart:'Rejouer',quiz_score:'Score',no_favs:'Aucun favori.',no_history:'Aucun historique.',no_learned:'Aucun mot appris.',copied:'Lien copié !',fav_added:'Ajouté aux favoris ★',fav_removed:'Retiré des favoris',learned_added:'Marqué comme appris ✓',learned_removed:'Retiré des appris'},
+  en:{favorites:'Favorites',history:'History',learned:'Learned',quiz:'Quiz',demo:'Demo',arabic_keyboard:'Arabic Keyboard',display:'Display',all:'All',random:'Random',no_results:'No words match.',space:'space',clear:'clear',footer_desc:'The Arabic heritage in world languages',demo_running:'Demo mode…',stop:'Stop',quiz_title:'Etymology Quiz',word_of_day:'Word of the Day',meaning:'Meaning',etymology:'Etymology',pathway_lbl:'Linguistic Pathway',examples_lbl:'Examples',related:'Related Words',listen:'Listen',share:'Share',save:'Favorite',mark_learned:'Learned',results:'results out of',words:'words',tts_ar:'🔊 Arabic',tts_fr:'🔊 French',tts_en:'🔊 English',quiz_q:'What is the Arabic word for',quiz_restart:'Play again',quiz_score:'Score',no_favs:'No favorites yet.',no_history:'No history yet.',no_learned:'No learned words yet.',copied:'Link copied!',fav_added:'Added to favorites ★',fav_removed:'Removed from favorites',learned_added:'Marked as learned ✓',learned_removed:'Removed from learned'},
+  ar:{favorites:'المفضلة',history:'السجل',learned:'المحفوظ',quiz:'اختبار',demo:'عرض',arabic_keyboard:'لوحة المفاتيح',display:'عرض',all:'الكل',random:'عشوائي',no_results:'لا توجد نتائج.',space:'مسافة',clear:'مسح',footer_desc:'الإرث العربي في لغات العالم',demo_running:'وضع العرض…',stop:'إيقاف',quiz_title:'اختبار اشتقاقي',word_of_day:'كلمة اليوم',meaning:'المعنى',etymology:'الاشتقاق',pathway_lbl:'المسار اللغوي',examples_lbl:'أمثلة',related:'كلمات ذات صلة',listen:'استمع',share:'مشاركة',save:'مفضلة',mark_learned:'محفوظ',results:'نتائج من',words:'كلمات',tts_ar:'🔊 عربي',tts_fr:'🔊 فرنسي',tts_en:'🔊 إنجليزي',quiz_q:'ما هي الكلمة العربية لـ',quiz_restart:'إعادة',quiz_score:'النتيجة',no_favs:'لا توجد مفضلات.',no_history:'لا يوجد سجل.',no_learned:'لا توجد كلمات محفوظة.',copied:'تم النسخ!',fav_added:'أضيف للمفضلة ★',fav_removed:'أزيل من المفضلة',learned_added:'تم الحفظ ✓',learned_removed:'أزيل من المحفوظات'}
 };
 
-// ══ BOOT ═══════════════════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
-  buildStylePills();
-  initCanvas();
-  // Restore last source path
-  const saved = localStorage.getItem('cg_src');
-  if(saved) document.getElementById('src').value = saved;
-  document.getElementById('depth').addEventListener('input', e => onDepth(e.target.value));
-  // Try restoring previous session
-  loadSession();
-});
+/* ═══════════════════════════════════════════════════════════════
+   LOCALSTORAGE — Couche de persistance complète
+═══════════════════════════════════════════════════════════════ */
+const LS = {
+  get(k,def=null){ try{ const v=localStorage.getItem('jisr_'+k); return v===null?def:JSON.parse(v); }catch{return def;} },
+  set(k,v){ try{ localStorage.setItem('jisr_'+k,JSON.stringify(v)); }catch{} },
+  // Clés : favs, history, learned, quiz_scores, ui_lang, card_lang
+};
 
-// ══ TOAST ══════════════════════════════════════════════════════
-let _tt;
-function toast(msg, t='info'){
+/* ═══════════════════════════════════════════════════════════════
+   ÉTAT (persisté dans localStorage)
+═══════════════════════════════════════════════════════════════ */
+const S = {
+  words: [], filtered:[],   /* populated after fetch */
+  query:'', cardLang: LS.get('card_lang','all'),
+  uiLang: LS.get('ui_lang','fr'),
+  cats:[], wod:null,
+  favs:    LS.get('favs',[]),
+  history: LS.get('history',[]),
+  learned: LS.get('learned',[]),
+  quizScores: LS.get('quiz_scores',[]),
+  debounce:null, demoTimer:null, demoRunning:false,
+  activeTab:'favs',
+};
+
+const t = k => (I18N[S.uiLang]||I18N.fr)[k]||k;
+const cap = s => s?s.charAt(0).toUpperCase()+s.slice(1):'';
+const trunc = (s,n) => !s||s.length<=n?s||'':s.slice(0,n).trimEnd()+'…';
+const hl = txt => {
+  if(!S.query||!txt) return txt||'';
+  return txt.replace(new RegExp(`(${S.query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<mark>$1</mark>');
+};
+
+/* ── Persistance helpers ── */
+function saveFavs()    { LS.set('favs', S.favs); }
+function saveHistory() { LS.set('history', S.history); }
+function saveLearned() { LS.set('learned', S.learned); }
+function saveScores()  { LS.set('quiz_scores', S.quizScores); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CLAVIER ARABE
+═══════════════════════════════════════════════════════════════ */
+const KR=['ض ص ث ق ف غ ع ه خ ح ج د','ش س ي ب ل ا ت ن م ك ط','ئ ء ؤ ر ﻻ ى ة و ز ظ'];
+const KD=['َ','ُ','ِ','ً','ٌ','ٍ','ّ','ْ','ـ'];
+
+function buildKbd(){
+  KR.forEach((row,i)=>{
+    document.getElementById('kr'+(i+1)).innerHTML=row.split(' ').map(c=>`<button class="k" onclick="ki('${c}')">${c}</button>`).join('');
+  });
+  document.getElementById('kd').innerHTML=KD.map(d=>`<button class="k" style="min-width:52px;font-size:1rem" onclick="ki('${d}')">ا${d}</button>`).join('');
+}
+function ki(ch){
+  const inp=document.getElementById('search-input');
+  const s=inp.selectionStart,e=inp.selectionEnd;
+  inp.value=inp.value.slice(0,s)+ch+inp.value.slice(e);
+  inp.selectionStart=inp.selectionEnd=s+ch.length;
+  inp.focus(); onInput();
+}
+function kb(){ const inp=document.getElementById('search-input'); inp.value=inp.value.slice(0,-1); onInput(); }
+function kc(){ clearSearch(); }
+function toggleKbd(){
+  document.getElementById('arabic-keyboard').classList.toggle('open');
+  document.getElementById('kbd-toggle').classList.toggle('active');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TTS
+═══════════════════════════════════════════════════════════════ */
+function speak(text,lang,btn){
+  if(!window.speechSynthesis){ showToast('TTS non supporté'); return; }
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=lang; u.rate=lang.startsWith('ar')?0.82:0.95;
+  if(btn){ btn.classList.add('speaking'); u.onend=u.onerror=()=>btn.classList.remove('speaking'); }
+  window.speechSynthesis.speak(u);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FAVORIS / APPRIS / HISTORIQUE
+═══════════════════════════════════════════════════════════════ */
+function toggleFav(id,btn){
+  const i=S.favs.indexOf(id);
+  if(i===-1){ S.favs.push(id); showToast(t('fav_added')); }
+  else{ S.favs.splice(i,1); showToast(t('fav_removed')); }
+  saveFavs(); updateFavCount();
+  if(btn){ btn.classList.toggle('fav-active',S.favs.includes(id)); btn.querySelector('svg').setAttribute('fill',S.favs.includes(id)?'currentColor':'none'); }
+}
+function toggleLearned(id,btn){
+  const i=S.learned.indexOf(id);
+  if(i===-1){ S.learned.push(id); showToast(t('learned_added')); }
+  else{ S.learned.splice(i,1); showToast(t('learned_removed')); }
+  saveLearned();
+  if(btn) btn.classList.toggle('learned-on',S.learned.includes(id));
+}
+function addHistory(id){
+  S.history=S.history.filter(x=>x!==id);
+  S.history.unshift(id);
+  if(S.history.length>20) S.history=S.history.slice(0,20);
+  saveHistory();
+}
+function updateFavCount(){
+  const el=document.getElementById('fav-count');
+  el.textContent=S.favs.length;
+  el.style.display=S.favs.length?'inline-flex':'none';
+}
+function shareWord(id){
+  const url=`${location.href.split('?')[0]}?word=${id}`;
+  navigator.clipboard.writeText(url).then(()=>showToast(t('copied'))).catch(()=>showToast(t('copied')));
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOT DU JOUR
+═══════════════════════════════════════════════════════════════ */
+function selectWod(){
+  const d=new Date(), seed=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();
+  S.wod=DATA[seed%DATA.length];
+}
+function renderWod(){
+  const w=S.wod;
+  document.getElementById('wod-section').innerHTML=`
+    <p class="section-label">${t('word_of_day')}</p>
+    <div class="wod-card" onclick="openModal(${w.id})" tabindex="0" onkeydown="if(event.key==='Enter')openModal(${w.id})">
+      <div class="wod-left">
+        <span class="cat-badge">${cap(w.category)}</span>
+        <h2>${w.word_fr}</h2>
+        <p class="wod-en">${w.word_en}</p>
+        <p class="wod-excerpt">${trunc(w.etymology,150)}</p>
+        <div class="wod-pathway-tag">→ ${w.pathway}</div>
+      </div>
+      <div class="wod-right">
+        <div class="wod-medallion">
+          <div class="wod-ar" dir="rtl" lang="ar">${w.word_ar}</div>
+          <div class="wod-tr">${w.transliteration}</div>
+        </div>
+        <button class="wod-tts" onclick="event.stopPropagation();speak('${w.word_ar}','ar-SA',this)" title="${t('listen')}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+      </div>
+    </div>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CATÉGORIES
+═══════════════════════════════════════════════════════════════ */
+function buildCats(){
+  const cats=[...new Set(DATA.map(w=>w.category))].sort();
+  document.getElementById('cat-row').innerHTML=
+    `<button class="cat-btn active" data-cat="all" onclick="toggleCat('all')">${t('all')}</button>`+
+    cats.map(c=>`<button class="cat-btn" data-cat="${c}" onclick="toggleCat('${c}')">${cap(c)}</button>`).join('');
+}
+function toggleCat(cat){
+  if(cat==='all'){ S.cats=[]; document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat==='all')); }
+  else{
+    document.querySelector('[data-cat="all"]')?.classList.remove('active');
+    const i=S.cats.indexOf(cat); i===-1?S.cats.push(cat):S.cats.splice(i,1);
+    if(!S.cats.length) document.querySelector('[data-cat="all"]')?.classList.add('active');
+    document.querySelectorAll('.cat-btn[data-cat]').forEach(b=>{ if(b.dataset.cat!=='all') b.classList.toggle('active',S.cats.includes(b.dataset.cat)); });
+  }
+  filter();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FILTRES
+═══════════════════════════════════════════════════════════════ */
+function filter(){
+  const q=S.query.toLowerCase().trim();
+  S.filtered=DATA.filter(w=>{
+    if(S.cats.length&&!S.cats.includes(w.category)) return false;
+    if(!q) return true;
+    return [w.word_fr,w.word_en,w.word_ar,w.transliteration,w.meaning_fr,w.meaning_en,w.meaning_ar]
+      .some(f=>(f||'').toLowerCase().includes(q));
+  });
+  renderCards(); updateCount();
+}
+function onInput(){
+  const v=document.getElementById('search-input').value;
+  S.query=v;
+  document.getElementById('s-clear').classList.toggle('show',v.length>0);
+  clearTimeout(S.debounce); S.debounce=setTimeout(filter,180);
+}
+function clearSearch(){
+  document.getElementById('search-input').value='';
+  S.query='';
+  document.getElementById('s-clear').classList.remove('show');
+  filter();
+}
+function filterCategory(){
+  const val=document.getElementById('cat-filter').value;
+  S.cats=val?[val]:[];
+  filter();
+}
+function randomWord(){ openModal(DATA[Math.floor(Math.random()*DATA.length)].id); }
+
+/* ═══════════════════════════════════════════════════════════════
+   CARTES — définition selon langue active
+═══════════════════════════════════════════════════════════════ */
+function getMeaning(w){
+  if(S.cardLang==='ar') return {text:w.meaning_ar, isAr:true};
+  if(S.cardLang==='en') return {text:w.meaning_en, isAr:false};
+  if(S.cardLang==='fr') return {text:w.meaning_fr, isAr:false};
+  // 'all' → langue UI
+  if(S.uiLang==='ar') return {text:w.meaning_ar, isAr:true};
+  if(S.uiLang==='en') return {text:w.meaning_en, isAr:false};
+  return {text:w.meaning_fr, isAr:false};
+}
+
+function renderCards(){
+  const grid=document.getElementById('cards-grid');
+  const noR=document.getElementById('no-results');
+  if(!S.filtered.length){ grid.innerHTML=''; noR.classList.add('visible'); return; }
+  noR.classList.remove('visible');
+  grid.innerHTML=S.filtered.map((w,i)=>{
+    const {text,isAr}=getMeaning(w);
+    const faved=S.favs.includes(w.id);
+    const learnt=S.learned.includes(w.id);
+    return `<article class="word-card" style="animation-delay:${Math.min(i*45,500)}ms"
+      onclick="openModal(${w.id})" tabindex="0" onkeydown="if(event.key==='Enter')openModal(${w.id})">
+      <div class="card-top">
+        <span class="cat-badge">${cap(w.category)}</span>
+        <div class="card-actions">
+          ${learnt?`<div class="learned-badge" title="${t('mark_learned')}"></div>`:''}
+          <button class="card-act-btn ${faved?'fav-active':''}" onclick="event.stopPropagation();toggleFav(${w.id},this)" title="${t('save')}">
+            <svg viewBox="0 0 24 24" fill="${faved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </button>
+          <button class="card-act-btn" onclick="event.stopPropagation();speak('${w.word_ar}','ar-SA',this)" title="${t('listen')}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="card-ar-wrap">
+        <div class="card-ar" dir="rtl" lang="ar">${hl(w.word_ar)}</div>
+        <div class="card-tr">${hl(w.transliteration)}</div>
+      </div>
+      <div class="card-div"></div>
+      <div class="card-words">
+        <span class="cw-fr">${hl(w.word_fr)}</span>
+        <span class="cw-sep">·</span>
+        <span class="cw-en">${hl(w.word_en)}</span>
+      </div>
+      <p class="card-meaning${isAr?' ':' '}" ${isAr?'dir="rtl" lang="ar"':''}>${hl(trunc(text,110))}</p>
+      <div class="card-pathway">→ ${w.pathway}</div>
+      <div class="card-foot">
+        <button class="card-open-btn">
+          ${t('listen')==='Listen'?'Full card':'Fiche complète'}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </article>`;
+  }).join('');
+}
+function updateCount(){
+  const el=document.getElementById('r-count');
+  const n=S.filtered.length;
+  el.innerHTML=n===DATA.length?`<strong>${n}</strong> ${t('words')}`:`<strong>${n}</strong> ${t('results')} ${DATA.length}`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ARBRE ÉTYMOLOGIQUE
+═══════════════════════════════════════════════════════════════ */
+function buildTree(steps){
+  if(!steps?.length) return '';
+  return `<div class="etym-tree-wrap"><div class="etym-tree">
+    ${steps.map((s,i,a)=>`
+      ${i>0?'<div class="etym-arrow"></div>':''}
+      <div class="etym-node ${i===0?'root':''} ${i===a.length-1?'final':''}">
+        <span class="etym-lang">${s.lang}</span>
+        <span class="etym-word ${s.lang.includes('arab')||s.lang.includes('arabe')||s.lang==='persan/arabe'?'':'latin'}"
+          ${s.lang.includes('arabe')||s.lang==='persan/arabe'?'dir="rtl"':''}>${s.word}</span>
+        <span class="etym-date">${s.date}</span>
+      </div>`).join('')}
+  </div></div>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL DÉTAIL — 3 définitions (FR + EN + AR)
+═══════════════════════════════════════════════════════════════ */
+function openModal(id){
+  const w=DATA.find(x=>x.id===id); if(!w) return;
+  addHistory(id);
+  const faved=S.favs.includes(id), learnt=S.learned.includes(id);
+  const rel=(w.related_words||[]).map(r=>`<span class="rel-tag" onclick="searchRel('${r}')">${r}</span>`).join('');
+
+  document.getElementById('modal-content').innerHTML=`
+    <div class="modal-hdr">
+      <div class="modal-nav">
+        <button class="modal-nav-btn" onclick="navModal(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="modal-nav-btn" onclick="navModal(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <button class="modal-close" onclick="closeModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal-ar-wrap">
+        <div class="modal-ar" dir="rtl" lang="ar">${w.word_ar}</div>
+      </div>
+      <div class="modal-tr">${w.transliteration}</div>
+      <div class="modal-chips">
+        <div class="m-chip"><span class="m-chip-flag">🇫🇷</span><span class="m-chip-word">${w.word_fr}</span></div>
+        <div class="m-chip"><span class="m-chip-flag">🇬🇧</span><span class="m-chip-word">${w.word_en}</span></div>
+        <div class="m-chip"><span class="m-chip-flag" style="font-size:.85rem">🏷</span><span class="m-chip-word" style="font-size:.85rem;font-weight:400">${cap(w.category)}</span></div>
+      </div>
+      <div class="modal-hdr-actions">
+        <button class="m-act" onclick="speak('${w.word_ar}','ar-SA',this)">${t('tts_ar')}</button>
+        <button class="m-act" onclick="speak('${w.word_fr}','fr-FR',this)">${t('tts_fr')}</button>
+        <button class="m-act" onclick="speak('${w.word_en}','en-US',this)">${t('tts_en')}</button>
+        <button class="m-act ${faved?'fav-on':''}" onclick="toggleFav(${id},this)">
+          <svg viewBox="0 0 24 24" fill="${faved?'currentColor':'none'}" stroke="currentColor" stroke-width="2" width="13" height="13"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          ${t('save')}
+        </button>
+        <button class="m-act ${learnt?'learned-on':''}" onclick="toggleLearned(${id},this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>
+          ${t('mark_learned')}
+        </button>
+        <button class="m-act" onclick="shareWord(${id})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/></svg>
+          ${t('share')}
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+
+      <!-- ── SIGNIFICATION — 3 langues ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('meaning')}</h3>
+        <div class="def-grid">
+          <div class="def-block">
+            <div class="def-lang">🇫🇷 Français</div>
+            <p class="def-text">${w.meaning_fr}</p>
+          </div>
+          <div class="def-block">
+            <div class="def-lang">🇬🇧 English</div>
+            <p class="def-text">${w.meaning_en}</p>
+          </div>
+          <div class="def-block ar-block">
+            <div class="def-lang" style="color:var(--gold)">🇸🇦 العربية</div>
+            <p class="def-text ar-text" dir="rtl" lang="ar">${w.meaning_ar}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ÉTYMOLOGIE ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('etymology')}</h3>
+        <p class="etym-block">${w.etymology}</p>
+      </div>
+
+      <!-- ── ARBRE ÉTYMOLOGIQUE ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('pathway_lbl')}</h3>
+        ${buildTree(w.pathway_steps)}
+      </div>
+
+      <!-- ── EXEMPLES — 3 langues ── -->
+      <div class="m-section">
+        <h3 class="m-title">${t('examples_lbl')}</h3>
+        <div class="ex-grid">
+          <div class="ex-block">
+            <div class="def-lang">🇫🇷</div>
+            <p class="ex-text">« ${w.examples.fr} »</p>
+          </div>
+          <div class="ex-block">
+            <div class="def-lang">🇬🇧</div>
+            <p class="ex-text">« ${w.examples.en} »</p>
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <div class="ex-block" style="border-left-color:rgba(201,168,76,0.3)">
+            <div class="def-lang" style="color:var(--gold)">🇸🇦 مثال</div>
+            <p class="ex-text ar-text" dir="rtl" lang="ar">« ${w.examples.ar} »</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── MOTS LIÉS ── -->
+      ${rel?`<div class="m-section"><h3 class="m-title">${t('related')}</h3><div class="rel-tags">${rel}</div></div>`:''}
+
+    </div>`;
+
+  document.getElementById('word-modal').classList.add('open');
+  document.getElementById('modal-content').scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+
+function navModal(dir){
+  const mc=document.getElementById('modal-content');
+  const arEl=mc.querySelector('.modal-ar');
+  if(!arEl) return;
+  const curAr=arEl.textContent.trim();
+  const curIdx=DATA.findIndex(w=>w.word_ar===curAr);
+  openModal(DATA[(curIdx+dir+DATA.length)%DATA.length].id);
+}
+function closeModal(){
+  document.getElementById('word-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function searchRel(word){
+  closeModal();
+  const inp=document.getElementById('search-input');
+  inp.value=word; S.query=word;
+  document.getElementById('s-clear').classList.add('show');
+  filter();
+  document.getElementById('search-section').scrollIntoView({behavior:'smooth'});
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PANEL LATÉRAL (Favoris / Historique / Appris)
+═══════════════════════════════════════════════════════════════ */
+function openSidePanel(tab){
+  S.activeTab=tab;
+  document.getElementById('side-panel').classList.add('open');
+  switchTab(tab);
+}
+function closeSidePanel(){ document.getElementById('side-panel').classList.remove('open'); }
+function switchTab(tab){
+  S.activeTab=tab;
+  document.querySelectorAll('.panel-tab').forEach(b=>b.classList.toggle('active',b.id==='tab-'+tab));
+  renderPanel();
+}
+function renderPanel(){
+  const body=document.getElementById('panel-body');
+  let ids=[];
+  let emptyKey='no_favs';
+  if(S.activeTab==='favs'){ ids=S.favs; emptyKey='no_favs'; }
+  else if(S.activeTab==='history'){ ids=S.history; emptyKey='no_history'; }
+  else{ ids=S.learned; emptyKey='no_learned'; }
+
+  if(!ids.length){
+    body.innerHTML=`<div class="panel-empty"><span class="panel-empty-ar" dir="rtl">✦</span><p>${t(emptyKey)}</p></div>`;
+    return;
+  }
+  body.innerHTML=ids.map(id=>{
+    const w=DATA.find(x=>x.id===id); if(!w) return '';
+    const canRm=S.activeTab!=='history';
+    return `<div class="panel-item" onclick="openModal(${id});closeSidePanel()">
+      <div class="pi-ar" dir="rtl">${w.word_ar}</div>
+      <div class="pi-fr">${w.word_fr}</div>
+      ${canRm?`<button class="pi-rm" onclick="event.stopPropagation();removePanelItem(${id})" title="Retirer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>`:''}
+    </div>`;
+  }).join('');
+}
+function removePanelItem(id){
+  if(S.activeTab==='favs'){ S.favs=S.favs.filter(x=>x!==id); saveFavs(); updateFavCount(); }
+  else if(S.activeTab==='learned'){ S.learned=S.learned.filter(x=>x!==id); saveLearned(); }
+  renderPanel(); renderCards();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   QUIZ
+═══════════════════════════════════════════════════════════════ */
+function openQuiz(){
+  const qs=[...DATA].sort(()=>Math.random()-0.5).slice(0,8).map(w=>{
+    const wrong=DATA.filter(x=>x.id!==w.id).sort(()=>Math.random()-0.5).slice(0,3);
+    return {word:w, choices:[...wrong,w].sort(()=>Math.random()-0.5), answered:false};
+  });
+  window._quiz={qs,idx:0,score:0};
+  document.getElementById('quiz-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  renderQuiz();
+}
+function renderQuiz(){
+  const {qs,idx,score}=window._quiz;
+  const body=document.getElementById('quiz-body');
+  if(idx>=qs.length){
+    const pct=Math.round(score/qs.length*100);
+    S.quizScores.unshift({score,total:qs.length,date:new Date().toLocaleDateString()});
+    if(S.quizScores.length>10) S.quizScores=S.quizScores.slice(0,10);
+    saveScores();
+    body.innerHTML=`<div style="text-align:center;padding:24px 0">
+      <div style="font-family:var(--font-arabic);font-size:4rem;color:var(--gold-light);direction:rtl;margin-bottom:16px;text-shadow:0 0 40px rgba(201,168,76,0.4)">${score>=6?'ممتاز':score>=4?'جيد':'تعلّم'}</div>
+      <div class="quiz-score">${t('quiz_score')} : ${score} / ${qs.length} <span style="font-size:1rem;color:var(--ivory-dim)">(${pct}%)</span></div>
+      <p style="font-family:var(--font-display);font-style:italic;color:rgba(240,230,204,0.4);margin:12px 0 24px;font-size:0.92rem">${score>=6?'Excellent !':score>=4?'Bien joué !':'Continuez à apprendre !'}</p>
+      <button class="r-btn" style="margin:0 auto" onclick="openQuiz()">↺ ${t('quiz_restart')}</button>
+    </div>`;
+    return;
+  }
+  const q=qs[idx];
+  const dots=qs.map((_,i)=>`<div class="qp-dot ${i<idx?'done':i===idx?'current':''}"></div>`).join('');
+  const qLabel=S.uiLang==='ar'?`${t('quiz_q')} : ${q.word.word_fr} / ${q.word.word_en}`:`${t('quiz_q')} :<br><em>${q.word.word_fr} / ${q.word.word_en}</em>`;
+  body.innerHTML=`
+    <div class="quiz-progress">${dots}</div>
+    <p class="quiz-q">${qLabel}</p>
+    <div class="quiz-ar" dir="rtl" lang="ar">؟</div>
+    <div class="quiz-choices">
+      ${q.choices.map((c,i)=>`<button class="quiz-choice" onclick="answerQuiz(${i})">${c.word_ar}</button>`).join('')}
+    </div>`;
+}
+function answerQuiz(ci){
+  const q=window._quiz.qs[window._quiz.idx];
+  if(q.answered) return;
+  q.answered=true;
+  const ok=q.choices[ci].id===q.word.id;
+  if(ok) window._quiz.score++;
+  document.querySelector('.quiz-ar').textContent=q.word.word_ar;
+  document.querySelectorAll('.quiz-choice').forEach((b,i)=>{
+    if(q.choices[i].id===q.word.id) b.classList.add('correct');
+    else if(i===ci&&!ok) b.classList.add('wrong');
+  });
+  setTimeout(()=>{ window._quiz.idx++; renderQuiz(); },1200);
+}
+function closeQuiz(){ document.getElementById('quiz-modal').classList.remove('open'); document.body.style.overflow=''; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DÉMO
+═══════════════════════════════════════════════════════════════ */
+function startDemo(){
+  if(S.demoRunning){ stopDemo(); return; }
+  S.demoRunning=true;
+  document.getElementById('demo-banner').classList.add('show');
+  document.getElementById('demo-btn').classList.add('active');
+  runDemo();
+}
+function runDemo(){
+  if(!S.demoRunning) return;
+  const picks=['café','zéro','algèbre','amiral','gazelle','sirop','coton'];
+  const pick=picks[Math.floor(Math.random()*picks.length)];
+  const inp=document.getElementById('search-input');
+  inp.value=''; S.query=''; filter();
+  let i=0;
+  const iv=setInterval(()=>{
+    if(!S.demoRunning){ clearInterval(iv); return; }
+    inp.value+=pick[i++]; S.query=inp.value;
+    document.getElementById('s-clear').classList.add('show');
+    filter();
+    if(i>=pick.length){
+      clearInterval(iv);
+      S.demoTimer=setTimeout(()=>{
+        if(!S.demoRunning) return;
+        const w=DATA.find(x=>x.word_fr===pick);
+        if(w){ openModal(w.id); S.demoTimer=setTimeout(()=>{ if(!S.demoRunning) return; closeModal(); clearSearch(); S.demoTimer=setTimeout(runDemo,1600); },3200); }
+        else S.demoTimer=setTimeout(runDemo,2000);
+      },700);
+    }
+  },130);
+}
+function stopDemo(){
+  S.demoRunning=false; clearTimeout(S.demoTimer);
+  document.getElementById('demo-banner').classList.remove('show');
+  document.getElementById('demo-btn').classList.remove('active');
+  closeModal(); clearSearch();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LANGUE UI
+═══════════════════════════════════════════════════════════════ */
+function switchUiLang(lang){
+  S.uiLang=lang; LS.set('ui_lang',lang);
+  const isAr=lang==='ar';
+  document.documentElement.lang=lang;
+  document.documentElement.dir=isAr?'rtl':'ltr';
+  document.querySelectorAll('.lbtn[data-ui-lang]').forEach(b=>b.classList.toggle('active',b.dataset.uiLang===lang));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ el.textContent=t(el.dataset.i18n); });
+  document.getElementById('search-input').placeholder=isAr?'ابحث عن كلمة…':lang==='en'?'Search a word…':'Rechercher un mot…';
+  renderWod(); buildCats(); filter();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════════════════ */
+function showToast(msg){
   const el=document.getElementById('toast');
-  el.textContent=msg;
-  el.style.borderColor=t==='error'?'var(--red)':t==='ok'?'var(--green)':'var(--border2)';
-  el.classList.add('on'); clearTimeout(_tt);
-  _tt=setTimeout(()=>el.classList.remove('on'),2600);
+  el.textContent=msg; el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),2200);
 }
 
-// ══ STYLE PILLS ════════════════════════════════════════════════
-function buildStylePills(){
-  const w=document.getElementById('spills'); w.innerHTML='';
-  STYLES.forEach(s=>{
-    const p=document.createElement('span');
-    p.className='sp'+(s.id===selStyle?' active':'');
-    p.textContent=s.id; p.title=s.id;
-    if(s.id===selStyle){p.style.background=s.c+'22';p.style.borderColor=s.c+'66';p.style.color=s.c;}
-    p.onclick=()=>{
-      selStyle=s.id;
-      document.querySelectorAll('.sp').forEach((x,i)=>{
-        x.classList.remove('active');x.style.background='';x.style.borderColor='';x.style.color='';
-      });
-      p.classList.add('active');p.style.background=s.c+'22';p.style.borderColor=s.c+'66';p.style.color=s.c;
-      renderGraph();
-    };
-    w.appendChild(p);
-  });
-}
-
-// ══ INDEX ══════════════════════════════════════════════════════
-async function doIndex(){
-  const src = document.getElementById('src').value.trim();
-  if(!src){ toast('Set a source directory','error'); return; }
-  localStorage.setItem('cg_src', src);
-
-  const btn = document.getElementById('btn-idx');
-  btn.disabled = true;
-  document.getElementById('progress').style.display='block';
-  setProgLog('Connecting…'); setProgFill(5);
-
-  try{
-    const r = await fetch('/api/index',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({source_path:src})});
-    const d = await r.json();
-    if(d.error){ toast(d.error,'error'); btn.disabled=false; return; }
-
-    const es = new EventSource('/api/stream/'+d.stream_id);
-    let prog = 10;
-    es.onmessage = ev => {
-      const line = JSON.parse(ev.data);
-      if(line === '__DONE__'){ es.close(); btn.disabled=false; return; }
-      if(line.startsWith('__GRAPH__:')){
-        const graph = JSON.parse(line.slice(10));
-        if(graph.error){ toast(graph.error,'error'); btn.disabled=false; return; }
-        G = graph;
-        setProgFill(100); setProgLog('Done ✓');
-        saveSession();
-        setTimeout(()=>enterApp(src), 400);
-        return;
-      }
-      prog = Math.min(90, prog + 15);
-      setProgFill(prog); setProgLog(line.replace(/^\[.*?\]\s*/,''));
-    };
-    es.onerror = ()=>{ es.close(); btn.disabled=false; };
-  } catch(e){
-    toast('Error: '+e.message,'error'); btn.disabled=false;
-  }
-}
-
-function setProgFill(p){ document.getElementById('prog-fill').style.width=p+'%'; }
-function setProgLog(t){ document.getElementById('prog-log').textContent=t; }
-
-// ══ ENTER APP ═════════════════════════════════════════════════
-function enterApp(src){
-  document.getElementById('launch').classList.add('out');
-  document.getElementById('app').classList.add('on');
-  document.getElementById('tb-src').textContent = src.split('/').pop() || src;
-  document.getElementById('tb-stat').innerHTML =
-    `<b>${G.nodes.length}</b> fns &nbsp;·&nbsp; <b>${Object.values(G.edges).reduce((s,v)=>s+v.length,0)}</b> edges`;
-  buildFnList();
-  renderGraph();
-}
-
-// ══ SESSION PERSISTENCE ════════════════════════════════════════
-function saveSession(){
-  if(!G) return;
-  try{
-    localStorage.setItem('cg_graph', JSON.stringify({src:G.source,graph:G,ts:Date.now()}));
-  }catch(e){ console.warn('Session save failed',e); }
-}
-function loadSession(){
-  try{
-    const raw=localStorage.getItem('cg_graph');
-    if(!raw) return false;
-    const sess=JSON.parse(raw);
-    if(Date.now()-sess.ts>86400000){ localStorage.removeItem('cg_graph'); return false; }
-    G=sess.graph;
-    enterApp(sess.src||G.source||'project');
-    toast(`Session restored: ${G.nodes.length} fns`,'ok');
-    return true;
-  }catch(e){ return false; }
-}
-function clearSession(){
-  localStorage.removeItem('cg_graph');
-  G=null; newIndex(true);
-  toast('Session cleared');
-}
-
-function newIndex(fresh=false){
-  if(fresh) document.getElementById('src').value='';
-  G=null; tracedFn=null; focusedFn=null;
-  multiTraceMode=false; multiTraceA=null; multiTraceB=null;
-  traceHistory=[]; traceHistIdx=-1;
-  window._deadFns=null; window._impactFns=null; window._heatScores=null; window._foundPaths=null;
-  clearCanvas();
-  document.getElementById('analysis-result').innerHTML='';
-  anaSetActive(null);
-  document.getElementById('progress').style.display='none';
-  setProgFill(0); setProgLog('');
-  document.getElementById('launch').classList.remove('out');
-  document.getElementById('app').classList.remove('on');
-  document.getElementById('btn-idx').disabled=false;
-  updateHistButtons();
-  if(!fresh) setTimeout(doIndex, 80); // re-index immediately
-}
-
-// ══ MODE ══════════════════════════════════════════════════════
-function setMode(m){
-  mode=m;
-  document.getElementById('m-fn').classList.toggle('active',m==='fn');
-  document.getElementById('m-mod').classList.toggle('active',m==='mod');
-  document.getElementById('depth-sect').style.display=m==='fn'?'':'none';
-  document.getElementById('trace-sect').style.display=m==='fn'?'':'none';
-  document.getElementById('multi-trace-sect').style.display=m==='fn'?'':'none';
-  document.getElementById('analysis-sect').style.display=m==='fn'?'':'none';
-  document.getElementById('mod-opts').style.display=m==='mod'?'block':'none';
-  tracedFn=null;
-  document.getElementById('btn-reset-trace').style.display='none';
-  document.getElementById('trace-inp').value='';
-  closeInfo();
-  renderGraph();
-}
-
-// ══ DEPTH ═════════════════════════════════════════════════════
-function onDepth(v){
-  depth=parseInt(v);
-  document.getElementById('dv').textContent=v==0?'∞':v;
-  renderGraph();
-}
-
-// ══ EXT TOGGLE ════════════════════════════════════════════════
-function toggleExt(){
-  showExt=!showExt;
-  if(!G){ document.getElementById('btn-ext').classList.toggle('active',showExt); return; }
-  document.getElementById('btn-ext').classList.toggle('active',showExt);
-  renderGraph();
-}
-
-// ══ FUNCTION LIST ═════════════════════════════════════════════
-function buildFnList(){
-  if(!G) return;
-  const list = document.getElementById('fn-list');
-  const projFns = G.nodes.filter(n=>n.type==='project').sort((a,b)=>b.in_degree-a.in_degree);
-  renderFnList(projFns);
-}
-function renderFnList(fns){
-  const list=document.getElementById('fn-list');
-  list.innerHTML=fns.slice(0,300).map(n=>`
-    <div class="fn-item" data-fn="${n.id}" onclick="selectFnItem('${n.id}')">
-      <span class="fn-name">${n.id}</span>
-      <span class="fn-badge">${n.in_degree}</span>
-    </div>`).join('');
-}
-function filterFns(q){
-  if(!G) return;
-  const fns=G.nodes.filter(n=>n.type==='project'&&(!q||n.id.toLowerCase().includes(q.toLowerCase())))
-                   .sort((a,b)=>b.in_degree-a.in_degree);
-  renderFnList(fns);
-  highlightSearchNodes(q);
-}
-function highlightSearchNodes(q){
-  const svg=document.getElementById('canvas').querySelector('svg');
-  if(!svg) return;
-  const rects=svg.querySelectorAll('g[data-fn] rect');
-  rects.forEach(r=>{
-    const fn=r.parentElement.dataset.fn;
-    if(!q){ r.removeAttribute('filter'); return; }
-    const match=fn&&fn.toLowerCase().includes(q.toLowerCase());
-    r.style.filter=match?'drop-shadow(0 0 6px #4a8fff)':'';
-    r.style.opacity=match?'1':'0.25';
-  });
-}
-function selectFnItem(fn){
-  document.querySelectorAll('.fn-item').forEach(x=>x.classList.remove('active'));
-  const el=document.querySelector(`.fn-item[data-fn="${fn}"]`);
-  if(el) el.classList.add('active');
-  focusNode(fn);
-}
-
-// ══ TRACE ═════════════════════════════════════════════════════
-function traceFunction(fn, pushHistory=true){
-  if(!G) return;
-  const exists=G.nodes.find(n=>n.id===fn);
-  if(!exists){ toast(`Function '${fn}' not found`,'error'); return; }
-  if(pushHistory){
-    // truncate forward history
-    traceHistory = traceHistory.slice(0, traceHistIdx+1);
-    traceHistory.push(fn);
-    traceHistIdx = traceHistory.length-1;
-  }
-  tracedFn=fn;
-  document.getElementById('trace-inp').value=fn;
-  document.getElementById('btn-reset-trace').style.display='';
-  document.getElementById('gbar-title').textContent='Trace: '+fn;
-  updateHistButtons();
-  updateBreadcrumb();
-  renderGraph();
-  showInfo(fn);
-}
-function clearTrace(){
-  tracedFn=null; traceHistory=[]; traceHistIdx=-1;
-  multiTraceMode=false; multiTraceA=null; multiTraceB=null;
-  document.getElementById('trace-inp').value='';
-  document.getElementById('btn-reset-trace').style.display='none';
-  document.getElementById('gbar-title').textContent=mode==='fn'?'Function graph':'Module graph';
-  updateHistButtons(); updateBreadcrumb();
-  renderGraph(); closeInfo();
-}
-
-// Autocomplete for trace
-function acTrace(v){
-  acIdx=-1;
-  const dd=document.getElementById('ac-dd');
-  if(!v||!G){ dd.style.display='none'; return; }
-  const ms=G.nodes.filter(n=>n.id.toLowerCase().includes(v.toLowerCase())).slice(0,8);
-  if(!ms.length){ dd.style.display='none'; return; }
-  dd.innerHTML=ms.map((n,i)=>`<div class="ac-it" data-fn="${n.id}" onmousedown="selTrace('${n.id}')">${n.id}</div>`).join('');
-  dd.style.display='block';
-}
-function traceKey(e){
-  const dd=document.getElementById('ac-dd');
-  const items=dd.querySelectorAll('.ac-it');
-  if(e.key==='ArrowDown'){ acIdx=Math.min(acIdx+1,items.length-1); highlightAc(items); e.preventDefault(); }
-  else if(e.key==='ArrowUp'){ acIdx=Math.max(acIdx-1,0); highlightAc(items); e.preventDefault(); }
-  else if(e.key==='Enter'){
-    if(acIdx>=0&&items[acIdx]) selTrace(items[acIdx].dataset.fn);
-    else { const v=document.getElementById('trace-inp').value.trim(); if(v) selTrace(v); }
-  }
-  else if(e.key==='Escape'){ clearTrace(); }
-}
-function highlightAc(items){ items.forEach((x,i)=>x.classList.toggle('hi',i===acIdx)); }
-function selTrace(fn){ hideAc(); traceFunction(fn); }
-function hideAc(){ document.getElementById('ac-dd').style.display='none'; acIdx=-1; }
-
-// ══ GRAPH RENDERING ═══════════════════════════════════════════
-// ══ TOOLTIP ════════════════════════════════════════════════════
-let _ttEl = null;
-function showTooltip(e, fn){
-  if(!G) return;
-  const meta = G.nodes.find(n=>n.id===fn)||{};
-  const tt = document.getElementById('tooltip');
-  tt.innerHTML = `<b>${fn}</b>`+
-    (meta.file?`<span style="color:var(--text3)">${meta.file}</span><br>`:'') +
-    `<span style="color:var(--text3)">in: ${meta.in_degree||0} · out: ${meta.out_degree||0} · ${meta.type||'?'}</span>`;
-  tt.style.display='block';
-  moveTooltip(e);
-}
-function moveTooltip(e){
-  const tt=document.getElementById('tooltip');
-  const x=e.clientX+14, y=e.clientY+14;
-  const tw=tt.offsetWidth, th=tt.offsetHeight;
-  tt.style.left=Math.min(x, window.innerWidth-tw-8)+'px';
-  tt.style.top=Math.min(y, window.innerHeight-th-8)+'px';
-}
-function hideTooltip(){ document.getElementById('tooltip').style.display='none'; }
-
-
-function toggleModExpand(){
-  modExpand=!modExpand;
-  document.getElementById('btn-expand').classList.toggle('active',modExpand);
-  if(modMatrix){ modMatrix=false; document.getElementById('btn-matrix').classList.remove('active'); }
-  renderGraph();
-}
-
-function toggleMatrix(){
-  modMatrix=!modMatrix;
-  document.getElementById('btn-matrix').classList.toggle('active',modMatrix);
-  if(modExpand){ modExpand=false; document.getElementById('btn-expand').classList.remove('active'); }
-  renderGraph();
-}
-
-function toggleDir(){
-  layoutDir = layoutDir === 'LR' ? 'TB' : 'LR';
-  document.getElementById('btn-dir').textContent = layoutDir === 'LR' ? '⇆ H/V' : '⇅ V/H';
-  renderGraph();
-}
-
-function clearCanvas(){
-  document.getElementById('gbar-legend').style.display='none';
-  const c=document.getElementById('canvas');
-  const svg=c.querySelector('svg'); if(svg) svg.remove();
-  document.getElementById('canvas-empty').style.display='flex';
-}
-
-function showLoading(msg='Rendering…'){
-  const l=document.getElementById('canvas-loading');
-  l.style.display='flex';
-  document.getElementById('loading-msg').textContent=msg;
-}
-function hideLoading(){ document.getElementById('canvas-loading').style.display='none'; }
-
-function renderGraph(){
-  if(!G) return;
-  // If multi-trace is active, re-run it rather than full graph
-  if(multiTraceMode && multiTraceA && multiTraceB){ runMultiTrace(); return; }
-  showLoading();
-  setTimeout(()=>{ // yield to show spinner
-    try{
-      if(mode==='mod') renderModuleGraph();
-      else renderFnGraph();
-    } catch(e){ console.error(e); hideLoading(); toast('Render error','error'); }
-  }, 20);
-}
-
-// ── Build visible node/edge sets ──────────────────────────────
-function buildVisibleGraph(){
-  const edges = G.edges;
-  const callers = G.callers;
-  let visNodes = new Set();
-  let visEdges = [];  // {from, to}
-
-  if(tracedFn){
-    // BFS ancestors (max 3 levels up to avoid showing entire codebase)
-    const anc = new Set();
-    let q=[[tracedFn,0]];
-    while(q.length){ const [n,d]=q.pop(); (callers[n]||[]).forEach(c=>{ if(!anc.has(c)&&d<3){anc.add(c);q.push([c,d+1]);} }); }
-    // BFS descendants
-    const desc = new Set();
-    q=[tracedFn];
-    while(q.length){ const n=q.pop(); (edges[n]||[]).forEach(c=>{ if(!desc.has(c)){desc.add(c);q.push(c);} }); }
-    // limit by depth
-    if(depth>0){
-      // re-BFS with depth limit
-      const descD=new Set(); q=[[tracedFn,0]];
-      while(q.length){ const [n,d]=q.pop(); if(d>=depth) continue; (edges[n]||[]).forEach(c=>{ if(!descD.has(c)){descD.add(c);q.push([c,d+1]);} }); }
-      desc.forEach(n=>{ if(!descD.has(n)) desc.delete(n); });
-    }
-    visNodes=new Set([tracedFn,...anc,...desc]);
-    // edges within visible
-    visNodes.forEach(n=>{
-      (edges[n]||[]).forEach(t=>{ if(visNodes.has(t)) visEdges.push({from:n,to:t}); });
-    });
-    // node roles
-    const roles={};
-    anc.forEach(n=>roles[n]='caller');
-    desc.forEach(n=>roles[n]='callee');
-    roles[tracedFn]='focused';
-    return {visNodes, visEdges, roles};
-  }
-
-  // Full graph with depth
-  if(depth>0){
-    // find roots (no callers)
-    const roots=G.nodes.filter(n=>!(callers[n.id]||[]).length).map(n=>n.id);
-    const q2=roots.map(r=>[r,0]);
-    while(q2.length){
-      const [n,d]=q2.pop();
-      visNodes.add(n);
-      if(d<depth) (edges[n]||[]).forEach(c=>{if(!visNodes.has(c)){q2.push([c,d+1]);}});
-    }
-  } else {
-    G.nodes.forEach(n=>visNodes.add(n.id));
-  }
-  // filter externals
-  if(!showExt) visNodes.forEach(id=>{ const n=G.nodes.find(x=>x.id===id); if(n&&n.type==='external') visNodes.delete(id); });
-  visNodes.forEach(n=>{ (edges[n]||[]).forEach(t=>{ if(visNodes.has(t)) visEdges.push({from:n,to:t}); }); });
-  return {visNodes, visEdges, roles:{}};
-}
-
-// ── Hierarchical layout ───────────────────────────────────────
-function layoutGraph(visNodes, visEdges, dir='LR', roles={}){
-  const nodeArr=[...visNodes];
-  if(!nodeArr.length) return {};
-
-  const layer={};
-
-  // In trace mode: assign layers by role to guarantee correct columns
-  const hasFocused = Object.values(roles).includes('focused');
-  if(hasFocused){
-    // callers=0, focused=1, callees get BFS depth from focused starting at 2
-    nodeArr.forEach(n=>{
-      if(roles[n]==='focused') layer[n]=1;
-      else if(roles[n]==='caller') layer[n]=0;
-    });
-    // BFS callees from focused
-    const focusedNode=nodeArr.find(n=>roles[n]==='focused');
-    if(focusedNode){
-      const q=[[focusedNode,1]];
-      const vis=new Set([focusedNode]);
-      while(q.length){
-        const [n,d]=q.shift();
-        visEdges.filter(e=>e.from===n&&!vis.has(e.to)).forEach(e=>{
-          vis.add(e.to); layer[e.to]=d+1; q.push([e.to,d+1]);
-        });
-      }
-    }
-    // Anything still unassigned
-    nodeArr.forEach(n=>{ if(layer[n]===undefined) layer[n]=2; });
-  } else {
-    // Normal BFS from in-degree-0 roots
-    const inDeg={};
-    nodeArr.forEach(n=>inDeg[n]=0);
-    visEdges.forEach(e=>{ if(inDeg[e.to]!==undefined) inDeg[e.to]++; });
-    const roots=nodeArr.filter(n=>inDeg[n]===0);
-    if(!roots.length) roots.push(nodeArr[0]);
-    const q=[...roots.map(r=>[r,0])];
-    const visited=new Set();
-    while(q.length){
-      const [n,d]=q.shift();
-      if(visited.has(n)) continue;
-      visited.add(n); layer[n]=d;
-      visEdges.filter(e=>e.from===n).forEach(e=>{ if(!visited.has(e.to)) q.push([e.to,d+1]); });
-    }
-    nodeArr.forEach(n=>{ if(layer[n]===undefined) layer[n]=0; });
-  }
-
-  // Group by layer
-  const byLayer={};
-  nodeArr.forEach(n=>{ const l=layer[n]; if(!byLayer[l]) byLayer[l]=[]; byLayer[l].push(n); });
-
-  // Assign positions — center each column vertically
-  const NW=150, NH=36, HGAP=60, VGAP=16, MPAD=40;
-  const pos={};
-  const layerNums=Object.keys(byLayer).map(Number).sort((a,b)=>a-b);
-  // Find max column height to center columns
-  const maxColH=Math.max(...layerNums.map(l=>byLayer[l].length));
-
-  layerNums.forEach(l=>{
-    const nodes=byLayer[l];
-    const colH=nodes.length*(NH+VGAP)-VGAP;
-    const yOff=(maxColH*(NH+VGAP)-colH)/2; // center vertically
-    nodes.forEach((n,i)=>{
-      if(dir==='LR'){
-        pos[n]={ x: MPAD+l*(NW+HGAP), y: MPAD+yOff+i*(NH+VGAP) };
-      } else {
-        const colW=nodes.length*(NW+HGAP)-HGAP;
-        const xOff=(maxColH*(NW+HGAP)-colW)/2;
-        pos[n]={ x: MPAD+xOff+i*(NW+HGAP), y: MPAD+l*(NH+VGAP*3) };
-      }
-    });
-  });
-  return pos;
-}
-
-// ── SVG render ────────────────────────────────────────────────
-function renderFnGraph(){
-  const {visNodes, visEdges, roles} = buildVisibleGraph();
-  document.getElementById('canvas-empty').style.display='none';
-
-  if(visNodes.size===0){ hideLoading(); toast('No nodes to show'); clearCanvas(); return; }
-  if(visNodes.size>800){
-    toast(`Graph too large (${visNodes.size} nodes) — use Trace or Depth to focus`,'error');
-    hideLoading(); return;
-  }
-
-  const pos = layoutGraph(visNodes, visEdges, layoutDir, roles);
-  const col = NODE_COLORS[selStyle]||NODE_COLORS.default;
-
-  // Calc canvas size
-  const xs=Object.values(pos).map(p=>p.x), ys=Object.values(pos).map(p=>p.y);
-  if(!xs.length){ hideLoading(); return; }
-  const W=Math.max(...xs)+200, H=Math.max(...ys)+80;
-
-  const svgNS='http://www.w3.org/2000/svg';
-  const svg=document.createElementNS(svgNS,'svg');
-  svg.setAttribute('width',W); svg.setAttribute('height',H);
-  svg.style.cssText='position:absolute;top:0;left:0;transform-origin:0 0;user-select:none';
-
-  // Arrowhead
-  const defs=document.createElementNS(svgNS,'defs');
-  const marker=document.createElementNS(svgNS,'marker');
-  marker.setAttribute('id','arr'); marker.setAttribute('markerWidth','8');
-  marker.setAttribute('markerHeight','6'); marker.setAttribute('refX','8');
-  marker.setAttribute('refY','3'); marker.setAttribute('orient','auto');
-  const poly=document.createElementNS(svgNS,'polygon');
-  poly.setAttribute('points','0 0, 8 3, 0 6');
-  poly.setAttribute('fill', tracedFn?'#3d5270':'#2d4060');
-  marker.appendChild(poly); defs.appendChild(marker);
-
-  const markerRed=marker.cloneNode(true); markerRed.setAttribute('id','arr-red');
-  markerRed.querySelector('polygon').setAttribute('fill','#ef6548');
-  const markerGreen=marker.cloneNode(true); markerGreen.setAttribute('id','arr-green');
-  markerGreen.querySelector('polygon').setAttribute('fill','#22c55e');
-  defs.appendChild(markerRed); defs.appendChild(markerGreen);
-  svg.appendChild(defs);
-
-  // Edges first
-  const NW=150, NH=36; // node width/height
-  const edgeG=document.createElementNS(svgNS,'g');
-  visEdges.forEach(e=>{
-    const p1=pos[e.from], p2=pos[e.to]; if(!p1||!p2) return;
-    const path=document.createElementNS(svgNS,'path');
-    let d;
-    if(layoutDir==='LR'){
-      // connect right edge → left edge
-      const x1=p1.x+NW, y1=p1.y+NH/2, x2=p2.x, y2=p2.y+NH/2;
-      const cx=Math.abs(x2-x1)*0.5;
-      d=`M${x1},${y1} C${x1+cx},${y1} ${x2-cx},${y2} ${x2},${y2}`;
-    } else {
-      // connect bottom edge → top edge
-      const x1=p1.x+NW/2, y1=p1.y+NH, x2=p2.x+NW/2, y2=p2.y;
-      const cy=Math.abs(y2-y1)*0.5;
-      d=`M${x1},${y1} C${x1},${y1+cy} ${x2},${y2-cy} ${x2},${y2}`;
-    }
-    path.setAttribute('d',d);
-    path.setAttribute('fill','none');
-    const isToTraced = e.to===tracedFn;
-    const isFromTraced = e.from===tracedFn;
-    if(isToTraced){ path.setAttribute('stroke','#ef6548');path.setAttribute('stroke-width','1.5');path.setAttribute('marker-end','url(#arr-red)'); }
-    else if(isFromTraced){ path.setAttribute('stroke','#22c55e');path.setAttribute('stroke-width','1.5');path.setAttribute('marker-end','url(#arr-green)'); }
-    else{ path.setAttribute('stroke',tracedFn?'#1a2535':'#1e3a5a');path.setAttribute('stroke-width','1');path.setAttribute('marker-end','url(#arr)'); }
-    edgeG.appendChild(path);
-  });
-  svg.appendChild(edgeG);
-
-  // Nodes
-  const nodeG=document.createElementNS(svgNS,'g');
-  visNodes.forEach(fn=>{
-    const p=pos[fn]; if(!p) return;
-    const meta=G.nodes.find(x=>x.id===fn)||{type:'external'};
-    const role=roles[fn]||'';
-    const isFocused=role==='focused'||fn===focusedFn;
-
-    const g=document.createElementNS(svgNS,'g');
-    g.setAttribute('transform',`translate(${p.x},${p.y})`);
-    g.setAttribute('data-fn',fn);
-    g.style.cursor='pointer';
-
-    const rect=document.createElementNS(svgNS,'rect');
-    rect.setAttribute('width','150');rect.setAttribute('height','36');
-    rect.setAttribute('rx','6');rect.setAttribute('ry','6');
-
-    let fill=col.fill, stroke=col.stroke, sw=1.5;
-    if(meta.type==='external'){ fill='#0e1420'; stroke='#2d3d55'; sw=1; }
-    if(meta.type==='macro'){ fill='#1a180a'; stroke='#d4a843'; }
-    if(role==='caller'){ fill='#2a0d0d'; stroke='#ef6548'; sw=2; }
-    if(role==='callee'){ fill='#0d2a0d'; stroke='#22c55e'; sw=2; }
-    if(isFocused){ fill='#1a2a4a'; stroke='#ffffff'; sw=2.5; }
-
-    rect.setAttribute('fill',fill);rect.setAttribute('stroke',stroke);rect.setAttribute('stroke-width',sw);
-    g.appendChild(rect);
-
-    const text=document.createElementNS(svgNS,'text');
-    text.setAttribute('x','75');text.setAttribute('y','22');
-    text.setAttribute('text-anchor','middle');text.setAttribute('dominant-baseline','middle');
-    text.setAttribute('font-size','10');text.setAttribute('font-family',"'JetBrains Mono',monospace");
-    const textCol = role==='caller'?'#ffc0a0':role==='callee'?'#a0ffc0':isFocused?'#ffffff':
-                    meta.type==='external'?'#4a6080':col.text;
-    text.setAttribute('fill',textCol);text.setAttribute('pointer-events','none');
-    // truncate label
-    const label=fn.length>18?fn.slice(0,16)+'…':fn;
-    text.textContent=label;
-    g.appendChild(text);
-
-    // degree badge
-    if(meta.in_degree>0){
-      const badge=document.createElementNS(svgNS,'text');
-      badge.setAttribute('x','145');badge.setAttribute('y','8');
-      badge.setAttribute('font-size','7');badge.setAttribute('fill',col.stroke);
-      badge.setAttribute('text-anchor','middle');badge.setAttribute('pointer-events','none');
-      badge.textContent=meta.in_degree;
-      g.appendChild(badge);
-    }
-
-    // click → trace (with drag threshold: only fire if not dragged)
-    g.addEventListener('mousedown', ev=>{ ev.stopPropagation(); });
-    g.addEventListener('click', ev=>{ ev.stopPropagation(); if(!_wasDragged) onNodeClick(fn); });
-    g.addEventListener('mouseenter', ev=>{ rect.setAttribute('fill', isFocused?fill:col.fill==='#111820'?'#1a2535':fill+'cc'); showTooltip(ev,fn); });
-    g.addEventListener('mousemove', ev=>{ moveTooltip(ev); });
-    g.addEventListener('mouseleave', ()=>{ rect.setAttribute('fill',fill); hideTooltip(); });
-
-    nodeG.appendChild(g);
-  });
-  svg.appendChild(nodeG);
-
-  // Mount
-  const canvas=document.getElementById('canvas');
-  const old=canvas.querySelector('svg'); if(old) old.remove();
-  canvas.appendChild(svg);
-
-  // Reset pan/zoom and fit
-  svgPan={x:0,y:0,scale:1};
-  fitGraph();
-  hideLoading();
-  document.getElementById('gbar-title').textContent=
-    tracedFn?'Trace: '+tracedFn : mode==='fn'?`Function graph (${visNodes.size} nodes)`:'Module graph';
-  document.getElementById('gbar-legend').style.display='flex';
-}
-
-function renderModuleGraph(){
-  document.getElementById('canvas-empty').style.display='none';
-  if(modMatrix){ renderModuleMatrix(); return; }
-  if(modExpand){ renderModuleExpand(); return; }
-
-  const modEdges=G.mod_edges;
-  const mods=G.mods;
-  const svgNS='http://www.w3.org/2000/svg';
-  const cols=['#4a8fff','#22c55e','#ef6548','#a78bfa','#d4a843','#06b6d4','#f59e0b','#ec4899'];
-  const modCol={};
-  mods.forEach((m,i)=>modCol[m]=cols[i%cols.length]);
-
-  // Layout: circle
-  const R=220, cx=310, cy=280;
-  const pos={};
-  mods.forEach((m,i)=>{ const a=(i/mods.length)*Math.PI*2-Math.PI/2; pos[m]={x:cx+R*Math.cos(a),y:cy+R*Math.sin(a)}; });
-
-  const W=620, H=560;
-  const svg=document.createElementNS(svgNS,'svg');
-  svg.setAttribute('width',W);svg.setAttribute('height',H);
-  svg.style.cssText='position:absolute;top:0;left:0;transform-origin:0 0;user-select:none';
-
-  const defs=document.createElementNS(svgNS,'defs');
-  const mkArr=(id,color)=>{
-    const mk=document.createElementNS(svgNS,'marker');
-    mk.setAttribute('id',id);mk.setAttribute('markerWidth','7');mk.setAttribute('markerHeight','5');
-    mk.setAttribute('refX','7');mk.setAttribute('refY','2.5');mk.setAttribute('orient','auto');
-    const p=document.createElementNS(svgNS,'polygon');
-    p.setAttribute('points','0 0, 7 2.5, 0 5');p.setAttribute('fill',color);
-    mk.appendChild(p);return mk;
-  };
-  defs.appendChild(mkArr('arr-mod','#2d4a6a'));
-  svg.appendChild(defs);
-
-  const maxCnt=Math.max(...Object.values(modEdges));
-
-  // Edges
-  Object.entries(modEdges).forEach(([key,cnt])=>{
-    const [a,b]=key.split('→');
-    const p1=pos[a],p2=pos[b]; if(!p1||!p2) return;
-    const dx=p2.x-p1.x,dy=p2.y-p1.y,len=Math.sqrt(dx*dx+dy*dy);
-    const nx=-dy/len*18,ny=dx/len*18;
-    const path=document.createElementNS(svgNS,'path');
-    path.setAttribute('d',`M${p1.x},${p1.y} Q${(p1.x+p2.x)/2+nx},${(p1.y+p2.y)/2+ny} ${p2.x},${p2.y}`);
-    path.setAttribute('fill','none');
-    const alpha=0.25+0.6*(cnt/maxCnt);
-    const lw=1+2.5*(cnt/maxCnt);
-    path.setAttribute('stroke',`rgba(74,143,255,${alpha.toFixed(2)})`);
-    path.setAttribute('stroke-width',lw.toFixed(1));
-    path.setAttribute('marker-end','url(#arr-mod)');
-    svg.appendChild(path);
-    // count label
-    const t=document.createElementNS(svgNS,'text');
-    t.setAttribute('x',(p1.x+p2.x)/2+nx);t.setAttribute('y',(p1.y+p2.y)/2+ny-4);
-    t.setAttribute('text-anchor','middle');t.setAttribute('font-size','8');
-    t.setAttribute('fill','#3d5270');t.setAttribute('font-family',"'JetBrains Mono',monospace");
-    t.textContent=cnt;svg.appendChild(t);
-  });
-
-  // Module nodes
-  mods.forEach(m=>{
-    const p=pos[m]; const c=modCol[m];
-    const fnCount=G.nodes.filter(n=>n.mod===m&&n.type==='project').length;
-    const g=document.createElementNS(svgNS,'g');
-    g.setAttribute('transform',`translate(${p.x-52},${p.y-22})`);
-    g.style.cursor='pointer';
-
-    const rect=document.createElementNS(svgNS,'rect');
-    rect.setAttribute('width','104');rect.setAttribute('height','44');rect.setAttribute('rx','8');
-    rect.setAttribute('fill',c+'18');rect.setAttribute('stroke',c);rect.setAttribute('stroke-width','1.5');
-    g.appendChild(rect);
-
-    const tName=document.createElementNS(svgNS,'text');
-    tName.setAttribute('x','52');tName.setAttribute('y','18');
-    tName.setAttribute('text-anchor','middle');tName.setAttribute('dominant-baseline','middle');
-    tName.setAttribute('font-size','10');tName.setAttribute('font-family',"'JetBrains Mono',monospace");
-    tName.setAttribute('fill',c);tName.setAttribute('pointer-events','none');
-    tName.textContent=m.length>12?m.slice(0,11)+'…':m;
-    g.appendChild(tName);
-
-    const tCount=document.createElementNS(svgNS,'text');
-    tCount.setAttribute('x','52');tCount.setAttribute('y','33');
-    tCount.setAttribute('text-anchor','middle');tCount.setAttribute('font-size','7.5');
-    tCount.setAttribute('fill',c+'99');tCount.setAttribute('font-family',"'JetBrains Mono',monospace");
-    tCount.setAttribute('pointer-events','none');
-    tCount.textContent=fnCount+' fn';
-    g.appendChild(tCount);
-
-    // hover + click
-    g.addEventListener('mousedown',ev=>ev.stopPropagation());
-    g.addEventListener('mouseenter',()=>rect.setAttribute('fill',c+'30'));
-    g.addEventListener('mouseleave',()=>rect.setAttribute('fill',c+'18'));
-    g.addEventListener('click',ev=>{
-      if(_wasDragged) return; ev.stopPropagation();
-      // Switch to fn mode filtered by this module
-      setMode('fn');
-      document.getElementById('fn-search').value=m;
-      filterFns(m);
-      toast(`Showing functions in '${m}'`);
-    });
-    svg.appendChild(g);
-  });
-
-  const canvas=document.getElementById('canvas');
-  const old=canvas.querySelector('svg'); if(old) old.remove();
-  canvas.appendChild(svg);
-  svgPan={x:0,y:0,scale:1};
-  fitGraph();
-  hideLoading();
-  document.getElementById('gbar-title').textContent=`Module graph (${mods.length} modules)`;
-  document.getElementById('gbar-legend').style.display='none';
-}
-
-// ── Module: Expand view (functions grouped by module bubble) ──
-function renderModuleExpand(){
-  const svgNS='http://www.w3.org/2000/svg';
-  const cols=['#4a8fff','#22c55e','#ef6548','#a78bfa','#d4a843','#06b6d4','#f59e0b','#ec4899'];
-  const mods=G.mods;
-  const modCol={}; mods.forEach((m,i)=>modCol[m]=cols[i%cols.length]);
-
-  // Group project functions by module
-  const byMod={};
-  G.nodes.filter(n=>n.type==='project').forEach(n=>{
-    if(!byMod[n.mod]) byMod[n.mod]=[];
-    byMod[n.mod].push(n);
-  });
-
-  const FW=120,FH=28,FPX=8,FPY=8; // fn box
-  const MPAD=16; // module padding
-
-  // Compute module sizes
-  const modSizes={};
-  Object.entries(byMod).forEach(([m,fns])=>{
-    const cols2=Math.min(fns.length,4);
-    const rows=Math.ceil(fns.length/cols2);
-    modSizes[m]={w:cols2*(FW+FPX)+MPAD*2, h:rows*(FH+FPY)+MPAD*2+22, cols:cols2, rows};
-  });
-
-  // Layout modules in a flow grid
-  const MGAP=24;
-  let mx=MPAD, my=MPAD, rowH=0;
-  const modPos={};
-  const maxW=Math.max(...Object.values(modSizes).map(s=>s.w));
-  const cols3=Math.max(1,Math.floor(Math.sqrt(mods.length)));
-  let col=0;
-  mods.forEach(m=>{
-    if(!byMod[m]) return;
-    const sz=modSizes[m];
-    modPos[m]={x:mx,y:my};
-    rowH=Math.max(rowH,sz.h);
-    col++;
-    if(col>=cols3){ mx=MPAD; my+=rowH+MGAP; rowH=0; col=0; }
-    else { mx+=sz.w+MGAP; }
-  });
-
-  const xs=Object.values(modPos).map((p,i)=>p.x+Object.values(modSizes)[i]?.w||0);
-  const ys=Object.values(modPos).map((p,i)=>p.y+Object.values(modSizes)[i]?.h||0);
-  const svgW=Math.max(...xs.filter(isFinite))+40;
-  const svgH=my+rowH+40;
-
-  const svg=document.createElementNS(svgNS,'svg');
-  svg.setAttribute('width',svgW);svg.setAttribute('height',svgH);
-  svg.style.cssText='position:absolute;top:0;left:0;transform-origin:0 0;user-select:none';
-
-  // fn node positions for cross-module edges
-  const fnPos={};
-
-  mods.forEach(m=>{
-    if(!byMod[m]||!modPos[m]) return;
-    const fns=byMod[m]; const c=modCol[m];
-    const mp=modPos[m]; const sz=modSizes[m];
-    const g=document.createElementNS(svgNS,'g');
-
-    // Module bubble
-    const rect=document.createElementNS(svgNS,'rect');
-    rect.setAttribute('x',mp.x);rect.setAttribute('y',mp.y);
-    rect.setAttribute('width',sz.w);rect.setAttribute('height',sz.h);
-    rect.setAttribute('rx','10');rect.setAttribute('fill',c+'0c');
-    rect.setAttribute('stroke',c+'55');rect.setAttribute('stroke-width','1.5');
-    g.appendChild(rect);
-
-    // Module label
-    const lbl=document.createElementNS(svgNS,'text');
-    lbl.setAttribute('x',mp.x+8);lbl.setAttribute('y',mp.y+14);
-    lbl.setAttribute('font-size','9');lbl.setAttribute('font-weight','600');
-    lbl.setAttribute('fill',c+'cc');lbl.setAttribute('font-family',"'JetBrains Mono',monospace");
-    lbl.textContent=m.toUpperCase();g.appendChild(lbl);
-
-    // Function nodes
-    fns.forEach((fn,i)=>{
-      const col2=i%sz.cols, row=Math.floor(i/sz.cols);
-      const fx=mp.x+MPAD+col2*(FW+FPX);
-      const fy=mp.y+MPAD+22+row*(FH+FPY);
-      fnPos[fn.id]={x:fx,y:fy,w:FW,h:FH};
-
-      const fg=document.createElementNS(svgNS,'g');
-      fg.style.cursor='pointer';
-
-      const fr=document.createElementNS(svgNS,'rect');
-      fr.setAttribute('x',fx);fr.setAttribute('y',fy);
-      fr.setAttribute('width',FW);fr.setAttribute('height',FH);
-      fr.setAttribute('rx','4');fr.setAttribute('fill','#111e30');
-      fr.setAttribute('stroke',c+'66');fr.setAttribute('stroke-width','1');
-      fg.appendChild(fr);
-
-      const ft=document.createElementNS(svgNS,'text');
-      ft.setAttribute('x',fx+FW/2);ft.setAttribute('y',fy+FH/2);
-      ft.setAttribute('text-anchor','middle');ft.setAttribute('dominant-baseline','middle');
-      ft.setAttribute('font-size','8');ft.setAttribute('fill','#8aa8c8');
-      ft.setAttribute('font-family',"'JetBrains Mono',monospace");
-      ft.setAttribute('pointer-events','none');
-      const lbl2=fn.id.length>14?fn.id.slice(0,13)+'…':fn.id;
-      ft.textContent=lbl2; fg.appendChild(ft);
-
-      fg.addEventListener('mousedown',ev=>ev.stopPropagation());
-      fg.addEventListener('mouseenter',()=>fr.setAttribute('fill','#1a2d48'));
-      fg.addEventListener('mouseleave',()=>fr.setAttribute('fill','#111e30'));
-      fg.addEventListener('click',ev=>{ if(_wasDragged) return; ev.stopPropagation(); setMode('fn'); traceFunction(fn.id); });
-      g.appendChild(fg);
-    });
-    svg.appendChild(g);
-  });
-
-  // Cross-module edges (sample: top 40 by caller in_degree to avoid clutter)
-  const crossEdges=[];
-  Object.entries(G.edges).forEach(([caller,callees])=>{
-    const cm=G.nodes.find(n=>n.id===caller)?.mod;
-    callees.forEach(callee=>{
-      const em=G.nodes.find(n=>n.id===callee)?.mod;
-      if(cm&&em&&cm!==em&&fnPos[caller]&&fnPos[callee]) crossEdges.push({caller,callee,cm,em});
-    });
-  });
-  crossEdges.slice(0,60).forEach(({caller,callee,cm,em})=>{
-    const p1=fnPos[caller],p2=fnPos[callee];
-    const c=modCol[cm]||'#3d5270';
-    const x1=p1.x+p1.w,y1=p1.y+p1.h/2,x2=p2.x,y2=p2.y+p2.h/2;
-    const path=document.createElementNS(svgNS,'path');
-    const cx2=Math.abs(x2-x1)*0.4;
-    path.setAttribute('d',`M${x1},${y1} C${x1+cx2},${y1} ${x2-cx2},${y2} ${x2},${y2}`);
-    path.setAttribute('fill','none');path.setAttribute('stroke',c+'55');
-    path.setAttribute('stroke-width','1');
-    svg.insertBefore(path,svg.firstChild);
-  });
-
-  const canvas=document.getElementById('canvas');
-  const old=canvas.querySelector('svg'); if(old) old.remove();
-  canvas.appendChild(svg);
-  svgPan={x:0,y:0,scale:1};
-  fitGraph();
-  hideLoading();
-  document.getElementById('gbar-title').textContent=`Expand view — click function to trace`;
-  document.getElementById('gbar-legend').style.display='none';
-}
-
-// ── Module: Matrix heatmap ──────────────────────────────────
-function renderModuleMatrix(){
-  const svgNS='http://www.w3.org/2000/svg';
-  const mods=G.mods.filter(m=>m!=='external');
-  const N=mods.length;
-  const CELL=44, PAD=90, TOP=90;
-  const W=PAD+N*CELL+20, H=TOP+N*CELL+20;
-
-  const maxVal=Math.max(...Object.values(G.mod_edges).filter(v=>typeof v==='number'));
-
-  const svg=document.createElementNS(svgNS,'svg');
-  svg.setAttribute('width',W);svg.setAttribute('height',H);
-  svg.style.cssText='position:absolute;top:0;left:0;transform-origin:0 0;user-select:none';
-
-  // Background
-  const bg=document.createElementNS(svgNS,'rect');
-  bg.setAttribute('width',W);bg.setAttribute('height',H);bg.setAttribute('fill','#07090f');
-  svg.appendChild(bg);
-
-  // Title
-  const title=document.createElementNS(svgNS,'text');
-  title.setAttribute('x',W/2);title.setAttribute('y',20);
-  title.setAttribute('text-anchor','middle');title.setAttribute('font-size','11');
-  title.setAttribute('fill','#7a95b8');title.setAttribute('font-family',"'JetBrains Mono',monospace");
-  title.textContent='Module coupling — calls per pair';
-  svg.appendChild(title);
-
-  // Column headers (rotated)
-  mods.forEach((m,j)=>{
-    const t=document.createElementNS(svgNS,'text');
-    t.setAttribute('x',PAD+j*CELL+CELL/2);t.setAttribute('y',TOP-6);
-    t.setAttribute('text-anchor','start');t.setAttribute('font-size','8.5');
-    t.setAttribute('fill','#7a95b8');t.setAttribute('font-family',"'JetBrains Mono',monospace");
-    t.setAttribute('transform',`rotate(-45,${PAD+j*CELL+CELL/2},${TOP-6})`);
-    t.textContent=m; svg.appendChild(t);
-  });
-
-  // Row headers
-  mods.forEach((m,i)=>{
-    const t=document.createElementNS(svgNS,'text');
-    t.setAttribute('x',PAD-6);t.setAttribute('y',TOP+i*CELL+CELL/2);
-    t.setAttribute('text-anchor','end');t.setAttribute('dominant-baseline','middle');
-    t.setAttribute('font-size','8.5');t.setAttribute('fill','#7a95b8');
-    t.setAttribute('font-family',"'JetBrains Mono',monospace");
-    t.textContent=m; svg.appendChild(t);
-  });
-
-  // Cells
-  mods.forEach((mRow,i)=>{
-    mods.forEach((mCol,j)=>{
-      const key=mRow+'→'+mCol;
-      const val=G.mod_edges[key]||0;
-      const intensity=val>0?0.15+0.8*(val/maxVal):0;
-      const x=PAD+j*CELL, y=TOP+i*CELL;
-
-      const rect=document.createElementNS(svgNS,'rect');
-      rect.setAttribute('x',x+1);rect.setAttribute('y',y+1);
-      rect.setAttribute('width',CELL-2);rect.setAttribute('height',CELL-2);
-      rect.setAttribute('rx','3');
-      if(i===j){
-        rect.setAttribute('fill','#1a1a2a');
-      } else if(val>0){
-        // blue→red gradient based on intensity
-        const r=Math.round(30+200*intensity),g2=Math.round(60*(1-intensity)),b=Math.round(180*(1-intensity*0.7));
-        rect.setAttribute('fill',`rgba(${r},${g2},${b},${(0.3+intensity*0.7).toFixed(2)})`);
-      } else {
-        rect.setAttribute('fill','#0d1117');
-      }
-      svg.appendChild(rect);
-
-      if(val>0){
-        const t=document.createElementNS(svgNS,'text');
-        t.setAttribute('x',x+CELL/2);t.setAttribute('y',y+CELL/2);
-        t.setAttribute('text-anchor','middle');t.setAttribute('dominant-baseline','middle');
-        t.setAttribute('font-size','9');
-        t.setAttribute('fill',intensity>0.5?'#fff':'#aac');
-        t.setAttribute('font-family',"'JetBrains Mono',monospace");
-        t.textContent=val; svg.appendChild(t);
-      }
-
-      // hover tooltip + click to filter
-      const hit=document.createElementNS(svgNS,'rect');
-      hit.setAttribute('x',x);hit.setAttribute('y',y);
-      hit.setAttribute('width',CELL);hit.setAttribute('height',CELL);
-      hit.setAttribute('fill','transparent');hit.style.cursor='pointer';
-      hit.addEventListener('mouseenter',()=>{
-        if(val>0) rect.setAttribute('stroke','#fff');rect.setAttribute('stroke-width','1.5');
-        document.getElementById('gbar-title').textContent=
-          val>0?`${mRow} → ${mCol}: ${val} calls`:`${mRow} → ${mCol}: no calls`;
-      });
-      hit.addEventListener('mouseleave',()=>{
-        rect.removeAttribute('stroke');
-        document.getElementById('gbar-title').textContent='Matrix — hover cell for details · click to filter';
-      });
-      hit.addEventListener('click',()=>{
-        if(val===0||i===j) return;
-        // switch to fn mode, show cross-module calls between these two
-        modMatrix=false; modExpand=false;
-        document.getElementById('btn-matrix').classList.remove('active');
-        setMode('fn');
-        toast(`Showing ${mRow} → ${mCol} calls`);
-        // filter to functions in mRow that call into mCol
-        const callers2=G.nodes.filter(n=>n.mod===mRow&&n.type==='project'&&
-          (G.edges[n.id]||[]).some(callee=>G.nodes.find(x=>x.id===callee)?.mod===mCol));
-        if(callers2.length===1) traceFunction(callers2[0].id);
-        else if(callers2.length>1){
-          document.getElementById('fn-search').value=mRow;
-          filterFns(mRow);
-          toast(`${callers2.length} functions in '${mRow}' call into '${mCol}' — trace one`);
-        }
-      });
-      svg.appendChild(hit);
-    });
-  });
-
-  // Axis labels
-  const ax=document.createElementNS(svgNS,'text');
-  ax.setAttribute('x',PAD+N*CELL/2);ax.setAttribute('y',H-4);
-  ax.setAttribute('text-anchor','middle');ax.setAttribute('font-size','8');ax.setAttribute('fill','#3d5270');
-  ax.setAttribute('font-family',"'JetBrains Mono',monospace");
-  ax.textContent='callee (column) ▶'; svg.appendChild(ax);
-
-  const ay=document.createElementNS(svgNS,'text');
-  ay.setAttribute('x',10);ay.setAttribute('y',TOP+N*CELL/2);
-  ay.setAttribute('text-anchor','middle');ay.setAttribute('font-size','8');ay.setAttribute('fill','#3d5270');
-  ay.setAttribute('font-family',"'JetBrains Mono',monospace");
-  ay.setAttribute('transform',`rotate(-90,10,${TOP+N*CELL/2})`);
-  ay.textContent='caller (row) ▼'; svg.appendChild(ay);
-
-  const canvas=document.getElementById('canvas');
-  const old=canvas.querySelector('svg'); if(old) old.remove();
-  canvas.appendChild(svg);
-  svgPan={x:0,y:0,scale:1};
-  fitGraph();
-  hideLoading();
-  document.getElementById('gbar-title').textContent='Matrix — hover cell for details · click to filter';
-  document.getElementById('gbar-legend').style.display='none';
-}
-
-
-function onNodeClick(fn){
-  focusedFn=fn;
-  showInfo(fn);
-  // single click = highlight, double handled via dblclick on g elements
-}
-function focusNode(fn){
-  focusedFn=fn;
-  if(mode==='fn') traceFunction(fn);
-}
-
-// ══ INFO PANEL ════════════════════════════════════════════════
-function showInfo(fn){
-  const meta=G.nodes.find(n=>n.id===fn);
-  if(!meta) return;
-  document.getElementById('info-name').textContent=fn;
-  const all_callees=(G.edges[fn]||[]);
-  const all_callers=(G.callers[fn]||[]);
-  const callee_list=all_callees.slice(0,15);
-  const caller_list=all_callers.slice(0,15);
-  const moreCallees=all_callees.length-15, moreCallers=all_callers.length-15;
-  document.getElementById('info-body').innerHTML=`
-    <div class="info-row"><span class="ik">File</span><span class="iv" title="${meta.file}">${meta.file.split('/').pop()||'external'}</span></div>
-    <div class="info-row"><span class="ik">Module</span><span class="iv">${meta.mod}</span></div>
-    <div class="info-row"><span class="ik">Callers</span><span class="iv">${meta.in_degree}</span></div>
-    <div class="info-row"><span class="ik">Calls</span><span class="iv">${meta.out_degree}</span></div>
-    <div class="info-row"><span class="ik">Type</span><span class="iv">${meta.type}</span></div>
-    ${caller_list.length?`<div class="info-sect">Called by</div>`+caller_list.map(c=>`<div class="info-fn" onclick="traceFunction('${c}')">${c}</div>`).join('')+(moreCallers>0?`<div class="info-fn" style="color:var(--text3);font-style:italic" onclick="showAllCallers('${fn}')">+${moreCallers} more…</div>`:''):''}
-    ${callee_list.length?`<div class="info-sect">Calls</div>`+callee_list.map(c=>`<div class="info-fn" onclick="traceFunction('${c}')">${c}</div>`).join('')+(moreCallees>0?`<div class="info-fn" style="color:var(--text3);font-style:italic" onclick="showAllCallees('${fn}')">+${moreCallees} more…</div>`:''):''}
-    <button class="info-trace-btn" onclick="traceFunction('${fn}')">◈ Trace this function</button>
-  `;
-  document.getElementById('info').classList.add('open');
-}
-function closeInfo(){ document.getElementById('info').classList.remove('open'); }
-function showAllCallers(fn){
-  const all=(G.callers[fn]||[]);
-  const extra=document.querySelector('#info-body .info-fn[onclick^="showAllCallers"]');
-  if(extra){ const frag=all.slice(15).map(c=>`<div class="info-fn" onclick="traceFunction('${c}')">${c}</div>`).join(''); extra.outerHTML=frag; }
-}
-function showAllCallees(fn){
-  const all=(G.edges[fn]||[]);
-  const extra=document.querySelector('#info-body .info-fn[onclick^="showAllCallees"]');
-  if(extra){ const frag=all.slice(15).map(c=>`<div class="info-fn" onclick="traceFunction('${c}')">${c}</div>`).join(''); extra.outerHTML=frag; }
-}
-
-// ══ PAN / ZOOM ════════════════════════════════════════════════
-function initCanvas(){
-  const canvas=document.getElementById('canvas');
-  canvas.addEventListener('mousedown', e=>{
-    if(e.button!==0) return;
-    dragging=true; _wasDragged=false; canvas.classList.add('grabbing');
-    dragStart={x:e.clientX,y:e.clientY};
-    panStart={x:svgPan.x,y:svgPan.y};
-  });
-  document.addEventListener('mousemove', e=>{
-    if(!dragging) return;
-    const dx=e.clientX-dragStart.x, dy=e.clientY-dragStart.y;
-    if(Math.abs(dx)>4||Math.abs(dy)>4) _wasDragged=true;
-    svgPan.x=panStart.x+dx; svgPan.y=panStart.y+dy;
-    applyTransform();
-  });
-  document.addEventListener('mouseup', ()=>{ dragging=false; document.getElementById('canvas').classList.remove('grabbing'); });
-
-  canvas.addEventListener('wheel', e=>{
-    e.preventDefault();
-    const rect=canvas.getBoundingClientRect();
-    const mx=e.clientX-rect.left, my=e.clientY-rect.top;
-    const delta=e.deltaY<0?1.15:0.87;
-    const ns=Math.min(8,Math.max(0.05,svgPan.scale*delta));
-    svgPan.x=mx-(mx-svgPan.x)*(ns/svgPan.scale);
-    svgPan.y=my-(my-svgPan.y)*(ns/svgPan.scale);
-    svgPan.scale=ns;
-    applyTransform();
-  },{passive:false});
-
-  // touch — pan + pinch-to-zoom
-  let touches={}, pinchDist0=null;
-  function getTouches(e){ return [...e.touches].map(t=>({id:t.identifier,x:t.clientX,y:t.clientY})); }
-  function pinchDist(ts){ const dx=ts[0].x-ts[1].x,dy=ts[0].y-ts[1].y; return Math.sqrt(dx*dx+dy*dy); }
-  function pinchMid(ts){ return {x:(ts[0].x+ts[1].x)/2,y:(ts[0].y+ts[1].y)/2}; }
-
-  canvas.addEventListener('touchstart', e=>{
-    const ts=getTouches(e);
-    ts.forEach(t=>touches[t.id]={x:t.x,y:t.y});
-    if(e.touches.length===2) pinchDist0=pinchDist(ts);
-  },{passive:true});
-
-  canvas.addEventListener('touchmove', e=>{
-    e.preventDefault();
-    const ts=getTouches(e);
-    if(e.touches.length===1){
-      const t=ts[0], prev=touches[t.id]||{x:t.x,y:t.y};
-      svgPan.x+=t.x-prev.x; svgPan.y+=t.y-prev.y;
-      touches[t.id]={x:t.x,y:t.y};
-      applyTransform();
-    } else if(e.touches.length===2 && pinchDist0){
-      const dist=pinchDist(ts);
-      const mid=pinchMid(ts);
-      const rect=canvas.getBoundingClientRect();
-      const mx=mid.x-rect.left, my=mid.y-rect.top;
-      const factor=dist/pinchDist0;
-      const ns=Math.min(8,Math.max(0.05,svgPan.scale*factor));
-      svgPan.x=mx-(mx-svgPan.x)*(ns/svgPan.scale);
-      svgPan.y=my-(my-svgPan.y)*(ns/svgPan.scale);
-      svgPan.scale=ns;
-      pinchDist0=dist;
-      ts.forEach(t=>touches[t.id]={x:t.x,y:t.y});
-      applyTransform();
-    }
-  },{passive:false});
-
-  canvas.addEventListener('touchend', e=>{
-    [...e.changedTouches].forEach(t=>delete touches[t.identifier]);
-    if(e.touches.length<2) pinchDist0=null;
-  },{passive:true});
-}
-
-function applyTransform(){
-  const svg=document.getElementById('canvas').querySelector('svg');
-  if(!svg) return;
-  svg.style.transform=`translate(${svgPan.x}px,${svgPan.y}px) scale(${svgPan.scale})`;
-  document.getElementById('zoom-pct').textContent=Math.round(svgPan.scale*100)+'%';
-}
-
-// ══ MULTI-TRACE ═══════════════════════════════════════════════
-function runMultiTrace(){
-  if(!G){ toast('Index a project first','error'); return; }
-  const a=document.getElementById('mt-a').value.trim();
-  const b=document.getElementById('mt-b').value.trim();
-  if(!a||!b){ toast('Enter two function names','error'); return; }
-  const nodeA=G.nodes.find(n=>n.id===a), nodeB=G.nodes.find(n=>n.id===b);
-  if(!nodeA){ toast(`'${a}' not found`,'error'); return; }
-  if(!nodeB){ toast(`'${b}' not found`,'error'); return; }
-
-  // Get full descendant sets for both
-  function getDesc(fn){
-    const desc=new Set([fn]); const q=[fn];
-    while(q.length){ const n=q.pop(); (G.edges[n]||[]).forEach(c=>{ if(!desc.has(c)){desc.add(c);q.push(c);} }); }
-    return desc;
-  }
-  const descA=getDesc(a), descB=getDesc(b);
-  // Intersection
-  const shared=new Set([...descA].filter(n=>descB.has(n)));
-  shared.delete(a); shared.delete(b);
-
-  if(!shared.size){ toast(`No shared callees between '${a}' and '${b}'`,'error'); return; }
-
-  multiTraceA=a; multiTraceB=b; multiTraceMode=true;
-  // Reset trace without triggering renderGraph (which would loop back to runMultiTrace)
-  tracedFn=null; traceHistory=[]; traceHistIdx=-1;
-  document.getElementById('trace-inp').value='';
-  document.getElementById('btn-reset-trace').style.display='none';
-  updateHistButtons(); updateBreadcrumb();
-  closeInfo();
-  toast(`Intersection: ${shared.size} shared functions`,'ok');
-
-  // Build visible graph: a→shared, b→shared
-  const visNodes=new Set([a,b,...shared]);
-  const visEdges=[];
-  visNodes.forEach(n=>{
-    (G.edges[n]||[]).forEach(t=>{ if(visNodes.has(t)) visEdges.push({from:n,to:t}); });
-  });
-  const roles={};
-  roles[a]='mt-a'; roles[b]='mt-b';
-  shared.forEach(n=>roles[n]='mt-shared');
-
-  renderMultiTrace(visNodes, visEdges, roles, a, b, shared.size);
-}
-
-function renderMultiTrace(visNodes, visEdges, roles, a, b, sharedCount){
-  document.getElementById('canvas-empty').style.display='none';
-  showLoading(`Rendering intersection (${visNodes.size} nodes)…`);
-  setTimeout(()=>{
-    try{
-      if(visNodes.size>800){ toast(`Too large (${visNodes.size}) — increase depth filter`,'error'); hideLoading(); return; }
-      const pos=layoutGraph(visNodes, visEdges, layoutDir, {});
-      const col=NODE_COLORS[selStyle]||NODE_COLORS.default;
-      const xs=Object.values(pos).map(p=>p.x), ys=Object.values(pos).map(p=>p.y);
-      if(!xs.length){ hideLoading(); return; }
-      const W=Math.max(...xs)+200, H=Math.max(...ys)+80;
-      const svgNS='http://www.w3.org/2000/svg';
-      const svg=document.createElementNS(svgNS,'svg');
-      svg.setAttribute('width',W); svg.setAttribute('height',H);
-      svg.style.cssText='position:absolute;top:0;left:0;transform-origin:0 0;user-select:none';
-
-      const defs=document.createElementNS(svgNS,'defs');
-      const mkM=(id,c)=>{ const mk=document.createElementNS(svgNS,'marker'); mk.setAttribute('id',id);mk.setAttribute('markerWidth','8');mk.setAttribute('markerHeight','6');mk.setAttribute('refX','8');mk.setAttribute('refY','3');mk.setAttribute('orient','auto'); const p=document.createElementNS(svgNS,'polygon'); p.setAttribute('points','0 0,8 3,0 6');p.setAttribute('fill',c);mk.appendChild(p);return mk; };
-      defs.appendChild(mkM('arr-mt','#3d5270'));
-      defs.appendChild(mkM('arr-mta','#4a8fff'));
-      defs.appendChild(mkM('arr-mtb','#a78bfa'));
-      svg.appendChild(defs);
-
-      // Edges
-      const edgeG=document.createElementNS(svgNS,'g');
-      const NW=150,NH=36;
-      visEdges.forEach(e=>{
-        const p1=pos[e.from],p2=pos[e.to]; if(!p1||!p2) return;
-        const path=document.createElementNS(svgNS,'path');
-        const x1=p1.x+NW,y1=p1.y+NH/2,x2=p2.x,y2=p2.y+NH/2;
-        const cx=Math.abs(x2-x1)*0.5;
-        path.setAttribute('d',`M${x1},${y1} C${x1+cx},${y1} ${x2-cx},${y2} ${x2},${y2}`);
-        path.setAttribute('fill','none');
-        const fromRole=roles[e.from];
-        const c=fromRole==='mt-a'?'#4a8fff44':fromRole==='mt-b'?'#a78bfa44':'#2d4a6a';
-        const mk=fromRole==='mt-a'?'arr-mta':fromRole==='mt-b'?'arr-mtb':'arr-mt';
-        path.setAttribute('stroke',c); path.setAttribute('stroke-width','1');
-        path.setAttribute('marker-end',`url(#${mk})`);
-        edgeG.appendChild(path);
-      });
-      svg.appendChild(edgeG);
-
-      // Nodes
-      visNodes.forEach(fn=>{
-        const p=pos[fn]; if(!p) return;
-        const role=roles[fn]||'';
-        const g=document.createElementNS(svgNS,'g');
-        g.setAttribute('transform',`translate(${p.x},${p.y})`);
-        g.setAttribute('data-fn',fn);
-        g.style.cursor='pointer';
-        const rect=document.createElementNS(svgNS,'rect');
-        rect.setAttribute('width','150');rect.setAttribute('height','36');
-        rect.setAttribute('rx','6');rect.setAttribute('ry','6');
-        let fill='#111e30', stroke='#2d4a6a', sw=1;
-        if(role==='mt-a'){fill='#0d1a2a';stroke='#4a8fff';sw=2.5;}
-        else if(role==='mt-b'){fill='#1a0d2a';stroke='#a78bfa';sw=2.5;}
-        else if(role==='mt-shared'){fill='#0d2210';stroke='#22c55e';sw=1.5;}
-        rect.setAttribute('fill',fill);rect.setAttribute('stroke',stroke);rect.setAttribute('stroke-width',sw);
-        g.appendChild(rect);
-        const text=document.createElementNS(svgNS,'text');
-        text.setAttribute('x','75');text.setAttribute('y','22');
-        text.setAttribute('text-anchor','middle');text.setAttribute('dominant-baseline','middle');
-        text.setAttribute('font-size','10');text.setAttribute('font-family',"'JetBrains Mono',monospace");
-        const tc=role==='mt-a'?'#a0c8ff':role==='mt-b'?'#d0c0ff':role==='mt-shared'?'#a0ffc0':'#7a95b8';
-        text.setAttribute('fill',tc);text.setAttribute('pointer-events','none');
-        text.textContent=fn.length>18?fn.slice(0,16)+'…':fn;
-        g.appendChild(text);
-        g.addEventListener('mousedown',ev=>ev.stopPropagation());
-        g.addEventListener('click',ev=>{ if(!_wasDragged){ev.stopPropagation();onNodeClick(fn);} });
-        g.addEventListener('mouseenter',ev=>{ rect.setAttribute('fill',role==='mt-a'?'#1a2a3a':role==='mt-b'?'#2a1a3a':role==='mt-shared'?'#1a3020':'#1a2535'); showTooltip(ev,fn); });
-        g.addEventListener('mousemove',ev=>moveTooltip(ev));
-        g.addEventListener('mouseleave',()=>{ rect.setAttribute('fill',fill); hideTooltip(); });
-        svg.appendChild(g);
-      });
-
-      const canvas=document.getElementById('canvas');
-      const old=canvas.querySelector('svg'); if(old) old.remove();
-      canvas.appendChild(svg);
-      svgPan={x:0,y:0,scale:1}; fitGraph(); hideLoading();
-      document.getElementById('gbar-title').textContent=`Intersection: ${a} ∩ ${b} — ${sharedCount} shared`;
-      document.getElementById('gbar-legend').style.display='none';
-      updateMinimap();
-    }catch(e){ console.error(e); hideLoading(); toast('Render error','error'); }
-  },20);
-}
-
-function clearMultiTrace(){
-  multiTraceA=null; multiTraceB=null; multiTraceMode=false;
-  document.getElementById('mt-a').value='';
-  document.getElementById('mt-b').value='';
-  document.getElementById('gbar-title').textContent='Function graph';
-  renderGraph();
-}
-
-
-// ══════════════════════════════════════════════════════════════
-// ANALYSIS ENGINE
-// ══════════════════════════════════════════════════════════════
-
-function anaSetActive(id){
-  ['ana-dead-btn','ana-impact-btn','ana-heat-btn','ana-path-btn']
-    .forEach(b=>document.getElementById(b).classList.remove('active'));
-  if(id) document.getElementById(id).classList.add('active');
-}
-function anaResult(html){
-  document.getElementById('analysis-result').innerHTML=html;
-}
-
-// ── 1. DEAD CODE ─────────────────────────────────────────────
-function runDeadCode(){
-  if(!G){ toast('Index a project first','error'); return; }
-  anaSetActive('ana-dead-btn');
-
-  const called = new Set();
-  Object.values(G.edges).forEach(cs=>cs.forEach(c=>called.add(c)));
-
-  // Entry points: no callers in project, or known patterns
-  const entryPatterns = /^(main|ISR_|irq_|interrupt_|handler_|_init|init_|startup)/i;
-
-  const dead = G.nodes.filter(n=>{
-    if(n.type!=='project') return false;
-    if(entryPatterns.test(n.id)) return false;
-    const callerList = G.callers[n.id]||[];
-    const hasProjectCaller = callerList.some(c=>{
-      const cm = G.nodes.find(x=>x.id===c);
-      return cm && cm.type==='project';
-    });
-    return !hasProjectCaller;
-  }).sort((a,b)=>a.id.localeCompare(b.id));
-
-  if(!dead.length){
-    anaResult('<div class="ana-row"><span class="ana-key">Result</span><span class="ana-val ok">No dead functions found ✓</span></div>');
+/* ═══════════════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', async ()=>{
+  /* ── Chargement des données ── */
+  const CATEGORIES = ["astronomie", "botanique", "medecine", "mathematiques", "chimie", "cuisine", "commerce", "zoologie", "geographie", "militaire", "architecture", "arts_musique"];
+  try {
+    const results = await Promise.all(
+      CATEGORIES.map(c => fetch(`data/${c}.json`).then(r => r.json()))
+    );
+    const allWords = results.flat().sort((a,b)=>a.id-b.id);
+    S.words    = allWords;
+    S.filtered = [...allWords];
+  } catch(err) {
+    console.error('Jisr: erreur chargement données', err);
+    document.getElementById('cards-grid').innerHTML =
+      '<p style="color:var(--gold);text-align:center;padding:40px">⚠️ Impossible de charger les données.<br>Lance un serveur local : <code>python3 -m http.server</code></p>';
     return;
   }
-
-  anaResult(`
-    <div class="analysis-panel">
-      <div class="analysis-title">
-        ☠ Dead code — ${dead.length} unreachable
-        <button class="analysis-close" onclick="anaResult('');anaSetActive(null)">✕</button>
-      </div>
-      <div class="ana-row">
-        <span class="ana-key">Total defined</span>
-        <span class="ana-val">${G.nodes.filter(n=>n.type==='project').length}</span>
-      </div>
-      <div class="ana-row">
-        <span class="ana-key">Unreachable</span>
-        <span class="ana-val bad">${dead.length} (${Math.round(dead.length/G.nodes.filter(n=>n.type==='project').length*100)}%)</span>
-      </div>
-      <div class="dead-list">
-        ${dead.map(n=>`
-          <div class="dead-item" onclick="highlightDeadNode('${n.id}')" title="Click to trace">
-            <span>${n.id}</span>
-            <span class="di-file">${n.file?n.file.split('/').pop():''}</span>
-          </div>`).join('')}
-      </div>
-      <div style="margin-top:.5rem;display:flex;gap:.4rem">
-        <button class="ana-btn" onclick="showDeadInGraph()">Show in graph</button>
-        <button class="ana-btn" onclick="exportDeadList()">Export list</button>
-      </div>
-    </div>`);
-
-  window._deadFns = dead.map(n=>n.id);
-}
-
-function highlightDeadNode(fn){
-  setMode('fn');
-  traceFunction(fn);
-}
-
-function showDeadInGraph(){
-  if(!window._deadFns||!_deadFns.length) return;
-  setMode('fn');
-  tracedFn=null; multiTraceMode=false;
-  renderGraph();
-  // Wait for async render to complete (renderGraph uses setTimeout 20ms + render time)
-  setTimeout(()=>{
-    const svg=document.getElementById('canvas').querySelector('svg');
-    if(!svg){ toast('Graph not ready, try again','error'); return; }
-    svg.querySelectorAll('g[data-fn]').forEach(g=>{
-      const fn=g.dataset.fn;
-      const rect=g.querySelector('rect');
-      if(!rect) return;
-      if(window._deadFns && _deadFns.includes(fn)){
-        rect.setAttribute('stroke','#ef4444');
-        rect.setAttribute('stroke-width','2.5');
-        rect.style.filter='drop-shadow(0 0 6px #ef444488)';
-      } else {
-        rect.style.opacity='0.2';
-      }
+  /* ── Initialisation ── */
+  // Langue UI persistée
+  document.querySelectorAll('.lbtn[data-ui-lang]').forEach(b=>{
+    b.addEventListener('click',()=>switchUiLang(b.getAttribute('data-ui-lang')));
+  });
+  // Filtre langue carte persisté
+  document.querySelectorAll('.lf-btn').forEach(b=>{
+    if(b.dataset.lang===S.cardLang) b.classList.add('active');
+    else b.classList.remove('active');
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.lf-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); S.cardLang=b.dataset.lang;
+      LS.set('card_lang',S.cardLang); filter();
     });
-    toast(`${window._deadFns ? _deadFns.length : 0} dead functions highlighted in red`,'ok');
-  }, 600);
-}
-
-function exportDeadList(){
-  if(!window._deadFns) return;
-  const lines = _deadFns.map(fn=>{
-    const n=G.nodes.find(x=>x.id===fn)||{};
-    return `${fn}	${n.file||''}`;
   });
-  const blob=new Blob(['# Dead functions (unreachable from any project caller)\n# function\tfile\n'+lines.join('\n')],{type:'text/plain'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='dead_code_'+Date.now()+'.txt'; a.click();
-  toast('Exported ✓','ok');
-}
-
-// ── 2. CHANGE IMPACT ANALYSIS ─────────────────────────────────
-let _impactFns = [];
-function showImpactUI(){
-  if(!G){ toast('Index a project first','error'); return; }
-  anaSetActive('ana-impact-btn');
-  anaResult(`
-    <div class="analysis-panel">
-      <div class="analysis-title">
-        ⚡ Change Impact
-        <button class="analysis-close" onclick="anaResult('');anaSetActive(null)">✕</button>
-      </div>
-      <div class="impact-hint">Enter changed functions (one per line or comma-separated)</div>
-      <textarea class="impact-inp" id="impact-inp" rows="3" placeholder="pilot_set_state&#10;host_if_reg_changed"></textarea>
-      <button class="ana-btn" style="width:100%;margin-bottom:.3rem" onclick="runImpact()">⚡ Analyse impact</button>
-    </div>`);
-}
-
-function runImpact(){
-  const raw=document.getElementById('impact-inp').value;
-  const changed=raw.split(/[\n\r,]+/).map(s=>s.trim()).filter(Boolean);
-  if(!changed.length){ toast('Enter at least one function','error'); return; }
-
-  const missing=changed.filter(fn=>!G.nodes.find(n=>n.id===fn));
-  if(missing.length){ toast(`Not found: ${missing.join(', ')}`,'error'); return; }
-
-  // Forward BFS from each changed function
-  const impacted=new Set();
-  // Also track callers (reverse impact — who calls changed functions)
-  const callerImpact=new Set();
-
-  function fwdBFS(fn){
-    const q=[fn]; const vis=new Set([fn]);
-    while(q.length){ const n=q.pop(); (G.callers[n]||[]).forEach(c=>{ if(!vis.has(c)){vis.add(c);q.push(c);impacted.add(c);} }); }
-  }
-  changed.forEach(fn=>{ fwdBFS(fn); callerImpact.add(fn); });
-  changed.forEach(fn=>impacted.delete(fn));
-
-  // Group by module
-  const byMod={};
-  [...impacted].forEach(fn=>{
-    const n=G.nodes.find(x=>x.id===fn)||{};
-    const m=n.mod||'?';
-    if(!byMod[m]) byMod[m]=[];
-    byMod[m].push(fn);
+  // Search
+  document.getElementById('search-input').addEventListener('input',onInput);
+  document.getElementById('search-input').addEventListener('keydown',e=>{ if(e.key==='Escape') clearSearch(); });
+  // Fermeture modals
+  ['word-modal','quiz-modal'].forEach(id=>{
+    document.getElementById(id).addEventListener('click',e=>{ if(e.target===document.getElementById(id)){ closeModal(); closeQuiz(); } });
   });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeModal(); closeQuiz(); if(S.demoRunning) stopDemo(); } });
 
-  window._impactFns=[...impacted];
-  window._changedFns=changed;
+  // Langue initiale
+  switchUiLang(S.uiLang);
+  buildKbd();
+  selectWod(); renderWod();
+  buildCats(); filter();
+  updateFavCount();
 
-  const modRows=Object.entries(byMod).sort((a,b)=>b[1].length-a[1].length)
-    .map(([m,fns])=>`<div class="ana-row"><span class="ana-key">${m}</span><span class="ana-val warn">${fns.length} affected</span></div>`).join('');
-
-  anaResult(`
-    <div class="analysis-panel">
-      <div class="analysis-title">
-        ⚡ Impact: ${changed.length} changed → ${impacted.size} affected
-        <button class="analysis-close" onclick="anaResult('');anaSetActive(null)">✕</button>
-      </div>
-      <div class="ana-row"><span class="ana-key">Changed</span><span class="ana-val bad">${changed.length}</span></div>
-      <div class="ana-row"><span class="ana-key">Affected callers</span><span class="ana-val warn">${impacted.size}</span></div>
-      <div class="ana-row"><span class="ana-key">Modules hit</span><span class="ana-val">${Object.keys(byMod).length}</span></div>
-      ${modRows}
-      <div style="margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap">
-        <button class="ana-btn" onclick="showImpactInGraph()">Show in graph</button>
-        <button class="ana-btn" onclick="showImpactUI()">◁ Edit</button>
-      </div>
-    </div>`);
-}
-
-function showImpactInGraph(){
-  if(!window._impactFns || !window._changedFns) return;
-  setMode('fn'); clearTrace(); renderGraph();
-  setTimeout(()=>{
-    const svg=document.getElementById('canvas').querySelector('svg');
-    if(!svg){ toast('Graph not ready, try again','error'); return; }
-    svg.querySelectorAll('g[data-fn]').forEach(g=>{
-      const fn=g.dataset.fn; const rect=g.querySelector('rect');
-      if(!rect) return;
-      if(window._changedFns && _changedFns.includes(fn)){
-        rect.setAttribute('stroke','#ef4444'); rect.setAttribute('stroke-width','2.5');
-        rect.style.filter='drop-shadow(0 0 8px #ef444499)';
-      } else if(window._impactFns && _impactFns.includes(fn)){
-        rect.setAttribute('stroke','#f59e0b'); rect.setAttribute('stroke-width','2');
-        rect.style.filter='drop-shadow(0 0 5px #f59e0b66)';
-      } else {
-        rect.style.opacity='0.15';
-      }
-    });
-    toast(`Red=changed · Orange=affected (${window._impactFns ? _impactFns.length : 0})`,'ok');
-  },600);
-}
-
-// ── 3. COMPLEXITY HEATMAP ─────────────────────────────────────
-function runHeatmap(){
-  if(!G){ toast('Index a project first','error'); return; }
-  anaSetActive('ana-heat-btn');
-
-  // Score each function: out_degree + in_degree + (out_degree * depth_proxy)
-  const proj=G.nodes.filter(n=>n.type==='project');
-
-  // Compute BFS depth from any root
-  const roots=proj.filter(n=>!(G.callers[n.id]||[]).some(c=>G.nodes.find(x=>x.id===c)?.type==='project'));
-  const depth={};
-  const q=[...roots.map(n=>[n.id,0])];
-  const vis=new Set();
-  while(q.length){
-    const [n,d]=q.shift();
-    if(vis.has(n)) continue; vis.add(n); depth[n]=d;
-    (G.edges[n]||[]).forEach(c=>{ if(!vis.has(c)) q.push([c,d+1]); });
-  }
-
-  const scored=proj.map(n=>{
-    const d=depth[n.id]||0;
-    const score=(n.out_degree||0)*2 + (n.in_degree||0) + d;
-    return {id:n.id, score, out:n.out_degree||0, in:n.in_degree||0, depth:d, file:n.file||''};
-  }).sort((a,b)=>b.score-a.score);
-
-  const maxScore=scored[0]?.score||1;
-
-  function scoreColor(sc){
-    const t=sc/maxScore;
-    if(t<0.33) return '#22c55e';
-    if(t<0.66) return '#f59e0b';
-    return '#ef4444';
-  }
-  function scoreLabel(sc){
-    const t=sc/maxScore;
-    if(t<0.33) return 'low';
-    if(t<0.66) return 'medium';
-    return 'high';
-  }
-
-  window._heatScores=scored;
-
-  const top10=scored.slice(0,10).map(n=>`
-    <div class="dead-item" onclick="highlightDeadNode('${n.id}')" title="score:${n.score} out:${n.out} in:${n.in} depth:${n.depth}">
-      <span style="color:${scoreColor(n.score)}">${n.id}</span>
-      <span class="di-file" style="color:${scoreColor(n.score)}">${scoreLabel(n.score)} · ${n.score}</span>
-    </div>`).join('');
-
-  anaResult(`
-    <div class="analysis-panel">
-      <div class="analysis-title">
-        🌡 Complexity heatmap
-        <button class="analysis-close" onclick="anaResult('');anaSetActive(null);clearHeatmap()">✕</button>
-      </div>
-      <div class="ana-row"><span class="ana-key">Score formula</span><span class="ana-val" style="font-size:.6rem">out×2 + in + depth</span></div>
-      <div class="ana-row"><span class="ana-key">Highest risk</span><span class="ana-val bad">${scored[0]?.id||'—'}</span></div>
-      <div class="hm-legend"><span>Low</span><div class="hm-grad"></div><span>High</span></div>
-      <div class="dead-list" style="margin-top:.4rem">${top10}</div>
-      <div style="margin-top:.5rem;display:flex;gap:.4rem">
-        <button class="ana-btn" onclick="applyHeatmap()">Apply to graph</button>
-        <button class="ana-btn" onclick="clearHeatmap()">Clear</button>
-      </div>
-    </div>`);
-}
-
-function applyHeatmap(){
-  if(!window._heatScores) return;
-  setMode('fn'); clearTrace(); renderGraph();
-  const maxScore=_heatScores[0]?.score||1;
-  const scoreMap={};
-  _heatScores.forEach(n=>scoreMap[n.id]=n.score);
-  function scoreColor(sc){
-    const t=sc/maxScore;
-    const r=Math.round(30+200*t), g2=Math.round(180*(1-t)), b=Math.round(48*(1-t));
-    return `rgb(${r},${g2},${b})`;
-  }
-  setTimeout(()=>{
-    const svg=document.getElementById('canvas').querySelector('svg');
-    if(!svg){ toast('Graph not ready, try again','error'); return; }
-    svg.querySelectorAll('g[data-fn]').forEach(g=>{
-      const fn=g.dataset.fn; const sc=scoreMap[fn];
-      if(sc===undefined) return;
-      const rect=g.querySelector('rect');
-      if(!rect) return;
-      const c=scoreColor(sc);
-      rect.setAttribute('stroke',c);
-      rect.style.filter=sc/maxScore>0.66?`drop-shadow(0 0 6px ${c}88)`:'';
-    });
-    toast('Heatmap applied — red=complex, green=simple','ok');
-  },600);
-}
-
-function clearHeatmap(){
-  window._heatScores=null;
-  renderGraph();
-}
-
-// ── 4. CALL PATH FINDER ───────────────────────────────────────
-function showPathUI(){
-  if(!G){ toast('Index a project first','error'); return; }
-  anaSetActive('ana-path-btn');
-  anaResult(`
-    <div class="analysis-panel">
-      <div class="analysis-title">
-        ⇢ Path finder
-        <button class="analysis-close" onclick="anaResult('');anaSetActive(null)">✕</button>
-      </div>
-      <div class="impact-hint">Find all call paths between two functions</div>
-      <input class="impact-inp" id="path-from" placeholder="From function…">
-      <input class="impact-inp" id="path-to"   placeholder="To function…">
-      <button class="ana-btn" style="width:100%;margin-bottom:.3rem" onclick="runPathFind()">⇢ Find paths</button>
-      <div id="path-results"></div>
-    </div>`);
-}
-
-function runPathFind(){
-  const from=document.getElementById('path-from').value.trim();
-  const to=document.getElementById('path-to').value.trim();
-  if(!from||!to){ toast('Enter both functions','error'); return; }
-  if(!G.nodes.find(n=>n.id===from)){ toast(`'${from}' not found`,'error'); return; }
-  if(!G.nodes.find(n=>n.id===to)){ toast(`'${to}' not found`,'error'); return; }
-
-  // DFS path finding — limit to 200 paths, depth 12
-  const paths=[];
-  const MAX_PATHS=20, MAX_DEPTH=12;
-
-  function dfs(node, target, path, visited){
-    if(paths.length>=MAX_PATHS) return;
-    if(node===target){ paths.push([...path]); return; }
-    if(path.length>MAX_DEPTH) return;
-    (G.edges[node]||[]).forEach(next=>{
-      if(!visited.has(next)){
-        visited.add(next);
-        path.push(next);
-        dfs(next,target,path,visited);
-        path.pop();
-        visited.delete(next);
-      }
-    });
-  }
-  dfs(from,to,[from],new Set([from]));
-
-  if(!paths.length){
-    document.getElementById('path-results').innerHTML=
-      '<div style="font-size:.65rem;color:var(--text3);padding:.3rem 0">No path found (max depth 12)</div>';
-    return;
-  }
-
-  paths.sort((a,b)=>a.length-b.length);
-  window._foundPaths=paths;
-
-  const html=paths.map((p,i)=>`
-    <div class="path-item" onclick="showPathInGraph(${i})" title="Click to visualise">
-      <div class="pi-hops">${p.length-1} hops</div>
-      <div>${p.map((fn,j)=>
-        `<span class="path-fn">${fn.length>16?fn.slice(0,14)+'…':fn}</span>`+
-        (j<p.length-1?'<span class="path-sep">→</span>':'')
-      ).join('')}</div>
-    </div>`).join('');
-
-  document.getElementById('path-results').innerHTML=
-    `<div style="font-size:.6rem;color:var(--text3);margin-bottom:.3rem">${paths.length} path${paths.length>1?'s':''} found (shortest first) · click to view</div>`+
-    `<div class="path-list">${html}</div>`;
-}
-
-function showPathInGraph(idx){
-  if(!window._foundPaths||!_foundPaths[idx]) return;
-  const path=_foundPaths[idx];
-  const visNodes=new Set(path);
-  const visEdges=[];
-  path.forEach((fn,i)=>{ if(i<path.length-1) visEdges.push({from:fn,to:path[i+1]}); });
-  const roles={};
-  roles[path[0]]='focused';
-  roles[path[path.length-1]]='callee';
-  path.slice(1,-1).forEach(fn=>roles[fn]='caller');
-
-  setMode('fn');
-  document.getElementById('canvas-empty').style.display='none';
-  showLoading('Rendering path…');
-  setTimeout(()=>{
-    try{
-      const pos=layoutGraph(visNodes,visEdges,layoutDir,roles);
-      const col=NODE_COLORS[selStyle]||NODE_COLORS.default;
-      const xs=Object.values(pos).map(p=>p.x),ys=Object.values(pos).map(p=>p.y);
-      if(!xs.length){hideLoading();return;}
-      const W=Math.max(...xs)+200,H=Math.max(...ys)+80;
-      const svgNS='http://www.w3.org/2000/svg';
-      const svg=document.createElementNS(svgNS,'svg');
-      svg.setAttribute('width',W);svg.setAttribute('height',H);
-      svg.style.cssText='position:absolute;top:0;left:0;transform-origin:0 0;user-select:none';
-      const defs=document.createElementNS(svgNS,'defs');
-      const mk=document.createElementNS(svgNS,'marker');
-      mk.setAttribute('id','arr-pf');mk.setAttribute('markerWidth','8');mk.setAttribute('markerHeight','6');
-      mk.setAttribute('refX','8');mk.setAttribute('refY','3');mk.setAttribute('orient','auto');
-      const po=document.createElementNS(svgNS,'polygon');
-      po.setAttribute('points','0 0,8 3,0 6');po.setAttribute('fill','#4a8fff');
-      mk.appendChild(po);defs.appendChild(mk);svg.appendChild(defs);
-      // Edges
-      const NW=150,NH=36;
-      visEdges.forEach(e=>{
-        const p1=pos[e.from],p2=pos[e.to];if(!p1||!p2)return;
-        const path2=document.createElementNS(svgNS,'path');
-        const x1=p1.x+NW,y1=p1.y+NH/2,x2=p2.x,y2=p2.y+NH/2;
-        const cx=Math.abs(x2-x1)*0.5;
-        path2.setAttribute('d',`M${x1},${y1} C${x1+cx},${y1} ${x2-cx},${y2} ${x2},${y2}`);
-        path2.setAttribute('fill','none');path2.setAttribute('stroke','#4a8fff');
-        path2.setAttribute('stroke-width','2');path2.setAttribute('marker-end','url(#arr-pf)');
-        svg.appendChild(path2);
-      });
-      // Nodes
-      path.forEach((fn,i)=>{
-        const p=pos[fn];if(!p)return;
-        const g=document.createElementNS(svgNS,'g');
-        g.setAttribute('transform',`translate(${p.x},${p.y})`);
-        g.setAttribute('data-fn',fn);g.style.cursor='pointer';
-        const rect=document.createElementNS(svgNS,'rect');
-        rect.setAttribute('width','150');rect.setAttribute('height','36');rect.setAttribute('rx','6');
-        const isEnd=(i===0||i===path.length-1);
-        rect.setAttribute('fill',isEnd?'#0d1a2a':'#111e30');
-        rect.setAttribute('stroke',isEnd?'#4a8fff':'#2d4a6a');
-        rect.setAttribute('stroke-width',isEnd?'2.5':'1.5');
-        g.appendChild(rect);
-        const step=document.createElementNS(svgNS,'text');
-        step.setAttribute('x','6');step.setAttribute('y','9');
-        step.setAttribute('font-size','7');step.setAttribute('fill','#3d5270');
-        step.setAttribute('font-family',"'JetBrains Mono',monospace");
-        step.setAttribute('pointer-events','none');
-        step.textContent=i+1;g.appendChild(step);
-        const text=document.createElementNS(svgNS,'text');
-        text.setAttribute('x','75');text.setAttribute('y','22');
-        text.setAttribute('text-anchor','middle');text.setAttribute('dominant-baseline','middle');
-        text.setAttribute('font-size','10');text.setAttribute('font-family',"'JetBrains Mono',monospace");
-        text.setAttribute('fill',isEnd?'#a0c8ff':'#7a95b8');text.setAttribute('pointer-events','none');
-        text.textContent=fn.length>18?fn.slice(0,16)+'…':fn;g.appendChild(text);
-        g.addEventListener('mousedown',ev=>ev.stopPropagation());
-        g.addEventListener('click',ev=>{if(!_wasDragged){ev.stopPropagation();onNodeClick(fn);}});
-        g.addEventListener('mouseenter',ev=>{rect.setAttribute('fill','#1a2d48');showTooltip(ev,fn);});
-        g.addEventListener('mousemove',ev=>moveTooltip(ev));
-        g.addEventListener('mouseleave',()=>{rect.setAttribute('fill',isEnd?'#0d1a2a':'#111e30');hideTooltip();});
-        svg.appendChild(g);
-      });
-      const canvas=document.getElementById('canvas');
-      const old=canvas.querySelector('svg');if(old)old.remove();
-      canvas.appendChild(svg);
-      svgPan={x:0,y:0,scale:1};fitGraph();hideLoading();
-      document.getElementById('gbar-title').textContent=`Path: ${path[0]} → ${path[path.length-1]} (${path.length-1} hops)`;
-      document.getElementById('gbar-legend').style.display='none';
-      updateMinimap();
-    }catch(e){console.error(e);hideLoading();toast('Render error','error');}
-  },20);
-}
-
-
-// ══ MINIMAP ═══════════════════════════════════════════════════
-let _mmDirty = false;
-function updateMinimap(){
-  const mm = document.getElementById('minimap');
-  const svg = document.getElementById('canvas').querySelector('svg');
-  if(!svg){ mm.style.display='none'; return; }
-  mm.style.display='block';
-
-  const mc = document.getElementById('mm-canvas');
-  const mw=160, mh=110;
-  mc.width=mw*2; mc.height=mh*2; // retina
-  mc.style.width=mw+'px'; mc.style.height=mh+'px';
-  const ctx=mc.getContext('2d');
-  ctx.scale(2,2);
-
-  const svgW=parseFloat(svg.getAttribute('width'))||800;
-  const svgH=parseFloat(svg.getAttribute('height'))||600;
-  const sc=Math.min(mw/svgW, mh/svgH);
-  const ox=(mw-svgW*sc)/2, oy=(mh-svgH*sc)/2;
-
-  // Background
-  ctx.fillStyle='#07090f'; ctx.fillRect(0,0,mw,mh);
-
-  // Draw nodes as tiny rects
-  svg.querySelectorAll('g[data-fn]').forEach(g=>{
-    const tr=g.getAttribute('transform')||'';
-    const m=tr.match(/translate\(([^,]+),([^)]+)\)/);
-    if(!m) return;
-    const nx=parseFloat(m[1]), ny=parseFloat(m[2]);
-    const rect=g.querySelector('rect');
-    if(!rect) return;
-    ctx.fillStyle=rect.getAttribute('stroke')||'#4a8fff';
-    ctx.globalAlpha=0.7;
-    ctx.fillRect(ox+nx*sc, oy+ny*sc, 150*sc, 36*sc);
-  });
-
-  // Draw edges as tiny lines
-  ctx.globalAlpha=0.2;
-  svg.querySelectorAll('path[d]').forEach(p=>{
-    const d=p.getAttribute('d')||'';
-    const pts=d.match(/[\d.]+,[\d.]+/g);
-    if(!pts||pts.length<2) return;
-    const [x1,y1]=pts[0].split(',').map(Number);
-    const [x2,y2]=pts[pts.length-1].split(',').map(Number);
-    ctx.strokeStyle=p.getAttribute('stroke')||'#2d4a6a';
-    ctx.lineWidth=0.5;
-    ctx.beginPath();
-    ctx.moveTo(ox+x1*sc, oy+y1*sc);
-    ctx.lineTo(ox+x2*sc, oy+y2*sc);
-    ctx.stroke();
-  });
-  ctx.globalAlpha=1;
-
-  // Viewport indicator
-  const canvas=document.getElementById('canvas');
-  const cw=canvas.clientWidth, ch=canvas.clientHeight;
-  const vx=(0-svgPan.x)/svgPan.scale, vy=(0-svgPan.y)/svgPan.scale;
-  const vw=cw/svgPan.scale, vh=ch/svgPan.scale;
-  const vp=document.getElementById('minimap-viewport');
-  vp.style.left=(ox+vx*sc)+'px';
-  vp.style.top=(oy+vy*sc)+'px';
-  vp.style.width=Math.min(mw, vw*sc)+'px';
-  vp.style.height=Math.min(mh, vh*sc)+'px';
-}
-
-// Click minimap to pan
-document.addEventListener('DOMContentLoaded',()=>{
-  document.getElementById('minimap').addEventListener('click', e=>{
-    const mm=document.getElementById('minimap');
-    const svg=document.getElementById('canvas').querySelector('svg');
-    if(!svg) return;
-    const rect=mm.getBoundingClientRect();
-    const mx=(e.clientX-rect.left)/rect.width;
-    const my=(e.clientY-rect.top)/rect.height;
-    const svgW=parseFloat(svg.getAttribute('width'));
-    const svgH=parseFloat(svg.getAttribute('height'));
-    const canvas=document.getElementById('canvas');
-    const cw=canvas.clientWidth, ch=canvas.clientHeight;
-    svgPan.x=cw/2-mx*svgW*svgPan.scale;
-    svgPan.y=ch/2-my*svgH*svgPan.scale;
-    applyTransform();
-    updateMinimap();
-  });
+  // Deep link
+  const urlWord=new URLSearchParams(location.search).get('word');
+  if(urlWord){ const w=DATA.find(x=>x.id===parseInt(urlWord)); if(w) setTimeout(()=>openModal(w.id),300); }
 });
-
-
-function zoom(factor){
-  const canvas=document.getElementById('canvas');
-  const cx=canvas.clientWidth/2, cy=canvas.clientHeight/2;
-  const ns=Math.min(8,Math.max(0.05,svgPan.scale*factor));
-  svgPan.x=cx-(cx-svgPan.x)*(ns/svgPan.scale);
-  svgPan.y=cy-(cy-svgPan.y)*(ns/svgPan.scale);
-  svgPan.scale=ns;
-  applyTransform();
-}
-
-function fitGraph(){
-  const canvas=document.getElementById('canvas');
-  const svg=canvas.querySelector('svg');
-  if(!svg) return;
-  const cw=canvas.clientWidth, ch=canvas.clientHeight;
-  const sw=parseFloat(svg.getAttribute('width')), sh=parseFloat(svg.getAttribute('height'));
-  if(!sw||!sh) return;
-  const sc=Math.min(cw/sw, ch/sh)*0.92;
-  svgPan={x:(cw-sw*sc)/2, y:(ch-sh*sc)/2, scale:sc};
-  applyTransform();
-  setTimeout(updateMinimap, 50);
-}
-
-// ══ HISTORY NAVIGATION ════════════════════════════════════════
-function histBack(){
-  if(traceHistIdx <= 0) return;
-  traceHistIdx--;
-  const fn = traceHistory[traceHistIdx];
-  traceFunction(fn, false);
-}
-function histFwd(){
-  if(traceHistIdx >= traceHistory.length-1) return;
-  traceHistIdx++;
-  const fn = traceHistory[traceHistIdx];
-  traceFunction(fn, false);
-}
-function updateHistButtons(){
-  const b=document.getElementById('btn-back');
-  const f=document.getElementById('btn-fwd');
-  const canBack = traceHistIdx > 0;
-  const canFwd  = traceHistIdx < traceHistory.length-1;
-  b.disabled = !canBack; b.style.opacity = canBack?'1':'0.35';
-  f.disabled = !canFwd;  f.style.opacity = canFwd?'1':'0.35';
-}
-function updateBreadcrumb(){
-  const el = document.getElementById('breadcrumb');
-  if(!traceHistory.length){ el.style.display='none'; return; }
-  el.style.display='block';
-  // show last 6 items max
-  const show = traceHistory.slice(Math.max(0,traceHistIdx-4), traceHistIdx+2);
-  const startIdx = Math.max(0, traceHistIdx-4);
-  el.innerHTML = (startIdx>0?'<span class="bc-sep">…</span>':'')+
-    show.map((fn,i)=>{
-      const abs = startIdx+i;
-      const isCur = abs===traceHistIdx;
-      return isCur
-        ? `<span class="bc-cur">${fn}</span>`
-        : `<span class="bc-item" onclick="jumpHistory(${abs})">${fn}</span>`;
-    }).join('<span class="bc-sep">›</span>');
-}
-function jumpHistory(idx){
-  if(idx<0||idx>=traceHistory.length) return;
-  traceHistIdx=idx;
-  traceFunction(traceHistory[idx], false);
-}
-
-// ══ EXPORT ════════════════════════════════════════════════════
-function buildExportSVG(){
-  const svg=document.getElementById('canvas').querySelector('svg');
-  if(!svg) return null;
-  const w=parseFloat(svg.getAttribute('width'))||800;
-  const h=parseFloat(svg.getAttribute('height'))||600;
-  const clone=svg.cloneNode(true);
-  // Remove any highlight filters/opacity from search
-  clone.querySelectorAll('g[data-fn] rect').forEach(r=>{
-    r.style.filter=''; r.style.opacity='';
-  });
-  // Dark background rect
-  const bg=document.createElementNS('http://www.w3.org/2000/svg','rect');
-  bg.setAttribute('width',w); bg.setAttribute('height',h); bg.setAttribute('fill','#07090f');
-  clone.insertBefore(bg, clone.firstChild);
-  // Inline font as base64 — use monospace fallback (no external fetch needed)
-  const style=document.createElementNS('http://www.w3.org/2000/svg','style');
-  style.textContent=`text { font-family: 'Courier New', Courier, monospace; }`;
-  clone.insertBefore(style, clone.firstChild);
-  // Ensure xmlns
-  clone.setAttribute('xmlns','http://www.w3.org/2000/svg');
-  return {svg: clone, w, h};
-}
-
-function exportSVG(){
-  const res=buildExportSVG();
-  if(!res){ toast('No graph to export','error'); return; }
-  const blob=new Blob([res.svg.outerHTML],{type:'image/svg+xml;charset=utf-8'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download=(tracedFn||'callgraph')+'_'+Date.now()+'.svg';
-  document.body.appendChild(a); a.click();
-  setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(a.href); },100);
-  toast('SVG saved ✓','ok');
-}
-
-function exportPNG(){
-  const res=buildExportSVG();
-  if(!res){ toast('No graph to export','error'); return; }
-  toast('Rendering PNG…');
-  const scale=2;
-  const svgStr=res.svg.outerHTML;
-  // Encode SVG as data URI — avoids cross-origin issues with blob URLs
-  const encoded='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgStr);
-  const img=new Image();
-  img.onload=()=>{
-    const cv=document.createElement('canvas');
-    cv.width=res.w*scale; cv.height=res.h*scale;
-    const ctx=cv.getContext('2d');
-    ctx.fillStyle='#07090f';
-    ctx.fillRect(0,0,cv.width,cv.height);
-    ctx.scale(scale,scale);
-    ctx.drawImage(img,0,0);
-    cv.toBlob(pngBlob=>{
-      if(!pngBlob){ toast('PNG failed — try SVG instead','error'); return; }
-      const a=document.createElement('a');
-      a.href=URL.createObjectURL(pngBlob);
-      a.download=(tracedFn||'callgraph')+'_'+Date.now()+'.png';
-      document.body.appendChild(a); a.click();
-      setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(a.href); },100);
-      toast('PNG saved ✓','ok');
-    },'image/png');
-  };
-  img.onerror=e=>{
-    console.error('PNG img load failed',e);
-    toast('PNG failed — SVG export works','error');
-  };
-  img.src=encoded;
-}
-
-// ══ KEYBOARD SHORTCUTS ═══════════════════════════════════════
-document.addEventListener('keydown', e=>{
-  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
-  if(e.altKey&&e.key==='ArrowLeft'){ e.preventDefault(); histBack(); return; }
-  if(e.altKey&&e.key==='ArrowRight'){ e.preventDefault(); histFwd(); return; }
-  if(e.key==='f'||e.key==='F') fitGraph();
-  else if(e.key==='+'||e.key==='=') zoom(1.2);
-  else if(e.key==='-') zoom(0.83);
-  else if(e.key==='Escape'){ clearTrace(); closeInfo(); }
-  else if(e.key==='m'||e.key==='M') setMode(mode==='fn'?'mod':'fn');
-});
-
-// ══ FILE BROWSER ══════════════════════════════════════════════
-function openFB(){
-  const start=document.getElementById('src').value.trim()||'/home';
-  document.getElementById('fb').classList.add('on');
-  fbNav(start);
-}
-function fbClose(){ document.getElementById('fb').classList.remove('on'); }
-function fbUp(){ fbNav(fbCur+'/..'); }
-async function fbNav(path){
-  try{
-    const d=await(await fetch('/api/browse?path='+encodeURIComponent(path))).json();
-    if(d.error){toast(d.error,'error');return;}
-    fbCur=d.path; fbSel=d.path;
-    document.getElementById('fb-pt').textContent=d.path;
-    document.getElementById('fb-sel').textContent=d.path;
-    const list=document.getElementById('fb-list'); list.innerHTML='';
-    d.entries.forEach(e=>{
-      const el=document.createElement('div');
-      el.className='fe '+(e.type==='dir'?'dir':'');
-      el.innerHTML=`<span>${e.type==='dir'?'📁':'📄'}</span><span>${e.name}</span>`;
-      if(e.type==='dir'){ el.ondblclick=()=>fbNav(e.path); el.onclick=()=>{fbSel=e.path;document.getElementById('fb-sel').textContent=e.path;}; }
-      list.appendChild(el);
-    });
-  }catch(e){toast('Browse error','error');}
-}
-function fbConfirm(){ document.getElementById('src').value=fbSel||fbCur; fbClose(); }
 </script>
-</body>
-</html>

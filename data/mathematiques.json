@@ -1,0 +1,177 @@
+[
+  {
+    "id": 2,
+    "word_fr": "algèbre",
+    "word_en": "algebra",
+    "word_ar": "الجَبْر",
+    "transliteration": "al-jabr",
+    "meaning_fr": "Branche des mathématiques qui étudie les structures et relations à l'aide de symboles et d'équations.",
+    "meaning_en": "Branch of mathematics studying structures and relationships using symbols and equations.",
+    "meaning_ar": "فرع من الرياضيات يدرس البنى والعلاقات باستخدام الرموز والمعادلات.",
+    "etymology": "Du titre de l'œuvre du mathématicien al-Khwarizmi (IXe s.). Al-jabr signifie « réunion des parties brisées ».",
+    "pathway": "arabe → latin médiéval → langues européennes",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الجَبْر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "algebra",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "langues européennes",
+        "word": "algèbre",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "mathematiques",
+    "examples": {
+      "fr": "L'algèbre fut introduite en Europe grâce aux traductions arabes.",
+      "en": "Algebra was introduced to Europe through Arabic translations.",
+      "ar": "انتشر علم الجبر في أوروبا عبر الترجمات العربية."
+    },
+    "related_words": [
+      "algorithme",
+      "zéro",
+      "chiffre"
+    ]
+  },
+  {
+    "id": 3,
+    "word_fr": "algorithme",
+    "word_en": "algorithm",
+    "word_ar": "الخَوَارِزْمِي",
+    "transliteration": "al-Khwārazmī",
+    "meaning_fr": "Suite finie et non ambiguë d'opérations permettant de résoudre un problème ou d'obtenir un résultat.",
+    "meaning_en": "A finite sequence of unambiguous instructions used to solve a problem or achieve a result.",
+    "meaning_ar": "سلسلة محدودة من التعليمات غير الغامضة لحل مشكلة أو الحصول على نتيجة.",
+    "etymology": "Latinisation du nom du mathématicien Muhammad ibn Musa al-Khwarizmi, dont les travaux furent traduits au XIIe siècle.",
+    "pathway": "nom propre arabe → latin médiéval → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "الخوارزمي",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "Algoritmi",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "algorithme",
+        "date": "XIXe s."
+      }
+    ],
+    "category": "mathematiques",
+    "examples": {
+      "fr": "Un algorithme de recherche trie des millions de données en quelques millisecondes.",
+      "en": "A search algorithm can sort millions of data points in milliseconds.",
+      "ar": "تُمكّن خوارزمية البحث من فرز ملايين البيانات في ثوانٍ."
+    },
+    "related_words": [
+      "algèbre",
+      "chiffre",
+      "zéro"
+    ]
+  },
+  {
+    "id": 8,
+    "word_fr": "zéro",
+    "word_en": "zero",
+    "word_ar": "صِفْر",
+    "transliteration": "ṣifr",
+    "meaning_fr": "Nombre entier naturel représentant une quantité nulle ; fondement du système de numération positionnel.",
+    "meaning_en": "Natural integer representing a null quantity; foundation of the positional numeration system.",
+    "meaning_ar": "العدد الطبيعي الصحيح الذي يمثل كمية معدومة؛ أساس نظام الترقيم الموضعي.",
+    "etymology": "De l'arabe ṣifr (صفر), signifiant « vide, rien ». Transmis par les mathématiciens arabes depuis l'Inde.",
+    "pathway": "sanskrit → arabe → latin médiéval → italien → français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "sanskrit",
+        "word": "śūnya",
+        "date": "Ve s."
+      },
+      {
+        "lang": "arabe",
+        "word": "صِفْر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "zephirum",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "italien",
+        "word": "zero",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "français/anglais",
+        "word": "zéro/zero",
+        "date": "XVIe s."
+      }
+    ],
+    "category": "mathematiques",
+    "examples": {
+      "fr": "Le concept de zéro fut une révolution intellectuelle sans précédent.",
+      "en": "The concept of zero was an unprecedented intellectual revolution.",
+      "ar": "كان مفهوم الصفر ثورة فكرية لا مثيل لها في تاريخ العلوم."
+    },
+    "related_words": [
+      "chiffre",
+      "algèbre",
+      "algorithme"
+    ]
+  },
+  {
+    "id": 16,
+    "word_fr": "chiffre",
+    "word_en": "cipher",
+    "word_ar": "صِفْر",
+    "transliteration": "ṣifr",
+    "meaning_fr": "Signe graphique représentant un nombre ; par extension, tout symbole ou code secret.",
+    "meaning_en": "Graphic sign representing a number; by extension, any symbol or secret code.",
+    "meaning_ar": "علامة رسومية تمثل رقماً؛ وبالتوسع، أي رمز أو شفرة سرية.",
+    "etymology": "De l'arabe ṣifr (صفر), « vide, rien » — même racine que zéro. Introduit avec la numération indo-arabe.",
+    "pathway": "arabe → latin médiéval → vieux français / anglais",
+    "pathway_steps": [
+      {
+        "lang": "arabe",
+        "word": "صِفْر",
+        "date": "IXe s."
+      },
+      {
+        "lang": "latin médiéval",
+        "word": "cifra",
+        "date": "XIIe s."
+      },
+      {
+        "lang": "vieux français",
+        "word": "chiffre",
+        "date": "XIVe s."
+      },
+      {
+        "lang": "anglais",
+        "word": "cipher",
+        "date": "XVe s."
+      }
+    ],
+    "category": "mathematiques",
+    "examples": {
+      "fr": "Les chiffres arabes ont révolutionné les mathématiques européennes.",
+      "en": "Arabic numerals revolutionized European mathematics in the Middle Ages.",
+      "ar": "أحدثت الأرقام العربية ثورة في الرياضيات الأوروبية خلال العصور الوسطى."
+    },
+    "related_words": [
+      "zéro",
+      "algorithme",
+      "algèbre"
+    ]
+  }
+]
