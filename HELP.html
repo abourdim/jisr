@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>جسر — Guide d'utilisation</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --night:#080C10; --night2:#0C1118; --night3:#111820; --night4:#172030;
+  --gold:#C9A84C; --gold-l:#E8C96A; --gold-dim:rgba(201,168,76,0.14);
+  --teal:#2A7B8C; --teal-l:#3AACBF; --teal-dim:rgba(42,123,140,0.18);
+  --ivory:#F0E6CC; --ivory-dim:rgba(240,230,204,0.6); --ivory-faint:rgba(240,230,204,0.1);
+  --emerald:#2A9B6E; --red:#C04040;
+  --fa:'Amiri',serif; --fd:'Cormorant Garamond',Georgia,serif; --fu:'Lato',sans-serif;
+  --r:12px; --pill:999px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--night);color:var(--ivory);font-family:var(--fu);line-height:1.7}
+
+/* Fond zellige */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse at 15% 10%,rgba(42,123,140,0.07) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 90%,rgba(201,168,76,0.05) 0%,transparent 55%);
+}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.025;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 30px,rgba(201,168,76,1) 30px,rgba(201,168,76,1) 31px),
+    repeating-linear-gradient(90deg,transparent,transparent 30px,rgba(201,168,76,1) 30px,rgba(201,168,76,1) 31px);
+}
+
+.wrap{max-width:860px;margin:0 auto;padding:0 28px 80px;position:relative;z-index:1}
+
+/* ── Bismillah ── */
+.bismillah{
+  text-align:center;padding:28px 20px 22px;
+  border-bottom:1px solid rgba(201,168,76,0.12);
+  background:linear-gradient(180deg,rgba(42,123,140,0.07) 0%,transparent 100%);
+  margin-bottom:0;
+}
+.bismillah-text{font-family:var(--fa);font-size:clamp(1.4rem,3vw,2.1rem);color:var(--gold-l);direction:rtl;text-shadow:0 0 40px rgba(201,168,76,0.5);letter-spacing:0.06em}
+.b-orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0}
+.b-orn span{height:1px;width:100px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.b-dia{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* ── Header ── */
+.page-header{
+  padding:52px 0 40px;text-align:center;
+  border-bottom:1px solid rgba(201,168,76,0.1);
+  position:relative;
+}
+.page-header::before{
+  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:600px;height:220px;border:1px solid rgba(201,168,76,0.04);
+  border-radius:50% 50% 0 0/80% 80% 0 0;pointer-events:none;
+}
+.back-link{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:7px 16px;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;
+  color:var(--teal-l);background:rgba(42,123,140,0.1);
+  border:1px solid rgba(42,123,140,0.25);border-radius:var(--pill);
+  text-decoration:none;transition:all 0.2s;margin-bottom:28px;
+}
+.back-link:hover{background:rgba(42,123,140,0.2);border-color:var(--teal-l)}
+.back-link svg{width:13px;height:13px}
+.page-header h1{
+  font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:300;
+  color:var(--ivory);margin-bottom:8px;position:relative;z-index:1;
+}
+.page-header .ar-title{font-family:var(--fa);font-size:clamp(1.4rem,3vw,2rem);color:var(--gold-l);direction:rtl;display:block;margin-bottom:14px;text-shadow:0 0 30px rgba(201,168,76,0.4)}
+.page-header p{font-family:var(--fd);font-style:italic;font-size:1.05rem;color:var(--ivory-dim);position:relative;z-index:1}
+
+/* ── ToC ── */
+.toc{
+  background:var(--night3);border:1px solid rgba(201,168,76,0.14);
+  border-radius:var(--r);padding:28px 32px;margin:44px 0 36px;
+  border-top:3px solid var(--gold);
+}
+.toc h2{font-family:var(--fd);font-size:1.1rem;font-weight:600;color:var(--gold-l);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.toc h2::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.3),transparent)}
+.toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
+@media(max-width:600px){.toc ol{grid-template-columns:1fr}}
+.toc li{counter-increment:toc}
+.toc a{
+  display:flex;align-items:center;gap:8px;text-decoration:none;
+  color:rgba(240,230,204,0.55);font-size:0.88rem;transition:color 0.2s;padding:3px 0;
+}
+.toc a::before{content:counter(toc,arabic-indic);font-family:var(--fa);color:var(--gold);font-size:0.9rem;flex-shrink:0;width:20px}
+.toc a:hover{color:var(--teal-l)}
+
+/* ── Sections ── */
+.section{padding:44px 0 8px}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.section-icon{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--gold-dim);border:1px solid rgba(201,168,76,0.3);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:var(--fa);font-size:1.6rem;color:var(--gold-l);direction:rtl;line-height:1;
+}
+.section-header h2{font-family:var(--fd);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:300;color:var(--ivory)}
+.section-num{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal-l);display:block;margin-bottom:4px}
+
+/* Diviseur islamique */
+.divider{display:flex;align-items:center;gap:10px;margin:8px 0 28px}
+.divider .line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.25),rgba(42,123,140,0.15),transparent)}
+.divider .sym{color:rgba(201,168,76,0.35);font-family:var(--fa);font-size:0.9rem}
+
+/* Paragraphes */
+.prose{font-size:0.96rem;color:rgba(240,230,204,0.7);line-height:1.85;margin-bottom:20px}
+.prose strong{color:var(--ivory);font-weight:700}
+.prose em{color:var(--gold-l);font-style:italic}
+
+/* Feature cards */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:24px}
+.feat{
+  background:var(--night3);border:1px solid rgba(201,168,76,0.1);
+  border-radius:var(--r);padding:18px 20px;
+  border-top:2px solid rgba(42,123,140,0.4);
+  transition:transform 0.2s,border-color 0.2s;
+}
+.feat:hover{transform:translateY(-2px);border-color:rgba(201,168,76,0.25)}
+.feat-icon{font-size:1.5rem;margin-bottom:8px}
+.feat h3{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--ivory);margin-bottom:6px}
+.feat p{font-size:0.82rem;color:rgba(240,230,204,0.5);line-height:1.6}
+
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:14px;margin-bottom:24px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold),#A07830);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--fa);font-size:1.1rem;color:var(--night);font-weight:700;line-height:1;
+}
+.step-body h4{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--ivory);margin-bottom:4px}
+.step-body p{font-size:0.85rem;color:rgba(240,230,204,0.55);line-height:1.6}
+
+/* Callout / tip */
+.tip{
+  background:rgba(42,123,140,0.1);border:1px solid rgba(42,123,140,0.25);
+  border-radius:var(--r);padding:16px 20px;margin-bottom:20px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.tip-icon{font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.tip p{font-size:0.88rem;color:var(--teal-l);line-height:1.65}
+.tip p strong{color:var(--ivory)}
+
+.warn{background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.25)}
+.warn p{color:var(--gold-l)}
+
+/* Kbd key visuals */
+.kbd-demo{
+  background:var(--night3);border:1px solid rgba(201,168,76,0.15);
+  border-radius:var(--r);padding:20px 24px;margin-bottom:20px;
+  display:flex;flex-wrap:wrap;gap:6px;align-items:center;
+}
+.k{
+  min-width:38px;height:40px;padding:0 8px;
+  background:var(--night4);border:1px solid rgba(201,168,76,0.15);
+  border-bottom:2px solid rgba(201,168,76,0.25);border-radius:6px;
+  font-family:var(--fa);font-size:1.2rem;color:var(--ivory);
+  display:inline-flex;align-items:center;justify-content:center;direction:rtl;
+}
+.k.wide{min-width:70px;font-family:var(--fu);font-size:0.72rem;letter-spacing:0.05em;color:rgba(240,230,204,0.5)}
+
+/* localStorage table */
+.ls-table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:0.88rem}
+.ls-table th{background:rgba(201,168,76,0.08);color:var(--gold-l);font-weight:700;letter-spacing:0.08em;font-size:0.72rem;text-transform:uppercase;padding:10px 14px;text-align:left;border-bottom:1px solid rgba(201,168,76,0.2)}
+.ls-table td{padding:10px 14px;border-bottom:1px solid rgba(240,230,204,0.05);color:rgba(240,230,204,0.65)}
+.ls-table tr:hover td{background:rgba(240,230,204,0.03)}
+code{font-family:monospace;background:rgba(42,123,140,0.15);color:var(--teal-l);padding:2px 7px;border-radius:4px;font-size:0.85em}
+
+/* Architecture ref */
+.arch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:24px}
+.arch-card{
+  background:var(--night3);border:1px solid rgba(201,168,76,0.1);
+  border-radius:var(--r);padding:16px;text-align:center;
+}
+.arch-ar{font-family:var(--fa);font-size:2rem;color:var(--gold-l);direction:rtl;display:block;margin-bottom:6px;text-shadow:0 0 20px rgba(201,168,76,0.3)}
+.arch-name{font-family:var(--fd);font-size:0.9rem;font-weight:600;color:var(--ivory);margin-bottom:4px}
+.arch-desc{font-size:0.75rem;color:rgba(240,230,204,0.4);line-height:1.5}
+
+/* Footer */
+footer{text-align:center;padding:44px 0 20px;border-top:1px solid rgba(201,168,76,0.08);margin-top:60px}
+footer p{font-family:var(--fd);font-style:italic;font-size:0.85rem;color:rgba(240,230,204,0.25)}
+footer strong{color:var(--gold);font-style:normal}
+footer .nav-links{display:flex;justify-content:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+footer a{color:var(--teal-l);text-decoration:none;font-size:0.82rem;font-weight:700;letter-spacing:0.08em;transition:color 0.2s}
+footer a:hover{color:var(--gold-l)}
+</style>
+</head>
+<body>
+
+<div class="bismillah">
+  <div class="b-orn"><span></span><div class="b-dia"></div><div class="b-dia"></div><div class="b-dia"></div><span></span></div>
+  <div class="bismillah-text">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+  <div class="b-orn"><span></span><div class="b-dia"></div><div class="b-dia"></div><div class="b-dia"></div><span></span></div>
+</div>
+
+<div class="wrap">
+
+<div class="page-header">
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    Retour à l'application
+  </a>
+  <span class="ar-title">دليل المستخدم</span>
+  <h1>Guide d'utilisation — Jisr</h1>
+  <p>Tout ce que vous devez savoir pour explorer l'héritage arabe dans les langues du monde</p>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <h2>Table des matières</h2>
+  <ol>
+    <li><a href="#start">Premiers pas</a></li>
+    <li><a href="#search">Recherche & Filtres</a></li>
+    <li><a href="#keyboard">Clavier arabe</a></li>
+    <li><a href="#modal">Fiche détaillée</a></li>
+    <li><a href="#tts">Écoute & Prononciation</a></li>
+    <li><a href="#quiz">Quiz étymologique</a></li>
+    <li><a href="#favs">Favoris & Historique</a></li>
+    <li><a href="#learned">Mots appris</a></li>
+    <li><a href="#demo">Mode démo</a></li>
+    <li><a href="#storage">Données & Confidentialité</a></li>
+    <li><a href="#arch">Références architecturales</a></li>
+    <li><a href="#shortkeys">Raccourcis clavier</a></li>
+  </ol>
+</nav>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="start">
+  <div class="section-header">
+    <div class="section-icon">١</div>
+    <div>
+      <span class="section-num">Section 01</span>
+      <h2>Premiers pas</h2>
+    </div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Jisr s'ouvre directement dans votre navigateur. <strong>Aucune installation, aucun compte, aucune connexion requise</strong> — c'est un fichier HTML autonome.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">١</div>
+      <div class="step-body"><h4>Ouvrez le fichier</h4><p>Double-cliquez sur <code>index.html</code> ou faites glisser le fichier dans votre navigateur.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <div class="step-body"><h4>Le mot du jour s'affiche</h4><p>Un mot est sélectionné automatiquement chaque jour. Cliquez dessus pour voir sa fiche complète.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <div class="step-body"><h4>Explorez les 279 mots</h4><p>Faites défiler les cartes, utilisez la recherche ou filtrez par catégorie.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <div class="step-body"><h4>Choisissez votre langue</h4><p>FR · EN · عربي — le bouton en haut à droite change toute l'interface, y compris la direction RTL/LTR.</p></div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-icon">💡</div>
+    <p>Votre langue d'interface, vos favoris et votre progression sont <strong>mémorisés automatiquement</strong> entre les sessions.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="search">
+  <div class="section-header">
+    <div class="section-icon">٢</div>
+    <div><span class="section-num">Section 02</span><h2>Recherche & Filtres</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">La recherche est <strong>multi-champs et en temps réel</strong>. Elle interroge simultanément :</p>
+  <div class="features">
+    <div class="feat"><div class="feat-icon">🇫🇷</div><h3>Mot français</h3><p>Ex : « alcool », « café », « zéro »</p></div>
+    <div class="feat"><div class="feat-icon">🇬🇧</div><h3>Mot anglais</h3><p>Ex : « sugar », « cotton », « algorithm »</p></div>
+    <div class="feat"><div class="feat-icon">🇸🇦</div><h3>Mot arabe</h3><p>Ex : قهوة، صفر، جبر</p></div>
+    <div class="feat"><div class="feat-icon">📖</div><h3>Translittération</h3><p>Ex : « qahwa », « sukkar », « ṣifr »</p></div>
+    <div class="feat"><div class="feat-icon">💬</div><h3>Définition FR/EN/AR</h3><p>Recherche dans le texte des définitions</p></div>
+  </div>
+
+  <p class="prose"><strong>Filtre de langue des cartes</strong> — les boutons FR / EN / عربي / Tous sous la barre de recherche changent la langue de la définition affichée sur chaque carte.</p>
+  <p class="prose"><strong>Filtres par catégorie</strong> — cliquez sur une ou plusieurs catégories (Mathématiques, Cuisine, Science…) pour restreindre les résultats. Les catégories se cumulent.</p>
+
+  <div class="tip warn">
+    <div class="tip-icon">✨</div>
+    <p>Le bouton <strong>Aléatoire</strong> (⇄) ouvre une fiche au hasard — idéal pour la découverte passive.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="keyboard">
+  <div class="section-header">
+    <div class="section-icon">٣</div>
+    <div><span class="section-num">Section 03</span><h2>Clavier arabe virtuel</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Le clavier arabe vous permet de <strong>taper en arabe sans changer la configuration de votre système</strong>. Il s'ouvre en cliquant sur le bouton « Clavier arabe » à côté de la barre de recherche.</p>
+
+  <div class="kbd-demo">
+    <div class="k">ض</div><div class="k">ص</div><div class="k">ث</div><div class="k">ق</div>
+    <div class="k">ف</div><div class="k">غ</div><div class="k">ع</div><div class="k">ه</div>
+    <div class="k">خ</div><div class="k">ح</div><div class="k">ج</div><div class="k">د</div>
+    <div class="k wide">⌫ Backspace</div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">١</div>
+      <div class="step-body"><h4>Cliquez sur « Clavier arabe »</h4><p>Le clavier s'ouvre sous la barre de recherche avec une animation fluide.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <div class="step-body"><h4>Tapez les lettres</h4><p>Chaque clic insère la lettre à la position du curseur dans le champ de recherche.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <div class="step-body"><h4>Utilisez les diacritiques</h4><p>La rangée du bas propose les voyelles courtes (fatha, damma, kasra) et la shadda.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <div class="step-body"><h4>Effacez avec ⌫</h4><p>Le bouton backspace supprime le dernier caractère. « Effacer » vide tout le champ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="modal">
+  <div class="section-header">
+    <div class="section-icon">٤</div>
+    <div><span class="section-num">Section 04</span><h2>Fiche détaillée</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Cliquez sur n'importe quelle carte ou sur le mot du jour pour ouvrir la <strong>fiche complète</strong>. Elle contient :</p>
+
+  <div class="features">
+    <div class="feat"><div class="feat-icon">🕌</div><h3>Grand mot arabe</h3><p>Calligraphie en pleine taille avec halo doré. Translittération phonétique en dessous.</p></div>
+    <div class="feat"><div class="feat-icon">📖</div><h3>3 définitions</h3><p>Français · English · العربية — côte à côte pour comparaison.</p></div>
+    <div class="feat"><div class="feat-icon">🌿</div><h3>Étymologie</h3><p>Texte détaillé sur l'origine et le voyage du mot à travers les langues.</p></div>
+    <div class="feat"><div class="feat-icon">🗺</div><h3>Arbre linguistique</h3><p>Timeline visuelle avec chaque langue intermédiaire et sa date approximative.</p></div>
+    <div class="feat"><div class="feat-icon">💬</div><h3>Exemples</h3><p>Phrases d'usage en français, anglais et arabe.</p></div>
+    <div class="feat"><div class="feat-icon">🔗</div><h3>Mots liés</h3><p>Tags cliquables qui lancent une recherche sur les mots de la même famille.</p></div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-icon">⬅️➡️</div>
+    <p>Les <strong>flèches de navigation</strong> en haut à gauche de la fiche permettent de passer au mot suivant ou précédent sans fermer la modale.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="tts">
+  <div class="section-header">
+    <div class="section-icon">٥</div>
+    <div><span class="section-num">Section 05</span><h2>Écoute & Prononciation</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Jisr utilise l'<strong>API Web Speech</strong> de votre navigateur pour lire les mots à voix haute. Disponible dans Chrome, Edge et Firefox modernes.</p>
+
+  <div class="features">
+    <div class="feat"><div class="feat-icon">🔊</div><h3>Arabe (ar-SA)</h3><p>Prononciation de l'arabe saoudien standard. Vitesse réduite pour la clarté.</p></div>
+    <div class="feat"><div class="feat-icon">🔊</div><h3>Français (fr-FR)</h3><p>Prononciation française du mot d'emprunt contemporain.</p></div>
+    <div class="feat"><div class="feat-icon">🔊</div><h3>Anglais (en-US)</h3><p>Prononciation anglaise américaine standard.</p></div>
+  </div>
+
+  <p class="prose">Les boutons TTS se trouvent : <strong>sur chaque carte</strong> (icône 🔊), dans le <strong>mot du jour</strong>, et dans la <strong>fiche détaillée</strong> (3 boutons distincts par langue).</p>
+  <p class="prose">Un <strong>effet d'animation pulse</strong> indique que la lecture est en cours. Elle s'arrête automatiquement à la fin.</p>
+
+  <div class="tip warn">
+    <div class="tip-icon">⚠️</div>
+    <p>La qualité de la voix arabe dépend des voix installées sur votre système. Pour la meilleure expérience, installez une voix arabe native dans les paramètres de votre OS.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="quiz">
+  <div class="section-header">
+    <div class="section-icon">٦</div>
+    <div><span class="section-num">Section 06</span><h2>Quiz étymologique</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Le <strong>quiz</strong> teste votre connaissance des mots arabes à partir du mot français/anglais. 8 questions par session, 4 choix chacune.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">١</div>
+      <div class="step-body"><h4>Cliquez sur « Quiz »</h4><p>8 mots sont sélectionnés aléatoirement parmi les 18 du dictionnaire.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <div class="step-body"><h4>Lisez le mot français/anglais</h4><p>Identifiez le mot arabe correspondant parmi les 4 propositions.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <div class="step-body"><h4>Feedback immédiat</h4><p>La bonne réponse apparaît en vert. La réponse incorrecte en rouge. Le mot arabe correct se révèle.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <div class="step-body"><h4>Score final persisté</h4><p>Vos 10 derniers scores sont sauvegardés automatiquement en localStorage.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="favs">
+  <div class="section-header">
+    <div class="section-icon">٧</div>
+    <div><span class="section-num">Section 07</span><h2>Favoris & Historique</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Le <strong>panel latéral</strong> (bouton ★ Favoris ou 🕐 Historique) donne accès à :</p>
+
+  <div class="features">
+    <div class="feat"><div class="feat-icon">⭐</div><h3>Favoris</h3><p>Mots marqués d'une étoile. Cliquez l'étoile sur une carte ou dans la fiche. Persistent entre sessions.</p></div>
+    <div class="feat"><div class="feat-icon">🕐</div><h3>Historique</h3><p>Les 20 derniers mots consultés, du plus récent au plus ancien.</p></div>
+    <div class="feat"><div class="feat-icon">✅</div><h3>Appris</h3><p>Mots que vous avez marqués comme maîtrisés. Un badge vert apparaît sur leur carte.</p></div>
+  </div>
+
+  <p class="prose">Cliquez sur un mot dans le panel pour ouvrir sa fiche directement. Les favoris et les mots appris peuvent être retirés avec le bouton ✕.</p>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="learned">
+  <div class="section-header">
+    <div class="section-icon">٨</div>
+    <div><span class="section-num">Section 08</span><h2>Mots appris</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Marquez un mot comme <strong>« appris »</strong> depuis la fiche détaillée (bouton ✓ Appris). Un <strong>badge vert</strong> apparaît sur la carte correspondante dans la grille principale.</p>
+  <p class="prose">La liste de vos mots appris est accessible dans le panel latéral → onglet <em>Appris</em>. Objectif : cocher tous les mots !</p>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="demo">
+  <div class="section-header">
+    <div class="section-icon">٩</div>
+    <div><span class="section-num">Section 09</span><h2>Mode démo</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Le <strong>mode démo</strong> est une présentation automatique de l'application — idéal pour une démonstration en public ou sur un portfolio.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">١</div>
+      <div class="step-body"><h4>Cliquez sur « Démo »</h4><p>Un mot est sélectionné aléatoirement.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <div class="step-body"><h4>Frappe automatique</h4><p>Les lettres s'inscrivent une par une dans la barre de recherche (effet machine à écrire).</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <div class="step-body"><h4>Fiche auto-ouverte</h4><p>La fiche du mot s'ouvre automatiquement après la recherche.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <div class="step-body"><h4>Boucle & arrêt</h4><p>La démo boucle sur différents mots. Cliquez n'importe où ou sur « Arrêter » pour interrompre.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="storage">
+  <div class="section-header">
+    <div class="section-icon">١٠</div>
+    <div><span class="section-num">Section 10</span><h2>Données & Confidentialité</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Jisr ne collecte <strong>aucune donnée</strong>. Toutes les préférences sont stockées localement dans votre navigateur (<code>localStorage</code>), jamais transmises à un serveur.</p>
+
+  <table class="ls-table">
+    <thead>
+      <tr><th>Clé localStorage</th><th>Contenu</th><th>Effaçable</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>jisr_favs</code></td><td>IDs des mots favoris</td><td>Panel → Favoris → ✕</td></tr>
+      <tr><td><code>jisr_history</code></td><td>20 derniers mots consultés</td><td>Non (auto-rotation)</td></tr>
+      <tr><td><code>jisr_learned</code></td><td>IDs des mots appris</td><td>Panel → Appris → ✕</td></tr>
+      <tr><td><code>jisr_quiz_scores</code></td><td>10 derniers scores</td><td>Non</td></tr>
+      <tr><td><code>jisr_ui_lang</code></td><td>Langue d'interface (fr/en/ar)</td><td>Auto à la prochaine visite</td></tr>
+      <tr><td><code>jisr_card_lang</code></td><td>Filtre de langue des cartes</td><td>Auto à la prochaine visite</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <div class="tip-icon">🔒</div>
+    <p>Pour effacer toutes les données : ouvrez la console du navigateur (F12) et tapez <code>localStorage.clear()</code>, puis rechargez la page.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="arch">
+  <div class="section-header">
+    <div class="section-icon">١١</div>
+    <div><span class="section-num">Section 11</span><h2>Références architecturales</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <p class="prose">Le design de Jisr s'inspire des chefs-d'œuvre de l'architecture islamique classique :</p>
+
+  <div class="arch-grid">
+    <div class="arch-card">
+      <span class="arch-ar">الحمراء</span>
+      <div class="arch-name">Alhambra</div>
+      <div class="arch-desc">Grenade, XIVe s. · Arcs nasrides · Muqarnas · Zellige · Palette or</div>
+    </div>
+    <div class="arch-card">
+      <span class="arch-ar">المدينة</span>
+      <div class="arch-name">Médine</div>
+      <div class="arch-desc">Arabie · Coupole verte · Minarets élancés · Fond nuit profonde</div>
+    </div>
+    <div class="arch-card">
+      <span class="arch-ar">قرطبة</span>
+      <div class="arch-name">Cordoue</div>
+      <div class="arch-desc">Espagne, IXe s. · Arcs bicolores · Turquoise andalou · Colonnes</div>
+    </div>
+    <div class="arch-card">
+      <span class="arch-ar">إسطنبول</span>
+      <div class="arch-name">Istanbul</div>
+      <div class="arch-desc">Turquie, XVIe s. · Demi-dômes · Bleu Iznik · Arabesque</div>
+    </div>
+    <div class="arch-card">
+      <span class="arch-ar">بغداد</span>
+      <div class="arch-name">Bagdad</div>
+      <div class="arch-desc">Irak, VIIIe s. · Maison de la Sagesse · Manuscrits abbassides</div>
+    </div>
+    <div class="arch-card">
+      <span class="arch-ar">فاس</span>
+      <div class="arch-name">Fès</div>
+      <div class="arch-desc">Maroc, IXe s. · Zellige · Stuc sculpté · Bois de cèdre</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<section class="section" id="shortkeys">
+  <div class="section-header">
+    <div class="section-icon">١٢</div>
+    <div><span class="section-num">Section 12</span><h2>Raccourcis clavier</h2></div>
+  </div>
+  <div class="divider"><div class="line"></div><div class="sym">✦</div><div class="line"></div></div>
+
+  <table class="ls-table">
+    <thead><tr><th>Touche</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td><code>Échap</code></td><td>Fermer la fiche / le quiz / arrêter la démo</td></tr>
+      <tr><td><code>Entrée</code></td><td>Ouvrir la fiche d'une carte sélectionnée (Tab + Entrée)</td></tr>
+      <tr><td><code>⬅️ ➡️</code></td><td>Navigation entre mots dans la fiche ouverte</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="wrap">
+    <div class="nav-links">
+      <a href="index.html">← Application</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="README.md">README</a>
+    </div>
+    <p><strong>جِسْر — Jisr v1.0</strong> · Guide d'utilisation · Sources : CNRTL · Oxford · Dozy</p>
+  </div>
+</footer>
+
+</body>
+</html>

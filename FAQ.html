@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>جسر — FAQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --night:#080C10;--night2:#0C1118;--night3:#111820;--night4:#172030;
+  --gold:#C9A84C;--gold-l:#E8C96A;--gold-dim:rgba(201,168,76,0.14);
+  --teal:#2A7B8C;--teal-l:#3AACBF;--teal-dim:rgba(42,123,140,0.18);
+  --ivory:#F0E6CC;--ivory-dim:rgba(240,230,204,0.6);
+  --emerald:#2A9B6E;--red:#C04040;
+  --fa:'Amiri',serif;--fd:'Cormorant Garamond',Georgia,serif;--fu:'Lato',sans-serif;
+  --r:14px;--pill:999px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--night);color:var(--ivory);font-family:var(--fu);line-height:1.7}
+
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse at 20% 0%,rgba(42,123,140,0.07) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,168,76,0.05) 0%,transparent 50%);
+}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.022;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 24px,rgba(201,168,76,1) 24px,rgba(201,168,76,1) 25px),
+    repeating-linear-gradient(-45deg,transparent,transparent 24px,rgba(201,168,76,1) 24px,rgba(201,168,76,1) 25px);
+}
+
+.wrap{max-width:820px;margin:0 auto;padding:0 28px 80px;position:relative;z-index:1}
+
+/* Bismillah */
+.bismillah{text-align:center;padding:26px 20px 20px;border-bottom:1px solid rgba(201,168,76,0.12);background:linear-gradient(180deg,rgba(42,123,140,0.06) 0%,transparent 100%)}
+.bismillah-text{font-family:var(--fa);font-size:clamp(1.3rem,2.8vw,2rem);color:var(--gold-l);direction:rtl;text-shadow:0 0 40px rgba(201,168,76,0.45);letter-spacing:0.06em}
+.b-orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:7px 0}
+.b-orn span{height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.b-dia{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* Page header */
+.page-header{padding:52px 0 40px;text-align:center;border-bottom:1px solid rgba(201,168,76,0.1);position:relative}
+.page-header::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:500px;height:180px;border:1px solid rgba(201,168,76,0.04);border-radius:50% 50% 0 0/80% 80% 0 0;pointer-events:none}
+.back-link{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--teal-l);background:rgba(42,123,140,0.1);border:1px solid rgba(42,123,140,0.25);border-radius:var(--pill);text-decoration:none;transition:all 0.2s;margin-bottom:28px}
+.back-link:hover{background:rgba(42,123,140,0.2);border-color:var(--teal-l)}
+.back-link svg{width:13px;height:13px}
+.ar-title{font-family:var(--fa);font-size:clamp(1.4rem,3vw,2rem);color:var(--gold-l);direction:rtl;display:block;margin-bottom:12px;text-shadow:0 0 30px rgba(201,168,76,0.4)}
+.page-header h1{font-family:var(--fd);font-size:clamp(2rem,5vw,3rem);font-weight:300;color:var(--ivory);margin-bottom:10px;position:relative;z-index:1}
+.page-header p{font-family:var(--fd);font-style:italic;font-size:1rem;color:var(--ivory-dim);position:relative;z-index:1}
+
+/* Catégories FAQ */
+.faq-cats{display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 28px}
+.faq-cat{padding:7px 16px;background:transparent;border:1px solid rgba(240,230,204,0.1);border-radius:var(--pill);color:rgba(240,230,204,0.45);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none}
+.faq-cat:hover,.faq-cat.active{border-color:var(--gold);color:var(--gold-l);background:var(--gold-dim)}
+
+/* Section FAQ */
+.faq-section{margin-bottom:48px}
+.faq-section-title{
+  font-family:var(--fu);font-size:0.65rem;font-weight:700;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--teal-l);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;padding-top:40px;
+}
+.faq-section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(42,123,140,0.35),transparent)}
+.faq-section-title .ar{font-family:var(--fa);font-size:1rem;direction:rtl}
+
+/* Accordion */
+.faq-item{
+  border:1px solid rgba(201,168,76,0.1);border-radius:var(--r);
+  overflow:hidden;margin-bottom:10px;transition:border-color 0.25s;
+}
+.faq-item:hover{border-color:rgba(201,168,76,0.2)}
+.faq-item.open{border-color:rgba(201,168,76,0.25)}
+
+.faq-q{
+  width:100%;padding:18px 22px;background:var(--night3);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  cursor:pointer;text-align:left;border:none;color:var(--ivory);
+  font-family:var(--fd);font-size:1.05rem;font-weight:400;line-height:1.4;
+  transition:background 0.2s;
+}
+.faq-q:hover{background:var(--night4)}
+.faq-item.open .faq-q{background:linear-gradient(135deg,var(--night4),#0F1D2E);border-bottom:1px solid rgba(201,168,76,0.1)}
+.faq-q-text{flex:1}
+.faq-q-num{
+  font-family:var(--fa);font-size:1.1rem;color:var(--gold);flex-shrink:0;
+  width:28px;text-align:right;direction:rtl;line-height:1;
+}
+.faq-q-arr{
+  width:20px;height:20px;flex-shrink:0;color:rgba(240,230,204,0.3);
+  transition:transform 0.3s,color 0.2s;
+}
+.faq-item.open .faq-q-arr{transform:rotate(180deg);color:var(--gold)}
+.faq-q-arr svg{width:100%;height:100%}
+
+.faq-a{
+  background:var(--night2);padding:0 22px;
+  max-height:0;overflow:hidden;
+  transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1),padding 0.3s;
+}
+.faq-item.open .faq-a{max-height:600px;padding:20px 22px 22px}
+
+.faq-a p{font-size:0.92rem;color:rgba(240,230,204,0.65);line-height:1.8;margin-bottom:12px}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a strong{color:var(--ivory);font-weight:700}
+.faq-a em{color:var(--gold-l);font-style:italic}
+.faq-a code{font-family:monospace;background:rgba(42,123,140,0.15);color:var(--teal-l);padding:2px 7px;border-radius:4px;font-size:0.85em}
+.faq-a a{color:var(--teal-l);text-decoration:none;border-bottom:1px solid rgba(42,123,140,0.3);transition:color 0.2s}
+.faq-a a:hover{color:var(--gold-l)}
+.faq-a ul{list-style:none;margin:8px 0 12px}
+.faq-a ul li{padding:4px 0 4px 18px;position:relative;font-size:0.9rem;color:rgba(240,230,204,0.6);line-height:1.6}
+.faq-a ul li::before{content:'✦';position:absolute;left:0;color:rgba(201,168,76,0.4);font-size:0.65rem;top:8px}
+
+/* Callout */
+.tip{background:rgba(42,123,140,0.1);border:1px solid rgba(42,123,140,0.25);border-radius:10px;padding:14px 16px;margin:12px 0 0;display:flex;gap:10px;align-items:flex-start}
+.tip-icon{font-size:1rem;flex-shrink:0;margin-top:2px}
+.tip p{font-size:0.86rem;color:var(--teal-l) !important;margin:0 !important}
+.tip p strong{color:var(--ivory) !important}
+
+/* Compteur */
+.faq-count{font-size:0.72rem;color:rgba(240,230,204,0.3);letter-spacing:0.1em;margin-left:6px}
+
+/* Grand mot déco */
+.deco-ar{
+  font-family:var(--fa);font-size:8rem;color:rgba(201,168,76,0.04);
+  direction:rtl;text-align:center;line-height:1;margin:60px 0 0;
+  user-select:none;pointer-events:none;
+}
+
+/* Footer */
+footer{text-align:center;padding:40px 0 20px;border-top:1px solid rgba(201,168,76,0.08);margin-top:20px}
+footer p{font-family:var(--fd);font-style:italic;font-size:0.85rem;color:rgba(240,230,204,0.22)}
+footer strong{color:var(--gold);font-style:normal}
+.nav-links{display:flex;justify-content:center;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+.nav-links a{color:var(--teal-l);text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold-l)}
+</style>
+</head>
+<body>
+
+<div class="bismillah">
+  <div class="b-orn"><span></span><div class="b-dia"></div><div class="b-dia"></div><div class="b-dia"></div><span></span></div>
+  <div class="bismillah-text">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+  <div class="b-orn"><span></span><div class="b-dia"></div><div class="b-dia"></div><div class="b-dia"></div><span></span></div>
+</div>
+
+<div class="wrap">
+
+<div class="page-header">
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    Retour à l'application
+  </a>
+  <span class="ar-title">الأسئلة الشائعة</span>
+  <h1>Questions Fréquentes</h1>
+  <p>Réponses aux questions les plus courantes sur Jisr — جِسْر</p>
+</div>
+
+<div class="faq-cats">
+  <a class="faq-cat active" href="#general">Général</a>
+  <a class="faq-cat" href="#features">Fonctionnalités</a>
+  <a class="faq-cat" href="#content">Contenu</a>
+  <a class="faq-cat" href="#tech">Technique</a>
+  <a class="faq-cat" href="#data">Données</a>
+  <a class="faq-cat" href="#islam">Civilisation islamique</a>
+</div>
+
+<!-- ══════════ GÉNÉRAL ══════════ -->
+<div class="faq-section" id="general">
+  <div class="faq-section-title"><span class="ar">✦</span> Général</div>
+
+  <div class="faq-item open">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١</span>
+      <span class="faq-q-text">Qu'est-ce que Jisr (جِسْر) ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p><strong>Jisr</strong> (جِسْر) signifie « pont » en arabe. C'est une application web d'étymologie qui révèle les mots d'origine arabe présents dans le français et l'anglais modernes — des ponts vivants entre les civilisations.</p>
+      <p>L'application célèbre l'âge d'or de la civilisation islamique (VIIe–XVe siècle) et le rôle des savants arabes dans la transmission du savoir universel. Elle s'inspire visuellement de l'architecture de l'Alhambra, de Médine et de Cordoue.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٢</span>
+      <span class="faq-q-text">Faut-il installer quelque chose pour utiliser Jisr ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p><strong>Non, absolument rien.</strong> Jisr est un fichier HTML unique et autonome (96 Ko). Il suffit de double-cliquer sur <code>index.html</code> pour l'ouvrir dans votre navigateur.</p>
+      <p>Aucun serveur, aucune connexion internet, aucun compte, aucun framework. Zéro dépendance externe à l'exécution (les polices Google Fonts sont chargées depuis internet si disponible, mais l'application fonctionne sans).</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٣</span>
+      <span class="faq-q-text">Sur quels navigateurs Jisr fonctionne-t-il ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <ul>
+        <li><strong>Chrome 90+</strong> — Support complet, meilleure expérience TTS</li>
+        <li><strong>Firefox 88+</strong> — Support complet</li>
+        <li><strong>Safari 14+</strong> — Support complet (iOS inclus)</li>
+        <li><strong>Edge 90+</strong> — Support complet</li>
+        <li><strong>Internet Explorer</strong> — Non supporté</li>
+      </ul>
+      <div class="tip"><div class="tip-icon">💡</div><p>Pour la meilleure qualité de prononciation arabe, utilisez <strong>Chrome ou Edge</strong> qui proposent des voix TTS de haute qualité.</p></div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٤</span>
+      <span class="faq-q-text">Jisr fonctionne-t-il hors ligne ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p><strong>Oui, presque entièrement.</strong> Toutes les données (279 mots, 12 catégories) sont dans <code>jisr-v1.0.html</code> pour un usage hors-ligne complet. Le TTS et les filtres fonctionnent hors ligne.</p>
+      <p>Seules les <em>polices Google Fonts</em> (Amiri, Cormorant Garamond, Lato) nécessitent une connexion internet au premier chargement. Sans connexion, le navigateur utilisera des polices système de repli.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ FONCTIONNALITÉS ══════════ -->
+<div class="faq-section" id="features">
+  <div class="faq-section-title"><span class="ar">✦</span> Fonctionnalités</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٥</span>
+      <span class="faq-q-text">Comment fonctionne la recherche en arabe ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>La recherche est <strong>multi-champs</strong> : elle interroge simultanément le mot français, anglais, arabe (graphie originale), la translittération latine, et les trois définitions.</p>
+      <p>Vous pouvez taper en arabe via le <strong>clavier virtuel</strong> (bouton « Clavier arabe ») ou en translittération (ex : taper « ṣifr » ou « sifr » pour trouver صِفْر).</p>
+      <p>La recherche est en <em>temps réel</em> avec un délai de 180ms pour éviter les latences.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٦</span>
+      <span class="faq-q-text">La prononciation arabe est-elle correcte ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Jisr utilise l'<strong>API Web Speech</strong> du navigateur avec la locale <code>ar-SA</code> (arabe d'Arabie Saoudite, MSA — arabe standard moderne). La qualité dépend des voix installées sur votre système.</p>
+      <p>La vitesse de lecture est réduite à 0,82× pour améliorer la clarté. Pour la meilleure qualité, installez une voix arabe native dans les paramètres de votre système d'exploitation.</p>
+      <div class="tip"><div class="tip-icon">🎙</div><p>Sur macOS : Préférences Système → Accessibilité → Contenu parlé → Voix système → chercher « Maged » (arabe masculin).</p></div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٧</span>
+      <span class="faq-q-text">Comment partager un mot avec quelqu'un ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Depuis la <strong>fiche détaillée</strong>, cliquez sur le bouton « Partager ». L'URL <code>?word=4</code> est copiée dans le presse-papiers.</p>
+      <p>Cette URL fonctionne si le destinataire a accès au même fichier <code>index.html</code> (par exemple sur un serveur web partagé ou dans un dépôt GitHub Pages).</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٨</span>
+      <span class="faq-q-text">Comment fonctionne le « mot du jour » ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Le mot du jour est sélectionné de façon <strong>déterministe</strong> à partir de la date du jour (année × 10000 + mois × 100 + jour) modulo le nombre de mots. Il est donc le même pour tous les utilisateurs à la même date.</p>
+      <p>Il change automatiquement à minuit et ne se répète qu'après 18 jours (un cycle complet du dictionnaire).</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٩</span>
+      <span class="faq-q-text">Puis-je changer la langue d'interface en cours de session ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Oui, à tout moment via les boutons <strong>FR / EN / ع</strong> en haut à droite. Le changement est instantané et affecte :</p>
+      <ul>
+        <li>Tous les labels, boutons et titres</li>
+        <li>La direction du texte (LTR ↔ RTL pour l'arabe)</li>
+        <li>La définition prioritaire sur les cartes</li>
+        <li>La langue du quiz</li>
+      </ul>
+      <p>Votre choix est <strong>mémorisé</strong> entre les sessions (localStorage <code>jisr_ui_lang</code>).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CONTENU ══════════ -->
+<div class="faq-section" id="content">
+  <div class="faq-section-title"><span class="ar">✦</span> Contenu & Étymologie</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٠</span>
+      <span class="faq-q-text">Les étymologies sont-elles fiables ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Oui. Chaque étymologie est vérifiée auprès de sources académiques reconnues :</p>
+      <ul>
+        <li><strong>CNRTL</strong> — Centre National de Ressources Textuelles et Lexicales (cnrtl.fr)</li>
+        <li><strong>Oxford English Dictionary</strong> — référence anglaise</li>
+        <li><strong>Dozy, R.</strong> — Supplément aux dictionnaires arabes (1881), référence classique</li>
+        <li>Textes primaires : al-Khwarizmi, Ibn Sina, al-Biruni</li>
+      </ul>
+      <p>Les dates sont approximatives et indiquent la première attestation connue dans chaque langue.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١١</span>
+      <span class="faq-q-text">Combien de mots y a-t-il dans Jisr v1.0 ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>La v1.0 contient <strong>279 mots</strong> répartis en 12 catégories : astronomie (31), botanique (98), médecine (131) et bien d'autres. L'objectif final est d'atteindre ~1760 mots.</p>
+      <p>Des centaines de mots français et anglais sont d'origine arabe. Les prochaines versions envisagent d'en ajouter davantage : <em>almanach, ambre, chiffre, coton, hazard, luth, matelas, orange, safran, tarif</em>…</p>
+      <div class="tip"><div class="tip-icon">💡</div><p>En réalité, le français compte <strong>plus de 500 mots</strong> d'origine arabe directe ou via des langues intermédiaires (espagnol, turc, persan).</p></div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٢</span>
+      <span class="faq-q-text">Quelle est la différence entre « mot arabe » et « mot arabisé » ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Jisr inclut les deux catégories :</p>
+      <ul>
+        <li><strong>Mots nativement arabes</strong> : قهوة (café), غزال (gazelle), صفر (zéro)</li>
+        <li><strong>Mots arabisés</strong> : empruntés au grec, sanskrit ou persan et transmis via l'arabe — comme الإكسير (élixir, du grec) ou نيلوفر (nénuphar, du sanskrit via le persan)</li>
+      </ul>
+      <p>Dans les deux cas, c'est la <em>médiation arabe</em> qui a permis la transmission vers les langues européennes. La distinction est toujours précisée dans l'arbre étymologique.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ TECHNIQUE ══════════ -->
+<div class="faq-section" id="tech">
+  <div class="faq-section-title"><span class="ar">✦</span> Technique</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٣</span>
+      <span class="faq-q-text">Quelles technologies sont utilisées ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <ul>
+        <li><strong>HTML5 sémantique</strong> — structure et accessibilité</li>
+        <li><strong>CSS3</strong> — Custom Properties, Grid, Flexbox, animations</li>
+        <li><strong>JavaScript ES6+</strong> — vanilla, aucun framework</li>
+        <li><strong>Web Speech API</strong> — synthèse vocale TTS</li>
+        <li><strong>localStorage</strong> — persistance locale des données</li>
+        <li><strong>Google Fonts</strong> — Amiri, Cormorant Garamond, Lato</li>
+      </ul>
+      <p>Poids total : ~96 Ko (HTML + CSS + JS + données). Aucune dépendance npm, aucun bundler.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٤</span>
+      <span class="faq-q-text">Comment héberger Jisr sur un serveur web ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Copiez simplement <code>index.html</code>, <code>HELP.html</code> et <code>FAQ.html</code> dans le répertoire de votre serveur. Aucune configuration requise.</p>
+      <ul>
+        <li><strong>GitHub Pages</strong> : déposez les fichiers dans un repo public et activez Pages</li>
+        <li><strong>Netlify / Vercel</strong> : glissez-déposez le dossier</li>
+        <li><strong>Serveur quelconque</strong> : tout serveur HTTP fonctionne (Apache, Nginx, Caddy…)</li>
+      </ul>
+      <div class="tip"><div class="tip-icon">🔗</div><p>Le partage par URL (<code>?word=4</code>) ne fonctionne que si l'application est hébergée sur un serveur — pas en protocole <code>file://</code>.</p></div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٥</span>
+      <span class="faq-q-text">Comment ajouter de nouveaux mots ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Ouvrez <code>index.html</code> dans un éditeur de texte. Dans le script, trouvez le tableau <code>const DATA=[...]</code>. Chaque mot suit cette structure :</p>
+      <p><code>{"id":19,"word_fr":"…","word_en":"…","word_ar":"…","transliteration":"…","meaning_fr":"…","meaning_en":"…","meaning_ar":"…","etymology":"…","pathway":"…","pathway_steps":[…],"category":"…","examples":{"fr":"…","en":"…","ar":"…"},"related_words":["…"]}</code></p>
+      <p>Respectez la structure JSON et incrémentez l'<code>id</code>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ DONNÉES ══════════ -->
+<div class="faq-section" id="data">
+  <div class="faq-section-title"><span class="ar">✦</span> Données & Confidentialité</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٦</span>
+      <span class="faq-q-text">Jisr collecte-t-il des données personnelles ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p><strong>Non, aucune.</strong> Jisr ne transmet aucune donnée à aucun serveur. L'application est entièrement locale. Vos favoris, historique et scores sont stockés uniquement dans le <code>localStorage</code> de votre navigateur, sur votre appareil.</p>
+      <p>Il n'y a ni analytics, ni cookies, ni trackers, ni publicités.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٧</span>
+      <span class="faq-q-text">Comment supprimer toutes mes données ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Plusieurs options :</p>
+      <ul>
+        <li>Ouvrez la console du navigateur (<code>F12</code>) et tapez <code>localStorage.clear()</code></li>
+        <li>Ou supprimez les clés individuellement : <code>localStorage.removeItem('jisr_favs')</code></li>
+        <li>Ou utilisez les paramètres de confidentialité de votre navigateur pour effacer les données du site</li>
+      </ul>
+      <p>Rechargez la page après suppression pour repartir de zéro.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CIVILISATION ISLAMIQUE ══════════ -->
+<div class="faq-section" id="islam">
+  <div class="faq-section-title"><span class="ar">✦</span> Civilisation islamique</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٨</span>
+      <span class="faq-q-text">Pourquoi l'arabe a-t-il eu une telle influence sur les langues européennes ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Entre le VIIe et le XIIIe siècle, la civilisation islamique connaît un <em>âge d'or</em> sans précédent. Des savants arabes, persans, berbères et turcs constituent la <strong>Maison de la Sagesse</strong> (بيت الحكمة) à Bagdad et traduisent, commentent et enrichissent les œuvres grecques, indiennes et perses.</p>
+      <p>Deux voies principales de transmission vers l'Europe :</p>
+      <ul>
+        <li><strong>L'Andalousie</strong> (711–1492) — Cordoue, Séville, Grenade. Les traducteurs de Tolède (XIIe s.) rendent le savoir arabe accessible en latin.</li>
+        <li><strong>La Sicile</strong> normande — carrefour entre monde arabe et Europe chrétienne.</li>
+        <li><strong>Les Croisades</strong> — contacts directs, commerce, échanges.</li>
+      </ul>
+      <p>Des domaines entiers — algèbre, astronomie, médecine, pharmacie, chimie, optique — arrivent en Europe avec leurs vocabulaires arabes.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">١٩</span>
+      <span class="faq-q-text">Pourquoi le Bismillah en ouverture ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <p>Le <em>Bismillah</em> (بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ — « Au nom de Dieu, le Clément, le Miséricordieux ») ouvre traditionnellement les manuscrits, les livres et les entreprises importantes dans la tradition islamique.</p>
+      <p>Tous les grands textes de la civilisation islamique classique — de al-Khwarizmi à Ibn Sina, d'Ibn Khaldoun à al-Biruni — commencent par le Bismillah. C'est un geste de respect et d'ancrage culturel, pas un acte de prosélytisme.</p>
+      <p>Jisr l'adopte comme <em>hommage authentique</em> à cette tradition savante qui a forgé le monde moderne.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggle(this)">
+      <span class="faq-q-num">٢٠</span>
+      <span class="faq-q-text">Quelles sont les principales références architecturales du design ?</span>
+      <span class="faq-q-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="faq-a">
+      <ul>
+        <li><strong>الحمراء — Alhambra (Grenade, XIVe s.)</strong> : arcs nasrides en fer à cheval, muqarnas (stalactites de plâtre), zellige (carreaux géométriques), palette or et turquoise</li>
+        <li><strong>المدينة المنورة — Médine</strong> : coupole verte, minarets élancés, fond de nuit profonde (bleue-noire)</li>
+        <li><strong>قرطبة — Cordoue (IXe–Xe s.)</strong> : arcs bicolores rouges et blancs, forêt de colonnes, arabesque</li>
+        <li><strong>آيا صوفيا — Hagia Sophia / Istanbul</strong> : demi-dômes en cascade, calligraphie monumentale</li>
+        <li><strong>بيت الحكمة — Maison de la Sagesse (Bagdad)</strong> : manuscrits enluminés, écriture coufique</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="deco-ar">جِسْر</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="wrap">
+    <div class="nav-links">
+      <a href="index.html">← Application</a>
+      <a href="HELP.html">Guide</a>
+      <a href="README.md">README</a>
+    </div>
+    <p><strong>جِسْر — Jisr v1.0</strong> · FAQ · L'héritage arabe dans les langues du monde</p>
+  </div>
+</footer>
+
+<script>
+function toggle(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  // Fermer tous
+  document.querySelectorAll('.faq-item.open').forEach(i=>{
+    if(i!==item) i.classList.remove('open');
+  });
+  item.classList.toggle('open',!isOpen);
+}
+// Ouvrir le premier par défaut
+document.querySelector('.faq-item')?.classList.add('open');
+</script>
+</body>
+</html>
